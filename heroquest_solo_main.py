@@ -7,47 +7,47 @@ class Heroquest_solo:
         self.r_num = random
 
         #position dict
-        self.LR_dict = {1: 'Sinistra',
-                        2: 'Destra',
+        self.LR_dict = {1: 'a sinistra',
+                        2: 'a destra',
                         3: 'al centro',
                         4: 'sul fondo',
                         5: 'davanti a te'}
 
         #fornutures dict
         self.forniture_dict = {1: "armadio",
-                               2: "porta chiusa a sinistra",
+                               2: "porta chiusa",
                                3: "libreria",
-                               4: "porta chiusa di fronte",
-                               5: "porta chiusa a destra",
-                               6: "porta aperta a destra",
-                               7: "porta aperta a sinistra",
+                               4: "porta chiusa",
+                               5: "porta chiusa",
+                               6: "porta aperta",
+                               7: "porta aperta",
                                8: "scrigno",
                                9: "tesoro",
                                10: "caminetto",
                                11: "trono",
                                12: "rastrelliera",
                                13: "tomba",
-                               14: "porta chiusa di fronte",
-                               15: "porta aperta di fronte",
-                               16: "porta a destra",
+                               14: "porta chiusa",
+                               15: "porta aperta",
+                               16: "porta aperta",
                                17: "bancone del mago",
                                18: "tavolo di tortura",
                                19: "tavolo",
                                20: "tavolo",
                                21: "tavolo",
-                               22: "porta aperta a sinistra",
-                               23: "porta chiusa a sinistra",
-                               24: "porta aperta di fronte",
+                               22: "porta aperta",
+                               23: "porta chiusa",
+                               24: "porta aperta",
                                25: "libreria",
-                               26: "porta a destra",
+                               26: "porta aperta",
                                27: "bancone del mago",
                                28: "tavolo di tortura",
                                29: "scrigno",
                                30: "tavolo",
                                31: "scrigno",
-                               32: "porta aperta a sinistra",
-                               33: "porta chiusa a sinistra",
-                               34: "porta aperta di fronte",
+                               32: "porta aperta",
+                               33: "porta chiusa",
+                               34: "porta aperta",
                                35: "libreria"}
 
         #items dict that you can find inside a cest or in other forniture
@@ -72,22 +72,27 @@ class Heroquest_solo:
                               19: "Pozione di difesa",
                               20: "Pozione di attacco"}
 
-        self.monsters_dict = {1: "Un Goblin",
-                              2: "Un Orco",
-                              3: "Un Fimir",
-                              4: "Due Goblin",
-                              5: "Due Orchi",
-                              6: "Due Fimir",
-                              7: "Uno Scheletro",
-                              8: "Uno Zombie",
-                              9: "Una Mummia",
-                              10 : "Due Scheletri",
-                              11: "Due Zombie",
-                              12: "Due Mummie",
-                              13: "Un Guerriero del Caos",
-                              14: "Due Guerrieri del Caos",
-                              15: "Tre Guerrieri del Caos",
-                              16: "Un Gargoyle"}
+        self.monsters_dict = {1: "un Goblin",
+                              2: "un Orco",
+                              3: "un Fimir",
+                              4: "due Goblin",
+                              5: "due Orchi",
+                              6: "due Fimir",
+                              7: "tre Goblin",
+                              8: "tre Orchi",
+                              9: "tre Fimir",
+                              10: "uno Scheletro",
+                              11:  "uno Zombie",
+                              12:  "una Mummia",
+                              13: "due Scheletri",
+                              14: "due Zombie",
+                              15: "tre Scheletri",
+                              16: "tre Mummie",
+                              17: "tre Zombie",
+                              18: "un Guerriero del Caos",
+                              19: "due Guerrieri del Caos",
+                              20: "tre Guerrieri del Caos",
+                              21: "Un Gargoyle"}
 
 
 
@@ -170,7 +175,9 @@ class Heroquest_solo:
             return """Mentre cerchi tra vecchi stracci e ossa di sorcio, senti uno scatto: un dardo di colpisce e perdi 1 punto corpo"""
         else:
             return "Non hai trovato nulla. Pesca una carta dal mazzo dei Tesori"
+
     def chest(self, rv):
+        """"create a random threasures inside chest"""
         self.rv = rv
 
         if self.rv > 1 and self.rv <= 15:
@@ -187,12 +194,13 @@ class Heroquest_solo:
             msg = "Hai trovato {} monete d'oro".format(self.r_num.randrange(1, 500, 25)-1)
             return msg
         else:
-            return """Putroppo hai fatto scattare un trabocchetto. Se provare a disinnescarlo tirando un dado da combattimento:
-                        Con 1 scudo bianco non ti succede nulla e puoi ritentare la sorte.
-                        Con 1 scudo nero non ti succede nulla.
-                        Con 1 teschio perdi 1 punto corpo."""
+            return """Putroppo hai fatto scattare un trabocchetto. Se provare a disinnescarlo tirando un dado da combattimento: 
+            Con 1 scudo bianco non ti succede nulla e puoi ritentare la sorte;
+            Con 1 scudo nero non ti succede nulla;
+            Con 1 teschio perdi 1 punto corpo."""
 
     def secret_doors(self, rv):
+        """Create random doors for aisles"""
         self.rv = rv
         self.LR_n = self.r_num.randrange(1, 2)
 
@@ -206,6 +214,8 @@ class Heroquest_solo:
             return "Non hai trovato nessuna porta segreta."
 
     def traps(self, rv):
+        """search for traps"""
+
         self.rv = rv
 
         if self.rv <= 13:
@@ -219,6 +229,7 @@ class Heroquest_solo:
             return "Non ci sono trabocchetti."
 
     def room_generator(self, rv, room_dimension):
+        """create random rooms with fornitures"""
         self.rv = rv #the values recives a number from 4D6
         self.room_dimension = int(room_dimension) #total of room's tiles
         forniture_number = 0
@@ -244,9 +255,10 @@ class Heroquest_solo:
 
 
     def monsters_generator(self, rv, room_dimension):
+        """create random monsters for rooms based on room dimension"""
         self.rv = rv
         self.room_dimension = int(room_dimension)
-        self.LR_n = self.LR_dict[self.r_num.randrange(1, 6)]
+        self.LR_n = self.LR_dict[self.r_num.randrange(1, 5)]
         monsters_number = 0
         if self.rv > 10:
             if self.room_dimension <= 6:
@@ -258,9 +270,9 @@ class Heroquest_solo:
             select_monsters_list = []
 
             for i in range(monsters_number):
-                select_monsters_list.append(self.monsters_dict[self.r_num.randrange(1, 16)])
+                select_monsters_list.append('{} {}'.format(self.monsters_dict[self.r_num.randrange(1, 21)], self.LR_dict[self.r_num.randrange(1, 5)]))
 
-            msg_monsters = "Colloca {} {}".format(", ".join(select_monsters_list), self.LR_n)
+            msg_monsters = "Colloca {}".format(", ".join(select_monsters_list))
             return msg_monsters
 
         else:

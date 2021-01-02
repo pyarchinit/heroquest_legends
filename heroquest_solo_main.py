@@ -8,11 +8,10 @@ class Heroquest_solo:
 
         #position dict
         self.LR_dict = {1: 'Sinistra',
-                        3: 'Sinistra',
-                        5: 'Sinistra',
                         2: 'Destra',
-                        4: 'Destra',
-                        6: 'Destra'}
+                        3: 'al centro',
+                        4: 'sul fondo',
+                        5: 'davanti a te'}
 
         #fornutures dict
         self.forniture_dict = {1: "armadio",
@@ -132,17 +131,17 @@ class Heroquest_solo:
         #sistem for discover aisles
 
         self.rv = rv #recive a random number beetween 4 and 24 for number of doors
-        self.LR_n = self.r_num.randrange(1, 6) #select beetween
+        self.LR_n = self.r_num.randrange(1, 2) #select beetween
 
         rock_msg_value = self.random_numbers()
         print(rock_msg_value)
         if rock_msg_value > 0 and rock_msg_value <= 13:
-            rocks_msg = "Dal fondo del corridoio arriva una luce fioca, forse ci sono altre stanze?"
+            rocks_msg = "Dal fondo del corridoio arriva una luce fioca, forse troverai altre stanze?"
         elif rock_msg_value > 13 and rock_msg_value <= 16:
             rocks_msg = "Il soffitto è crollato e il corridoio è bloccato dopo la porta. O tornare indietro o entrare. Che cosa ti dice di fare l'istinto?"
         else:
             wander_monster_list = [1, 2, 3, 7, 8, 9, 13]
-            rocks_msg = "Il soffitto è crollato e il corridoio è bloccato dopo la porta. Dul buio del corridoio arriva un rumore sinistro. ATTENTO! {}".format(
+            rocks_msg = "Il soffitto è crollato e il corridoio è bloccato dopo la porta. Dul buio del corridoio arriva un rumore sinistro: sulla tua strada trovi {}".format(
                 self.monsters_dict[ wander_monster_list[self.r_num.randrange(1, len(wander_monster_list))]])
 
         if self.rv > 1 and self.rv <= 10:
@@ -151,10 +150,10 @@ class Heroquest_solo:
 
         elif self.rv > 10 and self.rv <= 15:
 
-            return "Hai trovato due porte. Una prima porta a {} e una seconda porta a {}. Ognuna ti conduce ad una stanza diversa. ".format(self.LR_dict[self.r_num.randrange(1, 6)], self.LR_dict[self.r_num.randrange(1, 6)]) + rocks_msg
+            return "Hai trovato due porte. Una prima porta a {} e una seconda porta a {}. Ognuna ti conduce ad una stanza diversa. ".format(self.LR_dict[self.r_num.randrange(1, 2)], self.LR_dict[self.r_num.randrange(1, 2)]) + rocks_msg
 
         elif self.rv > 15 and self.rv <= 20:
-            return "Hai trovato tre porte. Colloca una prima porta a {}, una seconda porta a {} e una terza porta a {}. Ognuna ti conduce ad una stanza diversa. ".format(self.LR_dict[self.r_num.randrange(1, 6)], self.LR_dict[self.r_num.randrange(1, 6)], self.LR_dict[self.r_num.randrange(1, 6)]) + rocks_msg
+            return "Hai trovato tre porte. Colloca una prima porta a {}, una seconda porta a {} e una terza porta a {}. Ognuna ti conduce ad una stanza diversa. ".format(self.LR_dict[self.r_num.randrange(1, 2)], self.LR_dict[self.r_num.randrange(1, 2)], self.LR_dict[self.r_num.randrange(1, 2)]) + rocks_msg
         else:
             return ": Non hai trovato nessuna porta"
 
@@ -164,12 +163,13 @@ class Heroquest_solo:
         if self.rv > 1 and self.rv <= 11:
             return "Non hai trovato nulla. Pesca una carta dal mazzo dei Tesori"
 
-        elif self.rv > 12 and self.rv <= 17:
+        elif self.rv > 11 and self.rv <= 17:
             return "Finalmente un tesoro. Scopri cosa contiene"
 
-        elif self.rv > 18:
+        elif self.rv > 17:
             return """Mentre cerchi tra vecchi stracci e ossa di sorcio, senti uno scatto: un dardo di colpisce e perdi 1 punto corpo"""
-
+        else:
+            return "Non hai trovato nulla. Pesca una carta dal mazzo dei Tesori"
     def chest(self, rv):
         self.rv = rv
 
@@ -194,14 +194,14 @@ class Heroquest_solo:
 
     def secret_doors(self, rv):
         self.rv = rv
-        self.LR_n = self.r_num.randrange(1, 6)
+        self.LR_n = self.r_num.randrange(1, 2)
 
         if self.rv <= 13:
             return "Non hai trovato nessuna porta segreta."
         elif self.rv > 14 and self.rv <= 24:
-            value_LR = self.r_num.randrange(1, 6)
+            value_LR = self.r_num.randrange(1, 2)
             return "Hai trovato una porta segreta " + self.LR_dict[
-                self.r_num.randrange(1, 6)] + ". Colloca una porta segreta nel muro a {}".format(self.LR_dict[self.r_num.randrange(1, 6)])
+                self.r_num.randrange(1, 2)] + ". Colloca una porta segreta nel muro a {}".format(self.LR_dict[self.r_num.randrange(1, 2)])
         else:
             return "Non hai trovato nessuna porta segreta."
 
@@ -246,6 +246,7 @@ class Heroquest_solo:
     def monsters_generator(self, rv, room_dimension):
         self.rv = rv
         self.room_dimension = int(room_dimension)
+        self.LR_n = self.LR_dict[self.r_num.randrange(1, 6)]
         monsters_number = 0
         if self.rv > 10:
             if self.room_dimension <= 6:
@@ -259,7 +260,7 @@ class Heroquest_solo:
             for i in range(monsters_number):
                 select_monsters_list.append(self.monsters_dict[self.r_num.randrange(1, 16)])
 
-            msg_monsters = "Davanti a te ci sono {}".format(", ".join(select_monsters_list))
+            msg_monsters = "Colloca {} {}".format(", ".join(select_monsters_list), self.LR_n)
             return msg_monsters
 
         else:

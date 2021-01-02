@@ -33,7 +33,7 @@ layout = [[sg.Menu(menu_def, tearoff=True)],
               [sg.Button("Cosa contiene?", key="_CHEST_"), sg.Multiline('', key="_CHEST_TEXT_", size=(60, 6))]],
                 title='Esplora la stanza e i suoi mobili')],
 
-              [sg.Button("Ci sono mostri nella stanza?", key="_MONSTERS_GENERATOR_"),sg.Multiline('', key="_MONSTERS_GENERATOR_TEXT_", size=(60, 3))],
+              [sg.Button("Ci sono mostri nella stanza?", key="_MONSTERS_GENERATOR_"),sg.Multiline('', key="_MONSTERS_GENERATOR_TEXT_", size=(60, 3)), sg.Image(r'.\\images\\orco.png', key='-IMAGE-')],
               [sg.Button("Ci sono trabocchetti o porte segrete?", key="_TRAPS_SECRET_")],
               [sg.Multiline('', key="_TRAPS_TEXT_", size=(60, 3)), sg.Multiline('', key="_SECRET_DOOR_TEXT_", size=(60, 3))],
 
@@ -73,6 +73,7 @@ while True:
     if event == "_MONSTERS_GENERATOR_":
         msg = HQ_SOLO.monsters_generator(HQ_SOLO.random_numbers(), window["_ROOM_GENERATOR_NUMBER_"].get())
         window["_MONSTERS_GENERATOR_TEXT_"].update(str(msg))
+        window["-IMAGE-"].update(r'.\\images\\goblin.png')
 
 
     if event == "OK" or event == sg.WIN_CLOSED:

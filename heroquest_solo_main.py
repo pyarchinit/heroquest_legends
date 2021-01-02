@@ -9,8 +9,8 @@ class Heroquest_solo:
         #position dict
         self.LR_dict = {1: 'a sinistra',
                         2: 'a destra',
-                        3: 'al centro',
-                        4: 'sul fondo',
+                        3: 'sul fondo',
+                        4: 'al centro',
                         5: 'davanti a te'}
 
         #fornutures dict
@@ -151,7 +151,7 @@ class Heroquest_solo:
 
         if self.rv > 1 and self.rv <= 10:
 
-            return "Hai trovato una porta a " + self.LR_dict[self.LR_n] + ". Colloca una porta nella prima stanza. " + rocks_msg
+            return "Hai trovato una porta " + self.LR_dict[self.LR_n] + ". Colloca una porta nella prima stanza. " + rocks_msg
 
         elif self.rv > 10 and self.rv <= 15:
 
@@ -245,7 +245,7 @@ class Heroquest_solo:
             select_forniture_list = []
 
             for i in range(forniture_number):
-                select_forniture_list.append(self.forniture_dict[self.r_num.randrange(1, 35)])
+                select_forniture_list.append('{} {}'.format(self.forniture_dict[self.r_num.randrange(1, 35)], self.LR_dict[self.r_num.randrange(1, 3)]))
 
             msg_forniture = "La stanza contiene {}".format(", ".join(select_forniture_list))
             return msg_forniture

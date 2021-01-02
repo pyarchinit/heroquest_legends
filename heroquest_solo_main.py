@@ -73,22 +73,24 @@ class Heroquest_solo:
                               19: "Pozione di difesa",
                               20: "Pozione di attacco"}
 
-        self.monsters_dict = {1: "1 Goblin",
-                              2: "1 Orco",
-                              3: "1 Fimir",
-                              4: "2 Goblin",
-                              5: "2 Orchi",
-                              6: "2 Fimir",
-                              7: "1 Scheletro",
-                              8: "1 Zombie",
-                              9: "1 Mummia",
-                              10 : "2 Scheletri",
-                              11: "2 Zombie",
-                              12: "2 Mummie",
-                              13: "1 Guerriero del Caos",
-                              14: "2 Guerrieri del Caos",
-                              15: "3 Guerrieri del Caos",
-                              16: "1 Gargoyle"}
+        self.monsters_dict = {1: "Un Goblin",
+                              2: "Un Orco",
+                              3: "Un Fimir",
+                              4: "Due Goblin",
+                              5: "Due Orchi",
+                              6: "Due Fimir",
+                              7: "Uno Scheletro",
+                              8: "Uno Zombie",
+                              9: "Una Mummia",
+                              10 : "Due Scheletri",
+                              11: "Due Zombie",
+                              12: "Due Mummie",
+                              13: "Un Guerriero del Caos",
+                              14: "Due Guerrieri del Caos",
+                              15: "Tre Guerrieri del Caos",
+                              16: "Un Gargoyle"}
+
+
 
 
 
@@ -132,13 +134,27 @@ class Heroquest_solo:
         self.rv = rv #recive a random number beetween 4 and 24 for number of doors
         self.LR_n = self.r_num.randrange(1, 6) #select beetween
 
+        rock_msg_value = self.random_numbers()
+        print(rock_msg_value)
+        if rock_msg_value > 0 and rock_msg_value <= 13:
+            rocks_msg = "Dal fondo del corridoio arriva una luce fioca, forse ci sono altre stanze?"
+        elif rock_msg_value > 13 and rock_msg_value <= 16:
+            rocks_msg = "Il soffitto è crollato e il corridoio è bloccato dopo la porta. O tornare indietro o entrare. Che cosa ti dice di fare l'istinto?"
+        else:
+            wander_monster_list = [1, 2, 3, 7, 8, 9, 13]
+            rocks_msg = "Il soffitto è crollato e il corridoio è bloccato dopo la porta. Dul buio del corridoio arriva un rumore sinistro. ATTENTO! {}".format(
+                self.monsters_dict[ wander_monster_list[self.r_num.randrange(1, len(wander_monster_list))]])
 
         if self.rv > 1 and self.rv <= 10:
-            return "Hai trovato una porta a " + self.LR_dict[self.LR_n] + ". Colloca una porta nella prima stanza (non devono essere presenti porte segrete sul muro)."
+
+            return "Hai trovato una porta a " + self.LR_dict[self.LR_n] + ". Colloca una porta nella prima stanza. " + rocks_msg
+
         elif self.rv > 10 and self.rv <= 15:
-            return "Hai trovato due porte. Colloca una prima porta a {} e una seconda porta a {}. Mettile sfalsate a distanza di 2 stanze una dall'altra".format(self.LR_dict[self.r_num.randrange(1, 6)], self.LR_dict[self.r_num.randrange(1, 6)])
+
+            return "Hai trovato due porte. Una prima porta a {} e una seconda porta a {}. Ognuna ti conduce ad una stanza diversa. ".format(self.LR_dict[self.r_num.randrange(1, 6)], self.LR_dict[self.r_num.randrange(1, 6)]) + rocks_msg
+
         elif self.rv > 15 and self.rv <= 20:
-            return "Hai trovato tre porte. Colloca una prima porta a {}, una seconda porta a {} e una terza porta a {}. Mettile sfalsate a distanza di una stanze una dall'altra".format(self.LR_dict[self.r_num.randrange(1, 6)], self.LR_dict[self.r_num.randrange(1, 6)], self.LR_dict[self.r_num.randrange(1, 6)])
+            return "Hai trovato tre porte. Colloca una prima porta a {}, una seconda porta a {} e una terza porta a {}. Ognuna ti conduce ad una stanza diversa. ".format(self.LR_dict[self.r_num.randrange(1, 6)], self.LR_dict[self.r_num.randrange(1, 6)], self.LR_dict[self.r_num.randrange(1, 6)]) + rocks_msg
         else:
             return ": Non hai trovato nessuna porta"
 

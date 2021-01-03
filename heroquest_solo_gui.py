@@ -1,20 +1,33 @@
-# hello_world.py
+# -*- coding: utf-8 -*-
+"""
+/***************************************************************************
+        Heroquest Solo by Mandor the Druid
+                             -------------------
+    begin                : 2021-01-02
+    copyright            : (C) 2021 by Luca Mandolesi
+    email                : mandoluca at gmail.com
+ ***************************************************************************/
+
+/***************************************************************************
+ *                                                                         *
+ *   This program is free software; you can redistribute it and/or modify  *
+ *   it under the terms of the GNU General Public License as published by  *
+ *   the Free Software Foundation; either version 2 of the License, or     *
+ *   (at your option) any later version.                                   *
+ *                                                                         *
+ ***************************************************************************/
+"""
 
 from heroquest_solo_main import Heroquest_solo
 import PySimpleGUI as sg
 HQ_SOLO = Heroquest_solo() #app CLASS to call method
-
+#default theme
 sg.theme('DefaultNoMoreNagging')
-
-
-# ------ Menu Definition ------ #
-
-
 # ------ Menu Definition ------ #
 menu_def = [['&File', ['&Open', '&Save', 'E&xit', 'Properties']],
             ['&Edit', ['Paste', ['Special', 'Normal', ], 'Undo'], ],
             ['&Help', '&About...'], ]
-
+#layout
 layout = [[sg.Menu(menu_def, tearoff=True)],
           [sg.Frame(layout=[
               [sg.Button("Come è fatto il corridoio", key = "_AISLES_"),
@@ -29,7 +42,7 @@ layout = [[sg.Menu(menu_def, tearoff=True)],
                title='Esplora una nuova Stanza')],
 
           [sg.Frame(layout=[
-              [sg.Button("Ci sono tesori?", key="_THRESURES_"), sg.Multiline('', key = "_THRESURES_TEXT_", size=(60,3))],
+              [sg.Button("Ci sono tesori?", key="_TREASURES_"), sg.Multiline('', key = "_TREASURES_TEXT_", size=(60,3))],
               [sg.Button("Cosa contiene?", key="_CHEST_"), sg.Multiline('', key="_CHEST_TEXT_", size=(60, 6))]],
                 title='Esplora la stanza e i suoi mobili')],
 
@@ -40,8 +53,6 @@ layout = [[sg.Menu(menu_def, tearoff=True)],
     ]
 # Create the window
 window = sg.Window("Heroquest solo assistant - by Mandor The Druid-version 0.01 beta", layout,  margins=(10, 10))
-#sg.Window('Window Title', [[sg.Image(data=image)]], transparent_color=sg.theme_background_color(), no_titlebar=True, keep_on_top=True).read(timeout=DISPLAY_TIME_MILLISECONDS, close=True)
-
 # Create an event loop
 while True:
     event, values = window.read()
@@ -50,12 +61,14 @@ while True:
         msg = HQ_SOLO.aisles(HQ_SOLO.random_numbers())
         window["_AISLES_TEXT_"].update(str(msg))
 
-    if event == "_THRESURES_":
-        msg = HQ_SOLO.thresures(HQ_SOLO.random_numbers())
-        window["_THRESURES_TEXT_"].update(str(msg))
+    if event == "_TREASURES_":
+        msg = HQ_SOLO.treasures(HQ_SOLO.random_numbers())
+        window["_TREASURES_TEXT_"].update(str(''))
+        window["_TREASURES_TEXT_"].update(str(msg))
 
     if event == "_CHEST_":
         msg = HQ_SOLO.chest(HQ_SOLO.random_numbers())
+        window["_CHEST_TEXT_"].update("")
         window["_CHEST_TEXT_"].update(str(msg))
 
     if event == "_TRAPS_SECRET_":

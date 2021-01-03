@@ -77,9 +77,9 @@ class Heroquest_solo:
         22 = 1.16%
         23 = 0.39%
         24 = 0.08% """
-        value_1 = self.r_num.randrange(1, 6)
-        value_2 = self.r_num.randrange(1, 6)
-        value_3 = self.r_num.randrange(1, 6)
+        value_1 = self.r_num.randrange(1, 6, 1)
+        value_2 = self.r_num.randrange(1, 6, 2)
+        value_3 = self.r_num.randrange(1, 6, 3)
         value_4 = self.r_num.randrange(1, 6)
 
         rn_list = [value_1, value_2, value_3, value_4]
@@ -91,13 +91,14 @@ class Heroquest_solo:
         #sistem for discover aisles
 
         self.rv = rv #recive a random number beetween 4 and 24 for number of doors
-        self.LR_n = self.r_num.randrange(1, 2) #select beetween
+        self.LR_n = self.r_num.randint(1, 2) #select beetween
 
         rock_msg_value = self.random_numbers()
-        print(rock_msg_value)
-        if rock_msg_value > 0 and rock_msg_value <= 13:
+
+        if rock_msg_value > 0 and rock_msg_value <= 10:
             rocks_msg = self.CONFIG_DICT['aisles_msg_1']
-        elif rock_msg_value > 13 and rock_msg_value <= 16:
+
+        elif rock_msg_value > 10 and rock_msg_value <= 18:
             rocks_msg = self.CONFIG_DICT['aisles_msg_2']
         else:
             wander_monster_list = [1, 2, 3, 7, 8, 9, 13]
@@ -110,10 +111,10 @@ class Heroquest_solo:
 
         elif self.rv > 10 and self.rv <= 15:
 
-            return self.CONFIG_DICT['aisles_msg_5'].format(self.position_dict[self.r_num.randrange(1, 2)], self.position_dict[self.r_num.randrange(1, 2)], rocks_msg)
+            return self.CONFIG_DICT['aisles_msg_5'].format(self.position_dict[self.r_num.randint(1, 2)], self.position_dict[self.r_num.randint(1, 2)], rocks_msg)
 
         elif self.rv > 15 and self.rv <= 20:
-            return self.CONFIG_DICT['aisles_msg_6'].format(self.position_dict[self.r_num.randrange(1, 2)], self.position_dict[self.r_num.randrange(1, 2)], self.position_dict[self.r_num.randrange(1, 2)],rocks_msg)
+            return self.CONFIG_DICT['aisles_msg_6'].format(self.position_dict[self.r_num.randint(1, 2)], self.position_dict[self.r_num.randint(1, 2)], self.position_dict[self.r_num.randint(1, 2)],rocks_msg)
 
         else:
             return self.CONFIG_DICT['aisles_msg_7']
@@ -155,13 +156,13 @@ class Heroquest_solo:
     def secret_doors(self, rv):
         """Create random doors for aisles"""
         self.rv = rv
-        self.LR_n = self.r_num.randrange(1, 3)
+        self.LR_n = self.r_num.randint(1, 2)
 
         if self.rv <= 13:
             return self.CONFIG_DICT['secret_doors_msg_1']
         elif self.rv > 14 and self.rv <= 24:
-            value_LR = self.r_num.randrange(1, 2)
-            return self.CONFIG_DICT['secret_doors_msg_2'].format(self.position_dict[self.r_num.randrange(1, 2)], self.position_dict[self.r_num.randrange(1, 2)])
+            value_LR = self.r_num.randint(1, 2)
+            return self.CONFIG_DICT['secret_doors_msg_2'].format(self.position_dict[self.r_num.randint(1, 2)], self.position_dict[self.r_num.randint(1, 2)])
         else:
             return self.CONFIG_DICT['secret_doors_msg_1']
 

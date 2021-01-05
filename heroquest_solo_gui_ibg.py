@@ -18,7 +18,7 @@
  ***************************************************************************/
 """
 from heroquest_solo_main import Heroquest_solo
-#import PySimpleGUIWeb as sg#
+
 import PySimpleGUI as sg
 
 sg.Window._move_all_windows = True
@@ -49,15 +49,18 @@ def title_bar(title, text_color, background_color):
 
 
 def main():
-    background_layout = [title_bar('Heroquest\'s Legends - by Mandor The Druid - version 0.004 beta', sg.theme_text_color(), sg.theme_background_color()),
+
+    HQ_SOLO = Heroquest_solo()  # app CLASS to call method
+
+    background_layout = [title_bar('Heroquest\'s Legends - by Mandor The Druid - version 0.01 beta', sg.theme_text_color(), sg.theme_background_color()),
                          [sg.Image(data=background_image)]]
+
     window_background = sg.Window('Background', background_layout, no_titlebar=True, finalize=True, size = (720, 720), margins=(0, 0),
                                   element_padding=(0, 0), right_click_menu=[[''], ['Exit', ]])
 
     window_background['-C-'].expand(True, True,
-                                    False)  # expand the titlebar's rightmost column so that it resizes correctly
+                                    True)  # expand the titlebar's rightmost column so that it resizes correctly
 
-    HQ_SOLO = Heroquest_solo()  # app CLASS to call method
 
     layout = [[sg.Button(HQ_SOLO.CONFIG_DICT['btn_7'], key = "-RESET_ALL-")],
             [sg.Frame(layout=[
@@ -83,9 +86,10 @@ def main():
               [sg.Multiline('', key="-SECRET_DOOR_TEXT-", size=(60, 3))],
               #sg.Image(r'.\\images\\orco.png', key='-IMAGE-')
                 ]
+
+
     top_window = sg.Window("Heroquest solo assistant - by Mandor The Druid-version 0.004 beta",
-                       layout, finalize=True, keep_on_top=True, grab_anywhere=True,
-                           transparent_color=sg.theme_background_color(), no_titlebar=True, margins=(20, 10))
+                       layout, keep_on_top=True, finalize=True , grab_anywhere=True, transparent_color=sg.theme_background_color(), no_titlebar=True, margins=(20, 10))
 
 
 
@@ -96,8 +100,8 @@ def main():
         if event is None or event == 'Cancel' or event == 'Exit':
             #print(f'closing window = {window.Title}')
             break
-        #window_background.send_to_back()
-        #top_window.bring_to_front()
+        window_background.send_to_back()
+        top_window.bring_to_front()
 
         if event == "-RESET_ALL-":
             window["-CHEST_TEXT-"].update("")

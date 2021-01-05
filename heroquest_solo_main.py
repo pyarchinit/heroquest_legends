@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """
 /***************************************************************************
-        Heroquest Solo by Mandor the Druid
+        Heroquest's Legends Solo by Mandor the Druid
                              -------------------
     begin                : 2021-01-02
     copyright            : (C) 2021 by Luca Mandolesi
@@ -77,36 +77,42 @@ class Heroquest_solo:
         22 = 1.16%
         23 = 0.39%
         24 = 0.08% """
-        value_1 = self.r_num.randrange(1, 6, 1)
-        value_2 = self.r_num.randrange(1, 6, 2)
-        value_3 = self.r_num.randrange(1, 6, 3)
-        value_4 = self.r_num.randrange(1, 6)
+
+        value_1 = self.r_num.randint(1, 6)
+
+        value_2 = self.r_num.randint(1, 6)
+
+        value_3 = self.r_num.randint(1, 6)
+
+        value_4 = self.r_num.randint(1, 6)
 
         rn_list = [value_1, value_2, value_3, value_4]
 
         rn_sum = sum(rn_list)
-        return rn_sum #return values between 4 and 24
+
+        return rn_sum
+
 
     def aisles(self, rv):
         #sistem for discover aisles
 
         self.rv = rv #recive a random number beetween 4 and 24 for number of doors
-        self.LR_n = self.r_num.randint(1, 2) #select beetween
+        self.LR_n = self.r_num.randint(1, 2) #select beetween left ora right
 
         rock_msg_value = self.random_numbers()
 
-        if rock_msg_value > 0 and rock_msg_value <= 10:
+        #generate a rock message and sometis with a monster
+        if rock_msg_value > 0 and rock_msg_value <= 15:
             rocks_msg = self.CONFIG_DICT['aisles_msg_1']
 
-        elif rock_msg_value > 10 and rock_msg_value <= 18:
+        elif rock_msg_value > 15 and rock_msg_value <= 18:
             rocks_msg = self.CONFIG_DICT['aisles_msg_2']
         else:
             wander_monster_list = [1, 2, 3, 7, 8, 9, 13]
             rocks_msg = self.CONFIG_DICT['aisles_msg_3'].format(
-                self.monsters_dict[ wander_monster_list[self.r_num.randrange(1, len(wander_monster_list))]])
+                self.monsters_dict[wander_monster_list[self.r_num.randint(0, len(wander_monster_list))]])
 
         if self.rv > 1 and self.rv <= 10:
-
             return self.CONFIG_DICT['aisles_msg_4'].format(self.position_dict[self.LR_n], rocks_msg)
 
         elif self.rv > 10 and self.rv <= 15:
@@ -139,9 +145,9 @@ class Heroquest_solo:
 
         if self.rv > 1 and self.rv <= 17:
             items_list = []
-            items_numbers = self.r_num.randrange(1, 3)
+            items_numbers = self.r_num.randint(1, 3)
             for i in range(items_numbers):
-                items_list.append(self.treasures_dict[self.r_num.randrange(1, 20)])
+                items_list.append(self.treasures_dict[self.r_num.randint(1, 20)])
 
             items_list_str = self.CONFIG_DICT['chest_msg_1'].format('\n'.join(items_list))
 
@@ -184,18 +190,17 @@ class Heroquest_solo:
         self.room_dimension = int(room_dimension) #total of room's tiles
         forniture_number = 0
 
-        if self.rv > 10:
-
+        if self.rv > 10: #between 0.024% and 90% of cases, the system returns the presence of fornitures
             if self.room_dimension <= 6:
-                forniture_number = 1
-            elif self.room_dimension > 9 and self.room_dimension <= 16:
-                forniture_number = self.r_num.randrange(1, 3)
+                forniture_number = 1 #for rooms still 6 squares add 1 forniture
+            elif self.room_dimension > 6 and self.room_dimension <= 16:
+                forniture_number = self.r_num.randint(1, 3) #for rooms still 6 squares add between 1 and 3 forniture
             elif self.room_dimension > 16:
-                forniture_number = self.r_num.randrange(1, 4)
-            select_forniture_list = []
+                forniture_number = self.r_num.randint(1, 4) #for rooms still 6 squares add between 1 and 4 forniture
 
+            select_forniture_list = []
             for i in range(forniture_number):
-                select_forniture_list.append('{} {}'.format(self.forniture_dict[self.r_num.randrange(1, 35)], self.position_dict[self.r_num.randrange(1, 3)]))
+                select_forniture_list.append('{} {}'.format(self.forniture_dict[self.r_num.randint(1, 35)], self.position_dict[self.r_num.randint(1, 3)]))
 
             msg_forniture = self.CONFIG_DICT['fornitures_msg_1'].format(", ".join(select_forniture_list))
 
@@ -208,19 +213,19 @@ class Heroquest_solo:
         """create random monsters for rooms based on room dimension"""
         self.rv = rv
         self.room_dimension = int(room_dimension)
-        self.LR_n = self.position_dict[self.r_num.randrange(1, 5)]
+        self.LR_n = self.position_dict[self.r_num.randint(1, 5)]
         monsters_number = 0
         if self.rv > 10:
             if self.room_dimension <= 6:
                 monsters_number = 1
             elif self.room_dimension > 9 and self.room_dimension <= 16:
-                monsters_number = self.r_num.randrange(1, 3)
+                monsters_number = self.r_num.randint(1, 3)
             elif self.room_dimension > 16:
-                monsters_number = self.r_num.randrange(1, 4)
+                monsters_number = self.r_num.randint(1, 4)
             select_monsters_list = []
 
             for i in range(monsters_number):
-                select_monsters_list.append('{} {}'.format(self.monsters_dict[self.r_num.randrange(1, 21)], self.position_dict[self.r_num.randrange(1, 5)]))
+                select_monsters_list.append('{} {}'.format(self.monsters_dict[self.r_num.randint(1, 21)], self.position_dict[self.r_num.randint(1, 5)]))
 
             msg_monsters = self.CONFIG_DICT['monsters_msg_1'].format(", ".join(select_monsters_list))
             return msg_monsters

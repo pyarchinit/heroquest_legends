@@ -134,6 +134,7 @@
   'TXT_3': 'Explore the room and its furniture',
   'btn_4': "What does it contain?",
   'btn_5': "Are there monsters in the room?",
-  'btn_6': "Are there any pitfalls or secret doors?"
+  'btn_6': "Are there any pitfalls or secret doors?",
+  'btn_7':"Reset all"
 
 }

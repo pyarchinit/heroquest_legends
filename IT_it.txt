@@ -135,7 +135,8 @@
   'TXT_3':'Esplora la stanza e i suoi mobili',
   'btn_4':"Cosa contiene?",
   'btn_5':"Ci sono mostri nella stanza?",
-  'btn_6':"Ci sono trabocchetti o porte segrete?"
+  'btn_6':"Ci sono trabocchetti o porte segrete?",
+  'btn_7':"Resetta tutto"
 
 }
 

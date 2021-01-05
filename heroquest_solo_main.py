@@ -128,7 +128,7 @@ class Heroquest_solo:
     def treasures(self, rv):
         self.rv = rv
 
-        if self.rv > 0 and self.rv <= 15:
+        if self.rv > 13 and self.rv <= 15:
             return self.CONFIG_DICT['treasures_msg_1']
 
         elif self.rv > 15 and self.rv <= 22 :
@@ -136,8 +136,8 @@ class Heroquest_solo:
 
         elif self.rv > 22:
             return self.CONFIG_DICT['treasures_msg_3']
-        #else:
-            #return self.CONFIG_DICT['treasures_msg_4']
+        else:
+            return self.CONFIG_DICT['treasures_msg_4']
 
     def chest(self, rv):
         """"create a random treasures inside chest"""

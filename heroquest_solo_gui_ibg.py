@@ -59,7 +59,7 @@ def main():
 
     HQ_SOLO = Heroquest_solo()  # app CLASS to call method
 
-    layout = [
+    layout = [[sg.Button(HQ_SOLO.CONFIG_DICT['btn_7'], key = "-RESET_ALL-")],
             [sg.Frame(layout=[
               [sg.Button(HQ_SOLO.CONFIG_DICT['btn_1'], key = "-AISLES-"),
                sg.Multiline('', key = "-AISLES_TEXT-", size=(60,6))]],
@@ -98,6 +98,15 @@ def main():
             break
         #window_background.send_to_back()
         #top_window.bring_to_front()
+
+        if event == "-RESET_ALL-":
+            window["-CHEST_TEXT-"].update("")
+            window["-TRAPS_TEXT-"].update("")
+            window["-SECRET_DOOR_TEXT-"].update("")
+            window["-AISLES_TEXT-"].update("")
+            window["-ROOM_GENERATOR_TEXT-"].update("")
+            window["-MONSTERS_GENERATOR_TEXT-"].update("")
+            window["-TREASURES_TEXT-"].update(str(''))
 
         if event == "-AISLES-":
             msg = HQ_SOLO.aisles(HQ_SOLO.random_numbers())

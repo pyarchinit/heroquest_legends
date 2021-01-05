@@ -54,31 +54,31 @@ def main():
     window_background = sg.Window('Background', background_layout, no_titlebar=True, finalize=True, size = (720, 720), margins=(0, 0),
                                   element_padding=(0, 0), right_click_menu=[[''], ['Exit', ]])
 
-    window_background['-C-'].expand(True, False,
+    window_background['-C-'].expand(True, True,
                                     False)  # expand the titlebar's rightmost column so that it resizes correctly
 
     HQ_SOLO = Heroquest_solo()  # app CLASS to call method
 
     layout = [
             [sg.Frame(layout=[
-              [sg.Button("Come è fatto il corridoio", key = "-AISLES-"),
+              [sg.Button(HQ_SOLO.CONFIG_DICT['btn_1'], key = "-AISLES-"),
                sg.Multiline('', key = "-AISLES_TEXT-", size=(60,6))]],
-               title='Esplora un nuovo corridoio')],
+               title=HQ_SOLO.CONFIG_DICT['FIELD_BOX_1'])],
 
           [sg.Frame(layout=[
-               [sg.Button("Scopri come è fatta la stanza", key="-ROOM_GENERATOR-"),
-                sg.Text('Inserisci il numero di caselle della stanza (minimo 6)'),
+               [sg.Button(HQ_SOLO.CONFIG_DICT['btn_2'], key="-ROOM_GENERATOR-"),
+                sg.Text(HQ_SOLO.CONFIG_DICT['TXT_1']),
                 sg.Input('6', key="-ROOM_GENERATOR_NUMBER-", size=(5, 3))],
                [sg.Multiline('', key="-ROOM_GENERATOR_TEXT-", size=(60, 3))]],
-               title='Esplora una nuova Stanza')],
+               title=HQ_SOLO.CONFIG_DICT['TXT_1'])],
 
           [sg.Frame(layout=[
-              [sg.Button("Ci sono tesori?", key="-TREASURES-"), sg.Multiline('', key = "-TREASURES_TEXT-", size=(60,3))],
-              [sg.Button("Cosa contiene?", key="-CHEST-"), sg.Multiline('', key="-CHEST_TEXT-", size=(60, 6))]],
-                title='Esplora la stanza e i suoi mobili')],
+              [sg.Button(HQ_SOLO.CONFIG_DICT['btn_3'], key="-TREASURES-"), sg.Multiline('', key = "-TREASURES_TEXT-", size=(60,3))],
+              [sg.Button(HQ_SOLO.CONFIG_DICT['btn_4'], key="-CHEST-"), sg.Multiline('', key="-CHEST_TEXT-", size=(60, 6))]],
+                title=HQ_SOLO.CONFIG_DICT['TXT_3'])],
 
-              [sg.Button("Ci sono mostri nella stanza?", key="-MONSTERS_GENERATOR-"),sg.Multiline('', key="-MONSTERS_GENERATOR_TEXT-", size=(60, 3))],
-              [sg.Button("Ci sono trabocchetti o porte segrete?", key="-TRAPS_SECRET-")],
+              [sg.Button(HQ_SOLO.CONFIG_DICT['btn_5'], key="-MONSTERS_GENERATOR-"),sg.Multiline('', key="-MONSTERS_GENERATOR_TEXT-", size=(60, 3))],
+              [sg.Button(HQ_SOLO.CONFIG_DICT['btn_6'], key="-TRAPS_SECRET-")],
               [sg.Multiline('', key="-TRAPS_TEXT-", size=(60, 3))],
               [sg.Multiline('', key="-SECRET_DOOR_TEXT-", size=(60, 3))],
               #sg.Image(r'.\\images\\orco.png', key='-IMAGE-')

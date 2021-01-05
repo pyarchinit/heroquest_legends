@@ -47,16 +47,20 @@ layout = [[sg.Menu(menu_def, tearoff=True)],
               [sg.Button("Cosa contiene?", key="-CHEST-"), sg.Multiline('', key="-CHEST_TEXT-", size=(60, 6))]],
                 title='Esplora la stanza e i suoi mobili')],
 
-              [sg.Button("Ci sono mostri nella stanza?", key="-MONSTERS_GENERATOR-"),sg.Multiline('', key="-MONSTERS_GENERATOR_TEXT-", size=(60, 3)), sg.Image(r'.\\images\\orco.png', key='-IMAGE-')],
+              [sg.Button("Ci sono mostri nella stanza?", key="-MONSTERS_GENERATOR-"),sg.Multiline('', key="-MONSTERS_GENERATOR_TEXT-", size=(60, 3))],
               [sg.Button("Ci sono trabocchetti o porte segrete?", key="-TRAPS_SECRET-")],
               [sg.Multiline('', key="-TRAPS_TEXT-", size=(60, 3)), sg.Multiline('', key="-SECRET_DOOR_TEXT-", size=(60, 3))],
-
+              #sg.Image(r'.\\images\\orco.png', key='-IMAGE-')
     ]
+
+
+
 # Create the window
-window = sg.Window("Heroquest solo assistant - by Mandor The Druid-version 0.01 beta", layout,  margins=(10, 10))
+window = sg.Window("Heroquest solo assistant - by Mandor The Druid-version 0.004 beta", layout,  margins=(10, 10))
 # Create an event loop
 while True:
     event, values = window.read()
+    window.back
 
     if event == "-AISLES-":
         msg = HQ_SOLO.aisles(HQ_SOLO.random_numbers())

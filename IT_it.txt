@@ -124,7 +124,18 @@
                               18: "un Guerriero del Caos",
                               19: "due Guerrieri del Caos",
                               20: "tre Guerrieri del Caos",
-                              21: "Un Gargoyle"}
+                              21: "Un Gargoyle"},
+
+  'btn_1':"Come è fatto il corridoio",
+  'FIELD_BOX_1': "Esplora un nuovo corridoio",
+  'btn_2':"Scopri come è fatta la stanza",
+  'TXT_1': "Inserisci il numero di caselle della stanza (minimo 6)",
+  'TXT_2': "Esplora una nuova Stanza",
+  'btn_3':"Ci sono tesori?",
+  'TXT_3':'Esplora la stanza e i suoi mobili',
+  'btn_4':"Cosa contiene?",
+  'btn_5':"Ci sono mostri nella stanza?",
+  'btn_6':"Ci sono trabocchetti o porte segrete?"
 
 }
 

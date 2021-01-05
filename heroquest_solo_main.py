@@ -128,7 +128,7 @@ class Heroquest_solo:
     def treasures(self, rv):
         self.rv = rv
 
-        if self.rv > 13 and self.rv <= 15:
+        if self.rv > 14 and self.rv <= 15:
             return self.CONFIG_DICT['treasures_msg_1']
 
         elif self.rv > 15 and self.rv <= 22 :
@@ -142,10 +142,17 @@ class Heroquest_solo:
     def chest(self, rv):
         """"create a random treasures inside chest"""
         self.rv = rv
-
-        if self.rv > 1 and self.rv <= 17:
+        print(rv)
+        if self.rv > 1 and self.rv <= 15: #you'll find potions and items
             items_list = []
-            items_numbers = self.r_num.randint(1, 3)
+            nr_items_random = self.random_numbers()
+            if nr_items_random >0 and nr_items_random  <= 18:
+                items_numbers = 1
+            elif nr_items_random >18 and nr_items_random <= 20:
+                items_numbers = 2
+            else:
+                items_numbers = 3
+            #items_numbers = self.r_num.randint(1, 3)
             for i in range(items_numbers):
                 items_list.append(self.treasures_dict[self.r_num.randint(1, 20)])
 
@@ -153,10 +160,10 @@ class Heroquest_solo:
 
             return items_list_str
 
-        elif self.rv > 17 and self.rv <= 22:
+        elif self.rv > 15 and self.rv <= 21: #you'll find gold coins
             msg = self.CONFIG_DICT['chest_msg_2'].format(self.r_num.randrange(1, 500, 25)-1)
             return msg
-        else:
+        elif self.rv > 22:
             return self.CONFIG_DICT['chest_msg_3']
 
     def secret_doors(self, rv):
@@ -166,7 +173,7 @@ class Heroquest_solo:
 
         if self.rv <= 13:
             return self.CONFIG_DICT['secret_doors_msg_1']
-        elif self.rv > 14 and self.rv <= 24:
+        elif self.rv > 13 and self.rv <= 24:
             value_LR = self.r_num.randint(1, 2)
             return self.CONFIG_DICT['secret_doors_msg_2'].format(self.position_dict[self.r_num.randint(1, 2)], self.position_dict[self.r_num.randint(1, 2)])
         else:

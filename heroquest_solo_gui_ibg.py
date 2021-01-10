@@ -20,12 +20,12 @@
 from heroquest_solo_main import Heroquest_solo
 
 import PySimpleGUI as sg
-
 sg.Window._move_all_windows = True
 
 
 def title_bar(title, text_color, background_color):
     """
+
     Creates a "row" that can be added to a layout. This row looks like a titlebar
     :param title: The "title" to show in the titlebar
     :type title: str
@@ -36,6 +36,7 @@ def title_bar(title, text_color, background_color):
     :return: A list of elements (i.e. a "row" for a layout)
     :rtype: List[sg.Element]
     """
+
     bc = background_color
     tc = text_color
     font = 'Baskerville-old-Style'
@@ -44,7 +45,7 @@ def title_bar(title, text_color, background_color):
                    background_color=bc),
             sg.Col([[sg.T('_', text_color=tc, background_color=bc, enable_events=True, font=font, key='-MINIMIZE-'),
                      sg.Text('❎', text_color=tc, background_color=bc, font=font, enable_events=True, key='Exit')]],
-                   element_justification='r', key='-C-', grab=True,
+                   element_justification='j', key='-C-', grab=True,
                    pad=(0, 0), background_color=bc)]
 
 
@@ -55,30 +56,37 @@ def main():
     background_layout = [title_bar('Heroquest\'s Legends - by Mandor The Druid - version 0.01 beta', sg.theme_text_color(), sg.theme_background_color()),
                          [sg.Image(data=background_image)]]
 
-    window_background = sg.Window('Background', background_layout, no_titlebar=True, finalize=True, size = (720, 720), margins=(0, 0),
+    window_background = sg.Window('Background', background_layout, no_titlebar=True, finalize=True, size = (720,800), margins=(0, 0),
                                   element_padding=(0, 0), right_click_menu=[[''], ['Exit', ]])
 
     window_background['-C-'].expand(True, True,
                                     True)  # expand the titlebar's rightmost column so that it resizes correctly
 
 
-    layout = [[sg.Button(HQ_SOLO.CONFIG_DICT['btn_7'], key = "-RESET_ALL-")],
-            [sg.Frame(layout=[
+    left_column = [[sg.Text('', size=(20, 2), justification='center',font=("Helvetica", 12), relief=sg.RELIEF_RIDGE)],
+             [sg.Text(HQ_SOLO.CONFIG_DICT['TXT_4']), sg.Text("1", key = "-TEXT_4-", )],
+             [sg.Button(HQ_SOLO.CONFIG_DICT['btn_7'], key = "-RESET_ALL-")],
+             [sg.Frame(layout=[
               [sg.Button(HQ_SOLO.CONFIG_DICT['btn_1'], key = "-AISLES-"),
                sg.Multiline('', key = "-AISLES_TEXT-", size=(60,6))]],
-               title=HQ_SOLO.CONFIG_DICT['FIELD_BOX_1'])],
+               title=HQ_SOLO.CONFIG_DICT['FIELD_BOX_1'])]]
 
-          [sg.Frame(layout=[
+    layout = [
+             [sg.Column(left_column,element_justification='c')],
+
+             [sg.Frame(layout=[
                [sg.Button(HQ_SOLO.CONFIG_DICT['btn_2'], key="-ROOM_GENERATOR-"),
                 sg.Text(HQ_SOLO.CONFIG_DICT['TXT_1']),
                 sg.Input('6', key="-ROOM_GENERATOR_NUMBER-", size=(5, 3))],
                [sg.Multiline('', key="-ROOM_GENERATOR_TEXT-", size=(60, 3))]],
-               title=HQ_SOLO.CONFIG_DICT['TXT_1'])],
 
-          [sg.Frame(layout=[
-              [sg.Button(HQ_SOLO.CONFIG_DICT['btn_3'], key="-TREASURES-"), sg.Multiline('', key = "-TREASURES_TEXT-", size=(60,3))],
-              [sg.Button(HQ_SOLO.CONFIG_DICT['btn_4'], key="-CHEST-"), sg.Multiline('', key="-CHEST_TEXT-", size=(60, 6))]],
-                title=HQ_SOLO.CONFIG_DICT['TXT_3'])],
+                 title=HQ_SOLO.CONFIG_DICT['TXT_1'])],#frame title
+
+             [sg.Frame(layout=[
+              [sg.Button(HQ_SOLO.CONFIG_DICT['btn_3'],
+                         key="-TREASURES-"), sg.Multiline('', key = "-TREASURES_TEXT-", size=(60,3))],
+              [sg.Button(HQ_SOLO.CONFIG_DICT['btn_4'], key="-CHEST-"),
+               sg.Multiline('', key="-CHEST_TEXT-", size=(60, 6))]], title=HQ_SOLO.CONFIG_DICT['TXT_3'])],
 
               [sg.Button(HQ_SOLO.CONFIG_DICT['btn_5'], key="-MONSTERS_GENERATOR-"),sg.Multiline('', key="-MONSTERS_GENERATOR_TEXT-", size=(60, 3))],
               [sg.Button(HQ_SOLO.CONFIG_DICT['btn_6'], key="-TRAPS_SECRET-")],
@@ -111,9 +119,20 @@ def main():
             window["-ROOM_GENERATOR_TEXT-"].update("")
             window["-MONSTERS_GENERATOR_TEXT-"].update("")
             window["-TREASURES_TEXT-"].update(str(''))
+            current_turn = int(window["-TEXT_4-"].get())
+            netx_turn = current_turn+1
+            window["-TEXT_4-"].update(str(netx_turn))
 
         if event == "-AISLES-":
-            msg = HQ_SOLO.aisles(HQ_SOLO.random_numbers())
+            current_turn = int(window["-TEXT_4-"].get())
+
+            if current_turn == 1 or current_turn == 2:
+                msg_num = HQ_SOLO.random_numbers()
+                while(msg_num) >= 21:
+                    msg_num = HQ_SOLO.random_numbers() #return always door at first and second turn
+                msg = HQ_SOLO.aisles(msg_num)
+            else:
+                msg = HQ_SOLO.aisles(HQ_SOLO.random_numbers())
             window["-AISLES_TEXT-"].update("")
             window["-AISLES_TEXT-"].update(str(msg))
 
@@ -134,7 +153,22 @@ def main():
             window["-SECRET_DOOR_TEXT-"].update(str(msg_secret_door))
 
         if event == "-ROOM_GENERATOR-":
-            msg = HQ_SOLO.room_generator(HQ_SOLO.random_numbers(), window["-ROOM_GENERATOR_NUMBER-"].get())
+            current_turn = int(window["-TEXT_4-"].get())
+
+            if current_turn == 1 or current_turn == 2:
+                msg_num = HQ_SOLO.random_numbers()
+                while(msg_num) >= 14:
+                    msg_num = HQ_SOLO.random_numbers() #return always door at first and second turn
+                msg = HQ_SOLO.room_generator(msg_num, window["-ROOM_GENERATOR_NUMBER-"].get())
+                if not msg.__contains__('port'):
+                    msg = '{} Colloca anche una porta chiusa verso un corridio inesplorato.'.format(msg)
+
+            elif current_turn == 3:
+                msg_num = HQ_SOLO.random_numbers()
+                msg_temp = HQ_SOLO.room_generator(msg_num, window["-ROOM_GENERATOR_NUMBER-"].get())
+                msg = '{} Colloca anche una porta chiusa verso il corridio.'.format(msg_temp)
+            else:
+                msg = HQ_SOLO.room_generator(HQ_SOLO.random_numbers(), window["-ROOM_GENERATOR_NUMBER-"].get())
             window["-ROOM_GENERATOR_TEXT-"].update(str(msg))
 
         if event == "-MONSTERS_GENERATOR-":

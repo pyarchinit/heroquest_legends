@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+import sqlite3
 """
 /***************************************************************************
         Heroquest's Legends Solo by Mandor the Druid
@@ -37,6 +38,9 @@ class Heroquest_solo:
 
     CONFIG_DICT = eval(data_config)
 
+    CONNECTION = sqlite3.connect('db_heroquest_legends.sqlite')
+    CURSOR = CONNECTION.cursor()
+
     def __init__(self):
         self.r_num = random
 
@@ -56,6 +60,7 @@ class Heroquest_solo:
     def random_numbers(self):
         """ a random number generator based on four D6.
         A simple statistic to understand the probability of success
+        >= X = y%
         4 = 100%
         5 = 99.92%
         6 = 99.61%
@@ -78,13 +83,17 @@ class Heroquest_solo:
         23 = 0.39%
         24 = 0.08% """
 
-        value_1 = self.r_num.randint(1, 6)
+        rng = random.SystemRandom()
+        value_1 = rng.randint(1, 6)
 
-        value_2 = self.r_num.randint(1, 6)
+        rng = random.SystemRandom()
+        value_2 = rng.randint(1, 6)
 
-        value_3 = self.r_num.randint(1, 6)
+        rng = random.SystemRandom()
+        value_3 = rng.randint(1, 6)
 
-        value_4 = self.r_num.randint(1, 6)
+        rng = random.SystemRandom()
+        value_4 = rng.randint(1, 6)
 
         rn_list = [value_1, value_2, value_3, value_4]
 
@@ -121,7 +130,6 @@ class Heroquest_solo:
 
         elif self.rv > 15 and self.rv <= 20:
             return self.CONFIG_DICT['aisles_msg_6'].format(self.position_dict[self.r_num.randint(1, 2)], self.position_dict[self.r_num.randint(1, 2)], self.position_dict[self.r_num.randint(1, 2)],rocks_msg)
-
         else:
             return self.CONFIG_DICT['aisles_msg_7']
 
@@ -196,25 +204,96 @@ class Heroquest_solo:
         self.rv = rv #the values recives a number from 4D6
         self.room_dimension = int(room_dimension) #total of room's tiles
         forniture_number = 0
+        random_id_selected = ''
+        select_forniture_list = []
+        select_forniture_list_temp = []
 
-        if self.rv > 10: #between 0.024% and 90% of cases, the system returns the presence of fornitures
+        if self.rv >=14: #between 0.024% and 55% of cases, the system returns no fornitures
+            return self.CONFIG_DICT['fornitures_msg_2']
+        else:
             if self.room_dimension <= 6:
-                forniture_number = 1 #for rooms still 6 squares add 1 forniture
+                forniture_number = self.r_num.randint(1, 3) #for rooms still can add between 1 or 3 forniture
+
+                if forniture_number == 1:
+                    square_taken = self.r_num.randint(1, 3)
+
+                    for row in self.CURSOR.execute("SELECT * FROM fornitures WHERE square_taken <= '%s'" % square_taken):
+                        select_forniture_list_temp.append(row[0])
+                    random_id_selected = select_forniture_list_temp[self.r_num.randint(1,len(select_forniture_list_temp)-1)]
+                    res = self.CURSOR.execute("SELECT * FROM fornitures WHERE id_forniture = '%s'" % random_id_selected)
+                    forniture_selected = res.fetchone()
+
+                    select_forniture_list.append(
+
+                        '{} {}'.format(self.forniture_dict[forniture_selected[0]],
+                                       self.position_dict[self.r_num.randint(1, 3)]))
+
+                    msg_forniture = self.CONFIG_DICT['fornitures_msg_1'].format(", ".join(select_forniture_list))
+                
+                elif forniture_number >= 2: #if fornture number is beetween 2 and 3
+                    square_taken = self.r_num.randint(1, 3) #take randomly a fornitures beetween 1 and 3 square taken
+
+                    for row in self.CURSOR.execute("SELECT * FROM fornitures WHERE square_taken <= '%s'" % square_taken):
+                        select_forniture_list_temp.append(row[0])
+                    random_id_selected = select_forniture_list_temp[self.r_num.randint(1,len(select_forniture_list_temp)-1)]
+                    res = self.CURSOR.execute("SELECT * FROM fornitures WHERE id_forniture = '%s'" % random_id_selected)
+                    forniture_selected = res.fetchone()
+                    select_forniture_list.append(
+
+                        '{} {}'.format(self.forniture_dict[forniture_selected[0]],
+                                       self.position_dict[self.r_num.randint(1, 3)]))
+
+                    if square_taken <= 2:
+                        for row in self.CURSOR.execute("SELECT * FROM fornitures WHERE square_taken <= '%s'" % square_taken):
+                            select_forniture_list_temp.append(row[0])
+                        random_id_selected = select_forniture_list_temp[
+                            self.r_num.randint(1, len(select_forniture_list_temp) - 1)]
+                        res = self.CURSOR.execute(
+                            "SELECT * FROM fornitures WHERE id_forniture = '%s'" % random_id_selected)
+                        forniture_selected = res.fetchone()
+                        select_forniture_list.append(
+
+                        '{} {}'.format(self.forniture_dict[forniture_selected[0]],
+                                       self.position_dict[self.r_num.randint(1, 3)]))
+
+                        msg_forniture = self.CONFIG_DICT['fornitures_msg_1'].format(", ".join(select_forniture_list))
+
+
+                    else:
+                        for row in self.CURSOR.execute(
+                                "SELECT * FROM fornitures WHERE square_taken <= '1'"):
+                            select_forniture_list_temp.append(row[0])
+                        random_id_selected = select_forniture_list_temp[
+                            self.r_num.randint(1, len(select_forniture_list_temp) - 1)]
+                        res = self.CURSOR.execute(
+                            "SELECT * FROM fornitures WHERE id_forniture = '%s'" % random_id_selected)
+                        forniture_selected = res.fetchone()
+                        select_forniture_list.append(
+
+                        '{} {}'.format(self.forniture_dict[forniture_selected[0]],
+                                       self.position_dict[self.r_num.randint(1, 3)]))
+
+                        msg_forniture = self.CONFIG_DICT['fornitures_msg_1'].format(", ".join(select_forniture_list))
+
+
+
+
             elif self.room_dimension > 6 and self.room_dimension <= 16:
                 forniture_number = self.r_num.randint(1, 3) #for rooms still 6 squares add between 1 and 3 forniture
+                for i in range(forniture_number):
+                    select_forniture_list.append('{} {}'.format(self.forniture_dict[self.r_num.randint(1, 12)], self.position_dict[self.r_num.randint(1, 3)]))
+                    msg_forniture = self.CONFIG_DICT['fornitures_msg_1'].format(", ".join(select_forniture_list))
+
+
             elif self.room_dimension > 16:
                 forniture_number = self.r_num.randint(1, 4) #for rooms still 6 squares add between 1 and 4 forniture
+                for i in range(forniture_number):
+                    select_forniture_list.append('{} {}'.format(self.forniture_dict[self.r_num.randint(1, 12)], self.position_dict[self.r_num.randint(1, 3)]))
 
-            select_forniture_list = []
-            for i in range(forniture_number):
-                select_forniture_list.append('{} {}'.format(self.forniture_dict[self.r_num.randint(1, 35)], self.position_dict[self.r_num.randint(1, 3)]))
 
-            msg_forniture = self.CONFIG_DICT['fornitures_msg_1'].format(", ".join(select_forniture_list))
+                    msg_forniture = self.CONFIG_DICT['fornitures_msg_1'].format(", ".join(select_forniture_list))
 
-            return msg_forniture
-
-        else:
-            return self.CONFIG_DICT['fornitures_msg_2']
+        return msg_forniture
 
     def monsters_generator(self, rv, room_dimension):
         """create random monsters for rooms based on room dimension"""
@@ -232,7 +311,8 @@ class Heroquest_solo:
             select_monsters_list = []
 
             for i in range(monsters_number):
-                select_monsters_list.append('{} {}'.format(self.monsters_dict[self.r_num.randint(1, 21)], self.position_dict[self.r_num.randint(1, 5)]))
+                monster_dict_length = len(self.monsters_dict)
+                select_monsters_list.append('{} {}'.format(self.monsters_dict[self.r_num.randint(1, monster_dict_length)], self.position_dict[self.r_num.randint(1, 5)]))
 
             msg_monsters = self.CONFIG_DICT['monsters_msg_1'].format(", ".join(select_monsters_list))
             return msg_monsters

@@ -17,8 +17,9 @@
  *                                                                         *
  ***************************************************************************/
 """
+import random, locale
+import sqlite3
 from heroquest_solo_main import Heroquest_solo
-
 import PySimpleGUI as sg
 sg.Window._move_all_windows = True
 
@@ -44,7 +45,7 @@ def title_bar(title, text_color, background_color):
     return [sg.Col([[sg.T(title, text_color=tc, background_color=bc, font=font, grab=True)]], pad=(0, 0),
                    background_color=bc),
             sg.Col([[sg.T('_', text_color=tc, background_color=bc, enable_events=True, font=font, key='-MINIMIZE-'),
-                     sg.Text('❎', text_color=tc, background_color=bc, font=font, enable_events=True, key='Exit')]],
+                   sg.Text('❎', text_color=tc, background_color=bc, font=font, enable_events=True, key='Exit')]],
                    element_justification='j', key='-C-', grab=True,
                    pad=(0, 0), background_color=bc)]
 
@@ -96,7 +97,7 @@ def main():
                 ]
 
 
-    top_window = sg.Window("Heroquest solo assistant - by Mandor The Druid-version 0.004 beta",
+    top_window = sg.Window("Heroquest solo assistant - by Mandor The Druid-version 0.02 beta",
                        layout, keep_on_top=True, finalize=True , grab_anywhere=True, transparent_color=sg.theme_background_color(), no_titlebar=True, margins=(20, 10))
 
 
@@ -104,7 +105,7 @@ def main():
 
     while True:
         window, event, values = sg.read_all_windows()
-        print(event, values)
+        #print(event, values)
         if event is None or event == 'Cancel' or event == 'Exit':
             #print(f'closing window = {window.Title}')
             break

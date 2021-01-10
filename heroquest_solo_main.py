@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-import sqlite3
+
 """
 /***************************************************************************
         Heroquest's Legends Solo by Mandor the Druid
@@ -20,7 +20,7 @@ import sqlite3
 """
 
 import random, locale
-
+import sqlite3
 
 class Heroquest_solo:
     """main class for variables management"""
@@ -38,7 +38,7 @@ class Heroquest_solo:
 
     CONFIG_DICT = eval(data_config)
 
-    CONNECTION = sqlite3.connect('db_heroquest_legends.sqlite')
+    CONNECTION = sqlite3.connect('./db_heroquest_legends.sqlite')
     CURSOR = CONNECTION.cursor()
 
     def __init__(self):
@@ -150,7 +150,7 @@ class Heroquest_solo:
     def chest(self, rv):
         """"create a random treasures inside chest"""
         self.rv = rv
-        print(rv)
+        #print(rv)
         if self.rv > 1 and self.rv <= 15: #you'll find potions and items
             items_list = []
             nr_items_random = self.random_numbers()

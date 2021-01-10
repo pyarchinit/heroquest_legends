@@ -1,0 +1,702 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="f0731132-1647-4714-b667-c61b5640c3c3" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/test_gui.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/IT_it.txt" beforeDir="false" afterPath="$PROJECT_DIR$/IT_it.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/heroquest_solo_gui_ibg.py" beforeDir="false" afterPath="$PROJECT_DIR$/heroquest_solo_gui_ibg.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/heroquest_solo_main.py" beforeDir="false" afterPath="$PROJECT_DIR$/heroquest_solo_main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_random.py" beforeDir="false" afterPath="$PROJECT_DIR$/test_random.py" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FUSProjectUsageTrigger">
+    <session id="-2020558873">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="14" />
+          <entry key="project.open.time.10" value="1" />
+          <entry key="project.open.time.2" value="1" />
+          <entry key="project.open.time.3" value="1" />
+          <entry key="project.open.time.4" value="6" />
+          <entry key="project.open.time.5" value="2" />
+          <entry key="project.open.time.6" value="3" />
+          <entry key="project.open.time.7" value="3" />
+          <entry key="project.open.time.8" value="1" />
+          <entry key="project.opened" value="18" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="jpg" value="1" />
+          <entry key="md" value="2" />
+          <entry key="py" value="30" />
+          <entry key="txt" value="13" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="Image" value="1" />
+          <entry key="Markdown" value="2" />
+          <entry key="PLAIN_TEXT" value="13" />
+          <entry key="Python" value="29" />
+          <entry key="Scratch" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="Python Console" value="616" />
+          <entry key="md" value="94" />
+          <entry key="py" value="9528" />
+          <entry key="txt" value="1718" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="Markdown" value="94" />
+          <entry key="PLAIN_TEXT" value="1718" />
+          <entry key="Python" value="10144" />
+        </counts>
+      </usages-collector>
+    </session>
+  </component>
+  <component name="FavoritesManager">
+    <favorites_list name="heroquest_solo" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>self.TR_n</find>
+      <find>self.LR_n</find>
+      <find>ci sono</find>
+      <find>threasures</find>
+      <find>_THRESURES_</find>
+      <find>tresu</find>
+      <find>self.LR_n = self.r_num.randrange(1, 3)</find>
+      <find>self.r_num.randrange</find>
+      <find>im</find>
+      <find>mando</find>
+      <find>title_bar</find>
+      <find>randrange</find>
+      <find>image</find>
+      <find>ope</find>
+      <find>read</find>
+      <find>background_image</find>
+      <find>self.r_num</find>
+      <find>top</find>
+      <find>theme_background_color</find>
+      <find>Legends</find>
+      <find>005</find>
+      <find>004</find>
+      <find>All</find>
+      <find>windows</find>
+      <find>tkinter</find>
+    </findStrings>
+    <replaceStrings>
+      <replace>treasures</replace>
+      <replace>_TREASURES_</replace>
+      <replace>treasu</replace>
+      <replace>self.LR_n = self.r_num.randint(1, 2)</replace>
+      <replace>random</replace>
+    </replaceStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="UPDATE_TYPE" value="REBASE" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/convert.py" />
+        <option value="$PROJECT_DIR$/config.py" />
+        <option value="$PROJECT_DIR$/settings.py" />
+        <option value="$PROJECT_DIR$/heroquest_solo_gui.py" />
+        <option value="$PROJECT_DIR$/imageconverter.py" />
+        <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/background_map.txt" />
+        <option value="$PROJECT_DIR$/EN_en.txt" />
+        <option value="$USER_HOME$/.PyCharmCE2018.2/system/python_stubs/1355263629/music_player.py" />
+        <option value="$PROJECT_DIR$/test_random.py" />
+        <option value="$PROJECT_DIR$/heroquest_solo_main.py" />
+        <option value="$PROJECT_DIR$/neural_test.py" />
+        <option value="$PROJECT_DIR$/IT_it.txt" />
+        <option value="$PROJECT_DIR$/test_gui.py" />
+        <option value="$PROJECT_DIR$/heroquest_solo_gui_ibg.py" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-9" />
+    <option name="y" value="-9" />
+    <option name="width" value="1940" />
+    <option name="height" value="855" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="heroquest_legends" type="b2602c69:ProjectViewProjectNode" />
+              <item name="heroquest_solo" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="heroquest_legends" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="Python" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/.." />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Background" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Luca\Programmazione\heroquest_solo" />
+      <recent name="C:\Users\Luca\Programmazione\" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Python.heroquest_solo_gui_ibg">
+    <configuration name="heroquest_solo_gui_ibg" type="PythonConfigurationType" factoryName="Python">
+      <module name="heroquest_legends" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/heroquest_solo_gui_ibg.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="heroquest_solo_main" type="PythonConfigurationType" factoryName="Python">
+      <module name="heroquest_legends" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/heroquest_solo_gui.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="imageconverter" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="heroquest_legends" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/imageconverter.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="music_player" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="heroquest_legends" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$USER_HOME$/.PyCharmCE2018.2/system/python_stubs/1355263629" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$USER_HOME$/.PyCharmCE2018.2/system/python_stubs/1355263629/music_player.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="neural_test" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="heroquest_legends" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/neural_test.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="test_gui" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="heroquest_legends" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test_gui.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="test_random" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="heroquest_legends" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test_random.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Python.heroquest_solo_main" />
+      <item itemvalue="Python.heroquest_solo_gui_ibg" />
+      <item itemvalue="Python.music_player" />
+      <item itemvalue="Python.imageconverter" />
+      <item itemvalue="Python.test_random" />
+      <item itemvalue="Python.neural_test" />
+      <item itemvalue="Python.test_gui" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.test_gui" />
+        <item itemvalue="Python.neural_test" />
+        <item itemvalue="Python.test_random" />
+        <item itemvalue="Python.music_player" />
+        <item itemvalue="Python.imageconverter" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="StructureViewFactory">
+    <option name="ACTIVE_ACTIONS" value=",ALPHA_COMPARATOR,SHOW_FIELDS" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="f0731132-1647-4714-b667-c61b5640c3c3" name="Default Changelist" comment="" />
+      <created>1609517498762</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1609517498762</updated>
+    </task>
+    <task id="LOCAL-00001" summary="GUI modified">
+      <created>1609598968695</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1609598968695</updated>
+    </task>
+    <task id="LOCAL-00002" summary="push version for windows 0.01 beta">
+      <created>1609599676827</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1609599676827</updated>
+    </task>
+    <task id="LOCAL-00003" summary="push version new windows 0.01 beta">
+      <created>1609601329332</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1609601329332</updated>
+    </task>
+    <task id="LOCAL-00004" summary="push output dir for .exe">
+      <created>1609601598445</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1609601598445</updated>
+    </task>
+    <task id="LOCAL-00005" summary="otuput exe v0.002 BETA .exe">
+      <created>1609602304594</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1609602304594</updated>
+    </task>
+    <task id="LOCAL-00006" summary="otuput exe v0.002 BETA .exe">
+      <created>1609602440306</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1609602440306</updated>
+    </task>
+    <task id="LOCAL-00007" summary="-added wanderer monster - otuput exe v0.003 BETA .exe">
+      <created>1609605954208</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1609605954208</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Add somes messages, images and a basic system to charge images.">
+      <created>1609622071382</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1609622071382</updated>
+    </task>
+    <task id="LOCAL-00009" summary="New system for create monsters' crew">
+      <created>1609625089044</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1609625089044</updated>
+    </task>
+    <task id="LOCAL-00010" summary="New system for create rooms">
+      <created>1609625586971</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1609625586971</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Created a new translations system.&#10;Messages translated&#10;_ TODO Buttons">
+      <created>1609695689907</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1609695689907</updated>
+    </task>
+    <task id="LOCAL-00012" summary="heroquest_solo_gui_v_0_004_BETA.exe added">
+      <created>1609696021473</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1609696021473</updated>
+    </task>
+    <task id="LOCAL-00013" summary="More randomness added to the adventure!!!">
+      <created>1609697732513</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1609697732513</updated>
+    </task>
+    <task id="LOCAL-00014" summary="More randomness added to the adventure!!!">
+      <created>1609867472020</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1609867472021</updated>
+    </task>
+    <task id="LOCAL-00015" summary="TRANSLATION SYSTEM UPDATE!">
+      <created>1609869444351</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1609869444351</updated>
+    </task>
+    <task id="LOCAL-00016" summary="RESET ALL BUTTON ADDED">
+      <created>1609870470028</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1609870470028</updated>
+    </task>
+    <task id="LOCAL-00017" summary="Add v0.01 exe CONSOLE for testing">
+      <created>1609876316002</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1609876316002</updated>
+    </task>
+    <task id="LOCAL-00018" summary="Add v0.01 exe CONSOLE for testing">
+      <created>1609876484265</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1609876484265</updated>
+    </task>
+    <task id="LOCAL-00019" summary="More randomness in chests' items">
+      <created>1609883522763</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1609883522763</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
+    <servers />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-7" y="-7" width="1550" height="878" extended-state="6" />
+    <layout>
+      <window_info id="Favorites" order="0" sideWeight="0.38293216" side_tool="true" weight="0.18770654" />
+      <window_info active="true" content_ui="combo" id="Project" order="1" sideWeight="0.8027079" visible="true" weight="0.25512227" />
+      <window_info id="Structure" order="2" sideWeight="0.19729207" side_tool="true" weight="0.25512227" />
+      <window_info anchor="bottom" id="Terminal" order="0" sideWeight="0.4990086" weight="0.4598338" />
+      <window_info anchor="bottom" id="Event Log" order="1" sideWeight="0.32253802" side_tool="true" weight="0.28393352" />
+      <window_info anchor="bottom" id="Python Console" order="2" sideWeight="0.8360872" weight="0.2936288" />
+      <window_info anchor="bottom" id="Message" order="3" />
+      <window_info anchor="bottom" id="Find" order="4" weight="0.32963988" />
+      <window_info anchor="bottom" id="Version Control" order="5" sideWeight="0.4976867" weight="0.17451523" />
+      <window_info anchor="bottom" id="Run" order="6" sideWeight="0.677462" weight="0.35457063" />
+      <window_info anchor="bottom" id="Debug" order="7" weight="0.39889196" />
+      <window_info anchor="bottom" id="Cvs" order="8" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="9" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="10" sideWeight="0.49966952" weight="0.3504155" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+    </layout>
+    <layout-to-restore>
+      <window_info id="Favorites" order="0" sideWeight="0.38293216" side_tool="true" weight="0.18770654" />
+      <window_info content_ui="combo" id="Project" order="1" sideWeight="0.8027079" visible="true" weight="0.25512227" />
+      <window_info id="Structure" order="2" sideWeight="0.19729207" side_tool="true" visible="true" weight="0.25512227" />
+      <window_info anchor="bottom" id="Terminal" order="0" sideWeight="0.4990086" weight="0.4598338" />
+      <window_info anchor="bottom" id="Event Log" order="1" sideWeight="0.32253802" side_tool="true" visible="true" weight="0.28393352" />
+      <window_info anchor="bottom" id="Python Console" order="2" sideWeight="0.8360872" weight="0.2936288" />
+      <window_info anchor="bottom" id="Message" order="3" />
+      <window_info anchor="bottom" id="Find" order="4" weight="0.32963988" />
+      <window_info anchor="bottom" id="Version Control" order="5" sideWeight="0.4976867" weight="0.17451523" />
+      <window_info anchor="bottom" id="Run" order="6" sideWeight="0.677462" weight="0.28393352" />
+      <window_info anchor="bottom" id="Debug" order="7" weight="0.39889196" />
+      <window_info anchor="bottom" id="Cvs" order="8" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="9" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="10" sideWeight="0.49966952" weight="0.3504155" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+    </layout-to-restore>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="GUI modified" />
+    <MESSAGE value="push version for windows 0.01 beta" />
+    <MESSAGE value="push version new windows 0.01 beta" />
+    <MESSAGE value="push output dir for .exe" />
+    <MESSAGE value="otuput exe v0.002 BETA .exe" />
+    <MESSAGE value="-added wanderer monster - otuput exe v0.003 BETA .exe" />
+    <MESSAGE value="Add somes messages, images and a basic system to charge images." />
+    <MESSAGE value="New system for create monsters' crew" />
+    <MESSAGE value="New system for create rooms" />
+    <MESSAGE value="Created a new translations system.&#10;Messages translated&#10;_ TODO Buttons" />
+    <MESSAGE value="heroquest_solo_gui_v_0_004_BETA.exe added" />
+    <MESSAGE value="More randomness added to the adventure!!!" />
+    <MESSAGE value="TRANSLATION SYSTEM UPDATE!" />
+    <MESSAGE value="RESET ALL BUTTON ADDED" />
+    <MESSAGE value="Add v0.01 exe CONSOLE for testing" />
+    <MESSAGE value="More randomness in chests' items" />
+    <option name="LAST_COMMIT_MESSAGE" value="More randomness in chests' items" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/scratch.py" />
+    <entry file="file://$PROJECT_DIR$/convert.py" />
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python38-32/Lib/tkinter/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="287">
+          <caret line="4005" selection-start-line="4005" selection-end-line="4005" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../pycharm_pj/pyarchinit/modules/db/pyarchinit_conn_strings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="504">
+          <caret line="48" column="50" lean-forward="true" selection-end-line="171" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../settings.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../pycharm_pj/pyarchinit/modules/utility/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="672">
+          <caret line="28" column="43" lean-forward="true" selection-start-line="28" selection-start-column="43" selection-end-line="28" selection-end-column="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/settings.py" />
+    <entry file="file://$PROJECT_DIR$/config.py" />
+    <entry file="file://$PROJECT_DIR$/mappa.jpg" />
+    <entry file="file://$PROJECT_DIR$/background_map.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="539">
+          <caret column="409431" selection-start-column="409431" selection-end-column="409431" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/imageconverter.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="626">
+          <caret line="33" column="26" selection-start-line="33" selection-start-column="26" selection-end-line="33" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/heroquest_solo_gui.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1437">
+          <caret line="23" selection-start-line="23" selection-end-line="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/EN_en.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-13">
+          <caret line="123" column="4" lean-forward="true" selection-start-line="123" selection-start-column="4" selection-end-line="123" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.PyCharmCE2018.2/system/python_stubs/1355263629/music_player.py" />
+    <entry file="file://$USER_HOME$/.PyCharmCE2018.2/system/python_stubs/1355263629/builtins.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="88">
+          <caret line="176" column="9" selection-start-line="176" selection-start-column="9" selection-end-line="176" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/neural_test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-385">
+          <caret column="3" selection-start-column="3" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test_random.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="421">
+          <caret line="22" column="19" selection-start-line="22" selection-start-column="19" selection-end-line="22" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="168">
+            <caret line="7" selection-start-line="7" selection-end-line="7" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/IT_it.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="169">
+          <caret line="128" column="18" selection-start-line="128" selection-start-column="2" selection-end-line="128" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/heroquest_solo_gui_ibg.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="48">
+          <caret line="57" column="115" selection-start-line="57" selection-start-column="115" selection-end-line="57" selection-end-column="115" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test_gui.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="129">
+          <caret line="56" column="8" selection-start-line="56" selection-start-column="8" selection-end-line="57" selection-end-column="65" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/heroquest_solo_main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret line="35" column="12" selection-start-line="35" selection-start-column="12" selection-end-line="35" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

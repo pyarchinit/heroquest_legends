@@ -335,9 +335,9 @@ class Heroquest_solo:
             if self.room_dimension <= 6:
                 monsters_number = 1
             elif self.room_dimension > 9 and self.room_dimension <= 16:
-                monsters_number = self.r_num.randint(1, 3)
+                monsters_number = self.r_num.randint(1, 2)
             elif self.room_dimension > 16:
-                monsters_number = self.r_num.randint(1, 4)
+                monsters_number = self.r_num.randint(1, 3)
             select_monsters_list = []
 
             for i in range(monsters_number):
@@ -346,7 +346,6 @@ class Heroquest_solo:
 
             msg_monsters = self.CONFIG_DICT['monsters_msg_1'].format(", ".join(select_monsters_list))
             return msg_monsters
-
         else:
             return self.CONFIG_DICT['monsters_msg_2']
 

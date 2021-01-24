@@ -87,14 +87,14 @@
   'btn_1':"Come è fatto il corridoio",
   'FIELD_BOX_1': "Esplora un nuovo corridoio",
   'btn_2':"Scopri come è fatta la stanza",
-  'TXT_1': "Inserisci il numero di caselle della stanza (minimo 6)",
+  'TXT_1': "Nr. caselle della stanza (min. 6)",
   'TXT_2': "Esplora una nuova Stanza",
   'btn_3':"Ci sono tesori?",
   'TXT_3':'Esplora la stanza e i suoi mobili',
   'btn_4':"Cosa contiene?",
   'btn_5':"Ci sono mostri nella stanza?",
   'btn_6':"Ci sono trabocchetti o porte segrete?",
-  'btn_7':"Resetta tutto",
+  'btn_7':"Nuovo turno",
   'aux_msg_1': '{} Colloca anche una porta chiusa verso una zona inesplorata.',
   'end_msg_1' : 'Hai trovato le scale!'
 

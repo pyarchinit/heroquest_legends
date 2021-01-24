@@ -61,7 +61,7 @@
                                12: "porta chiusa",
                                },
 
-'monsters_dict' : {1: "un Goblin",
+'monsters_dict' : {           1: "un Goblin",
                               2: "un Orco",
                               3: "un Fimir",
                               4: "due Goblin",
@@ -94,8 +94,9 @@
   'btn_4':"Cosa contiene?",
   'btn_5':"Ci sono mostri nella stanza?",
   'btn_6':"Ci sono trabocchetti o porte segrete?",
-  'btn_7':"Resetta tutto"
-
+  'btn_7':"Resetta tutto",
+  'aux_msg_1': '{} Colloca anche una porta chiusa verso una zona inesplorata.',
+  'end_msg_1' : 'Hai trovato le scale!'
 
 }
 

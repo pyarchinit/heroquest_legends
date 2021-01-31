@@ -24,10 +24,32 @@ import sqlite3
 
 class Heroquest_solo:
     """main class for variables management"""
-    TOTAL_NUMBER_OF_TURNS = 1
+    rng = random.SystemRandom()
+    TOTAL_NUMBER_OF_TURNS = rng.randint(1, 10)
+
     CONFIG_DICT = ''
+
     CONNECTION = sqlite3.connect('./db_heroquest_legends.sqlite')
     CURSOR = CONNECTION.cursor()
+
+    db_fornitures_query = CURSOR.execute("Select * from fornitures")
+    db_fornitures_charged = db_fornitures_query.fetchall()
+
+
+    FORNITURES_QTY_DICT = {1:db_fornitures_charged[0][2],
+                           2:db_fornitures_charged[1][2],
+                           3:db_fornitures_charged[1][2],
+                           4:db_fornitures_charged[3][2],
+                           5:db_fornitures_charged[4][2],
+                           6:db_fornitures_charged[5][2],
+                           7:db_fornitures_charged[6][2],
+                           8:db_fornitures_charged[7][2],
+                           9:db_fornitures_charged[8][2],
+                           10:db_fornitures_charged[9][2],
+                           11:db_fornitures_charged[10][2],
+                           12:db_fornitures_charged[11][2]}
+
+
 
     def __init__(self, cd):
         self.CONFIG_DICT = cd
@@ -190,140 +212,54 @@ class Heroquest_solo:
         else:
             return self.CONFIG_DICT['traps_msg_3']
 
-    def room_generator(self, rv, room_dimension, ct):
+    def room_generator(self, room_dimension, ct):
         """create random rooms with fornitures"""
-        self.rv = rv #the values recives a number from 4D6
+        #self.rv = rv #the values recives a number from 4D6
         self.room_dimension = int(room_dimension) #total of room's tiles
         self.current_turn = ct
-        forniture_number = 0
-        random_id_selected = ''
-        select_forniture_list = []
-        select_forniture_list_temp = []
 
-        if self.current_turn >= 3 and self.current_turn >= self.TOTAL_NUMBER_OF_TURNS:
+        rng = random.SystemRandom()
+        forniture_numbers = rng.randint(1, 4)
+        monster_numbers = rng.randint(1, 5) #TODO
+        rng = random.SystemRandom()
+        msg_forniture = ''
+        tot_square_taken = 0
+        if self.current_turn == self.TOTAL_NUMBER_OF_TURNS:
             return self.CONFIG_DICT['end_msg_1']
         else:
-            if self.rv <=14: #if the random values is minus-equal 14 (between 55% and 100% of cases), the system returns no fornitures
-                return self.CONFIG_DICT['fornitures_msg_2']
-            else:
-                if self.room_dimension <= 6: #for rooms minus-equal to 6 the number of forniture is 1,2 or 3
-                    forniture_number = self.r_num.randint(1, 3) #for rooms still can add between 1 or 3 forniture
+            for i in range(forniture_numbers):
+                rng_1 = random.SystemRandom()
+                id_forniture_rand_1 = rng_1.randint(0, 6)
 
-                    if forniture_number == 1: #if the is selected only on forniture it can take 1, 2 or 3 square
-                        square_taken = self.r_num.randint(1, 3)
+                rng_2 = random.SystemRandom()
+                id_forniture_rand_2 = rng_2.randint(1, 6)
 
-                        for row in self.CURSOR.execute("SELECT * FROM fornitures WHERE square_taken <= '%s'" % square_taken):
-                            select_forniture_list_temp.append(row[0])
-                        random_id_selected = select_forniture_list_temp[self.r_num.randint(1,len(select_forniture_list_temp)-1)]
-                        res = self.CURSOR.execute("SELECT * FROM fornitures WHERE id_forniture = '%s'" % random_id_selected)
-                        forniture_selected = res.fetchone()
+                id_forniture_rand = id_forniture_rand_1+id_forniture_rand_2
+                res = self.CURSOR.execute("SELECT * FROM fornitures WHERE id_forniture = %d" % id_forniture_rand)
 
-                        select_forniture_list.append(
+                forniture_selected = res.fetchone()
 
-                            '{} {}'.format(self.forniture_dict[forniture_selected[0]],
-                                           self.position_dict[self.r_num.randint(1, 3)])) #this command decide the position of the forniture
+                square_taken_temp = forniture_selected[4]
+                tot_square_taken += square_taken_temp
+                if tot_square_taken < self.room_dimension:
+                    forniture_residue = self.FORNITURES_QTY_DICT[id_forniture_rand]
 
-                        msg_forniture = self.CONFIG_DICT['fornitures_msg_1'].format(", ".join(select_forniture_list))
+                    if forniture_residue >= 1:
+                        msg_forniture = ' {} {} {}'.format(msg_forniture, self.forniture_dict[id_forniture_rand], self.position_dict[self.r_num.randint(1, 5)])
+                        new_forniture_residue = forniture_residue - 1
+                        self.FORNITURES_QTY_DICT[id_forniture_rand] = new_forniture_residue
+                    else:
+                        msg_forniture = msg_forniture
+                else:
+                    msg_forniture = msg_forniture
 
-                    elif forniture_number >= 2: #if fornture number is beetween 2 and 3
-                        square_taken = self.r_num.randint(1, 3) #take randomly a fornitures beetween 1 and 3 square taken
+            if msg_forniture != '':
+                msg_rand = rng.randint(0, 3)
+                aux_message = ['aux_msg_2', 'aux_msg_3', 'aux_msg_4', 'aux_msg_5']
+                msg_forniture = '{} {}.'.format(self.CONFIG_DICT[aux_message[msg_rand]], msg_forniture)
 
-                        for row in self.CURSOR.execute("SELECT * FROM fornitures WHERE square_taken <= '%s'" % square_taken):
-                            select_forniture_list_temp.append(row[0])
-                        random_id_selected = select_forniture_list_temp[self.r_num.randint(1,len(select_forniture_list_temp)-1)]
-                        res = self.CURSOR.execute("SELECT * FROM fornitures WHERE id_forniture = '%s'" % random_id_selected)
-                        forniture_selected = res.fetchone()
-                        select_forniture_list.append(
-
-                            '{} {}'.format(self.forniture_dict[forniture_selected[0]],
-                                           self.position_dict[self.r_num.randint(1, 3)])) #this command decide the position of the forniture
-
-                        if square_taken <= 2: #if square taken value is minus-equal 2
-                            for row in self.CURSOR.execute("SELECT * FROM fornitures WHERE square_taken <= '%s'" % square_taken):
-                                select_forniture_list_temp.append(row[0])
-                            random_id_selected = select_forniture_list_temp[
-                                self.r_num.randint(1, len(select_forniture_list_temp) - 1)]
-                            res = self.CURSOR.execute(
-                                "SELECT * FROM fornitures WHERE id_forniture = '%s'" % random_id_selected)
-                            forniture_selected = res.fetchone()
-                            select_forniture_list.append(
-
-                            '{} {}'.format(self.forniture_dict[forniture_selected[0]],
-                                           self.position_dict[self.r_num.randint(1, 3)]))
-
-                            msg_forniture = self.CONFIG_DICT['fornitures_msg_1'].format(", ".join(select_forniture_list))
-
-
-                        else: #if square taken is more than 2 then
-                            for row in self.CURSOR.execute(
-                                    "SELECT * FROM fornitures WHERE square_taken = '1'"):
-                                select_forniture_list_temp.append(row[0])
-                            random_id_selected = select_forniture_list_temp[
-                                self.r_num.randint(1, len(select_forniture_list_temp) - 1)]
-                            res = self.CURSOR.execute(
-                                "SELECT * FROM fornitures WHERE id_forniture = '%s'" % random_id_selected)
-                            forniture_selected = res.fetchone()
-                            select_forniture_list.append(
-
-                            '{} {}'.format(self.forniture_dict[forniture_selected[0]],
-                                           self.position_dict[self.r_num.randint(1, 3)]))
-
-                            msg_forniture = self.CONFIG_DICT['fornitures_msg_1'].format(", ".join(select_forniture_list))
-
-
-                    elif self.room_dimension > 6 and self.room_dimension <= 16: #if room is beetween 6 and 16 squares
-                        square_taken = self.r_num.randint(1, 6)  # take randomly a fornitures beetween 1 and 6 square taken
-
-                        forniture_number = self.r_num.randint(1, 3) #for rooms beetwee 6 and 16 squares ad between 1 and 3 forniture
-                        for row in self.CURSOR.execute("SELECT * FROM fornitures WHERE square_taken <= '%s'" % square_taken):
-                            select_forniture_list_temp.append(row[0])
-                        random_id_selected = select_forniture_list_temp[
-                            self.r_num.randint(1, len(select_forniture_list_temp) - 1)]
-                        res = self.CURSOR.execute(
-                            "SELECT * FROM fornitures WHERE id_forniture = '%s'" % random_id_selected)
-                        forniture_selected = res.fetchone()
-                        select_forniture_list.append(
-
-                            '{} {}'.format(self.forniture_dict[forniture_selected[0]],
-                                           self.position_dict[self.r_num.randint(1, 3)]))
-
-                        msg_forniture = self.CONFIG_DICT['fornitures_msg_1'].format(", ".join(select_forniture_list))
-
-                    """
-                    for i in range(forniture_number):
-                        select_forniture_list.append('{} {}'.format(self.forniture_dict[self.r_num.randint(1, 12)], self.position_dict[self.r_num.randint(1, 3)]))
-                        msg_forniture = self.CONFIG_DICT['fornitures_msg_1'].format(", ".join(select_forniture_list))
-                    """
-
-                elif self.room_dimension > 16:
-
-                    square_taken = self.r_num.randint(1, 6)  # take randomly a fornitures beetween 1 and 6 square taken
-
-                    forniture_number = self.r_num.randint(1,
-                                                          3)  # for rooms beetwee 6 and 16 squares ad between 1 and 3 forniture
-                    for row in self.CURSOR.execute("SELECT * FROM fornitures WHERE square_taken <= '%s'" % square_taken):
-                        select_forniture_list_temp.append(row[0])
-                    random_id_selected = select_forniture_list_temp[
-                        self.r_num.randint(1, len(select_forniture_list_temp) - 1)]
-                    res = self.CURSOR.execute(
-                        "SELECT * FROM fornitures WHERE id_forniture = '%s'" % random_id_selected)
-                    forniture_selected = res.fetchone()
-                    select_forniture_list.append(
-
-                        '{} {}'.format(self.forniture_dict[forniture_selected[0]],
-                                       self.position_dict[self.r_num.randint(1, 3)]))
-
-                    msg_forniture = self.CONFIG_DICT['fornitures_msg_1'].format(", ".join(select_forniture_list))
-
-                    """
-                    forniture_number = self.r_num.randint(1, 4) #for rooms still 6 squares add between 1 and 4 forniture
-                    for i in range(forniture_number):
-                        select_forniture_list.append('{} {}'.format(self.forniture_dict[self.r_num.randint(1, 12)], self.position_dict[self.r_num.randint(1, 3)]))
-    
-    
-                        msg_forniture = self.CONFIG_DICT['fornitures_msg_1'].format(", ".join(select_forniture_list))
-                    """
             return msg_forniture
+
 
     def monsters_generator(self, rv, room_dimension):
         """create random monsters for rooms based on room dimension"""

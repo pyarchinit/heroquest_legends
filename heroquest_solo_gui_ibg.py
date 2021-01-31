@@ -165,22 +165,18 @@ def main():
             window["-SECRET_DOOR_TEXT-"].update(str(msg_secret_door))
 
         if event == "-ROOM_GENERATOR-":
+            window["-ROOM_GENERATOR_TEXT-"].update('')
             current_turn = int(window["-TEXT_4-"].get())
 
             if current_turn == 1 or current_turn == 2:
-                msg_num = HQ_SOLO.random_numbers()
-                while(msg_num) <= 14:
-                    msg_num = HQ_SOLO.random_numbers() #return always door at first and second turn
-                msg = HQ_SOLO.room_generator(msg_num, window["-ROOM_GENERATOR_NUMBER-"].get(), current_turn)
-                if not msg.__contains__('port'):
-                    msg = HQ_SOLO.CONFIG_DICT['aux_msg_1'].format(msg)
-
-            elif current_turn == 3:
-                msg_num = HQ_SOLO.random_numbers()
-                msg_temp = HQ_SOLO.room_generator(msg_num, window["-ROOM_GENERATOR_NUMBER-"].get(), current_turn)
+                msg_temp = HQ_SOLO.room_generator(window["-ROOM_GENERATOR_NUMBER-"].get(), current_turn)
                 msg = HQ_SOLO.CONFIG_DICT['aux_msg_1'].format(msg_temp)
             else:
-                msg = HQ_SOLO.room_generator(HQ_SOLO.random_numbers(), window["-ROOM_GENERATOR_NUMBER-"].get(), current_turn)
+                msg = HQ_SOLO.room_generator(window["-ROOM_GENERATOR_NUMBER-"].get(), current_turn)
+
+                if msg == '':
+                    msg = HQ_SOLO.CONFIG_DICT['aux_msg_6']
+
             window["-ROOM_GENERATOR_TEXT-"].update(str(msg))
 
         if event == "-MONSTERS_GENERATOR-":

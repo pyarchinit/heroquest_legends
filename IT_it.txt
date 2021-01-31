@@ -22,7 +22,7 @@
 'fornitures_msg_2' : "Non c'è mobilio ma attento agli incantesimi!!!",
 'monsters_msg_1' : "Preparati alla battaglia. Nella stanza trovi {}.",
 'monsters_msg_2' : "FIUUU... meno male. Nessun Mostro in vista!!!",
-'position_dict': {1: 'sinistra', 2: 'destra', 3: 'sul fondo', 4: 'al centro', 5: 'davanti a te'},
+'position_dict': {1: 'a sinistra', 2: 'a destra', 3: 'sul fondo', 4: 'al centro della stanza', 5: 'davanti a te'},
 
 
 'treasures_dict' :  {1: "Pozione di cura",
@@ -47,18 +47,18 @@
                               20: "Pozione di attacco"},
 
 
-'fornitures_dict': {	       1: "scrigno",
-                               2: "trono",
-                               3: "armadio",
-                               4: "libreria",
-                               5: "caminetto",
-                               6: "tavolo di tortura",
-                               7: "tavolo dell'alchimista",
-                               8: "bancone del mago",
-                               9: "tomba",
-                               10: "rastrelliera",
-                               11: "porta aperta",
-                               12: "porta chiusa",
+'fornitures_dict': {	       1: "uno scrigno",
+                               2: "un trono",
+                               3: "un armadio",
+                               4: "una libreria",
+                               5: "un caminetto",
+                               6: "un tavolo di tortura",
+                               7: "un tavolo dell'alchimista",
+                               8: "un bancone del mago",
+                               9: "una tomba",
+                               10: "una rastrelliera",
+                               11: "lungo il muro una porta aperta",
+                               12: "lungo il muro una porta chiusa",
                                },
 
 'monsters_dict' : {           1: "un Goblin",
@@ -95,7 +95,12 @@
   'btn_5':"Ci sono mostri nella stanza?",
   'btn_6':"Ci sono trabocchetti o porte segrete?",
   'btn_7':"Nuovo turno",
-  'aux_msg_1': '{} Colloca anche una porta chiusa verso una zona inesplorata.',
+  'aux_msg_1': '{} Colloca una porta chiusa verso una zona inesplorata.',
+  'aux_msg_2': 'Nella penombra vedi: ',
+  'aux_msg_3': 'Alla luce di alcune fiaccole accese vedi: ',
+  'aux_msg_4': 'Da una finestra entra della luce che illumina: ',
+  'aux_msg_5': 'Attendi che la vista si adatti al buio e vedi: ',
+  'aux_msg_6': 'La stanza sembra completamente disabitata.',
   'end_msg_1' : 'Hai trovato le scale!'
 
 }

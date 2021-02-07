@@ -95,12 +95,12 @@
   'btn_5':"Ci sono mostri nella stanza?",
   'btn_6':"Ci sono trabocchetti o porte segrete?",
   'btn_7':"Nuovo turno",
-  'aux_msg_1': '{} Colloca una porta chiusa verso una zona inesplorata.',
+  'aux_msg_1': 'Una porta ti conduce verso una zona inesplorata.{}',
   'aux_msg_2': 'Nella penombra vedi: ',
   'aux_msg_3': 'Alla luce di alcune fiaccole accese vedi: ',
   'aux_msg_4': 'Da una finestra entra della luce che illumina: ',
   'aux_msg_5': 'Attendi che la vista si adatti al buio e vedi: ',
-  'aux_msg_6': 'La stanza sembra completamente disabitata.',
+  'aux_msg_6': 'La stanza è spoglia e solo muffa e sangue arredano le sue pareti.',
   'end_msg_1' : 'Hai trovato le scale!'
 
 }

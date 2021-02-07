@@ -18,8 +18,7 @@
  ***************************************************************************/
 """
 
-import random, locale
-import sqlite3
+import locale
 from heroquest_solo_main import Heroquest_solo
 import PySimpleGUI as sg
 sg.Window._move_all_windows = True
@@ -41,14 +40,21 @@ def title_bar(title, text_color, background_color):
 
     bc = background_color
     tc = text_color
-    font = 'Baskerville-old-Style'
+    font = 'Baskerville-old-Style 8'
 
-    return [sg.Col([[sg.T(title, text_color=tc, background_color=bc, font=font, grab=True)]], pad=(0, 0),
-                   background_color=bc),
-            sg.Col([[sg.T('_', text_color=tc, background_color=bc, enable_events=True, font=font, key='-MINIMIZE-'),
-                   sg.Text('❎', text_color=tc, background_color=bc, font=font, enable_events=True, key='Exit')]],
-                   element_justification='j', key='-C-', grab=True,
-                   pad=(0, 0), background_color=bc)]
+    return [
+        sg.Col(
+            [[sg.T(title, text_color=tc, background_color=bc, font=font, grab=True)]],
+            pad=(0,0),
+            background_color=bc),
+        sg.Col(
+            [[sg.T('_', text_color=tc, background_color=bc, enable_events=True, font=font, key='-MINIMIZE-'),
+              sg.Text('❎', text_color=tc, background_color=bc, font=font, enable_events=True, key='Exit')]],
+            element_justification='j',
+            key='-C-',
+            grab=True,
+            pad=(0, 0),
+            background_color=bc)]
 
 
 def main():
@@ -68,51 +74,49 @@ def main():
 
     HQ_SOLO = Heroquest_solo(CONFIG_DICT)  # app CLASS to call method
 
-    background_layout = [title_bar('Heroquest\'s Legends - by Mandor The Druid - version 0.1 beta', sg.theme_text_color(), sg.theme_background_color()),
-                         [sg.Image(data=background_image)]]
+    background_layout = [
+        title_bar('Heroquest\'s Legends - by Mandor The Druid - version 0.3 beta',
+        sg.theme_text_color(),
+        sg.theme_background_color()),
+        [sg.Image(data=background_image)]]
 
-    window_background = sg.Window('Background', background_layout, no_titlebar=True, finalize=True, size = (720,830), margins=(1, 1),
-                                  element_padding=(0, 0), right_click_menu=[[''], ['Exit', ]])
+    window_background = sg.Window('Background', background_layout, no_titlebar=True, finalize=True, size = (720,830), margins=(1, 1), element_padding=(0, 0), right_click_menu=[[''], ['Exit', ]])
 
-    window_background['-C-'].expand(False, False,
-                                    False)  # expand the titlebar's rightmost column so that it resizes correctly
+    window_background['-C-'].expand(True, False, True)  # expand the titlebar's rightmost column so that it resizes correctly
 
 
     left_column = [
              [sg.Frame(layout=[
              [sg.Button(HQ_SOLO.CONFIG_DICT['btn_1'], key = "-AISLES-")],
-             [sg.Multiline('', key = "-AISLES_TEXT-", size=(50,3))]],
+             [sg.Multiline('', key = "-AISLES_TEXT-", size=(50,3), font = 'Baskerville-old-Style 8')]],
                 title=HQ_SOLO.CONFIG_DICT['FIELD_BOX_1'])]]
     layout = [
              [sg.Column(left_column,element_justification='j')],
              [sg.Frame(layout=[
              [sg.Text(HQ_SOLO.CONFIG_DICT['TXT_1']),
-              sg.Input('6', key="-ROOM_GENERATOR_NUMBER-", size=(4, 3)),
+              sg.Input('6', key="-ROOM_GENERATOR_NUMBER-", size=(4, 3), font = 'Baskerville-old-Style 8'),
               sg.Button(HQ_SOLO.CONFIG_DICT['btn_2'], key="-ROOM_GENERATOR-")],
-             [sg.Multiline('', key="-ROOM_GENERATOR_TEXT-", size=(50, 3))]],
+             [sg.Multiline('', key="-ROOM_GENERATOR_TEXT-", size=(50, 3), font = 'Baskerville-old-Style 8')]],
                  title=HQ_SOLO.CONFIG_DICT['TXT_2'])],#frame title
 
              [sg.Frame(layout=[
              [sg.Button(HQ_SOLO.CONFIG_DICT['btn_5'], key="-MONSTERS_GENERATOR-"),
-                  sg.Multiline('', key="-MONSTERS_GENERATOR_TEXT-", size=(30, 3))],
+                  sg.Multiline('', key="-MONSTERS_GENERATOR_TEXT-", size=(30, 3), font = 'Baskerville-old-Style 8')],
              [sg.Button(HQ_SOLO.CONFIG_DICT['btn_3'],
-                         key="-TREASURES-"), sg.Multiline('', key = "-TREASURES_TEXT-", size=(50,3))],
+                         key="-TREASURES-"), sg.Multiline('', key = "-TREASURES_TEXT-", size=(50,3), font = 'Baskerville-old-Style 8')],
              [sg.Button(HQ_SOLO.CONFIG_DICT['btn_4'], key="-CHEST-"),
-              sg.Multiline('', key="-CHEST_TEXT-", size=(50, 3))]], title=HQ_SOLO.CONFIG_DICT['TXT_3'])],
+              sg.Multiline('', key="-CHEST_TEXT-", size=(50, 3), font = 'Baskerville-old-Style 8')]], title=HQ_SOLO.CONFIG_DICT['TXT_3'])],
 
               [sg.Frame(layout=[
               [sg.Button(HQ_SOLO.CONFIG_DICT['btn_6'], key="-TRAPS_SECRET-")],
-              [sg.Multiline('', key="-TRAPS_TEXT-", size=(50, 3))],
-              [sg.Multiline('', key="-SECRET_DOOR_TEXT-", size=(50, 3)),sg.Button(HQ_SOLO.CONFIG_DICT['btn_7'], key="-RESET_ALL-"), sg.Text(HQ_SOLO.CONFIG_DICT['TXT_4']), sg.Text("1", key="-TEXT_4-", )]],
+              [sg.Multiline('', key="-TRAPS_TEXT-", size=(50, 3), font = 'Baskerville-old-Style 8')],
+              [sg.Multiline('', key="-SECRET_DOOR_TEXT-", size=(50, 3), font = 'Baskerville-old-Style 8'),sg.Button(HQ_SOLO.CONFIG_DICT['btn_7'], key="-RESET_ALL-"), sg.Text(HQ_SOLO.CONFIG_DICT['TXT_4']), sg.Text("1", key="-TEXT_4-", )]],
               title = HQ_SOLO.CONFIG_DICT['TXT_1'])]  # frame title
 
             ]
 
     top_window = sg.Window("Heroquest solo assistant - by Mandor The Druid-version 0.1 beta",
                        layout, keep_on_top=True, finalize=True , grab_anywhere=True, transparent_color=sg.theme_background_color(), no_titlebar=True, margins=(5, 5))
-
-
-
 
     while True:
         window, event, values = sg.read_all_windows()
@@ -167,19 +171,24 @@ def main():
         if event == "-ROOM_GENERATOR-":
             window["-ROOM_GENERATOR_TEXT-"].update('')
             current_turn = int(window["-TEXT_4-"].get())
+            msg_temp = HQ_SOLO.room_generator(window["-ROOM_GENERATOR_NUMBER-"].get(), current_turn)
 
             if current_turn == 1 or current_turn == 2:
-                msg_temp = HQ_SOLO.room_generator(window["-ROOM_GENERATOR_NUMBER-"].get(), current_turn)
-                msg = HQ_SOLO.CONFIG_DICT['aux_msg_1'].format(msg_temp)
+                msg = HQ_SOLO.CONFIG_DICT['aux_msg_1'].format(msg_temp[0])
+                print("mesg war 7")
             else:
-                msg = HQ_SOLO.room_generator(window["-ROOM_GENERATOR_NUMBER-"].get(), current_turn)
-
-                if msg == '':
+                if msg_temp[0] == '':
                     msg = HQ_SOLO.CONFIG_DICT['aux_msg_6']
+                    print("mesg war 8")
+                else:
+                    msg = msg_temp[0]
+                    print("mesg war 9")
 
             window["-ROOM_GENERATOR_TEXT-"].update(str(msg))
 
-        if event == "-MONSTERS_GENERATOR-":
+            window["-MONSTERS_GENERATOR_TEXT-"].update(str(msg_temp[1]))
+
+        if event == "-MONSTERS_GENERATOR-": #TODO FROM HERE
             msg = HQ_SOLO.monsters_generator(HQ_SOLO.random_numbers(), window["-ROOM_GENERATOR_NUMBER-"].get())
             window["-MONSTERS_GENERATOR_TEXT-"].update(str(msg))
             # window["-IMAGE-"].update(r'.\\images\\goblin.png')

@@ -19,7 +19,7 @@
  ***************************************************************************/
 """
 
-import random, locale
+import random
 import sqlite3
 
 class Heroquest_solo:
@@ -114,6 +114,125 @@ class Heroquest_solo:
         rn_sum = sum(rn_list)
 
         return rn_sum
+
+
+    def room_generator(self, room_dimension, ct):
+        """create random rooms with fornitures"""
+        self.room_dimension = int(room_dimension) #total of room's tiles
+        self.current_turn = ct
+
+        rng = random.SystemRandom()
+        forniture_numbers = rng.randint(1, 4)
+        monster_numbers = rng.randint(1, 5) #TODO
+        #rng = random.SystemRandom()
+        msg_forniture = ''
+        tot_square_taken = 0
+        msg_list = []
+        if self.current_turn == self.TOTAL_NUMBER_OF_TURNS:
+            print("mesg war 1")
+            msg_forniture = self.CONFIG_DICT['end_msg_1']
+        else:
+            for i in range(forniture_numbers):
+                rng_1 = random.SystemRandom()
+                id_forniture_rand_1 = rng_1.randint(0, 6)
+
+                rng_2 = random.SystemRandom()
+                id_forniture_rand_2 = rng_2.randint(1, 6)
+
+                id_forniture_rand = id_forniture_rand_1+id_forniture_rand_2
+                res = self.CURSOR.execute("SELECT * FROM fornitures WHERE id_forniture = %d" % id_forniture_rand)
+
+                forniture_selected = res.fetchone()
+
+                square_taken_temp = forniture_selected[4]
+                tot_square_taken += square_taken_temp
+                if tot_square_taken < self.room_dimension:
+                    forniture_residue = self.FORNITURES_QTY_DICT[id_forniture_rand]
+
+                    if forniture_residue >= 1:
+                        msg_forniture = ' {} {} {}'.format(msg_forniture, self.forniture_dict[id_forniture_rand], self.position_dict[self.r_num.randint(1, 5)])
+                        new_forniture_residue = forniture_residue - 1
+                        self.FORNITURES_QTY_DICT[id_forniture_rand] = new_forniture_residue
+                        print("mesg war 2")
+                    else:
+                        msg_forniture = msg_forniture
+                        print("mesg war 3")
+                else:
+                    msg_forniture = msg_forniture
+                    print("mesg war 4")
+
+            if msg_forniture != '':
+                msg_rand = rng.randint(0, 3)
+                aux_message = ['aux_msg_2', 'aux_msg_3', 'aux_msg_4', 'aux_msg_5']
+                print("mesg war 4")
+                msg_forniture = '{} {}.'.format(self.CONFIG_DICT[aux_message[msg_rand]], msg_forniture)
+
+
+        msg_monsters = self.monsters_generator_2(self.random_numbers(), self.random_numbers(),tot_square_taken)
+
+
+        msg_list.append(msg_forniture)
+        msg_list.append(msg_monsters)
+
+        return msg_list
+
+    def monsters_generator_2(self, rv, square_taken, ct):
+        """create random group of monsters based on squares taken by fornitures"""
+        self.rv = rv #the random values to know to create the percentage of possibilities to find monsters
+
+        self.residual_tiles = int(square_taken) #total of room's tiles residue
+        self.current_turn = ct
+
+        rng = random.SystemRandom()
+        monsters_numbers = rng.randint(1, 4)
+
+        self.LR_n = self.position_dict[self.r_num.randint(1, 5)]
+
+        monsters_number = 0
+
+        if self.rv >= 15:
+            if self.residual_tiles <= 6:
+                monsters_number = 1
+            elif self.residual_tiles >= 7 and self.residual_tiles <= 16:
+                monsters_number = self.r_num.randint(1, 2)
+            elif self.residual_tiles > 16:
+                monsters_number = self.r_num.randint(1, 3)
+            select_monsters_list = []
+
+            for i in range(monsters_number):
+                monster_dict_length = len(self.monsters_dict)
+                select_monsters_list.append('{} {}'.format(self.monsters_dict[self.r_num.randint(1, monster_dict_length)], self.position_dict[self.r_num.randint(1, 5)]))
+
+            msg_monsters = self.CONFIG_DICT['monsters_msg_1'].format(", ".join(select_monsters_list))
+            return msg_monsters
+        else:
+            return self.CONFIG_DICT['monsters_msg_2']
+
+
+    def monsters_generator(self, rv, room_dimension):
+        """create random monsters for rooms based on room dimension"""
+        self.rv = rv
+        self.room_dimension = int(room_dimension)
+        self.LR_n = self.position_dict[self.r_num.randint(1, 5)]
+        monsters_number = 0
+        if self.rv > 13:
+            if self.room_dimension <= 6:
+                monsters_number = 1
+            elif self.room_dimension > 9 and self.room_dimension <= 16:
+                monsters_number = self.r_num.randint(1, 2)
+            elif self.room_dimension > 16:
+                monsters_number = self.r_num.randint(1, 3)
+            select_monsters_list = []
+
+            for i in range(monsters_number):
+                monster_dict_length = len(self.monsters_dict)
+                select_monsters_list.append('{} {}'.format(self.monsters_dict[self.r_num.randint(1, monster_dict_length)], self.position_dict[self.r_num.randint(1, 5)]))
+
+            msg_monsters = self.CONFIG_DICT['monsters_msg_1'].format(", ".join(select_monsters_list))
+            return msg_monsters
+        else:
+            return self.CONFIG_DICT['monsters_msg_2']
+
 
     def aisles(self, rv):
         #sistem for discover aisles
@@ -212,77 +331,7 @@ class Heroquest_solo:
         else:
             return self.CONFIG_DICT['traps_msg_3']
 
-    def room_generator(self, room_dimension, ct):
-        """create random rooms with fornitures"""
-        #self.rv = rv #the values recives a number from 4D6
-        self.room_dimension = int(room_dimension) #total of room's tiles
-        self.current_turn = ct
-
-        rng = random.SystemRandom()
-        forniture_numbers = rng.randint(1, 4)
-        monster_numbers = rng.randint(1, 5) #TODO
-        rng = random.SystemRandom()
-        msg_forniture = ''
-        tot_square_taken = 0
-        if self.current_turn == self.TOTAL_NUMBER_OF_TURNS:
-            return self.CONFIG_DICT['end_msg_1']
-        else:
-            for i in range(forniture_numbers):
-                rng_1 = random.SystemRandom()
-                id_forniture_rand_1 = rng_1.randint(0, 6)
-
-                rng_2 = random.SystemRandom()
-                id_forniture_rand_2 = rng_2.randint(1, 6)
-
-                id_forniture_rand = id_forniture_rand_1+id_forniture_rand_2
-                res = self.CURSOR.execute("SELECT * FROM fornitures WHERE id_forniture = %d" % id_forniture_rand)
-
-                forniture_selected = res.fetchone()
-
-                square_taken_temp = forniture_selected[4]
-                tot_square_taken += square_taken_temp
-                if tot_square_taken < self.room_dimension:
-                    forniture_residue = self.FORNITURES_QTY_DICT[id_forniture_rand]
-
-                    if forniture_residue >= 1:
-                        msg_forniture = ' {} {} {}'.format(msg_forniture, self.forniture_dict[id_forniture_rand], self.position_dict[self.r_num.randint(1, 5)])
-                        new_forniture_residue = forniture_residue - 1
-                        self.FORNITURES_QTY_DICT[id_forniture_rand] = new_forniture_residue
-                    else:
-                        msg_forniture = msg_forniture
-                else:
-                    msg_forniture = msg_forniture
-
-            if msg_forniture != '':
-                msg_rand = rng.randint(0, 3)
-                aux_message = ['aux_msg_2', 'aux_msg_3', 'aux_msg_4', 'aux_msg_5']
-                msg_forniture = '{} {}.'.format(self.CONFIG_DICT[aux_message[msg_rand]], msg_forniture)
-
-            return msg_forniture
 
 
-    def monsters_generator(self, rv, room_dimension):
-        """create random monsters for rooms based on room dimension"""
-        self.rv = rv
-        self.room_dimension = int(room_dimension)
-        self.LR_n = self.position_dict[self.r_num.randint(1, 5)]
-        monsters_number = 0
-        if self.rv > 13:
-            if self.room_dimension <= 6:
-                monsters_number = 1
-            elif self.room_dimension > 9 and self.room_dimension <= 16:
-                monsters_number = self.r_num.randint(1, 2)
-            elif self.room_dimension > 16:
-                monsters_number = self.r_num.randint(1, 3)
-            select_monsters_list = []
-
-            for i in range(monsters_number):
-                monster_dict_length = len(self.monsters_dict)
-                select_monsters_list.append('{} {}'.format(self.monsters_dict[self.r_num.randint(1, monster_dict_length)], self.position_dict[self.r_num.randint(1, 5)]))
-
-            msg_monsters = self.CONFIG_DICT['monsters_msg_1'].format(", ".join(select_monsters_list))
-            return msg_monsters
-        else:
-            return self.CONFIG_DICT['monsters_msg_2']
 
 #TODO FIGTHTING SYSTEM

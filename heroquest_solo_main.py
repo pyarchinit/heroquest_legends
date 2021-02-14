@@ -32,13 +32,18 @@ class Heroquest_solo:
     CONNECTION = sqlite3.connect('./db_heroquest_legends.sqlite')
     CURSOR = CONNECTION.cursor()
 
+    #charge the total of forniture linked to ID
     db_fornitures_query = CURSOR.execute("Select * from fornitures")
     db_fornitures_charged = db_fornitures_query.fetchall()
+
+    #charge the total of monsters linked to ID
+    db_monsters_query = CURSOR.execute("Select * from monsters")
+    db_monsters_charged = db_monsters_query.fetchall()
 
 
     FORNITURES_QTY_DICT = {1:db_fornitures_charged[0][2],
                            2:db_fornitures_charged[1][2],
-                           3:db_fornitures_charged[1][2],
+                           3:db_fornitures_charged[2][2],
                            4:db_fornitures_charged[3][2],
                            5:db_fornitures_charged[4][2],
                            6:db_fornitures_charged[5][2],
@@ -49,7 +54,9 @@ class Heroquest_solo:
                            11:db_fornitures_charged[10][2],
                            12:db_fornitures_charged[11][2]}
 
-
+    MONSTERS_QTY_DICT = {1:db_monsters_charged[0][2],
+                           2:db_monsters_charged[1][2],
+                           3:db_monsters_charged[2][2]}
 
     def __init__(self, cd):
         self.CONFIG_DICT = cd
@@ -153,10 +160,8 @@ class Heroquest_solo:
                         msg_forniture = ' {} {} {}'.format(msg_forniture, self.forniture_dict[id_forniture_rand], self.position_dict[self.r_num.randint(1, 5)])
                         new_forniture_residue = forniture_residue - 1
                         self.FORNITURES_QTY_DICT[id_forniture_rand] = new_forniture_residue
-                        print("mesg war 2")
                     else:
                         msg_forniture = msg_forniture
-                        print("mesg war 3")
                 else:
                     msg_forniture = msg_forniture
                     print("mesg war 4")
@@ -164,7 +169,6 @@ class Heroquest_solo:
             if msg_forniture != '':
                 msg_rand = rng.randint(0, 3)
                 aux_message = ['aux_msg_2', 'aux_msg_3', 'aux_msg_4', 'aux_msg_5']
-                print("mesg war 4")
                 msg_forniture = '{} {}.'.format(self.CONFIG_DICT[aux_message[msg_rand]], msg_forniture)
 
 
@@ -184,26 +188,43 @@ class Heroquest_solo:
         self.current_turn = ct
 
         rng = random.SystemRandom()
-        monsters_numbers = rng.randint(1, 4)
+        monsters_numbers = rng.randint(1,1)
 
+        msg_monsters = ''
         self.LR_n = self.position_dict[self.r_num.randint(1, 5)]
 
         monsters_number = 0
 
         if self.rv >= 15:
-            if self.residual_tiles <= 6:
+            if self.residual_tiles <= 2:
                 monsters_number = 1
-            elif self.residual_tiles >= 7 and self.residual_tiles <= 16:
-                monsters_number = self.r_num.randint(1, 2)
-            elif self.residual_tiles > 16:
-                monsters_number = self.r_num.randint(1, 3)
-            select_monsters_list = []
+            elif self.residual_tiles > 2 and self.residual_tiles <= 5:
+                monsters_number = 3
+            elif self.residual_tiles > 6 and self.residual_tiles <= 10:
+                monsters_number = 4
+            else:
+                monsters_number = 6
 
             for i in range(monsters_number):
-                monster_dict_length = len(self.monsters_dict)
-                select_monsters_list.append('{} {}'.format(self.monsters_dict[self.r_num.randint(1, monster_dict_length)], self.position_dict[self.r_num.randint(1, 5)]))
+                rng_1 = random.SystemRandom()
+                id_monster_rand_1 = rng_1.randint(0, 1) #to increase
 
-            msg_monsters = self.CONFIG_DICT['monsters_msg_1'].format(", ".join(select_monsters_list))
+                rng_2 = random.SystemRandom()
+                id_monster_rand_2 = rng_2.randint(1, 2) #to increase
+
+                id_monster_rand = id_monster_rand_1 + id_monster_rand_2
+                res = self.CURSOR.execute("SELECT * FROM monsters WHERE id_monster = %d" % id_monster_rand)
+
+                monster_selected = res.fetchone()
+
+                monsters_residue = self.MONSTERS_QTY_DICT[id_monster_rand]
+
+                if monsters_residue >= 1:
+                    msg_monsters = ' {} {} {}'.format(msg_monsters, self.monsters_dict[id_monster_rand],
+                                                       self.position_dict[self.r_num.randint(1, 5)])
+                    new_monster_residue = monsters_residue - 1
+                    self.MONSTERS_QTY_DICT[id_monster_rand] = new_monster_residue
+
             return msg_monsters
         else:
             return self.CONFIG_DICT['monsters_msg_2']

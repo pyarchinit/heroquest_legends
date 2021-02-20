@@ -56,7 +56,12 @@ class Heroquest_solo:
 
     MONSTERS_QTY_DICT = {1:db_monsters_charged[0][2],
                            2:db_monsters_charged[1][2],
-                           3:db_monsters_charged[2][2]}
+                           3:db_monsters_charged[2][2],
+                           4:db_monsters_charged[3][2],
+                           5:db_monsters_charged[4][2],
+                           6:db_monsters_charged[5][2],
+                           7:db_monsters_charged[6][2],
+                           8:db_monsters_charged[7][2]}
 
     def __init__(self, cd):
         self.CONFIG_DICT = cd
@@ -130,13 +135,10 @@ class Heroquest_solo:
 
         rng = random.SystemRandom()
         forniture_numbers = rng.randint(1, 4)
-        monster_numbers = rng.randint(1, 5) #TODO
-        #rng = random.SystemRandom()
         msg_forniture = ''
         tot_square_taken = 0
         msg_list = []
         if self.current_turn == self.TOTAL_NUMBER_OF_TURNS:
-            print("mesg war 1")
             msg_forniture = self.CONFIG_DICT['end_msg_1']
         else:
             for i in range(forniture_numbers):
@@ -164,7 +166,6 @@ class Heroquest_solo:
                         msg_forniture = msg_forniture
                 else:
                     msg_forniture = msg_forniture
-                    print("mesg war 4")
 
             if msg_forniture != '':
                 msg_rand = rng.randint(0, 3)
@@ -172,7 +173,7 @@ class Heroquest_solo:
                 msg_forniture = '{} {}.'.format(self.CONFIG_DICT[aux_message[msg_rand]], msg_forniture)
 
 
-        msg_monsters = self.monsters_generator_2(self.random_numbers(), self.random_numbers(),tot_square_taken)
+        msg_monsters = self.monsters_generator_2(self.random_numbers(),tot_square_taken, self.current_turn)
 
 
         msg_list.append(msg_forniture)
@@ -187,35 +188,34 @@ class Heroquest_solo:
         self.residual_tiles = int(square_taken) #total of room's tiles residue
         self.current_turn = ct
 
-        rng = random.SystemRandom()
-        monsters_numbers = rng.randint(1,1)
-
-        msg_monsters = ''
+        msg_monsters = self.CONFIG_DICT['monsters_msg_intro']
         self.LR_n = self.position_dict[self.r_num.randint(1, 5)]
 
-        monsters_number = 0
-
-        if self.rv >= 15:
-            if self.residual_tiles <= 2:
+        if self.rv >= 12:
+            print('>=12')
+            if self.residual_tiles <= 3:
                 monsters_number = 1
-            elif self.residual_tiles > 2 and self.residual_tiles <= 5:
-                monsters_number = 3
-            elif self.residual_tiles > 6 and self.residual_tiles <= 10:
-                monsters_number = 4
+            elif self.residual_tiles > 3 and self.residual_tiles <= 6:
+                rng_base = random.SystemRandom()
+                monsters_number = rng_base.randint(1, 2)
+            elif self.residual_tiles > 6 and self.residual_tiles <= 12:
+                rng_base = random.SystemRandom()
+                monsters_number = rng_base.randint(1, 3)
+            elif self.residual_tiles > 12 and self.residual_tiles <= 20:
+                rng_base = random.SystemRandom()
+                monsters_number = rng_base.randint(1,6)
             else:
-                monsters_number = 6
+                rng_base = random.SystemRandom()
+                monsters_number = rng_base.randint(1, 6)
 
             for i in range(monsters_number):
                 rng_1 = random.SystemRandom()
-                id_monster_rand_1 = rng_1.randint(0, 1) #to increase
+                id_monster_rand_1 = rng_1.randint(0, 2)
 
                 rng_2 = random.SystemRandom()
-                id_monster_rand_2 = rng_2.randint(1, 2) #to increase
+                id_monster_rand_2 = rng_2.randint(1, 6)
 
                 id_monster_rand = id_monster_rand_1 + id_monster_rand_2
-                res = self.CURSOR.execute("SELECT * FROM monsters WHERE id_monster = %d" % id_monster_rand)
-
-                monster_selected = res.fetchone()
 
                 monsters_residue = self.MONSTERS_QTY_DICT[id_monster_rand]
 
@@ -227,7 +227,8 @@ class Heroquest_solo:
 
             return msg_monsters
         else:
-            return self.CONFIG_DICT['monsters_msg_2']
+            print('<12')
+            return ' {} {}'.format(msg_monsters,self.CONFIG_DICT['monsters_msg_2'])
 
 
     def monsters_generator(self, rv, room_dimension):
@@ -351,8 +352,6 @@ class Heroquest_solo:
             return self.CONFIG_DICT['traps_msg_2']
         else:
             return self.CONFIG_DICT['traps_msg_3']
-
-
 
 
 #TODO FIGTHTING SYSTEM

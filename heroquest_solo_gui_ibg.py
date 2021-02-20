@@ -19,9 +19,13 @@
 """
 
 import locale
+
 from heroquest_solo_main import Heroquest_solo
 import PySimpleGUI as sg
+
 sg.Window._move_all_windows = True
+
+
 
 
 def title_bar(title, text_color, background_color):
@@ -174,24 +178,28 @@ def main():
             msg_temp = HQ_SOLO.room_generator(window["-ROOM_GENERATOR_NUMBER-"].get(), current_turn)
 
             if current_turn == 1 or current_turn == 2:
-                msg = HQ_SOLO.CONFIG_DICT['aux_msg_1'].format(msg_temp[0])
-                print("mesg war 7")
+                msg_room = HQ_SOLO.CONFIG_DICT['aux_msg_1'].format(msg_temp[0])
+                #print("mesg war 7")
             else:
                 if msg_temp[0] == '':
-                    msg = HQ_SOLO.CONFIG_DICT['aux_msg_6']
-                    print("mesg war 8")
+                    msg_room = HQ_SOLO.CONFIG_DICT['aux_msg_6']
                 else:
-                    msg = msg_temp[0]
-                    print("mesg war 9")
+                    msg_room = msg_temp[0]
 
-            window["-ROOM_GENERATOR_TEXT-"].update(str(msg))
+            window["-ROOM_GENERATOR_TEXT-"].update(str(msg_room))
 
             window["-MONSTERS_GENERATOR_TEXT-"].update(str(msg_temp[1]))
 
+
+        """
         if event == "-MONSTERS_GENERATOR-": #TODO FROM HERE
             msg = HQ_SOLO.monsters_generator(HQ_SOLO.random_numbers(), window["-ROOM_GENERATOR_NUMBER-"].get())
             window["-MONSTERS_GENERATOR_TEXT-"].update(str(msg))
+            
+        """
+
             # window["-IMAGE-"].update(r'.\\images\\goblin.png')
+
 
         if event == "OK" or event == sg.WIN_CLOSED:
             break

@@ -21,7 +21,7 @@
 'fornitures_msg_1' : "Nella stanza trovi {}",
 'fornitures_msg_2' : "Non c'è mobilio ma attento agli incantesimi!!!",
 'monsters_msg_1' : "Preparati alla battaglia. Nella stanza trovi {}.",
-'monsters_msg_2' : "FIUUU... meno male. Nessun Mostro in vista!!!",
+'monsters_msg_2' : "Arcamadonfla meno male. Nessun Mostro in vista!!!",
 'position_dict': {1: 'a sinistra', 2: 'a destra', 3: 'sul fondo', 4: 'al centro della stanza', 5: 'davanti a te'},
 
 
@@ -88,7 +88,8 @@
   'aux_msg_4': 'Da una finestra entra della luce che illumina: ',
   'aux_msg_5': 'Attendi che la vista si adatti al buio e vedi: ',
   'aux_msg_6': 'La stanza è spoglia e solo muffa e sangue arredano le sue pareti.',
-  'end_msg_1' : 'Hai trovato le scale!'
+  'end_msg_1' : 'Hai trovato le scale!',
+  'monsters_msg_intro':'Prenti tutto il tuo coraggio e guardi dentro. '
 
 }
 

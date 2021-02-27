@@ -25,26 +25,26 @@
 'position_dict': {1: 'a sinistra', 2: 'a destra', 3: 'sul fondo', 4: 'al centro della stanza', 5: 'davanti a te'},
 
 
-'treasures_dict' :  {1: "Pozione di cura",
-                              2: "Pozione di velocità",
-                              3: "Pozione di attacco",
-                              4: "Pozione di difesa",
-                              5: "Spada",
-                              6: "Pozione di cura",
-                              7: "Lancia",
-                              8: "Pozione di difesa",
-                              9: "Scudo",
-                              10 : "balestra",
-                              11: "Pozione di attacco",
-                              12: "Pozione di difesa",
-                              13: "Spada",
-                              14: "Spadino",
-                              15: "Lancia",
-                              16: "Pozione di difesa",
-                              17: "Pozione di attacco",
-                              18: "Balestra",
-                              19: "Pozione di difesa",
-                              20: "Pozione di attacco"},
+'treasures_dict' :  {1: "La pietra che avete sotto i piedi comincia a spostarsi e vi accorgete, troppo tardi, che si tratta di un trabocchetto. Cascate in uns buca piena di spuntoni e perdete 1 punto-corpo, ma al vostro prossimo turno potrete venire fuori e ricominciare a giocare normalmente.",
+                              2: "La leggera pressione di un filo contro le gambe vi fa prima vacillare, poi girare...ma troppo tardi! Perdete 1 punto-corpo a causa di una freccia lanciata da una balestra nascosta dentro un muro",
+                              3: "State cercando qualcosa e fate scattare inavvertitamente una trappola che vi scaglia addosso un dardo da dentro un muro. Perdete 1 punto-corpo.",
+                              4: "Da uno scaffale polveroso tirate giù uno strano flacone. Ripulendolo vi accorgete che si tratta di una pozione magica. Potrete berla in qualsiasi momento ed essa vi permetterà, al vostro prossimo movimento, di tirare un numero di dadi doppio rispetto al normale. La carta va scartata dopo l'uso.",
+                              5: "Avvolta in un mucchio di stracci trovate una bottiglietta colma di un liquido che si rivela essere una pozione risanante. Potrete berla in qualsiasi momento ed essa vi farà riguardagnare fino a 4 punti-corpo perduti. La carta va scartata dopo l'uso.",
+                              6: "Scoprite una bottiglietta di color porpora. Contiene  una pozione rinforzante, che potrete bere in qualsiasi momento. Essa vi permetterà di tirare 2 dadi di combattimento in più durante la vostra prossima azione di attacco. La carta va scartata dopo l'uso.",
+                              7: "In mezzo a un gruppo di vecchie bottiglie e di bricchi in terracotta, scoprite un flaconcino trasparente con dentro una pozione del recupero. Potrete berla in qualsiasi momento, dopo di che potrete lanciare per difendervi 2 dadi da combattimento in più la prossima volta che se ne presenterà l'occasione. La carta va scartata dopo l'uso.",
+                              8: "Una sacca di pelle che pende da un muro contiene una pozione magica: l'infuso Eroico, da bere prima dell'attacco. Ogni Personaggio che beve la posizione sarà in grado per un turno solo, di condurre 2 attacchi invece di uno. La carta va scartata dopo l'uso.",
+                              9: "Abbandonata e dimenticata in un angolo della stanza, trovate un'ampollina d'acqua benedetta. Potrete usarla al posto di un attacco dato che eliminerà qualsiasi nonmorto, sia esso Scheletro, Zombie o Mummia. Scartare la carta dopo l'uso.",
+                              10 : "Dopo una assidua ricerca scoprite tanti piccoli mucchi d'oro sparsi in vari nascondigli. Perdete però la cognizione del tempo. Tirate allora un dado e moltiplicate il valore per 10 onde scoprire quante monete avete trovato. Saltate un turno. Riportate il totale sul retro del vostro foglio segna-punti e rimettete questa carta nel mazzo.",
+                              11: "Dietro una pietra traballante trovate un borsellino di cuoio avvolto in un vecchio straccio. Lo aprite e e vi trovate 50 monete d'oro! Riportate la cifra sul retro del vostro foglio segna-punti e rimettete questa carta nel mazzo del tesoro.",
+                              12: "Dopo aver frugato in vari cassetti trovate 20 monete d'oro. Riportate la cifra sul retro del vostro foglio segna punti e rimettete questa carta nel mazzo del tesoro.",
+                              13: "Qualcuno ha stupidamente lasciato in vista una scatoletta contenente 25 onete d'oro. Segnate il valore sul retro del foglio segna punti e riponete la carta nel mazzo del tesoro.",
+                              14: "Tra un mucchio di cianfrusaglie, vecchi cenci sporchi e bisunte coperte trovate 25 monete d'oro. Registrate il valore sul retro del foglio segna punti e riponete questa carta nel mazzo del tesoro.",
+                              15: "Un magro bottino di sole 10 monete d'oro è stato trovato nel taschino di un logoro puzzolente gilet. Registrate il valore sul retro del foglio segna punti e riponete la carta nel mazzo del tesoro.",
+                              16: "La fortuna è dalla vostra! In un piccolo scrigno, nascostro sotto ad una vecchia pelliccia, scoprite 100 monete d'oro. Dopo averle registrate sul retro del vostro foglio segna-punti rimettete la carta nel mazzo del tesoro.",
+                              17: "Avete trovato una vecchia cassettina di legno tarlato che, all'interno, è foderata di raso rosso e contiene gioielli del valore di 50 monete d'oro. Riportate la cifra sul retro del vostro foglio segna-punti e rimettete questa carta nel mazzo del tesoro.",
+                              18: "Nascosta dentro la punta di un vecchio stivale trovate una pietra preziosa del valore di 50 monete d'oro. Segnate il valore sul retro del foglio segna-punti e riponete la carta nel mazzo del tesoro.",
+                              19: "Mentre siete occupati nella ricerca un mostro vi soprende furtivamente alle spalle e vi attacca. Lo Stregone dovrà mettere il mostro errante, menzionato per questa avventura nel libro delle imprese, in una casella qualsiasi a voi adiacente. Il mostro vi attaccherà subito.",
+                              20: "Nonostante abbiate cercato ovunque non trovate ... niente!"},
 
 
 'fornitures_dict': {	       1: "uno scrigno",
@@ -70,6 +70,7 @@
                               7: "Guerriero del Caos",
                               8: "Gargoyle"},
 
+
   'TXT_4': "Turno",'TXT_5': "1",
   'btn_1':"Come è fatto il corridoio",
   'FIELD_BOX_1': "Esplora un nuovo corridoio",
@@ -89,7 +90,7 @@
   'aux_msg_5': 'Attendi che la vista si adatti al buio e vedi: ',
   'aux_msg_6': 'La stanza è spoglia e solo muffa e sangue arredano le sue pareti.',
   'end_msg_1' : 'Hai trovato le scale!',
-  'monsters_msg_intro':'Prenti tutto il tuo coraggio e guardi dentro. '
+  'monsters_msg_intro':'Prendi tutto il tuo coraggio e guardi dentro. '
 
 }
 

@@ -128,7 +128,7 @@ class Ui(QtWidgets.QMainWindow):
 
     def on_pushButton_treasures_random_pressed(self):
         msg = self.HQ_SOLO.treasure_random(self.HQ_SOLO.random_numbers())
-        print("random 4")
+
         self.textEdit_treasures_description.setText("")
         self.textEdit_treasures_description.setText(str(msg))
 

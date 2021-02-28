@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>768</width>
+    <width>780</width>
     <height>900</height>
    </rect>
   </property>
@@ -80,7 +80,7 @@
      </widget>
     </item>
     <item row="3" column="1">
-     <widget class="QWidget" name="" native="true">
+     <widget class="QWidget" name="widget" native="true">
       <layout class="QGridLayout" name="gridLayout">
        <item row="28" column="3">
         <widget class="QLineEdit" name="lineEdit_round">
@@ -246,7 +246,7 @@
         </widget>
        </item>
        <item row="13" column="1">
-        <widget class="QPushButton" name="pushButton_treasures_description">
+        <widget class="QPushButton" name="pushButton_treasures_random">
          <property name="font">
           <font>
            <family>Viner Hand ITC</family>
@@ -399,7 +399,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>768</width>
+     <width>780</width>
      <height>26</height>
     </rect>
    </property>

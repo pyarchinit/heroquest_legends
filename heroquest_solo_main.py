@@ -303,8 +303,8 @@ class Heroquest_solo:
         """"create a random treasures inside chest"""
         self.rv = rv
         if self.rv >= 4 and self.rv <= 12: #you'll find potions and items
+            print("tres_rand_1")
             items_list = []
-            print("random treasure 1")
             nr_items_random = self.random_numbers()
             if nr_items_random >=4 and nr_items_random  <= 18:
                 items_numbers = 1
@@ -316,11 +316,18 @@ class Heroquest_solo:
                 items_list.append(self.treasures_dict[self.r_num.randint(1, 20)])
             items_list_str = self.CONFIG_DICT['chest_msg_1'].format('\n'.join(items_list))
             return items_list_str
-        elif self.rv > 13 and self.rv <= 21: #you'll find gold coins
+        elif self.rv > 12 and self.rv <= 20: #you'll find gold coins
+            print("tres_rand_2")
             msg = self.CONFIG_DICT['chest_msg_2'].format(self.r_num.randrange(1, 150, 5)-1)
             return msg
-        else:
+        elif self.rv > 20 and self.rv <= 22:  #you'll find a trap!
+            print("tres_rand_3")
             return self.CONFIG_DICT['chest_msg_3']
+        else:
+            rng_1 = random.SystemRandom()
+            weapon_rand_num = rng_1.randint(1, 9)
+            msg = self.CONFIG_DICT['chest_msg_4'].format(self.CONFIG_DICT['weapons_dict'][weapon_rand_num])
+            return msg
 
     def treasure_card(self, rv):
         """"create a random treasures inside chest"""

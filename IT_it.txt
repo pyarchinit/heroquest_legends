@@ -15,6 +15,7 @@
 'chest_msg_1' : "Hai trovato un tesoro con dentro:\n{}",
 'chest_msg_2' : "Hai trovato {} monete d'oro",
 'chest_msg_3' : "Putroppo hai fatto scattare un trabocchetto. Se provare a disinnescarlo tirando un dado da combattimento: \nCon 1 scudo bianco non ti succede nulla e puoi ritentare la sorte; \nCon 1 scudo nero non ti succede nulla; \nCon 1 teschio perdi 1 punto corpo.",
+'chest_msg_4' : "Non puoi credere ai tuoi occhi. Hai trovato un'arma:\n{}",
 'traps_msg_1' : "Per fortuna non ci sono trabocchetti.",
 'traps_msg_2' : "Mentre cerchi una porta segreta, senti il rumore di un meccanisco e un trabocchetto scatta proprio davanti a te. Se vuoi sorpassarlo tira un dado da combattimento:\n Con 1 scudo bianco passi indenne. \n Con 1 scudo nero non riesci a passare. \n Con 1 teschio cadi e perdi 1 punto corpo. Se sei caduto difendi con un dado in meno e uscirai solo facendo un valore superiore a 2",
 'traps_msg_3' : "Un trabocchetto scatta, ma riesci a schivarlo. Spostati di una casella e metti una tessera crollo al posto tuo",

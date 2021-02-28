@@ -209,7 +209,6 @@ class Heroquest_solo:
             else:
                 rng_base = random.SystemRandom()
                 monsters_number = rng_base.randint(1, 6)
-
             for i in range(monsters_number):
                 rng_1 = random.SystemRandom()
                 id_monster_rand_1 = rng_1.randint(0, 2)

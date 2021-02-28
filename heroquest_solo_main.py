@@ -63,6 +63,8 @@ class Heroquest_solo:
                            7:db_monsters_charged[6][2],
                            8:db_monsters_charged[7][2]}
 
+
+
     def __init__(self, cd):
         self.CONFIG_DICT = cd
         self.r_num = random
@@ -224,10 +226,8 @@ class Heroquest_solo:
                                                        self.position_dict[self.r_num.randint(1, 5)])
                     new_monster_residue = monsters_residue - 1
                     self.MONSTERS_QTY_DICT[id_monster_rand] = new_monster_residue
-
             return msg_monsters
         else:
-            print('<12')
             return ' {} {}'.format(msg_monsters,self.CONFIG_DICT['monsters_msg_2'])
 
 
@@ -292,41 +292,49 @@ class Heroquest_solo:
 
         if self.rv > 14 and self.rv <= 15:
             return self.CONFIG_DICT['treasures_msg_1']
-
         elif self.rv > 15 and self.rv <= 22 :
             return self.CONFIG_DICT['treasures_msg_2']
-
         elif self.rv > 22:
             return self.CONFIG_DICT['treasures_msg_3']
         else:
             return self.CONFIG_DICT['treasures_msg_4']
 
-    def chest(self, rv):
+    def treasure_random(self, rv):
         """"create a random treasures inside chest"""
         self.rv = rv
-        #print(rv)
-        if self.rv > 1 and self.rv <= 15: #you'll find potions and items
+        if self.rv >= 4 and self.rv <= 12: #you'll find potions and items
             items_list = []
+            print("random treasure 1")
             nr_items_random = self.random_numbers()
-            if nr_items_random >0 and nr_items_random  <= 18:
+            if nr_items_random >=4 and nr_items_random  <= 18:
                 items_numbers = 1
             elif nr_items_random >18 and nr_items_random <= 20:
                 items_numbers = 2
             else:
                 items_numbers = 3
-            #items_numbers = self.r_num.randint(1, 3)
             for i in range(items_numbers):
                 items_list.append(self.treasures_dict[self.r_num.randint(1, 20)])
-
             items_list_str = self.CONFIG_DICT['chest_msg_1'].format('\n'.join(items_list))
-
             return items_list_str
-
-        elif self.rv > 15 and self.rv <= 21: #you'll find gold coins
-            msg = self.CONFIG_DICT['chest_msg_2'].format(self.r_num.randrange(1, 500, 25)-1)
+        elif self.rv > 13 and self.rv <= 21: #you'll find gold coins
+            msg = self.CONFIG_DICT['chest_msg_2'].format(self.r_num.randrange(1, 150, 5)-1)
             return msg
-        elif self.rv > 22:
+        else:
             return self.CONFIG_DICT['chest_msg_3']
+
+    def treasure_card(self, rv):
+        """"create a random treasures inside chest"""
+        self.rv = rv
+        if self.rv > 1 and self.rv <= 12: #you'll find a wanderer monster
+            treasure_description = self.CONFIG_DICT["treasures_dict"][19]
+            return treasure_description
+        elif self.rv > 13 and self.rv <= 16: #you'll find a heoling potion
+            treasure_description = self.CONFIG_DICT["treasures_dict"][5]
+            return treasure_description
+        elif self.rv > 16:
+            rng_1 = random.SystemRandom()
+            treasure_description = self.CONFIG_DICT["treasures_dict"][rng_1.randint(1, 20)]
+            return treasure_description
 
     def secret_doors(self, rv):
         """Create random doors for aisles"""

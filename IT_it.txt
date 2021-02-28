@@ -21,7 +21,8 @@
 'fornitures_msg_1' : "Nella stanza trovi {}",
 'fornitures_msg_2' : "Non c'è mobilio ma attento agli incantesimi!!!",
 'monsters_msg_1' : "Preparati alla battaglia. Nella stanza trovi {}.",
-'monsters_msg_2' : "Arcamadonfla meno male. Nessun Mostro in vista!!!",
+'monsters_msg_2' : "Meno male. Nessun Mostro in vista!!!",
+'monsters_msg_3' : "Il mostro errante in questa avventura è: ",
 'position_dict': {1: 'a sinistra', 2: 'a destra', 3: 'sul fondo', 4: 'al centro della stanza', 5: 'davanti a te'},
 
 
@@ -70,6 +71,19 @@
                               7: "Guerriero del Caos",
                               8: "Gargoyle"},
 
+'weapons_dict' : {            1: "Balestra",
+                              2: "Spadino",
+                              3: "Bastone",
+                              4: "Ascia da battaglia",
+                              5: "Armatura Corazzata",
+                              6: "Ascia",
+                              7: "Lancia",
+                              8: "Borsa degli attrezzi",
+                              9: "Elmo",
+                              10: "Scudo",
+                              11: "Spadone",
+                              12: "Maglia di ferro"},
+
 
   'TXT_4': "Turno",'TXT_5': "1",
   'btn_1':"Come è fatto il corridoio",
@@ -90,7 +104,12 @@
   'aux_msg_5': 'Attendi che la vista si adatti al buio e vedi: ',
   'aux_msg_6': 'La stanza è spoglia e solo muffa e sangue arredano le sue pareti.',
   'end_msg_1' : 'Hai trovato le scale!',
-  'monsters_msg_intro':'Prendi tutto il tuo coraggio e guardi dentro. '
+  'monsters_msg_intro':'Prendi tutto il tuo coraggio e guardi dentro.',
+
+   'missions_dict' : { 1: "Nelle terre di Hogarth, in un maniero abbandonato, si trova nascosto in un sotterraneo un antico pozzo magico. Dovrai recuperare con un'ampolla l'acqua e riportarla indietro. Si narra che una antica scalinata celi il mistero per arrivarci. Trova le scale che portano al sotterraneo e cerca di sopravvivere!!!",
+                       2: "Il re Volgarth darà una ricompensa di 150 monete d'oro a chi gli porterà le teste di 6 Orchi. Vai nella fortezza di Gurmardath e riporta le teste di 6 orchi."
+                                }
+
 
 }
 

@@ -21,6 +21,8 @@
 import locale
 import sys
 import os
+import random
+
 from PyQt5 import QtWidgets, uic
 from PyQt5.uic import loadUiType
 #codeadded
@@ -51,23 +53,39 @@ class Ui(QtWidgets.QMainWindow):
 
     def __init__(self):
         super(Ui, self).__init__()
-        uic.loadUi('C:\\Users\\Luca\\Programmazione\\heroquest_solo\\heroquest_legends.ui', self)
+        uic.loadUi(os.path.join(os.path.dirname(__file__),'heroquest_legends.ui'), self)
         self.acceptDrops()
         self.HQ_SOLO = Heroquest_solo(self.CONFIG_DICT)
 
         #add backgroundimage
-        oImage = QImage("C:\\Users\\Luca\\Programmazione\\heroquest_solo\\images\mappa.bmp")
-        sImage = oImage.scaled(QSize(1024, 768))  # resize Image to widgets size
+        dir_path = os.path.dirname(__file__)
+        print(dir_path)
+        bg_img_path ='{}{}'.format(dir_path, '\images\mappa.png')
+        print(str(bg_img_path))
+        oImage = QImage(bg_img_path)
+        sImage = oImage.scaled(QSize(800, 768))  # resize Image to widgets size
         palette = QPalette()
         palette.setBrush(QPalette.Window, QBrush(sImage))
         self.setPalette(palette)
 
-        self.label_image = QLabel(self)
-        self.label_image.move(50,50)
-
-
+        #self.label_image = QLabel(self)
+        #self.label_image.move(50,50)
 
         self.show()
+
+    def on_pushButton_the_mission_pressed(self):
+        print('gg0g')
+        rng_base = random.SystemRandom()
+        mission_number_rand = rng_base.randint(1, 2)
+
+        the_mission_dict = self.CONFIG_DICT['missions_dict']
+
+        rng_base = random.SystemRandom()
+        wanderer_monster_number_rand = rng_base.randint(1, 7)
+        wanderer_monster = self.CONFIG_DICT['monsters_dict'][wanderer_monster_number_rand]
+        wanderer_monster_text = self.CONFIG_DICT['monsters_msg_3']
+        the_mission_text = '{}\n{}{}'.format(the_mission_dict[mission_number_rand],wanderer_monster_text,wanderer_monster)
+        self.textEdit_the_mission.setText(the_mission_text)
 
     def on_pushButton_round_pressed(self):
         self.textEdit_aisles.setText("")
@@ -77,6 +95,7 @@ class Ui(QtWidgets.QMainWindow):
         self.textEdit_treasures_description.setText("")
         self.textEdit_traps.setText("")
         self.textEdit_secret_doors.setText("")
+        self.textEdit_treasure_cards_description.setText("")
 
         current_turn = int(self.lineEdit_round.text())
         next_turn = current_turn+1
@@ -85,7 +104,6 @@ class Ui(QtWidgets.QMainWindow):
     def on_pushButton_aisles_pressed(self):
         current_turn = int(self.lineEdit_round.text())
         self.textEdit_aisles.setText("")
-
 
         if current_turn == 1 or current_turn == 2:
             msg_num = self.HQ_SOLO.random_numbers()
@@ -103,8 +121,14 @@ class Ui(QtWidgets.QMainWindow):
         self.textEdit_treasures_finder.setText("")
         self.textEdit_treasures_finder.setText(str(msg))
 
-    def on_pushButton_treasures_description_pressed(self):
-        msg = self.HQ_SOLO.chest(self.HQ_SOLO.random_numbers())
+    def on_pushButton_treasure_card_pressed(self):
+        msg = self.HQ_SOLO.treasure_card(self.HQ_SOLO.random_numbers())
+        self.textEdit_treasure_cards_description.setText("")
+        self.textEdit_treasure_cards_description.setText(str(msg))
+
+    def on_pushButton_treasures_random_pressed(self):
+        msg = self.HQ_SOLO.treasure_random(self.HQ_SOLO.random_numbers())
+        print("random 4")
         self.textEdit_treasures_description.setText("")
         self.textEdit_treasures_description.setText(str(msg))
 

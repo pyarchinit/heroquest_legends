@@ -20,8 +20,7 @@
  ***************************************************************************/
 """
 import locale
-import sys
-import os
+import sys, os
 import random
 
 from PyQt5 import QtWidgets, uic
@@ -54,15 +53,16 @@ class Ui(QtWidgets.QMainWindow):
 
     def __init__(self):
         super(Ui, self).__init__()
-        uic.loadUi(os.path.join(os.path.dirname(__file__),'heroquest_legends.ui'), self)
         self.acceptDrops()
+        uic.loadUi(os.path.join(os.path.dirname(__file__),'heroquest_legends.ui'), self)
+
         self.HQ_SOLO = Heroquest_solo(self.CONFIG_DICT)
 
         #add backgroundimage
         dir_path = os.path.dirname(__file__)
-        print(dir_path)
-        bg_img_path ='{}{}'.format(dir_path, '\images\mappa.png')
-        print(str(bg_img_path))
+
+        bg_img_path = os.path.join(os.path.dirname(__file__),'images', 'mappa.png')
+
         oImage = QImage(bg_img_path)
         sImage = oImage.scaled(QSize(800, 768))  # resize Image to widgets size
         palette = QPalette()

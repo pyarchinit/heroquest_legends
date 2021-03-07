@@ -61,6 +61,7 @@
                                10: "una rastrelliera",
                                11: "lungo il muro una porta aperta",
                                12: "lungo il muro una porta chiusa",
+                               13: "tavolo"
                                },
 
 'monsters_dict' : {           1: "Goblin",
@@ -86,7 +87,7 @@
                               12: "Maglia di ferro"},
 
 
-  'TXT_4': "Turno",'TXT_5': "1",
+
   'btn_1':"Come è fatto il corridoio",
   'FIELD_BOX_1': "Esplora un nuovo corridoio",
   'btn_2':"Scopri come è fatta la stanza",
@@ -94,6 +95,8 @@
   'TXT_2': "Esplora una nuova Stanza",
   'btn_3':"Ci sono tesori?",
   'TXT_3':'Esplora la stanza e i suoi mobili',
+  'TXT_4': "Turno",
+  'TXT_5': "1",
   'btn_4':"Cosa contiene?",
   'btn_5':"Ci sono mostri nella stanza?",
   'btn_6':"Ci sono trabocchetti o porte segrete?",
@@ -104,12 +107,43 @@
   'aux_msg_4': 'Da una finestra entra della luce che illumina: ',
   'aux_msg_5': 'Attendi che la vista si adatti al buio e vedi: ',
   'aux_msg_6': 'La stanza è spoglia e solo muffa e sangue arredano le sue pareti.',
-  'end_msg_1' : 'Hai trovato le scale!',
+  'aux_msg_7': 'Siete tornati sui vostri passi e un rumore sinistro vi accoglie...cosa può essere?',
+  'end_msg_1' : 'Noti una pietra spostata nel muro e toccandola, un rumore di ingranaggi\
+                 apre una voragine nel pavimento. Hai trovato le scale per uscire! Missione compiuta!',
   'monsters_msg_intro':'Prendi tutto il tuo coraggio e guardi dentro.',
 
-   'missions_dict' : { 1: "Nelle terre di Hogarth, in un maniero abbandonato, si trova nascosto in un sotterraneo un antico pozzo magico. Dovrai recuperare con un'ampolla l'acqua e riportarla indietro. Si narra che una antica scalinata celi il mistero per arrivarci. Trova le scale che portano al sotterraneo e cerca di sopravvivere!!!",
-                       2: "Il re Volgarth darà una ricompensa di 150 monete d'oro a chi gli porterà le teste di 6 Orchi. Vai nella fortezza di Gurmardath e riporta le teste di 6 orchi."
-                                }
+  'missions_dict' : { 1: "Nelle terre di Hogarth, in un maniero abbandonato, si trova nascosto in un sotterraneo un antico pozzo magico. Dovrai recuperare con un'ampolla l'acqua e riportarla indietro. Si narra che una antica scalinata celi il mistero per arrivarci. Trova le scale che portano al sotterraneo e cerca di sopravvivere!!!",
+                      2: "Il re Volgarth darà una ricompensa di 150 monete d'oro a chi gli porterà le teste di 6 Orchi. Vai nella fortezza di Gurmardath e riporta le teste di 6 orchi."
+                     },
+
+  'combat_value_dict'  : {
+            'goblin'        : 2,
+            'orc'           : 3,
+            'fimir'         : 5,
+            'skeletor'      : 3,
+            'zombie'        : 7,
+            'mummie'        : 6,
+            'chaos_warrior' : 8,
+            'gargoyle'      : 9
+               },
+
+  'attack_messages' : {1: ['Il mostro attacca l\'eroe {} oppure si muove verso l\'eroe più vicino e se può lo attacca.',
+                           'Se ci sono nemici nel raggio di movimento, il mostro muove va verso l\'eroe {}. Se lo raggiunge lo attacca; altrimenti si muove verso l\'eroe più vicino e se può lo attacca.'],
+                       2: 'Il mostro cerca di fuggire lontano.'},
+
+  'choice_dict' : {1:' più vicino {}',
+                   2:' più lontano {}',
+                   3: ' con meno punti corpo {}',
+                   4: ' con più punti corpo {}',
+                   5: ' con meno dadi da difesa {}'
+                   },
+
+
+  'monster_direction_dict' : {1:' alla sua sinistra',
+                              2:' alla sua destra',
+                              3: ' dietro di lui',
+                              4: ' davanti a lui'}
+
 
 
 }

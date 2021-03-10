@@ -54,7 +54,8 @@ class Heroquest_solo:
                            9:db_fornitures_charged[8][2],
                            10:db_fornitures_charged[9][2],
                            11:db_fornitures_charged[10][2],
-                           12:db_fornitures_charged[11][2]}
+                           12:db_fornitures_charged[11][2],
+                           13:db_fornitures_charged[12][2]}
 
     MONSTERS_QTY_DICT = {1:db_monsters_charged[0][2],
                            2:db_monsters_charged[1][2],
@@ -130,55 +131,80 @@ class Heroquest_solo:
 
     def room_generator(self, room_dimension, ct, re):
         """create random rooms with fornitures"""
-        self.room_dimension = int(room_dimension) #total of room's tiles
+
+        #turn controller INPUT
         self.current_turn = ct
+
+        #room controller INPUT
         self.room_explored = int(re)
-        rng = random.SystemRandom()
-        forniture_numbers = rng.randint(1, 4)
+        self.room_dimension = int(room_dimension) #total of room's tiles
+
+        #forniture_square_taken
+        tot_square_taken = 0
+
+        #messages controller
         msg_forniture = ''
         msg_monsters = ''
         msg_end = ''
-        tot_square_taken = 0
         msg_list = []
+
+        #roll the dice and select a random number of fornitures between 1 and 4
+        rng = random.SystemRandom()
+        forniture_numbers = rng.randint(1, 4)
+        count = 0
+        #if the current turn is max or equal and the escape is founded
         if self.current_turn >= self.TOTAL_NUMBER_OF_TURNS and self.ESCAPE_FOUND==0:
             msg_end = self.CONFIG_DICT['end_msg_1']
             self.ESCAPE_FOUND = 1
         else:
-            if self.room_explored == 0:
+            if self.room_explored == 0: #if the room is not explored
+                print("step_1")
+                count = 0                           #counter
                 for i in range(forniture_numbers):
                     rng_1 = random.SystemRandom()
                     id_forniture_rand_1 = rng_1.randint(0, 6)
 
                     rng_2 = random.SystemRandom()
-                    id_forniture_rand_2 = rng_2.randint(1, 7)
+                    id_forniture_rand_2 = rng_2.randint(1, 7)  #create a random ID for fornitures between 1 and 13
 
                     id_forniture_rand = id_forniture_rand_1+id_forniture_rand_2
-                    res = self.CURSOR.execute("SELECT * FROM fornitures WHERE id_forniture = %d" % id_forniture_rand)
 
-                    forniture_selected = res.fetchone()
-                    square_taken_temp = forniture_selected[4]
-                    tot_square_taken += square_taken_temp
 
-                    if tot_square_taken < self.room_dimension:
-                        forniture_residue = self.FORNITURES_QTY_DICT[id_forniture_rand]
-
-                        if forniture_residue >= 1:
-                            msg_forniture = ' {} {} {}'.format(msg_forniture, self.forniture_dict[id_forniture_rand], self.position_dict[self.r_num.randint(1, 5)])
+                    #verify if the fornitures is still present
+                    forniture_residue = self.FORNITURES_QTY_DICT[id_forniture_rand]
+                    if forniture_residue > 0:
+                        print("step_2")
+                        # charge from DB the selected fornitures
+                        res = self.CURSOR.execute(
+                            "SELECT * FROM fornitures WHERE id_forniture = %d" % id_forniture_rand)
+                        forniture_selected = res.fetchone()
+                        print("step_12")
+                        square_taken_temp = forniture_selected[4]
+                        tot_square_taken += square_taken_temp
+                        print("step_13")
+                        if tot_square_taken < self.room_dimension:
+                            print("step_15")
+                            msg_forniture = '{}{}{}'.format(msg_forniture, self.forniture_dict[id_forniture_rand],self.position_dict[self.r_num.randint(1, 5)])
+                            print("step_5")
                             new_forniture_residue = forniture_residue - 1
                             self.FORNITURES_QTY_DICT[id_forniture_rand] = new_forniture_residue
                         else:
-                            msg_forniture = ''
+                            print("step_6")
+                            tot_square_taken -= square_taken_temp
                     else:
-                        msg_forniture = ''
+                        print("step_7")
+                        msg_forniture = msg_forniture
 
-                if msg_forniture != '':
-                    msg_rand = rng.randint(0, 3)
-                    aux_message = ['aux_msg_2', 'aux_msg_3', 'aux_msg_4', 'aux_msg_5']
-                    msg_forniture = '{} {}.'.format(self.CONFIG_DICT[aux_message[msg_rand]], msg_forniture)
-        try:
-            msg_monsters = self.monsters_generator_2(self.random_numbers(),tot_square_taken, self.current_turn)
-        except Exception(e):
-            print(str(e))
+            else:
+                msg_forniture = self.CONFIG_DICT['aux_msg_7']
+
+            if msg_forniture != '':
+                msg_rand = rng.randint(0, 3)
+                aux_message = ['aux_msg_2', 'aux_msg_3', 'aux_msg_4', 'aux_msg_5']
+                msg_forniture = '{} {}.'.format(self.CONFIG_DICT[aux_message[msg_rand]], msg_forniture)
+
+        msg_monsters = self.monsters_generator_2(self.random_numbers(),tot_square_taken, self.current_turn)
+
 
         msg_list.append(msg_forniture)
         msg_list.append(msg_monsters)
@@ -194,9 +220,10 @@ class Heroquest_solo:
         self.current_turn = ct
 
         msg_monsters = ''
-        self.LR_n = self.position_dict[self.r_num.randint(1, 5)]
-
-        if self.rv >= 12:
+        monsters_msg_partial = ''
+        if self.rv > 12:
+            return '{} {}'.format(msg_monsters, self.CONFIG_DICT['monsters_msg_2'])
+        else:
             if self.residual_tiles <= 3:
                 monsters_number = 1
             elif self.residual_tiles > 3 and self.residual_tiles <= 6:
@@ -222,45 +249,19 @@ class Heroquest_solo:
                 id_monster_rand = id_monster_rand_1 + id_monster_rand_2
                 monsters_residue = self.MONSTERS_QTY_DICT[id_monster_rand]
 
-                if monsters_residue != 0:
-                    msg_monsters = self.CONFIG_DICT['monsters_msg_intro']
-                    msg_monsters = ' {} {} {}'.format(msg_monsters, self.monsters_dict[id_monster_rand],
+                if monsters_residue > 0:
+                    monsters_msg_partial = '{} {} {};'.format(monsters_msg_partial, self.monsters_dict[id_monster_rand],
                                                        self.position_dict[self.r_num.randint(1, 5)])
+
                     new_monster_residue = monsters_residue - 1
+
                     self.MONSTERS_QTY_DICT[id_monster_rand] = new_monster_residue
-                else:
-                    msg_monsters = '{} {}'.format(self.CONFIG_DICT['monsters_msg_intro'],
-                                                  self.CONFIG_DICT['monsters_msg_2'])
-            if msg_monsters == '':
+
+            if monsters_msg_partial != '':
+                msg_monsters = '{} {} {}'.format(self.CONFIG_DICT['monsters_msg_intro'], monsters_msg_partial, self.CONFIG_DICT['monsters_msg_close'])
+            else:
                 msg_monsters = '{} {}'.format(self.CONFIG_DICT['monsters_msg_intro'],self.CONFIG_DICT['monsters_msg_2'])
-            return msg_monsters
-        else:
-            return '{} {}'.format(msg_monsters,self.CONFIG_DICT['monsters_msg_2'])
-
-
-    def monsters_generator(self, rv, room_dimension):
-        """create random monsters for rooms based on room dimension"""
-        self.rv = rv
-        self.room_dimension = int(room_dimension)
-        self.LR_n = self.position_dict[self.r_num.randint(1, 5)]
-        monsters_number = 0
-        if self.rv > 13:
-            if self.room_dimension <= 6:
-                monsters_number = 1
-            elif self.room_dimension > 9 and self.room_dimension <= 16:
-                monsters_number = self.r_num.randint(1, 2)
-            elif self.room_dimension > 16:
-                monsters_number = self.r_num.randint(1, 3)
-            select_monsters_list = []
-
-            for i in range(monsters_number):
-                monster_dict_length = len(self.monsters_dict)
-                select_monsters_list.append('{} {}'.format(self.monsters_dict[self.r_num.randint(1, monster_dict_length)], self.position_dict[self.r_num.randint(1, 5)]))
-
-            msg_monsters = self.CONFIG_DICT['monsters_msg_1'].format(", ".join(select_monsters_list))
-            return msg_monsters
-        else:
-            return self.CONFIG_DICT['monsters_msg_2']
+        return msg_monsters
 
 
     def aisles(self, rv):
@@ -349,16 +350,16 @@ class Heroquest_solo:
             treasure_description = self.CONFIG_DICT["treasures_dict"][rng_1.randint(1, 20)]
             return treasure_description
 
-    def secret_doors(self, rv):
+    def traps_secret_doors(self, rv):
         """Create random doors for aisles"""
         self.rv = rv
-        self.LR_n = self.r_num.randint(1, 2)
+
 
         if self.rv <= 13:
             return self.CONFIG_DICT['secret_doors_msg_1']
         elif self.rv > 13 and self.rv <= 24:
-            value_LR = self.r_num.randint(1, 2)
-            return self.CONFIG_DICT['secret_doors_msg_2'].format(self.position_dict[self.r_num.randint(1, 2)], self.position_dict[self.r_num.randint(1, 2)])
+            value_LR = self.r_num.randint(1, 3)
+            return self.CONFIG_DICT['secret_doors_msg_2'].format(self.position_dict[self.r_num.randint(1, 3)])
         else:
             return self.CONFIG_DICT['secret_doors_msg_1']
 

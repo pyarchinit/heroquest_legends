@@ -221,7 +221,8 @@ class Heroquest_solo:
 
         msg_monsters = ''
         monsters_msg_partial = ''
-        if self.rv > 12:
+        print("monster_value{}".format(str(self.rv)))
+        if self.rv >= 18:
             return '{} {}'.format(msg_monsters, self.CONFIG_DICT['monsters_msg_2'])
         else:
             if self.residual_tiles <= 3:

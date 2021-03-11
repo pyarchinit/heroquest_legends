@@ -152,7 +152,7 @@ class Ui(QtWidgets.QMainWindow):
 
     def on_pushButton_traps_and_secret_doors_finder_pressed(self):
         msg_traps = self.HQ_SOLO.traps(self.HQ_SOLO.random_numbers())
-        msg_secret_door = self.HQ_SOLO.secret_doors(self.HQ_SOLO.random_numbers())
+        msg_secret_door = self.HQ_SOLO.traps_secret_doors(self.HQ_SOLO.random_numbers())
         self.textEdit_traps.setText(str(msg_traps))
         self.textEdit_secret_doors.setText(str(msg_secret_door))
 
@@ -160,22 +160,22 @@ class Ui(QtWidgets.QMainWindow):
         self.textEdit_room_description.setText('')
         self.textEdit_monsters.setText('')
 
-        if self.radioButton_not_explored.isChecked() == True:
-            room_explored = 0
-        else:
+        if self.radioButton_explored.isChecked() == True:
             room_explored = 1
+        else:
+            room_explored = 0
 
         current_turn = int(self.lineEdit_round.text())
         msg_temp = self.HQ_SOLO.room_generator(self.lineEdit_room_dimension.text(), current_turn,room_explored)
-        print(str(msg_temp))
+
         if current_turn == 1 or current_turn == 2:
             msg_room = self.HQ_SOLO.CONFIG_DICT['aux_msg_1'].format(msg_temp[0])
         else:
             if msg_temp[2] != '':
                 msg_room = msg_temp[2]
-            elif msg_temp[0] == '' and  msg_temp[2] == '' and room_explored == 1 :
+            elif msg_temp[0] == '' and  msg_temp[2] == '' and room_explored == 1:
                 msg_room = self.HQ_SOLO.CONFIG_DICT['aux_msg_7']
-            elif msg_temp[0] == '' and  msg_temp[2] == '' and room_explored == 0 :
+            elif msg_temp[0] == '' and  msg_temp[2] == '' and room_explored == 0:
                 msg_room = self.HQ_SOLO.CONFIG_DICT['aux_msg_6']
             else:
                 msg_room = msg_temp[0]

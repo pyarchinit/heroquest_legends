@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1198</width>
+    <width>1386</width>
     <height>900</height>
    </rect>
   </property>
@@ -52,32 +52,6 @@
        </size>
       </property>
       <layout class="QGridLayout" name="gridLayout_3">
-       <item row="1" column="0">
-        <widget class="QPushButton" name="pushButton_monster_attack">
-         <property name="font">
-          <font>
-           <family>Viner Hand ITC</family>
-           <pointsize>10</pointsize>
-          </font>
-         </property>
-         <property name="text">
-          <string>Il mostro ti scruta e poi ... </string>
-         </property>
-        </widget>
-       </item>
-       <item row="0" column="0">
-        <widget class="QComboBox" name="comboBox_monster_attack">
-         <property name="font">
-          <font>
-           <family>Viner Hand ITC</family>
-           <pointsize>10</pointsize>
-           <weight>50</weight>
-           <italic>false</italic>
-           <bold>false</bold>
-          </font>
-         </property>
-        </widget>
-       </item>
        <item row="2" column="0">
         <widget class="QTextEdit" name="textEdit_combat_text">
          <property name="maximumSize">
@@ -97,7 +71,33 @@
          </property>
         </widget>
        </item>
-       <item row="3" column="0">
+       <item row="0" column="0">
+        <widget class="QComboBox" name="comboBox_monster_attack">
+         <property name="font">
+          <font>
+           <family>Viner Hand ITC</family>
+           <pointsize>10</pointsize>
+           <weight>50</weight>
+           <italic>false</italic>
+           <bold>false</bold>
+          </font>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="0">
+        <widget class="QPushButton" name="pushButton_monster_attack">
+         <property name="font">
+          <font>
+           <family>Viner Hand ITC</family>
+           <pointsize>10</pointsize>
+          </font>
+         </property>
+         <property name="text">
+          <string>Il mostro ti scruta e poi ... </string>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="0">
         <layout class="QHBoxLayout" name="horizontalLayout">
          <item>
           <widget class="QPushButton" name="pushButton_round">
@@ -181,6 +181,9 @@
       <property name="text">
        <string>AREA DI COMBATTIMENTO</string>
       </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
      </widget>
     </item>
     <item row="2" column="0" rowspan="2">
@@ -225,37 +228,48 @@
     <item row="1" column="1" rowspan="3" colspan="2">
      <widget class="QWidget" name="widget" native="true">
       <layout class="QGridLayout" name="gridLayout">
-       <item row="6" column="0" colspan="2">
-        <widget class="QLabel" name="label_room_1">
-         <property name="font">
-          <font>
-           <family>Viner Hand ITC</family>
-           <pointsize>10</pointsize>
-           <weight>50</weight>
-           <bold>false</bold>
-           <underline>false</underline>
-           <strikeout>false</strikeout>
-           <kerning>false</kerning>
-          </font>
-         </property>
-         <property name="styleSheet">
-          <string notr="true">background-color: rgb(255, 255, 255);</string>
-         </property>
-         <property name="frameShadow">
-          <enum>QFrame::Raised</enum>
-         </property>
-         <property name="lineWidth">
-          <number>53</number>
-         </property>
-         <property name="text">
-          <string>Quanto è grande la stanza?</string>
-         </property>
-         <property name="wordWrap">
-          <bool>true</bool>
-         </property>
-        </widget>
+       <item row="9" column="0" colspan="12">
+        <layout class="QHBoxLayout" name="horizontalLayout_5">
+         <item>
+          <widget class="QTextEdit" name="textEdit_room_description">
+           <property name="font">
+            <font>
+             <family>Viner Hand ITC</family>
+             <pointsize>10</pointsize>
+             <weight>50</weight>
+             <italic>false</italic>
+             <bold>false</bold>
+             <stylestrategy>PreferAntialias</stylestrategy>
+            </font>
+           </property>
+           <property name="lineWrapColumnOrWidth">
+            <number>1</number>
+           </property>
+           <property name="cursorWidth">
+            <number>-3</number>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QTextEdit" name="textEdit_monsters"/>
+         </item>
+        </layout>
        </item>
-       <item row="13" column="0" colspan="11">
+       <item row="12" column="0" colspan="5">
+        <layout class="QHBoxLayout" name="horizontalLayout_4">
+         <item>
+          <widget class="QTextEdit" name="textEdit_treasures_description">
+           <property name="maximumSize">
+            <size>
+             <width>16777215</width>
+             <height>120</height>
+            </size>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item row="13" column="0" colspan="12">
         <layout class="QVBoxLayout" name="verticalLayout_2">
          <item>
           <widget class="QPushButton" name="pushButton_traps_and_secret_doors_finder">
@@ -305,46 +319,47 @@
          </item>
         </layout>
        </item>
-       <item row="5" column="3">
-        <widget class="QRadioButton" name="radioButton_not_explored">
+       <item row="6" column="0" colspan="3">
+        <widget class="QLabel" name="label_room_1">
+         <property name="font">
+          <font>
+           <family>Viner Hand ITC</family>
+           <pointsize>10</pointsize>
+           <weight>50</weight>
+           <bold>false</bold>
+           <underline>false</underline>
+           <strikeout>false</strikeout>
+           <kerning>false</kerning>
+          </font>
+         </property>
          <property name="styleSheet">
           <string notr="true">background-color: rgb(255, 255, 255);</string>
          </property>
-         <property name="text">
-          <string>Non esplorata</string>
+         <property name="frameShadow">
+          <enum>QFrame::Raised</enum>
          </property>
-         <property name="checked">
+         <property name="lineWidth">
+          <number>53</number>
+         </property>
+         <property name="text">
+          <string>Quanto è grande la stanza?</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+         <property name="wordWrap">
           <bool>true</bool>
          </property>
         </widget>
        </item>
-       <item row="5" column="4">
-        <widget class="QRadioButton" name="radioButton_explored">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="styleSheet">
-          <string notr="true">background-color: rgb(255, 255, 255);</string>
-         </property>
-         <property name="text">
-          <string>Già esplorata</string>
-         </property>
-         <property name="checked">
-          <bool>false</bool>
-         </property>
-        </widget>
-       </item>
-       <item row="2" column="0" colspan="10">
+       <item row="2" column="0" colspan="11">
         <widget class="Line" name="line_2">
          <property name="orientation">
           <enum>Qt::Horizontal</enum>
          </property>
         </widget>
        </item>
-       <item row="5" column="0">
+       <item row="5" column="0" colspan="2">
         <widget class="QLabel" name="label_2">
          <property name="styleSheet">
           <string notr="true">background-color: rgb(255, 255, 255);</string>
@@ -352,12 +367,27 @@
          <property name="text">
           <string>Di che stanza si tratta?</string>
          </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
         </widget>
        </item>
-       <item row="12" column="0" colspan="4">
-        <layout class="QHBoxLayout" name="horizontalLayout_4">
+       <item row="12" column="5" colspan="7">
+        <layout class="QVBoxLayout" name="verticalLayout">
+         <property name="spacing">
+          <number>2</number>
+         </property>
+         <property name="sizeConstraint">
+          <enum>QLayout::SetFixedSize</enum>
+         </property>
          <item>
-          <widget class="QTextEdit" name="textEdit_treasures_description">
+          <widget class="QTextEdit" name="textEdit_treasure_cards_description">
+           <property name="minimumSize">
+            <size>
+             <width>0</width>
+             <height>50</height>
+            </size>
+           </property>
            <property name="maximumSize">
             <size>
              <width>16777215</width>
@@ -368,47 +398,7 @@
          </item>
         </layout>
        </item>
-       <item row="6" column="5" colspan="2">
-        <widget class="QLineEdit" name="lineEdit_room_dimension">
-         <property name="maximumSize">
-          <size>
-           <width>50</width>
-           <height>16777215</height>
-          </size>
-         </property>
-         <property name="text">
-          <string>6</string>
-         </property>
-        </widget>
-       </item>
-       <item row="9" column="0" colspan="11">
-        <layout class="QHBoxLayout" name="horizontalLayout_5">
-         <item>
-          <widget class="QTextEdit" name="textEdit_room_description">
-           <property name="font">
-            <font>
-             <family>Viner Hand ITC</family>
-             <pointsize>10</pointsize>
-             <weight>50</weight>
-             <italic>false</italic>
-             <bold>false</bold>
-             <stylestrategy>PreferAntialias</stylestrategy>
-            </font>
-           </property>
-           <property name="lineWrapColumnOrWidth">
-            <number>1</number>
-           </property>
-           <property name="cursorWidth">
-            <number>-3</number>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QTextEdit" name="textEdit_monsters"/>
-         </item>
-        </layout>
-       </item>
-       <item row="10" column="0" colspan="11">
+       <item row="10" column="0" colspan="12">
         <layout class="QHBoxLayout" name="horizontalLayout_3">
          <item>
           <widget class="QPushButton" name="pushButton_treasures_finds">
@@ -493,8 +483,24 @@
          </item>
         </layout>
        </item>
-       <item row="6" column="3" colspan="2">
-        <widget class="QPushButton" name="pushButton_rooms">
+       <item row="0" column="0" colspan="3">
+        <widget class="QPushButton" name="pushButton_the_mission">
+         <property name="font">
+          <font>
+           <family>Viner Hand ITC</family>
+           <pointsize>10</pointsize>
+           <weight>50</weight>
+           <italic>false</italic>
+           <bold>false</bold>
+          </font>
+         </property>
+         <property name="text">
+          <string>Scopri la missione che Mentor ha per te!!!</string>
+         </property>
+        </widget>
+       </item>
+       <item row="11" column="0">
+        <widget class="QPushButton" name="pushButton_treasures_random">
          <property name="font">
           <font>
            <family>Viner Hand ITC</family>
@@ -502,11 +508,21 @@
           </font>
          </property>
          <property name="text">
-          <string>Scopri come è fatta la stanza</string>
+          <string>Cosa contiene?</string>
          </property>
         </widget>
        </item>
-       <item row="4" column="0" colspan="11">
+       <item row="1" column="0" colspan="12">
+        <widget class="QTextEdit" name="textEdit_the_mission">
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>80</height>
+          </size>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="0" colspan="12">
         <widget class="QTextEdit" name="textEdit_aisles">
          <property name="minimumSize">
           <size>
@@ -516,7 +532,86 @@
          </property>
         </widget>
        </item>
-       <item row="6" column="7">
+       <item row="11" column="5" colspan="7">
+        <widget class="QPushButton" name="pushButton_treasure_card">
+         <property name="font">
+          <font>
+           <family>Viner Hand ITC</family>
+           <pointsize>10</pointsize>
+          </font>
+         </property>
+         <property name="text">
+          <string>Pesca una carta dal mazzo dei tesori</string>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="0">
+        <widget class="QPushButton" name="pushButton_aisles">
+         <property name="maximumSize">
+          <size>
+           <width>200</width>
+           <height>16777215</height>
+          </size>
+         </property>
+         <property name="font">
+          <font>
+           <family>Viner Hand ITC</family>
+           <pointsize>10</pointsize>
+           <weight>50</weight>
+           <bold>false</bold>
+          </font>
+         </property>
+         <property name="text">
+          <string>Come è fatto il corridoio</string>
+         </property>
+        </widget>
+       </item>
+       <item row="5" column="2">
+        <widget class="QRadioButton" name="radioButton_not_explored">
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(255, 255, 255);</string>
+         </property>
+         <property name="text">
+          <string>Non esplorata</string>
+         </property>
+         <property name="checked">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="5" column="3">
+        <widget class="QRadioButton" name="radioButton_explored">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(255, 255, 255);</string>
+         </property>
+         <property name="text">
+          <string>Già esplorata</string>
+         </property>
+         <property name="checked">
+          <bool>false</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="6" column="3">
+        <widget class="QLineEdit" name="lineEdit_room_dimension">
+         <property name="maximumSize">
+          <size>
+           <width>50</width>
+           <height>16777215</height>
+          </size>
+         </property>
+         <property name="text">
+          <string>6</string>
+         </property>
+        </widget>
+       </item>
+       <item row="6" column="4">
         <widget class="QLabel" name="label_room_2">
          <property name="sizePolicy">
           <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
@@ -556,81 +651,8 @@
          </property>
         </widget>
        </item>
-       <item row="12" column="4" colspan="7">
-        <layout class="QVBoxLayout" name="verticalLayout">
-         <property name="spacing">
-          <number>2</number>
-         </property>
-         <property name="sizeConstraint">
-          <enum>QLayout::SetFixedSize</enum>
-         </property>
-         <item>
-          <widget class="QTextEdit" name="textEdit_treasure_cards_description">
-           <property name="minimumSize">
-            <size>
-             <width>0</width>
-             <height>50</height>
-            </size>
-           </property>
-           <property name="maximumSize">
-            <size>
-             <width>16777215</width>
-             <height>120</height>
-            </size>
-           </property>
-          </widget>
-         </item>
-        </layout>
-       </item>
-       <item row="3" column="0">
-        <widget class="QPushButton" name="pushButton_aisles">
-         <property name="maximumSize">
-          <size>
-           <width>200</width>
-           <height>16777215</height>
-          </size>
-         </property>
-         <property name="font">
-          <font>
-           <family>Viner Hand ITC</family>
-           <pointsize>10</pointsize>
-           <weight>50</weight>
-           <bold>false</bold>
-          </font>
-         </property>
-         <property name="text">
-          <string>Come è fatto il corridoio</string>
-         </property>
-        </widget>
-       </item>
-       <item row="1" column="0" colspan="11">
-        <widget class="QTextEdit" name="textEdit_the_mission">
-         <property name="minimumSize">
-          <size>
-           <width>0</width>
-           <height>80</height>
-          </size>
-         </property>
-        </widget>
-       </item>
-       <item row="0" column="0" colspan="3">
-        <widget class="QPushButton" name="pushButton_the_mission">
-         <property name="font">
-          <font>
-           <family>Viner Hand ITC</family>
-           <pointsize>10</pointsize>
-           <weight>50</weight>
-           <italic>false</italic>
-           <bold>false</bold>
-          </font>
-         </property>
-         <property name="text">
-          <string>Scopri la missione che Mentor ha per te!!!</string>
-         </property>
-        </widget>
-       </item>
-       <item row="11" column="0">
-        <widget class="QPushButton" name="pushButton_treasures_random">
+       <item row="5" column="4" colspan="2">
+        <widget class="QPushButton" name="pushButton_rooms">
          <property name="font">
           <font>
            <family>Viner Hand ITC</family>
@@ -638,20 +660,7 @@
           </font>
          </property>
          <property name="text">
-          <string>Cosa contiene?</string>
-         </property>
-        </widget>
-       </item>
-       <item row="11" column="4" colspan="4">
-        <widget class="QPushButton" name="pushButton_treasure_card">
-         <property name="font">
-          <font>
-           <family>Viner Hand ITC</family>
-           <pointsize>10</pointsize>
-          </font>
-         </property>
-         <property name="text">
-          <string>Pesca una carta dal mazzo dei tesori</string>
+          <string>Scopri come è fatta la stanza</string>
          </property>
         </widget>
        </item>
@@ -665,7 +674,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1198</width>
+     <width>1386</width>
      <height>33</height>
     </rect>
    </property>

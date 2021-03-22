@@ -19,8 +19,6 @@
  *                                                                         *
  ***************************************************************************/
 """
-
-
 import locale
 import sys, os
 import random
@@ -29,11 +27,11 @@ from PyQt5 import QtWidgets, uic
 
 #codeadded
 from PyQt5.QtCore import QSize
-from PyQt5.QtGui import QImage, QPalette, QBrush
+from PyQt5.QtGui import QImage, QPalette, QBrush, QPixmap
+from PyQt5.QtWidgets import QLabel
 
 #codeadde d/
 from heroquest_solo_function import Heroquest_solo
-
 
 class Ui(QtWidgets.QMainWindow):
     CONFIG = ""
@@ -51,59 +49,64 @@ class Ui(QtWidgets.QMainWindow):
 
     CURRENT_ROUND = ''
 
+    MONSTER_LIST = ''
+
+
+    #todo messaggio con punto di partenza
+    #todo aggiungere segnalatore di fine avventura scale trovate
+
+
     def __init__(self):
         super(Ui, self).__init__()
         self.acceptDrops()
+
         uic.loadUi(os.path.join(os.path.dirname(__file__),'heroquest_legends.ui'), self)
 
         self.HQ_SOLO = Heroquest_solo(self.CONFIG_DICT)
 
-        #add backgroundimage
-        #dir_path = os.path.dirname(__file__)
-
-        bg_img_path = './mappa.png'#os.path.join(os.path.dirname(__file__),'mappa.png')
-        print(bg_img_path)
-
+        bg_img_path = './mappa.png'  #os.path.join(os.path.dirname(__file__),'mappa.png')
         oImage = QImage(bg_img_path)
         sImage = oImage.scaled(QSize(800, 768))  # resize Image to widgets size
         palette = QPalette()
         palette.setBrush(QPalette.Window, QBrush(sImage))
+
         self.setPalette(palette)
 
         self.charge_list()
 
-        #self.label_image = QLabel(self)
-        #self.label_image.move(50,50)
-
         self.show()
 
-    def charge_list(self):
 
-        monsters_category = ['goblin',
-                             'orc',
-                             'fimir',
-                             'skeletor',
-                             'zombie',
-                             'mummie',
-                             'chaos_warrior',
-                             'gargoyle'
-                             ]
+    def charge_list(self):
+        db_monsters_charged = self.HQ_SOLO.MONSTERS_CATEGORY
+
+        self.MONSTER_LIST = []
+
+        for value in db_monsters_charged.values():
+            self.MONSTER_LIST.append(self.CONFIG_DICT['monster_name_conversion_dict'][value])
+
         self.comboBox_monster_attack.clear()
-        self.comboBox_monster_attack.addItems(monsters_category)
+
+        self.comboBox_monster_attack.addItems(self.MONSTER_LIST)
+
 
     def on_pushButton_the_mission_pressed(self):
-        print('gg0g')
         rng_base = random.SystemRandom()
+
         mission_number_rand = rng_base.randint(1, 2)
 
         the_mission_dict = self.CONFIG_DICT['missions_dict']
 
         rng_base = random.SystemRandom()
+
         wanderer_monster_number_rand = rng_base.randint(1, 7)
         wanderer_monster = self.CONFIG_DICT['monsters_dict'][wanderer_monster_number_rand]
         wanderer_monster_text = self.CONFIG_DICT['monsters_msg_3']
+
         the_mission_text = '{}\n{}{}'.format(the_mission_dict[mission_number_rand],wanderer_monster_text,wanderer_monster)
+
         self.textEdit_the_mission.setText(the_mission_text)
+
 
     def on_pushButton_round_pressed(self):
         self.textEdit_aisles.setText("")
@@ -114,10 +117,10 @@ class Ui(QtWidgets.QMainWindow):
         self.textEdit_traps.setText("")
         self.textEdit_secret_doors.setText("")
         self.textEdit_treasure_cards_description.setText("")
-
         current_turn = int(self.lineEdit_round.text())
         next_turn = current_turn+1
         self.lineEdit_round.setText(str(next_turn))
+
 
     def on_pushButton_aisles_pressed(self):
         current_turn = int(self.lineEdit_round.text())
@@ -134,21 +137,24 @@ class Ui(QtWidgets.QMainWindow):
         self.textEdit_aisles.setText("")
         self.textEdit_aisles.setText(str(msg))
 
+
     def on_pushButton_treasures_finds_pressed(self):
         msg = self.HQ_SOLO.treasures(self.HQ_SOLO.random_numbers())
         self.textEdit_treasures_finder.setText("")
         self.textEdit_treasures_finder.setText(str(msg))
+
 
     def on_pushButton_treasure_card_pressed(self):
         msg = self.HQ_SOLO.treasure_card(self.HQ_SOLO.random_numbers())
         self.textEdit_treasure_cards_description.setText("")
         self.textEdit_treasure_cards_description.setText(str(msg))
 
+
     def on_pushButton_treasures_random_pressed(self):
         msg = self.HQ_SOLO.treasure_random(self.HQ_SOLO.random_numbers())
-
         self.textEdit_treasures_description.setText("")
         self.textEdit_treasures_description.setText(str(msg))
+
 
     def on_pushButton_traps_and_secret_doors_finder_pressed(self):
         msg_traps = self.HQ_SOLO.traps(self.HQ_SOLO.random_numbers())
@@ -156,10 +162,10 @@ class Ui(QtWidgets.QMainWindow):
         self.textEdit_traps.setText(str(msg_traps))
         self.textEdit_secret_doors.setText(str(msg_secret_door))
 
+
     def on_pushButton_rooms_pressed(self):
         self.textEdit_room_description.setText('')
         self.textEdit_monsters.setText('')
-
         if self.radioButton_explored.isChecked() == True:
             room_explored = 1
         else:
@@ -173,9 +179,9 @@ class Ui(QtWidgets.QMainWindow):
         else:
             if msg_temp[2] != '':
                 msg_room = msg_temp[2]
-            elif msg_temp[0] == '' and  msg_temp[2] == '' and room_explored == 1:
+            elif msg_temp[0] == '' and msg_temp[2] == '' and room_explored == 1:
                 msg_room = self.HQ_SOLO.CONFIG_DICT['aux_msg_7']
-            elif msg_temp[0] == '' and  msg_temp[2] == '' and room_explored == 0:
+            elif msg_temp[0] == '' and msg_temp[2] == '' and room_explored == 0:
                 msg_room = self.HQ_SOLO.CONFIG_DICT['aux_msg_6']
             else:
                 msg_room = msg_temp[0]
@@ -184,32 +190,8 @@ class Ui(QtWidgets.QMainWindow):
 
         self.textEdit_monsters.setText(str(msg_temp[1]))
 
-
         #TODO test area to add images
-        """
-        #test area to add images
-        #image = QFileDialog.getOpenFileName(None, 'OpenFile', '', "Image file(*.jpg)")
-        #imagePath = image[0]
-        #pixmap = QPixmap(imagePath)
 
-        #if int(self.lineEdit_round.text()) == 1:
-            pixmap = QPixmap('C:\\Users\\Luca\\Programmazione\\heroquest_solo\\images\\goblin.png')
-
-            self.label_image.setPixmap(pixmap)
-            self.label_image.setGeometry(500, 500, 500, 700)
-
-            self.label_image.adjustSize()  # <---
-
-            ## print(ocr.resimden_yaziya(imagePath))
-            # print(imagePath)
-        else:
-            pixmap = QPixmap('C:\\Users\\Luca\\Programmazione\\heroquest_solo\\images\\fimir.png')
-
-            self.label_image.setPixmap(pixmap)
-            self.label_image.setGeometry(400, 400, 250, 250)
-
-            self.label_image.adjustSize()  # <---
-        """
 
     def on_pushButton_monster_attack_pressed(self):
         self.textEdit_combat_text.setText("")
@@ -238,5 +220,3 @@ class Ui(QtWidgets.QMainWindow):
 app = QtWidgets.QApplication(sys.argv)
 window = Ui()
 app.exec_()
-
-

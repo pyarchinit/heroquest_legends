@@ -24,7 +24,7 @@ import sqlite3
 class Heroquest_solo:
     """main class for variables management"""
     rng = random.SystemRandom()
-    TOTAL_NUMBER_OF_TURNS = rng.randint(4, 12)
+    TOTAL_NUMBER_OF_TURNS = rng.randint(8, 12)
 
     ESCAPE_FOUND = 0
     FIRST_ROOM = 0
@@ -103,17 +103,19 @@ class Heroquest_solo:
         #monsters dict that you can find inside a Room or in a aisle
         self.monsters_dict = self.CONFIG_DICT['monsters_dict']
 
-        #charge_the_special_room
+        #charge_the_special_room #todo add the real random number for the mission
 
-        self.SPECIAL_ROOM_CHARGED = self.CONFIG_DICT['specials_rooms'][1] #Replace the number with THE_MISSION = RAND_NUM
-        print(str(self.SPECIAL_ROOM_CHARGED))
+    def special_room_charged(self, mn):
+        self.THE_MISSION = int(mn)
+        self.SPECIAL_ROOM_CHARGED = self.CONFIG_DICT['specials_rooms'][self.THE_MISSION]
 
         #remove_forniture_for_special_room
         id_forniture_special_room_list = self.SPECIAL_ROOM_CHARGED[0] #charge id list
         for i in id_forniture_special_room_list:
-            tot_fornuture = self.FORNITURES_QTY_DICT[i]
-            new_tot_forniture = tot_fornuture-1
-            self.FORNITURES_QTY_DICT[i] = new_tot_forniture
+            tot_forniture = self.FORNITURES_QTY_DICT[i]
+            #print(tot_forniture)
+            new_tot_forniture = tot_forniture-1
+            self.FORNITURES_QTY_DICT[i] = new_tot_forniture #todo continua a non essere rimossa la serie di mobili
 
     def random_numbers(self):
         """ a random number generator based on four D6.
@@ -163,7 +165,7 @@ class Heroquest_solo:
     def room_generator(self, room_dimension, ct, re):
         """create random rooms with fornitures"""
         #TEST
-        print(str(self.SPECIAL_ROOM_CHARGED))
+        #print(str(self.SPECIAL_ROOM_CHARGED))
 
         #turn controller INPUT
         self.current_turn = ct
@@ -214,7 +216,11 @@ class Heroquest_solo:
                         #if there is residue space in rooms
                         if tot_square_taken < self.room_dimension:
                             if count == 0:
-                                msg_forniture = '{}{}{};'.format(msg_forniture, self.forniture_dict[id_forniture_rand],self.position_dict[self.r_num.randint(1, 5)])
+                                if id_forniture_rand == 11 or id_forniture_rand == 12:
+                                    msg_forniture = '{}{}{};'.format(msg_forniture, self.forniture_dict[id_forniture_rand],self.position_dict[self.r_num.randint(1, 3)])
+                                else:
+                                    msg_forniture = '{}{}{};'.format(msg_forniture, self.forniture_dict[id_forniture_rand],self.position_dict[self.r_num.randint(1, 5)])
+
                                 new_forniture_residue = forniture_residue - 1
                                 self.FORNITURES_QTY_DICT[id_forniture_rand] = new_forniture_residue
                                 count = 1
@@ -227,13 +233,14 @@ class Heroquest_solo:
                             tot_square_taken -= square_taken_temp
                     else: #if the forniture is not present
                         msg_forniture = msg_forniture
+                if msg_forniture != '':
+                    msg_rand = rng.randint(0, 3)
+                    aux_message = ['aux_msg_2', 'aux_msg_3', 'aux_msg_4', 'aux_msg_5']
+                    msg_forniture = '{} {}.'.format(self.CONFIG_DICT[aux_message[msg_rand]], msg_forniture)
             else:
                 msg_forniture = self.CONFIG_DICT['aux_msg_7']
 
-            if msg_forniture != '':
-                msg_rand = rng.randint(0, 3)
-                aux_message = ['aux_msg_2', 'aux_msg_3', 'aux_msg_4', 'aux_msg_5']
-                msg_forniture = '{} {}.'.format(self.CONFIG_DICT[aux_message[msg_rand]], msg_forniture)
+
 
         #generate the room
         if self.FIRST_ROOM == 1:
@@ -305,33 +312,37 @@ class Heroquest_solo:
         #sistem for discover aisles
         self.rv = rv #recive a random number beetween 4 and 24 for number of doors
         self.LR_n = self.r_num.randint(1, 2) #select beetween left ora right
-
+        print("qui 1")
         rock_msg_value = self.random_numbers()
 
         #generate a rock message and sometis with a monster
         if rock_msg_value > 0 and rock_msg_value <= 15:
+            print("qui 9")
             rocks_msg = self.CONFIG_DICT['aisles_msg_1']
 
         elif rock_msg_value > 15 and rock_msg_value <= 18:
+            print("qui 8")
             rocks_msg = self.CONFIG_DICT['aisles_msg_2']
         else:
-            wander_monster_list = [1, 2, 3, 7, 8, 9, 13]
-            rocks_msg = self.CONFIG_DICT['aisles_msg_3'].format(
-                self.monsters_dict[wander_monster_list[self.r_num.randint(0, len(wander_monster_list)-1)]])
-
+            print("qui 7")
+            rocks_msg = self.CONFIG_DICT['aisles_msg_3'].format(self.monsters_dict[self.r_num.randint(1, 7)])
+        print("qui 2")
         if self.rv > 1 and self.rv <= 12:
+            print('qui 3')
             msg_1 = self.CONFIG_DICT['aisles_msg_4'].format(self.position_dict[self.LR_n], rocks_msg)
             return '{} {}'.format(msg_1, self.CONFIG_DICT['aisles_msg_8'])
 
         elif self.rv > 12 and self.rv <= 20:
-
-            msg_1 =  self.CONFIG_DICT['aisles_msg_5'].format(self.position_dict[self.r_num.randint(1, 2)], self.position_dict[self.r_num.randint(1, 2)], rocks_msg)
+            print('qui 4')
+            msg_1 = self.CONFIG_DICT['aisles_msg_5'].format(self.position_dict[self.r_num.randint(1, 2)], self.position_dict[self.r_num.randint(1, 2)], rocks_msg)
             return '{} {}'.format(msg_1, self.CONFIG_DICT['aisles_msg_8'])
 
         elif self.rv > 20 and self.rv <= 24:
+            print('qui 4')
             msg_1 = self.CONFIG_DICT['aisles_msg_6'].format(self.position_dict[self.r_num.randint(1, 2)], self.position_dict[self.r_num.randint(1, 2)], self.position_dict[self.r_num.randint(1, 2)],rocks_msg)
             return '{} {}'.format(msg_1, self.CONFIG_DICT['aisles_msg_8'])
         else:
+            print('qui 5')
             return self.CONFIG_DICT['aisles_msg_7']
 
     def treasures(self, rv):

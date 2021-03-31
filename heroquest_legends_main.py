@@ -95,6 +95,8 @@ class Ui(QtWidgets.QMainWindow):
 
         mission_number_rand = rng_base.randint(1, 2)
 
+        self.HQ_SOLO.special_room_charged(mission_number_rand)
+
         the_mission_dict = self.CONFIG_DICT['missions_dict']
 
         rng_base = random.SystemRandom()

@@ -6,7 +6,7 @@
 'aisles_msg_5' : "Hai trovato due porte. Una prima porta {} e una seconda porta {}. Ognuna ti conduce ad una stanza inesplorata diversa. {}",
 'aisles_msg_6' : "Hai trovato tre porte. Colloca una prima porta {}, una seconda porta {} e una terza porta a {}. Ognuna ti conduce ad una stanza inesplorata diversa.{}",
 'aisles_msg_7' : "Non hai trovato nessuna porta.",
-'aisles_msg_8' : "ATTENZIONE. Se le porte indicate conducono fuori dal tabellone, mettile frontalmente sulla prima stanza utile. Se invece ti conducono su stanze già esplorate, collocale come porte segrete non trovate prima.",
+'aisles_msg_8' : "ATTENZIONE: Se le porte indicate conducono fuori dal tabellone, mettile frontalmente sulla prima stanza utile. Se invece ti conducono su stanze già esplorate, collocale come porte segrete non trovate prima.",
 'treasures_msg_1' : "Non hai trovato nulla. Pesca una carta dal mazzo dei Tesori.",
 'treasures_msg_2' : "Finalmente un tesoro. Scopri cosa contiene",
 'treasures_msg_3' : "Mentre cerchi tra vecchi stracci e ossa di sorcio, senti uno scatto: un dardo ti colpisce e perdi 1 punto corpo",
@@ -109,9 +109,9 @@
   'btn_7':"Nuovo turno",
   'aux_msg_1': 'Una porta ti conduce verso una zona inesplorata. {}',
   'aux_msg_2': 'Nella penombra vedi',
-  'aux_msg_3': 'Alla luce di alcune fiaccole accese vedi',
+  'aux_msg_3': 'La luce di alcune fiaccole accese illumina a mala pena i muri e vedete ',
   'aux_msg_4': 'Da una finestra entra della luce che illumina',
-  'aux_msg_5': 'Attendi che la vista si adatti al buio e vedi',
+  'aux_msg_5': 'Attendi che la vista si adatti al buio e vedi ',
   'aux_msg_6': 'La stanza è spoglia e solo muffa e sangue arredano le sue pareti.',
   'aux_msg_7': 'Siete tornati sui vostri passi e un rumore sinistro vi accoglie...cosa può essere?',
   'end_msg_1' : 'La via d\'uscita! Noti una pietra spostata nel muro e toccandola, un rumore di ingranaggi apre una voragine nel pavimento. Hai trovato le scale per uscire!',
@@ -170,12 +170,12 @@
                               3: ' dietro di lui',
                               4: ' davanti a lui'},
 
-  'missions_dict' : { 1: "Nelle terre di Hogarth, in un maniero abbandonato, si trova nascosto in un sotterraneo un antico laboratorio. Dovrai recuperare una pozione che il potente necrmante tiene nascosta da qualche parte. Trova il laboratorio e cerca di sopravvivere!!! (Metti gli eroi nell'angolo del corridoio in alto a destra del tabellone.",
-                      2: "Il re Volgarth darà una ricompensa di 150 monete d'oro a chi gli porterà la spada del leggendario Eriamar, re barbaro dei tempi antichi, la cui tomba si trova in fondo ad un profondo intrico di cunicoli. Vai nella fortezza di Gurmardath e cerca la tomba dell'antico re e recupera la sua spada. Metti le scale al centro con gli eroi; per vincere dovrai trovare la tomba e tornare indenne alla stanza delle scale."
+  'missions_dict' : { 1: "Nelle terre di Hogarth, in un maniero abbandonato, si trova nascosto in un sotterraneo un antico laboratorio. Dovrai recuperare una pozione che il potente necromante tiene nascosta da qualche parte. Trova il laboratorio e cerca di sopravvivere!!! (Metti gli eroi nell'angolo del corridoio in alto a destra del tabellone.",
+                      2: "Il re Volgarth darà una ricompensa di 150 monete d'oro a chi gli porterà la spada del leggendario Eriamar, re barbaro dei tempi antichi, la cui tomba si trova in fondo ad un profondo intrico di cunicoli. Vai nella fortezza di Gurmardath e cerca la tomba dell'antico re e recupera la sua spada. Metti le scale al centro con gli eroi e 4 porte chiuse al centro di ogni muro; per vincere dovrai trovare la tomba e tornare indenne alla stanza delle scale."
                      },
 
-  'specials_rooms' : {1: [[1,1,3,7], "Hai trovato la stanza di Hogarth, necromante della dinastia di Hamasul che qui ha il suo laboratorio. Metti sul fondo due scrigni, a sinistra il tavolo dell'alchimista e una libreria a destra."],
-                      2: [[9], "Hai trovato la stanza dove , necromante della dinastia di Hamasul che qui ha il suo laboratorio. Metti sul fondo due scrigni, a sinistra il tavolo dell'alchimista e una libreria a destra."]}
+  'specials_rooms' : {1: [[1,1,3,7], "Hai trovato la stanza di Hogarth, necromante della dinastia di Hamasul che qui ha il suo laboratorio. Metti sul fondo due scrigni, a sinistra il tavolo dell'alchimista e un armadio a destra."],
+                      2: [[9], "Hai trovato la catacomba in cui riposa Eriamar della dinastia di Hamasul. Presto! Prendi dalla sua tomba la spada. Appena la sollevi ecco giungere alcuni scricchiolii, la tomba si sposta e ti rivela le scale. Affrettati ad uscire prima di essere ucciso dagli spettri che difendono la tomba. Metti la tomba in fondo alla stanza, 3 scheletri e 3 mummie nella stanza (se non ci stanno mettile lungo il corridoio)."]}
 
 }
 

@@ -7,7 +7,7 @@
     begin                : 2021-01-02
     copyright            : (C) 2021 by Luca Mandolesi
     email                : mandoluca at gmail.com
-    version              : 0.6 BETA
+    version              : 0.7 ALPHA
  ***************************************************************************/
 
 /***************************************************************************
@@ -64,7 +64,7 @@ class Ui(QtWidgets.QMainWindow):
 
         self.HQ_SOLO = Heroquest_solo(self.CONFIG_DICT)
 
-        bg_img_path = './mappa.png'  #os.path.join(os.path.dirname(__file__),'mappa.png')
+        bg_img_path = './background.png'  #os.path.join(os.path.dirname(__file__),'mappa.png')
         oImage = QImage(bg_img_path)
         sImage = oImage.scaled(QSize(800, 768))  # resize Image to widgets size
         palette = QPalette()
@@ -89,11 +89,14 @@ class Ui(QtWidgets.QMainWindow):
 
         self.comboBox_monster_attack.addItems(self.MONSTER_LIST)
 
+        fornitures_list = self.CONFIG_DICT['forniture_name_reconversion_dict']
+        self.comboBox_fornitures.addItems([*fornitures_list])
+
 
     def on_pushButton_the_mission_pressed(self):
         rng_base = random.SystemRandom()
 
-        mission_number_rand = rng_base.randint(1, 2)
+        mission_number_rand = rng_base.randint(2, 2)
 
         self.HQ_SOLO.special_room_charged(mission_number_rand)
 
@@ -153,14 +156,16 @@ class Ui(QtWidgets.QMainWindow):
 
 
     def on_pushButton_treasures_random_pressed(self):
-        msg = self.HQ_SOLO.treasure_random(self.HQ_SOLO.random_numbers())
+        forniture = self.comboBox_fornitures.currentText()
+        msg = self.HQ_SOLO.treasure_random(self.HQ_SOLO.random_numbers(), forniture)
         self.textEdit_treasures_description.setText("")
         self.textEdit_treasures_description.setText(str(msg))
 
 
     def on_pushButton_traps_and_secret_doors_finder_pressed(self):
         msg_traps = self.HQ_SOLO.traps(self.HQ_SOLO.random_numbers())
-        msg_secret_door = self.HQ_SOLO.traps_secret_doors(self.HQ_SOLO.random_numbers())
+        msg_secret_door = self.HQ_SOLO.secret_doors(self.HQ_SOLO.random_numbers())
+
         self.textEdit_traps.setText(str(msg_traps))
         self.textEdit_secret_doors.setText(str(msg_secret_door))
 
@@ -187,6 +192,8 @@ class Ui(QtWidgets.QMainWindow):
                 msg_room = self.HQ_SOLO.CONFIG_DICT['aux_msg_6']
             else:
                 msg_room = msg_temp[0]
+
+        msg_room = msg_room.replace(';.', '.')
 
         self.textEdit_room_description.setText(str(msg_room))
 

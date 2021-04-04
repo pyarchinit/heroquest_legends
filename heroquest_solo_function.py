@@ -24,7 +24,7 @@ import sqlite3
 class Heroquest_solo:
     """main class for variables management"""
     rng = random.SystemRandom()
-    TOTAL_NUMBER_OF_TURNS = rng.randint(8, 12)
+    TOTAL_NUMBER_OF_TURNS = rng.randint(6, 10)
 
     ESCAPE_FOUND = 0
     FIRST_ROOM = 0
@@ -98,12 +98,10 @@ class Heroquest_solo:
         self.forniture_dict = self.CONFIG_DICT['fornitures_dict']
 
         #treasures dict that you can find inside a cest or in other forniture
-        self.treasures_dict =  self.CONFIG_DICT['treasures_dict']
+        self.treasures_dict =  self.CONFIG_DICT['treasures_card_dict']
 
         #monsters dict that you can find inside a Room or in a aisle
         self.monsters_dict = self.CONFIG_DICT['monsters_dict']
-
-        #charge_the_special_room #todo add the real random number for the mission
 
     def special_room_charged(self, mn):
         self.THE_MISSION = int(mn)
@@ -161,7 +159,6 @@ class Heroquest_solo:
 
         return rn_sum
 
-
     def room_generator(self, room_dimension, ct, re):
         """create random rooms with fornitures"""
         #TEST
@@ -188,7 +185,7 @@ class Heroquest_solo:
         forniture_numbers = rng.randint(1, 4)
         count = 0
         #if the current turn is max or equal and the escape is founded
-        if self.current_turn >= self.TOTAL_NUMBER_OF_TURNS and self.ESCAPE_FOUND==0:
+        if self.current_turn >= self.TOTAL_NUMBER_OF_TURNS and self.ESCAPE_FOUND==0 and self.room_explored == 0:
             msg_end = self.SPECIAL_ROOM_CHARGED[1] #Replace the number with THE_MISSION = RAND_NUM
             self.ESCAPE_FOUND = 1
         else:
@@ -217,15 +214,14 @@ class Heroquest_solo:
                         if tot_square_taken < self.room_dimension:
                             if count == 0:
                                 if id_forniture_rand == 11 or id_forniture_rand == 12:
-                                    msg_forniture = '{}{}{};'.format(msg_forniture, self.forniture_dict[id_forniture_rand],self.position_dict[self.r_num.randint(1, 3)])
+                                    msg_forniture = '{} {} {};'.format(msg_forniture, self.forniture_dict[id_forniture_rand],self.position_dict[self.r_num.randint(1, 3)])
                                 else:
-                                    msg_forniture = '{}{}{};'.format(msg_forniture, self.forniture_dict[id_forniture_rand],self.position_dict[self.r_num.randint(1, 5)])
-
+                                    msg_forniture = '{} {} {};'.format(msg_forniture, self.forniture_dict[id_forniture_rand],self.position_dict[self.r_num.randint(1, 5)])
                                 new_forniture_residue = forniture_residue - 1
                                 self.FORNITURES_QTY_DICT[id_forniture_rand] = new_forniture_residue
                                 count = 1
                             else:
-                                msg_forniture = '{}{}{}'.format(msg_forniture, self.forniture_dict[id_forniture_rand],
+                                msg_forniture = '{} {} {};'.format(msg_forniture, self.forniture_dict[id_forniture_rand],
                                                                  self.position_dict[self.r_num.randint(1, 5)])
                                 new_forniture_residue = forniture_residue - 1
                                 self.FORNITURES_QTY_DICT[id_forniture_rand] = new_forniture_residue
@@ -239,8 +235,6 @@ class Heroquest_solo:
                     msg_forniture = '{} {}.'.format(self.CONFIG_DICT[aux_message[msg_rand]], msg_forniture)
             else:
                 msg_forniture = self.CONFIG_DICT['aux_msg_7']
-
-
 
         #generate the room
         if self.FIRST_ROOM == 1:
@@ -265,23 +259,23 @@ class Heroquest_solo:
         msg_monsters = ''
         monsters_msg_partial = ''
 
-        if self.rv >= 20:
+        if self.rv >= 18:
             return '{} {}'.format(msg_monsters, self.CONFIG_DICT['monsters_msg_2'])
         else:
             if self.residual_tiles <= 3:
                 monsters_number = 1
             elif self.residual_tiles > 3 and self.residual_tiles <= 6:
                 rng_base = random.SystemRandom()
-                monsters_number = rng_base.randint(1, 2)
+                monsters_number = rng_base.randint(2, 3)
             elif self.residual_tiles > 6 and self.residual_tiles <= 12:
                 rng_base = random.SystemRandom()
-                monsters_number = rng_base.randint(1, 3)
+                monsters_number = rng_base.randint(2,4)
             elif self.residual_tiles > 12 and self.residual_tiles <= 20:
                 rng_base = random.SystemRandom()
-                monsters_number = rng_base.randint(1,6)
+                monsters_number = rng_base.randint(4,6)
             else:
                 rng_base = random.SystemRandom()
-                monsters_number = rng_base.randint(1, 6)
+                monsters_number = rng_base.randint(3, 6)
 
             for i in range(monsters_number):
                 rng_1 = random.SystemRandom()
@@ -312,87 +306,88 @@ class Heroquest_solo:
         #sistem for discover aisles
         self.rv = rv #recive a random number beetween 4 and 24 for number of doors
         self.LR_n = self.r_num.randint(1, 2) #select beetween left ora right
-        print("qui 1")
         rock_msg_value = self.random_numbers()
 
         #generate a rock message and sometis with a monster
         if rock_msg_value > 0 and rock_msg_value <= 15:
-            print("qui 9")
             rocks_msg = self.CONFIG_DICT['aisles_msg_1']
-
         elif rock_msg_value > 15 and rock_msg_value <= 18:
-            print("qui 8")
             rocks_msg = self.CONFIG_DICT['aisles_msg_2']
         else:
-            print("qui 7")
             rocks_msg = self.CONFIG_DICT['aisles_msg_3'].format(self.monsters_dict[self.r_num.randint(1, 7)])
-        print("qui 2")
+
         if self.rv > 1 and self.rv <= 12:
-            print('qui 3')
             msg_1 = self.CONFIG_DICT['aisles_msg_4'].format(self.position_dict[self.LR_n], rocks_msg)
-            return '{} {}'.format(msg_1, self.CONFIG_DICT['aisles_msg_8'])
 
+            return '{} {}'.format(msg_1, self.CONFIG_DICT['aisles_msg_8'])
         elif self.rv > 12 and self.rv <= 20:
-            print('qui 4')
             msg_1 = self.CONFIG_DICT['aisles_msg_5'].format(self.position_dict[self.r_num.randint(1, 2)], self.position_dict[self.r_num.randint(1, 2)], rocks_msg)
-            return '{} {}'.format(msg_1, self.CONFIG_DICT['aisles_msg_8'])
 
+            return '{} {}'.format(msg_1, self.CONFIG_DICT['aisles_msg_8'])
         elif self.rv > 20 and self.rv <= 24:
-            print('qui 4')
             msg_1 = self.CONFIG_DICT['aisles_msg_6'].format(self.position_dict[self.r_num.randint(1, 2)], self.position_dict[self.r_num.randint(1, 2)], self.position_dict[self.r_num.randint(1, 2)],rocks_msg)
+
             return '{} {}'.format(msg_1, self.CONFIG_DICT['aisles_msg_8'])
         else:
-            print('qui 5')
             return self.CONFIG_DICT['aisles_msg_7']
 
     def treasures(self, rv):
         self.rv = rv
-        if self.rv > 14 and self.rv <= 15:
-            return self.CONFIG_DICT['treasures_msg_1']
+        if self.rv > 1 and self.rv <= 15:
+            return self.CONFIG_DICT['treasures_msg_1'] #you find nothing. Draw a treasure card.
         elif self.rv > 15 and self.rv <= 22 :
-            return self.CONFIG_DICT['treasures_msg_2']
+            return self.CONFIG_DICT['treasures_msg_2'] #you find a random treasure
         elif self.rv > 22:
-            return self.CONFIG_DICT['treasures_msg_3']
+            return self.CONFIG_DICT['treasures_msg_3'] #You find a trap!
         else:
-            return self.CONFIG_DICT['treasures_msg_4']
+            return self.CONFIG_DICT['treasures_msg_4'] #you find nothing. Draw a treasure card.
 
-    def treasure_random(self, rv):
+    def treasure_random(self, rv, forniture):
         """"create a random treasures inside chest"""
-        self.rv = rv
-        if self.rv >= 4 and self.rv <= 12: #you'll find potions and items
-            items_list = []
-            nr_items_random = self.random_numbers()
-            if nr_items_random >=4 and nr_items_random  <= 18: #probability to find one treasure
-                items_numbers = 1
-            elif nr_items_random >18 and nr_items_random <= 20: #probability to find two treasure
-                items_numbers = 2
-            else:
-                items_numbers = 3 #probability to find three treasure
+        self.forniture = forniture
 
-            for i in range(items_numbers):
-                items_list.append(self.treasures_dict[self.r_num.randint(1, 20)]) #select randomly
-            items_list_str = self.CONFIG_DICT['chest_msg_1'].format('\n'.join(items_list))
-            return items_list_str
+        self.rv = rv
+        string_to_print = str(self.rv)+ " "+self.forniture
+        print(string_to_print)
+        if self.rv > 1 and self.rv <= 12: #a special treasure
+            print("test 1")
+            forniture_id_txt = self.CONFIG_DICT['forniture_name_reconversion_dict'][self.forniture]
+            print("subtest 1.1")
+            treasure_list = self.CONFIG_DICT['treasures_random_type'][forniture_id_txt]
+            print("subtest 1.2")
+            max_rand_value = len(treasure_list)-1
+            print("subtest 1.3")
+            rng = random.SystemRandom()
+            print("subtest 1.4")
+            value_for_selection = rng.randint(0, max_rand_value)
+            print("subtest 1.5")
+            msg_random_treasure = treasure_list[value_for_selection]
+            print("subtest 1.6")
+            return msg_random_treasure
+
         elif self.rv > 12 and self.rv <= 20: #you'll find gold coins
-            print("tres_rand_2")
+            print("test 2")
             msg = self.CONFIG_DICT['chest_msg_2'].format(self.r_num.randrange(1, 150, 5)-1)
             return msg
+
         elif self.rv > 20 and self.rv <= 22:  #you'll find a trap!
-            print("tres_rand_3")
+            print("test 3")
             return self.CONFIG_DICT['chest_msg_3']
         else:
+            print("test 4")
             rng_1 = random.SystemRandom() #you'll find a weapon
             weapon_rand_num = rng_1.randint(1, 9)
             msg = self.CONFIG_DICT['chest_msg_4'].format(self.CONFIG_DICT['weapons_dict'][weapon_rand_num])
+
             return msg
 
     def treasure_card(self, rv):
         """"create a random treasures inside chest"""
         self.rv = rv
-        if self.rv > 1 and self.rv <= 12: #you'll find a wanderer monster
+        if self.rv >= 1 and self.rv <= 12: #you'll find a wanderer monster
             treasure_description = self.CONFIG_DICT["treasures_dict"][19]
             return treasure_description
-        elif self.rv > 13 and self.rv <= 16: #you'll find a heoling potion
+        elif self.rv > 12 and self.rv <= 16: #you'll find a healing potion
             treasure_description = self.CONFIG_DICT["treasures_dict"][5]
             return treasure_description
         elif self.rv > 16:
@@ -400,18 +395,18 @@ class Heroquest_solo:
             treasure_description = self.CONFIG_DICT["treasures_dict"][rng_1.randint(1, 20)]
             return treasure_description
 
-    def traps_secret_doors(self, rv):
+    def secret_doors(self, rv):
         """Create random doors for aisles"""
         self.rv = rv
 
-
-        if self.rv <= 13:
-            return self.CONFIG_DICT['secret_doors_msg_1']
-        elif self.rv > 13 and self.rv <= 24:
+        if self.rv >= 1 and self.rv <= 15:
+            return self.CONFIG_DICT['secret_doors_msg_1'] #no secret doors
+        elif self.rv > 15 and self.rv <= 20 :
             value_LR = self.r_num.randint(1, 3)
-            return self.CONFIG_DICT['secret_doors_msg_2'].format(self.position_dict[self.r_num.randint(1, 3)])
+            return self.CONFIG_DICT['secret_doors_msg_2'].format(self.position_dict[value_LR]) #find a secret doot
         else:
-            return self.CONFIG_DICT['secret_doors_msg_1']
+
+            return self.CONFIG_DICT['secret_doors_msg_3'] #find a trapdoor
 
     def traps(self, rv):
         """search for traps"""

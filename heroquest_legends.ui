@@ -43,7 +43,7 @@
   </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QGridLayout" name="gridLayout_2">
-    <item row="2" column="4" rowspan="2">
+    <item row="1" column="4" rowspan="2">
      <widget class="QWidget" name="widget_2" native="true">
       <property name="minimumSize">
        <size>
@@ -98,20 +98,17 @@
         </widget>
        </item>
        <item row="4" column="0">
-        <layout class="QHBoxLayout" name="horizontalLayout">
+        <layout class="QVBoxLayout" name="verticalLayout_3">
          <item>
-          <widget class="QPushButton" name="pushButton_round">
-           <property name="font">
-            <font>
-             <family>Viner Hand ITC</family>
-             <pointsize>10</pointsize>
-             <weight>50</weight>
-             <italic>false</italic>
-             <bold>false</bold>
-            </font>
+          <widget class="QLabel" name="label_3">
+           <property name="maximumSize">
+            <size>
+             <width>16777215</width>
+             <height>20</height>
+            </size>
            </property>
            <property name="styleSheet">
-            <string notr="true">color: rgb(255, 255, 255);</string>
+            <string notr="true">background-color: rgb(255, 255, 255);</string>
            </property>
            <property name="text">
             <string>Round</string>
@@ -137,101 +134,8 @@
            </property>
           </widget>
          </item>
-        </layout>
-       </item>
-      </layout>
-     </widget>
-    </item>
-    <item row="2" column="5" rowspan="2">
-     <spacer name="horizontalSpacer_3">
-      <property name="orientation">
-       <enum>Qt::Horizontal</enum>
-      </property>
-      <property name="sizeType">
-       <enum>QSizePolicy::Fixed</enum>
-      </property>
-      <property name="sizeHint" stdset="0">
-       <size>
-        <width>40</width>
-        <height>20</height>
-       </size>
-      </property>
-     </spacer>
-    </item>
-    <item row="1" column="4">
-     <widget class="QLabel" name="label">
-      <property name="maximumSize">
-       <size>
-        <width>16777215</width>
-        <height>31</height>
-       </size>
-      </property>
-      <property name="font">
-       <font>
-        <family>Viner Hand ITC</family>
-        <pointsize>10</pointsize>
-        <weight>50</weight>
-        <italic>false</italic>
-        <bold>false</bold>
-       </font>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-color: rgb(255, 255, 255);</string>
-      </property>
-      <property name="text">
-       <string>AREA DI COMBATTIMENTO</string>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignCenter</set>
-      </property>
-     </widget>
-    </item>
-    <item row="2" column="0" rowspan="2">
-     <spacer name="horizontalSpacer">
-      <property name="orientation">
-       <enum>Qt::Horizontal</enum>
-      </property>
-      <property name="sizeType">
-       <enum>QSizePolicy::Fixed</enum>
-      </property>
-      <property name="sizeHint" stdset="0">
-       <size>
-        <width>40</width>
-        <height>20</height>
-       </size>
-      </property>
-     </spacer>
-    </item>
-    <item row="2" column="2">
-     <spacer name="horizontalSpacer_2">
-      <property name="orientation">
-       <enum>Qt::Horizontal</enum>
-      </property>
-      <property name="sizeType">
-       <enum>QSizePolicy::Fixed</enum>
-      </property>
-      <property name="sizeHint" stdset="0">
-       <size>
-        <width>20</width>
-        <height>20</height>
-       </size>
-      </property>
-     </spacer>
-    </item>
-    <item row="1" column="3" rowspan="3">
-     <widget class="Line" name="line">
-      <property name="orientation">
-       <enum>Qt::Vertical</enum>
-      </property>
-     </widget>
-    </item>
-    <item row="1" column="1" rowspan="3" colspan="2">
-     <widget class="QWidget" name="widget" native="true">
-      <layout class="QGridLayout" name="gridLayout">
-       <item row="9" column="0" colspan="12">
-        <layout class="QHBoxLayout" name="horizontalLayout_5">
          <item>
-          <widget class="QTextEdit" name="textEdit_room_description">
+          <widget class="QPushButton" name="pushButton_round">
            <property name="font">
             <font>
              <family>Viner Hand ITC</family>
@@ -239,35 +143,30 @@
              <weight>50</weight>
              <italic>false</italic>
              <bold>false</bold>
-             <stylestrategy>PreferAntialias</stylestrategy>
             </font>
            </property>
-           <property name="lineWrapColumnOrWidth">
-            <number>1</number>
+           <property name="styleSheet">
+            <string notr="true">color: rgb(0, 0, 0);</string>
            </property>
-           <property name="cursorWidth">
-            <number>-3</number>
+           <property name="text">
+            <string>Prossimo Round</string>
            </property>
           </widget>
-         </item>
-         <item>
-          <widget class="QTextEdit" name="textEdit_monsters"/>
          </item>
         </layout>
        </item>
-       <item row="12" column="0" colspan="5">
-        <layout class="QHBoxLayout" name="horizontalLayout_4">
-         <item>
-          <widget class="QTextEdit" name="textEdit_treasures_description">
-           <property name="maximumSize">
-            <size>
-             <width>16777215</width>
-             <height>120</height>
-            </size>
-           </property>
-          </widget>
-         </item>
-        </layout>
+      </layout>
+     </widget>
+    </item>
+    <item row="0" column="1" rowspan="3" colspan="2">
+     <widget class="QWidget" name="widget" native="true">
+      <layout class="QGridLayout" name="gridLayout">
+       <item row="2" column="0" colspan="11">
+        <widget class="Line" name="line_2">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+        </widget>
        </item>
        <item row="13" column="0" colspan="12">
         <layout class="QVBoxLayout" name="verticalLayout_2">
@@ -352,12 +251,32 @@
          </property>
         </widget>
        </item>
-       <item row="2" column="0" colspan="11">
-        <widget class="Line" name="line_2">
-         <property name="orientation">
-          <enum>Qt::Horizontal</enum>
-         </property>
-        </widget>
+       <item row="9" column="0" colspan="12">
+        <layout class="QHBoxLayout" name="horizontalLayout_5">
+         <item>
+          <widget class="QTextEdit" name="textEdit_room_description">
+           <property name="font">
+            <font>
+             <family>Viner Hand ITC</family>
+             <pointsize>10</pointsize>
+             <weight>50</weight>
+             <italic>false</italic>
+             <bold>false</bold>
+             <stylestrategy>PreferAntialias</stylestrategy>
+            </font>
+           </property>
+           <property name="lineWrapColumnOrWidth">
+            <number>1</number>
+           </property>
+           <property name="cursorWidth">
+            <number>-3</number>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QTextEdit" name="textEdit_monsters"/>
+         </item>
+        </layout>
        </item>
        <item row="5" column="0" colspan="2">
         <widget class="QLabel" name="label_2">
@@ -372,22 +291,10 @@
          </property>
         </widget>
        </item>
-       <item row="12" column="5" colspan="7">
-        <layout class="QVBoxLayout" name="verticalLayout">
-         <property name="spacing">
-          <number>2</number>
-         </property>
-         <property name="sizeConstraint">
-          <enum>QLayout::SetFixedSize</enum>
-         </property>
+       <item row="12" column="0" colspan="5">
+        <layout class="QHBoxLayout" name="horizontalLayout_4">
          <item>
-          <widget class="QTextEdit" name="textEdit_treasure_cards_description">
-           <property name="minimumSize">
-            <size>
-             <width>0</width>
-             <height>50</height>
-            </size>
-           </property>
+          <widget class="QTextEdit" name="textEdit_treasures_description">
            <property name="maximumSize">
             <size>
              <width>16777215</width>
@@ -397,107 +304,6 @@
           </widget>
          </item>
         </layout>
-       </item>
-       <item row="10" column="0" colspan="12">
-        <layout class="QHBoxLayout" name="horizontalLayout_3">
-         <item>
-          <widget class="QPushButton" name="pushButton_treasures_finds">
-           <property name="font">
-            <font>
-             <family>Viner Hand ITC</family>
-             <pointsize>10</pointsize>
-            </font>
-           </property>
-           <property name="text">
-            <string>Ci sono tesori nel ...</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QComboBox" name="comboBox_fornitures">
-           <property name="font">
-            <font>
-             <family>Viner Hand ITC</family>
-             <pointsize>10</pointsize>
-             <weight>50</weight>
-             <italic>false</italic>
-             <bold>false</bold>
-            </font>
-           </property>
-           <item>
-            <property name="text">
-             <string>Scrigno</string>
-            </property>
-           </item>
-           <item>
-            <property name="text">
-             <string>Trono</string>
-            </property>
-           </item>
-           <item>
-            <property name="text">
-             <string>Armadio</string>
-            </property>
-           </item>
-           <item>
-            <property name="text">
-             <string>Libreria</string>
-            </property>
-           </item>
-           <item>
-            <property name="text">
-             <string>Caminetto</string>
-            </property>
-           </item>
-           <item>
-            <property name="text">
-             <string>Tavolo di tortura</string>
-            </property>
-           </item>
-           <item>
-            <property name="text">
-             <string>Tavolo dell'Alchimista</string>
-            </property>
-           </item>
-           <item>
-            <property name="text">
-             <string>Bancone del Mago</string>
-            </property>
-           </item>
-           <item>
-            <property name="text">
-             <string>Tomba</string>
-            </property>
-           </item>
-          </widget>
-         </item>
-         <item>
-          <widget class="QTextEdit" name="textEdit_treasures_finder">
-           <property name="maximumSize">
-            <size>
-             <width>16777215</width>
-             <height>50</height>
-            </size>
-           </property>
-          </widget>
-         </item>
-        </layout>
-       </item>
-       <item row="0" column="0" colspan="3">
-        <widget class="QPushButton" name="pushButton_the_mission">
-         <property name="font">
-          <font>
-           <family>Viner Hand ITC</family>
-           <pointsize>10</pointsize>
-           <weight>50</weight>
-           <italic>false</italic>
-           <bold>false</bold>
-          </font>
-         </property>
-         <property name="text">
-          <string>Scopri la missione che Mentor ha per te!!!</string>
-         </property>
-        </widget>
        </item>
        <item row="11" column="0">
         <widget class="QPushButton" name="pushButton_treasures_random">
@@ -509,16 +315,6 @@
          </property>
          <property name="text">
           <string>Cosa contiene?</string>
-         </property>
-        </widget>
-       </item>
-       <item row="1" column="0" colspan="12">
-        <widget class="QTextEdit" name="textEdit_the_mission">
-         <property name="minimumSize">
-          <size>
-           <width>0</width>
-           <height>80</height>
-          </size>
          </property>
         </widget>
        </item>
@@ -566,6 +362,72 @@
          </property>
         </widget>
        </item>
+       <item row="12" column="5" colspan="7">
+        <layout class="QVBoxLayout" name="verticalLayout">
+         <property name="spacing">
+          <number>2</number>
+         </property>
+         <property name="sizeConstraint">
+          <enum>QLayout::SetFixedSize</enum>
+         </property>
+         <item>
+          <widget class="QTextEdit" name="textEdit_treasure_cards_description">
+           <property name="minimumSize">
+            <size>
+             <width>0</width>
+             <height>50</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>16777215</width>
+             <height>120</height>
+            </size>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item row="10" column="0" colspan="12">
+        <layout class="QHBoxLayout" name="horizontalLayout_3">
+         <item>
+          <widget class="QComboBox" name="comboBox_fornitures">
+           <property name="font">
+            <font>
+             <family>Viner Hand ITC</family>
+             <pointsize>10</pointsize>
+             <weight>50</weight>
+             <italic>false</italic>
+             <bold>false</bold>
+            </font>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="pushButton_treasures_finds">
+           <property name="font">
+            <font>
+             <family>Viner Hand ITC</family>
+             <pointsize>10</pointsize>
+            </font>
+           </property>
+           <property name="text">
+            <string>Ci sono tesori nel ...</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QTextEdit" name="textEdit_treasures_finder">
+           <property name="maximumSize">
+            <size>
+             <width>16777215</width>
+             <height>50</height>
+            </size>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
        <item row="5" column="2">
         <widget class="QRadioButton" name="radioButton_not_explored">
          <property name="styleSheet">
@@ -611,7 +473,33 @@
          </property>
         </widget>
        </item>
-       <item row="6" column="4">
+       <item row="0" column="0" colspan="3">
+        <widget class="QPushButton" name="pushButton_the_mission">
+         <property name="font">
+          <font>
+           <family>Viner Hand ITC</family>
+           <pointsize>10</pointsize>
+           <weight>50</weight>
+           <italic>false</italic>
+           <bold>false</bold>
+          </font>
+         </property>
+         <property name="text">
+          <string>Scopri la missione che Mentor ha per te!!!</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="0" colspan="12">
+        <widget class="QTextEdit" name="textEdit_the_mission">
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>80</height>
+          </size>
+         </property>
+        </widget>
+       </item>
+       <item row="7" column="3">
         <widget class="QLabel" name="label_room_2">
          <property name="sizePolicy">
           <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
@@ -651,7 +539,7 @@
          </property>
         </widget>
        </item>
-       <item row="5" column="4" colspan="2">
+       <item row="7" column="6">
         <widget class="QPushButton" name="pushButton_rooms">
          <property name="font">
           <font>
@@ -665,6 +553,89 @@
         </widget>
        </item>
       </layout>
+     </widget>
+    </item>
+    <item row="1" column="2">
+     <spacer name="horizontalSpacer_2">
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+      <property name="sizeType">
+       <enum>QSizePolicy::Fixed</enum>
+      </property>
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>20</width>
+        <height>20</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
+    <item row="0" column="3" rowspan="3">
+     <widget class="Line" name="line">
+      <property name="orientation">
+       <enum>Qt::Vertical</enum>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="0" rowspan="2">
+     <spacer name="horizontalSpacer">
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+      <property name="sizeType">
+       <enum>QSizePolicy::Fixed</enum>
+      </property>
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>40</width>
+        <height>20</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
+    <item row="1" column="5" rowspan="2">
+     <spacer name="horizontalSpacer_3">
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+      <property name="sizeType">
+       <enum>QSizePolicy::Fixed</enum>
+      </property>
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>40</width>
+        <height>20</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
+    <item row="0" column="4">
+     <widget class="QLabel" name="label">
+      <property name="maximumSize">
+       <size>
+        <width>16777215</width>
+        <height>31</height>
+       </size>
+      </property>
+      <property name="font">
+       <font>
+        <family>Viner Hand ITC</family>
+        <pointsize>10</pointsize>
+        <weight>50</weight>
+        <italic>false</italic>
+        <bold>false</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(255, 255, 255);</string>
+      </property>
+      <property name="text">
+       <string>AREA DI COMBATTIMENTO</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
      </widget>
     </item>
    </layout>

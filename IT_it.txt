@@ -54,7 +54,7 @@
                      16: "La fortuna è dalla vostra! In un piccolo scrigno, nascostro sotto ad una vecchia pelliccia, scoprite 100 monete d'oro. Dopo averle registrate sul retro del vostro foglio segna-punti rimettete la carta nel mazzo del tesoro.",
                      17: "Avete trovato una vecchia cassettina di legno tarlato che, all'interno, è foderata di raso rosso e contiene gioielli del valore di 50 monete d'oro. Riportate la cifra sul retro del vostro foglio segna-punti e rimettete questa carta nel mazzo del tesoro.",
                      18: "Nascosta dentro la punta di un vecchio stivale trovate una pietra preziosa del valore di 50 monete d'oro. Segnate il valore sul retro del foglio segna-punti e riponete la carta nel mazzo del tesoro.",
-                     19: "Mentre siete occupati nella ricerca un mostro vi soprende furtivamente alle spalle e vi attacca. Lo Stregone dovrà mettere il mostro errante, menzionato per questa avventura nel libro delle imprese, in una casella qualsiasi a voi adiacente. Il mostro vi attaccherà subito.",
+                     19: "Mentre siete occupati nella ricerca un mostro vi soprende furtivamente alle spalle e vi attacca. Lo Stregone dovrà mettere il mostro errante, menzionato per questa avventura nel libro delle imprese, in una casella qualsiasi a te adiacente. Il mostro vi attaccherà subito.",
                      20: "Nonostante abbiate cercato ovunque non trovate ... niente!"},
 
 'random_treasures_dict' : {'a' : 0},
@@ -126,7 +126,7 @@
             'fimir'         : 5,
             'skeleton'      : 3,
             'zombie'        : 7,
-            'mummie'        : 6,
+            'mummy'         : 6,
             'chaos_warrior' : 8,
             'gargoyle'      : 9
                             },
@@ -187,7 +187,7 @@
   'treasures_random_type' : { 'chest'          : ["Uno scrigno pieno di gioielli del valore di 200 monete d'oro.",
                                                   "Tra varie cianfrusaglie notate un luccichio sul fondo. Avete trovato uno Spadino. Prendete la relativa carta e annotatevi il valore di attacco.",
                                                   "Aprite lo scrigno e scoprire sfortunatamente che qualcuno è passato prima di voi, a parte un straccio che protegge una fiala (Si tratta di una pozione curativa per 2 punti corpo).",
-                                                  "Un forziere ricolmo d'oro! Sono 500 monete d\'oro ma se deciderete di trasportarle dovrete muovermi con un dado in meno. A voi la scelta!"],
+                                                  "Un forziere ricolmo d'oro! Sono 500 monete d\'oro ma se deciderete di trasportarle dovrete muovermi con un dado in meno. A te la scelta!"],
                               'throne'         : ["Frugate nelle imbottiture e scovate 25 monete d'oro. Un magro bottino ma meglio di niente...",
                                                   "Il trono sembra mal ridotto e il legno infradiciato, ma vi accorgete che sopra allo schienale è incastonata una gemma del valore di 150 monete d'oro",
                                                   "Frugate ovunque e alla fine vi accorgete di uno scomparto segreto nel poggiolo. Trovate un pugnale da lancio con +1 punto di attacco da vicino e +2 se lo lanciate.",

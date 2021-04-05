@@ -350,20 +350,20 @@ class Heroquest_solo:
     def treasures(self, rv):
         self.rv = rv
         if self.rv > 1 and self.rv <= 15:
-            return self.CONFIG_DICT['treasures_msg_1'] #you find nothing. Draw a treasure card.
+            return (self.CONFIG_DICT['treasures_msg_1'], 0) #you find nothing. Draw a treasure card.
         elif self.rv > 15 and self.rv <= 22 :
-            return self.CONFIG_DICT['treasures_msg_2'] #you find a random treasure
+            return (self.CONFIG_DICT['treasures_msg_2'], 1) #you find a random treasure
         elif self.rv > 22:
-            return self.CONFIG_DICT['treasures_msg_3'] #You find a trap!
+            return (self.CONFIG_DICT['treasures_msg_3'], 0) #You find a trap!
         else:
-            return self.CONFIG_DICT['treasures_msg_4'] #you find nothing. Draw a treasure card.
+            return (self.CONFIG_DICT['treasures_msg_4'], 1) #you find nothing. Draw a treasure card.
 
     def treasure_random(self, rv, forniture):
         """"create a random treasures inside chest"""
         self.forniture = forniture
 
         self.rv = rv
-        if self.rv > 1 and self.rv <= 12: #a special treasure
+        if self.rv > 1 and self.rv <= 13 and self.forniture != '-': #a special treasure
             forniture_id_txt = self.CONFIG_DICT['forniture_name_reconversion_dict'][self.forniture]
             treasure_list = self.CONFIG_DICT['treasures_random_type'][forniture_id_txt]
             max_rand_value = len(treasure_list)-1
@@ -372,8 +372,8 @@ class Heroquest_solo:
             msg_random_treasure = treasure_list[value_for_selection]
             return msg_random_treasure
 
-        elif self.rv > 12 and self.rv <= 20: #you'll find gold coins
-            msg = self.CONFIG_DICT['chest_msg_2'].format(self.r_num.randrange(1, 150, 5)-1)
+        elif self.rv > 13 and self.rv <= 20: #you'll find gold coins
+            msg = self.CONFIG_DICT['chest_msg_2'].format(self.r_num.randrange(50, 150, 5))
             return msg
 
         elif self.rv > 20 and self.rv <= 22:  #you'll find a trap!

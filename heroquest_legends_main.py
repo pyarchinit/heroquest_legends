@@ -51,6 +51,8 @@ class Ui(QtWidgets.QMainWindow):
 
     MONSTER_LIST = ''
 
+    TREASURES_FINDS = 0
+
 
     #todo messaggio con punto di partenza
     #todo aggiungere segnalatore di fine avventura scale trovate
@@ -144,7 +146,12 @@ class Ui(QtWidgets.QMainWindow):
 
 
     def on_pushButton_treasures_finds_pressed(self):
-        msg = self.HQ_SOLO.treasures(self.HQ_SOLO.random_numbers())
+        self.textEdit_treasures_description.setText("")
+        res = self.HQ_SOLO.treasures(self.HQ_SOLO.random_numbers())
+        msg = res[0]
+        self.TREASURES_FINDS = res[1]
+        if self.TREASURES_FINDS == 1:
+            self.pushButton_treasures_random.setEnabled(True)
         self.textEdit_treasures_finder.setText("")
         self.textEdit_treasures_finder.setText(str(msg))
 
@@ -156,9 +163,11 @@ class Ui(QtWidgets.QMainWindow):
 
 
     def on_pushButton_treasures_random_pressed(self):
+        self.textEdit_treasures_description.setText("")
         forniture = self.comboBox_fornitures.currentText()
         msg = self.HQ_SOLO.treasure_random(self.HQ_SOLO.random_numbers(), forniture)
-        self.textEdit_treasures_description.setText("")
+        self.pushButton_treasures_random.setEnabled(False)
+        self.TREASURES_FINDS = 0
         self.textEdit_treasures_description.setText(str(msg))
 
 

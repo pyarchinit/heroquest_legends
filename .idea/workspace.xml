@@ -4,13 +4,7 @@
     <bookmark url="file://$PROJECT_DIR$/cocos2D_gui.py" description="label.position = (320, 240)" line="20" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f0731132-1647-4714-b667-c61b5640c3c3" name="Default Changelist" comment="Monster Class System added">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/IT_it.txt" beforeDir="false" afterPath="$PROJECT_DIR$/IT_it.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db_heroquest_legends.sqlite" beforeDir="false" afterPath="$PROJECT_DIR$/db_heroquest_legends.sqlite" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/heroquest_legends_main.py" beforeDir="false" afterPath="$PROJECT_DIR$/heroquest_legends_main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/heroquest_solo_function.py" beforeDir="false" afterPath="$PROJECT_DIR$/heroquest_solo_function.py" afterDir="false" />
-    </list>
+    <list default="true" id="f0731132-1647-4714-b667-c61b5640c3c3" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,13 +59,13 @@
           <entry key="dummy" value="21" />
           <entry key="md" value="94" />
           <entry key="py" value="18228" />
-          <entry key="txt" value="13280" />
+          <entry key="txt" value="13414" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="Markdown" value="94" />
-          <entry key="PLAIN_TEXT" value="13301" />
+          <entry key="PLAIN_TEXT" value="13435" />
           <entry key="Python" value="19012" />
         </counts>
       </usages-collector>
@@ -85,8 +79,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/heroquest_legends_main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="216">
-              <caret line="9" column="30" selection-start-line="9" selection-start-column="30" selection-end-line="9" selection-end-column="30" />
+            <state relative-caret-position="192">
+              <caret line="8" column="34" selection-start-line="8" selection-start-column="34" selection-end-line="8" selection-end-column="34" />
             </state>
           </provider>
         </entry>
@@ -640,7 +634,14 @@
       <option name="project" value="LOCAL" />
       <updated>1617570874083</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="Monster Class System added.&#10;The system allows to charge one or more classes of monster for real immersive settings of the adventure.">
+      <created>1617618470841</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1617618470841</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TodoView">
@@ -654,18 +655,17 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="878" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Favorites" order="0" sideWeight="0.3614679" side_tool="true" weight="0.26635823" />
-      <window_info content_ui="combo" id="Project" order="1" sideWeight="0.41980198" visible="true" weight="0.22670192" />
-      <window_info id="Structure" order="2" sideWeight="0.58019805" side_tool="true" visible="true" weight="0.22670192" />
-      <window_info anchor="bottom" id="Terminal" order="0" sideWeight="0.4990086" weight="0.5567867" />
+      <window_info content_ui="combo" id="Project" order="1" sideWeight="0.42105263" visible="true" weight="0.22670192" />
+      <window_info id="Structure" order="2" sideWeight="0.57894737" side_tool="true" visible="true" weight="0.22670192" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="0" sideWeight="0.4990086" visible="true" weight="0.15789473" />
       <window_info anchor="bottom" id="Event Log" order="1" sideWeight="0.32253802" side_tool="true" weight="0.28393352" />
       <window_info anchor="bottom" id="Python Console" order="2" sideWeight="0.8360872" weight="0.14127424" />
       <window_info anchor="bottom" id="Message" order="3" />
       <window_info anchor="bottom" id="Find" order="4" weight="0.32963988" />
       <window_info anchor="bottom" id="Version Control" order="5" sideWeight="0.4976867" weight="0.433518" />
-      <window_info active="true" anchor="bottom" id="Run" order="6" sideWeight="0.677462" visible="true" weight="0.300554" />
+      <window_info anchor="bottom" id="Run" order="6" sideWeight="0.677462" weight="0.300554" />
       <window_info anchor="bottom" id="Debug" order="7" weight="0.54432136" />
       <window_info anchor="bottom" id="Cvs" order="8" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="9" weight="0.4" />
@@ -703,7 +703,8 @@
     <MESSAGE value="Updated special rooms forniture system updated" />
     <MESSAGE value="New treasure system: the treasures are related to the forniture" />
     <MESSAGE value="Minor bug fixed. 0.7 Alpha" />
-    <option name="LAST_COMMIT_MESSAGE" value="Minor bug fixed. 0.7 Alpha" />
+    <MESSAGE value="Monster Class System added.&#10;The system allows to charge one or more classes of monster for real immersive settings of the adventure." />
+    <option name="LAST_COMMIT_MESSAGE" value="Monster Class System added.&#10;The system allows to charge one or more classes of monster for real immersive settings of the adventure." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -884,8 +885,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/heroquest_legends_main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="9" column="30" selection-start-line="9" selection-start-column="30" selection-end-line="9" selection-end-column="30" />
+        <state relative-caret-position="192">
+          <caret line="8" column="34" selection-start-line="8" selection-start-column="34" selection-end-line="8" selection-end-column="34" />
         </state>
       </provider>
     </entry>

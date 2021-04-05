@@ -239,7 +239,6 @@ class Ui(QtWidgets.QMainWindow):
             self.textEdit_combat_text.setText(msg_escape)
 
 
-
 app = QtWidgets.QApplication(sys.argv)
 window = Ui()
 app.exec_()

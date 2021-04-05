@@ -8,7 +8,6 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/heroquest_legends.ui" beforeDir="false" afterPath="$PROJECT_DIR$/heroquest_legends.ui" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/heroquest_legends_main.py" beforeDir="false" afterPath="$PROJECT_DIR$/heroquest_legends_main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/heroquest_solo_function.py" beforeDir="false" afterPath="$PROJECT_DIR$/heroquest_solo_function.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -20,7 +19,7 @@
     <session id="-2020558873">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="47" />
+          <entry key="project.closed" value="48" />
           <entry key="project.open.time.0" value="1" />
           <entry key="project.open.time.10" value="6" />
           <entry key="project.open.time.11" value="1" />
@@ -63,15 +62,15 @@
           <entry key="Python Console" value="784" />
           <entry key="dummy" value="21" />
           <entry key="md" value="94" />
-          <entry key="py" value="18438" />
-          <entry key="txt" value="13453" />
+          <entry key="py" value="18489" />
+          <entry key="txt" value="13559" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="Markdown" value="94" />
-          <entry key="PLAIN_TEXT" value="13474" />
-          <entry key="Python" value="19222" />
+          <entry key="PLAIN_TEXT" value="13580" />
+          <entry key="Python" value="19273" />
         </counts>
       </usages-collector>
     </session>
@@ -84,8 +83,11 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/heroquest_legends_main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="61">
-              <caret line="148" column="55" selection-start-line="148" selection-start-column="55" selection-end-line="148" selection-end-column="55" />
+            <state relative-caret-position="389">
+              <caret line="239" lean-forward="true" selection-start-line="239" selection-end-line="239" />
+              <folding>
+                <element signature="e#1087#1100#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -658,7 +660,21 @@
       <option name="project" value="LOCAL" />
       <updated>1617624719856</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="new system for enabling and disabling the push button to find treasures.">
+      <created>1617628195198</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1617628195198</updated>
+    </task>
+    <task id="LOCAL-00032" summary="Button Close added">
+      <created>1617628984278</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1617628984278</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="TodoView">
@@ -672,18 +688,17 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="878" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Favorites" order="0" sideWeight="0.3614679" side_tool="true" weight="0.26635823" />
-      <window_info content_ui="combo" id="Project" order="1" sideWeight="0.41967213" visible="true" weight="0.22670192" />
-      <window_info id="Structure" order="2" sideWeight="0.58032787" side_tool="true" visible="true" weight="0.22670192" />
-      <window_info anchor="bottom" id="Terminal" order="0" sideWeight="0.4990086" weight="0.15789473" />
+      <window_info content_ui="combo" id="Project" order="1" sideWeight="0.46962234" visible="true" weight="0.22670192" />
+      <window_info id="Structure" order="2" sideWeight="0.5303777" side_tool="true" visible="true" weight="0.22670192" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="0" sideWeight="0.4990086" visible="true" weight="0.1565097" />
       <window_info anchor="bottom" id="Event Log" order="1" sideWeight="0.32253802" side_tool="true" weight="0.28393352" />
       <window_info anchor="bottom" id="Python Console" order="2" sideWeight="0.8360872" weight="0.14127424" />
       <window_info anchor="bottom" id="Message" order="3" />
       <window_info anchor="bottom" id="Find" order="4" weight="0.32963988" />
       <window_info anchor="bottom" id="Version Control" order="5" sideWeight="0.4976867" weight="0.433518" />
-      <window_info active="true" anchor="bottom" id="Run" order="6" sideWeight="0.677462" visible="true" weight="0.15512465" />
+      <window_info anchor="bottom" id="Run" order="6" sideWeight="0.677462" weight="0.21883656" />
       <window_info anchor="bottom" id="Debug" order="7" weight="0.54432136" />
       <window_info anchor="bottom" id="Cvs" order="8" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="9" weight="0.4" />
@@ -697,8 +712,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="push version for windows 0.01 beta" />
-    <MESSAGE value="push version new windows 0.01 beta" />
     <MESSAGE value="push output dir for .exe" />
     <MESSAGE value="otuput exe v0.002 BETA .exe" />
     <MESSAGE value="-added wanderer monster - otuput exe v0.003 BETA .exe" />
@@ -722,7 +735,9 @@
     <MESSAGE value="Minor bug fixed. 0.7 Alpha" />
     <MESSAGE value="Monster Class System added.&#10;The system allows to charge one or more classes of monster for real immersive settings of the adventure." />
     <MESSAGE value="add .exe file of Versione 0.8 ALPHA" />
-    <option name="LAST_COMMIT_MESSAGE" value="add .exe file of Versione 0.8 ALPHA" />
+    <MESSAGE value="new system for enabling and disabling the push button to find treasures." />
+    <MESSAGE value="Button Close added" />
+    <option name="LAST_COMMIT_MESSAGE" value="Button Close added" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -903,8 +918,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/heroquest_legends_main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="61">
-          <caret line="148" column="55" selection-start-line="148" selection-start-column="55" selection-end-line="148" selection-end-column="55" />
+        <state relative-caret-position="389">
+          <caret line="239" lean-forward="true" selection-start-line="239" selection-end-line="239" />
+          <folding>
+            <element signature="e#1087#1100#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

@@ -87,6 +87,8 @@ class Heroquest_solo:
 
     SPECIAL_ROOM_CHARGED = ''
 
+    MONSTER_CLASS = ''
+
     def __init__(self, cd):
         self.CONFIG_DICT = cd
         self.r_num = random
@@ -98,22 +100,24 @@ class Heroquest_solo:
         self.forniture_dict = self.CONFIG_DICT['fornitures_dict']
 
         #treasures dict that you can find inside a cest or in other forniture
-        self.treasures_dict =  self.CONFIG_DICT['treasures_card_dict']
+        self.treasures_card_dict =  self.CONFIG_DICT['treasures_card_dict']
 
         #monsters dict that you can find inside a Room or in a aisle
         self.monsters_dict = self.CONFIG_DICT['monsters_dict']
 
-    def special_room_charged(self, mn):
+    def special_data_mission_charged(self, mn):
         self.THE_MISSION = int(mn)
         self.SPECIAL_ROOM_CHARGED = self.CONFIG_DICT['specials_rooms'][self.THE_MISSION]
-
+        self.MONSTER_CLASS = self.CONFIG_DICT['monster_class'][self.THE_MISSION]
+        string_to_print = 'monster class: ' + str(self.MONSTER_CLASS)
+        print(string_to_print)
         #remove_forniture_for_special_room
         id_forniture_special_room_list = self.SPECIAL_ROOM_CHARGED[0] #charge id list
         for i in id_forniture_special_room_list:
             tot_forniture = self.FORNITURES_QTY_DICT[i]
             #print(tot_forniture)
             new_tot_forniture = tot_forniture-1
-            self.FORNITURES_QTY_DICT[i] = new_tot_forniture #todo continua a non essere rimossa la serie di mobili
+            self.FORNITURES_QTY_DICT[i] = new_tot_forniture
 
     def random_numbers(self):
         """ a random number generator based on four D6.
@@ -259,7 +263,7 @@ class Heroquest_solo:
         msg_monsters = ''
         monsters_msg_partial = ''
 
-        if self.rv >= 18:
+        if self.rv >= 20:
             return '{} {}'.format(msg_monsters, self.CONFIG_DICT['monsters_msg_2'])
         else:
             if self.residual_tiles <= 3:
@@ -278,13 +282,25 @@ class Heroquest_solo:
                 monsters_number = rng_base.randint(3, 6)
 
             for i in range(monsters_number):
-                rng_1 = random.SystemRandom()
-                id_monster_rand_1 = rng_1.randint(0, 2)
 
-                rng_2 = random.SystemRandom()
-                id_monster_rand_2 = rng_2.randint(1, 6)
+                print("rand_monst 1")
+                #choose id based on monster class
+                query_string = "Select id_monster from monsters where monster_class = '{}' or monster_class LIKE '%{}' or monster_class LIKE '{}%' or monster_class LIKE '%{}%'".format(self.MONSTER_CLASS, self.MONSTER_CLASS, self.MONSTER_CLASS, self.MONSTER_CLASS)
+                print("rand_monst 2")
+                db_monsters_class_query = self.CURSOR.execute(query_string)
+                print("rand_monst 3")
+                db_monsters_class_charged = db_monsters_class_query.fetchall()
+                db_monsters_class_charged_list = []
+                for i in db_monsters_class_charged:
+                    db_monsters_class_charged_list.append(i[0])
 
-                id_monster_rand = id_monster_rand_1 + id_monster_rand_2
+                print("rand_monst 4 {}".format(str(db_monsters_class_charged_list)))
+                db_monsters_class_charged_lenght = len(db_monsters_class_charged_list)-1
+                print("rand_monst 5 {}".format(str(db_monsters_class_charged_lenght)))
+                rng = random.SystemRandom()
+                id_monster_rand = db_monsters_class_charged_list[rng.randint(0, db_monsters_class_charged_lenght)]
+                print("rand_monst 6")
+
                 monsters_residue = self.MONSTERS_QTY_DICT[id_monster_rand]
 
                 if monsters_residue > 0:
@@ -347,34 +363,22 @@ class Heroquest_solo:
         self.forniture = forniture
 
         self.rv = rv
-        string_to_print = str(self.rv)+ " "+self.forniture
-        print(string_to_print)
         if self.rv > 1 and self.rv <= 12: #a special treasure
-            print("test 1")
             forniture_id_txt = self.CONFIG_DICT['forniture_name_reconversion_dict'][self.forniture]
-            print("subtest 1.1")
             treasure_list = self.CONFIG_DICT['treasures_random_type'][forniture_id_txt]
-            print("subtest 1.2")
             max_rand_value = len(treasure_list)-1
-            print("subtest 1.3")
             rng = random.SystemRandom()
-            print("subtest 1.4")
             value_for_selection = rng.randint(0, max_rand_value)
-            print("subtest 1.5")
             msg_random_treasure = treasure_list[value_for_selection]
-            print("subtest 1.6")
             return msg_random_treasure
 
         elif self.rv > 12 and self.rv <= 20: #you'll find gold coins
-            print("test 2")
             msg = self.CONFIG_DICT['chest_msg_2'].format(self.r_num.randrange(1, 150, 5)-1)
             return msg
 
         elif self.rv > 20 and self.rv <= 22:  #you'll find a trap!
-            print("test 3")
             return self.CONFIG_DICT['chest_msg_3']
         else:
-            print("test 4")
             rng_1 = random.SystemRandom() #you'll find a weapon
             weapon_rand_num = rng_1.randint(1, 9)
             msg = self.CONFIG_DICT['chest_msg_4'].format(self.CONFIG_DICT['weapons_dict'][weapon_rand_num])
@@ -385,14 +389,21 @@ class Heroquest_solo:
         """"create a random treasures inside chest"""
         self.rv = rv
         if self.rv >= 1 and self.rv <= 12: #you'll find a wanderer monster
-            treasure_description = self.CONFIG_DICT["treasures_dict"][19]
+            print("tresure_1")
+            treasure_description = self.treasures_card_dict[19]
             return treasure_description
         elif self.rv > 12 and self.rv <= 16: #you'll find a healing potion
-            treasure_description = self.CONFIG_DICT["treasures_dict"][5]
+            print("tresure_2")
+
+            treasure_description = self.treasures_card_dict[5]
             return treasure_description
-        elif self.rv > 16:
+        else:
+            print("tresure_3")
+
             rng_1 = random.SystemRandom()
-            treasure_description = self.CONFIG_DICT["treasures_dict"][rng_1.randint(1, 20)]
+            print("tresure_4")
+            treasure_description = self.treasures_card_dict[rng_1.randint(1, 20)]
+            print("tresure_5")
             return treasure_description
 
     def secret_doors(self, rv):
@@ -405,7 +416,6 @@ class Heroquest_solo:
             value_LR = self.r_num.randint(1, 3)
             return self.CONFIG_DICT['secret_doors_msg_2'].format(self.position_dict[value_LR]) #find a secret doot
         else:
-
             return self.CONFIG_DICT['secret_doors_msg_3'] #find a trapdoor
 
     def traps(self, rv):
@@ -433,7 +443,7 @@ class Heroquest_solo:
         aggression_value = aggr_rand_num+combat_value
 
         if aggression_value > 17:
-            #heroes mode
+            #heroe mode
             return 1
         else:
             #villan mode

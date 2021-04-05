@@ -7,7 +7,7 @@
     begin                : 2021-01-02
     copyright            : (C) 2021 by Luca Mandolesi
     email                : mandoluca at gmail.com
-    version              : 0.7 ALPHA
+    version              : 0.8 ALPHA
  ***************************************************************************/
 
 /***************************************************************************
@@ -98,7 +98,7 @@ class Ui(QtWidgets.QMainWindow):
 
         mission_number_rand = rng_base.randint(2, 2)
 
-        self.HQ_SOLO.special_room_charged(mission_number_rand)
+        self.HQ_SOLO.special_data_mission_charged(mission_number_rand)
 
         the_mission_dict = self.CONFIG_DICT['missions_dict']
 

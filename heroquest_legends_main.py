@@ -23,7 +23,7 @@ import locale
 import sys, os
 import random
 
-from PyQt5 import QtWidgets, uic
+from PyQt5 import QtWidgets, uic, QtCore
 
 #codeadded
 from PyQt5.QtCore import QSize
@@ -34,6 +34,7 @@ from PyQt5.QtWidgets import QLabel
 from heroquest_solo_function import Heroquest_solo
 
 class Ui(QtWidgets.QMainWindow):
+
     CONFIG = ""
     local_language = locale.getdefaultlocale()
     file_name = 'it_IT.txt'
@@ -61,10 +62,13 @@ class Ui(QtWidgets.QMainWindow):
     def __init__(self):
         super(Ui, self).__init__()
         self.acceptDrops()
+        self.setWindowFlag(QtCore.Qt.WindowCloseButtonHint, False)
 
         uic.loadUi(os.path.join(os.path.dirname(__file__),'heroquest_legends.ui'), self)
 
         self.HQ_SOLO = Heroquest_solo(self.CONFIG_DICT)
+
+        self.pushButton_close.clicked.connect(self.close)
 
         bg_img_path = './background.png'  #os.path.join(os.path.dirname(__file__),'mappa.png')
         oImage = QImage(bg_img_path)
@@ -233,6 +237,7 @@ class Ui(QtWidgets.QMainWindow):
         else:
             msg_escape = self.CONFIG_DICT['attack_messages'][2]
             self.textEdit_combat_text.setText(msg_escape)
+
 
 
 app = QtWidgets.QApplication(sys.argv)

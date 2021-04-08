@@ -24,9 +24,15 @@ import sqlite3
 class Heroquest_solo:
     """main class for variables management"""
     rng = random.SystemRandom()
-    TOTAL_NUMBER_OF_TURNS = rng.randint(6, 10)
+    TOTAL_NUMBER_OF_TURNS = rng.randint(6, 15)
+
+    rng = random.SystemRandom()
+    MAX_ROOM_COUNTER = rng.randint(8, 15)
+
+    CURRENT_ROOM_COUNTER = 0
 
     ESCAPE_FOUND = 0
+
     FIRST_ROOM = 0
 
     CONFIG_DICT = ''
@@ -109,13 +115,11 @@ class Heroquest_solo:
         self.THE_MISSION = int(mn)
         self.SPECIAL_ROOM_CHARGED = self.CONFIG_DICT['specials_rooms'][self.THE_MISSION]
         self.MONSTER_CLASS = self.CONFIG_DICT['monster_class'][self.THE_MISSION]
-        string_to_print = 'monster class: ' + str(self.MONSTER_CLASS)
-        print(string_to_print)
+
         #remove_forniture_for_special_room
         id_forniture_special_room_list = self.SPECIAL_ROOM_CHARGED[0] #charge id list
         for i in id_forniture_special_room_list:
             tot_forniture = self.FORNITURES_QTY_DICT[i]
-            #print(tot_forniture)
             new_tot_forniture = tot_forniture-1
             self.FORNITURES_QTY_DICT[i] = new_tot_forniture
 
@@ -165,8 +169,6 @@ class Heroquest_solo:
 
     def room_generator(self, room_dimension, ct, re):
         """create random rooms with fornitures"""
-        #TEST
-        #print(str(self.SPECIAL_ROOM_CHARGED))
 
         #turn controller INPUT
         self.current_turn = ct
@@ -189,7 +191,10 @@ class Heroquest_solo:
         forniture_numbers = rng.randint(1, 4)
         count = 0
         #if the current turn is max or equal and the escape is founded
-        if self.current_turn >= self.TOTAL_NUMBER_OF_TURNS and self.ESCAPE_FOUND==0 and self.room_explored == 0:
+        if self.room_explored == 0:
+            self.CURRENT_ROOM_COUNTER += 1
+
+        if self.current_turn >= self.TOTAL_NUMBER_OF_TURNS and self.ESCAPE_FOUND==0 and self.room_explored == 0 and self.CURRENT_ROOM_COUNTER >= self.MAX_ROOM_COUNTER:
             msg_end = self.SPECIAL_ROOM_CHARGED[1] #Replace the number with THE_MISSION = RAND_NUM
             self.ESCAPE_FOUND = 1
         else:
@@ -283,23 +288,17 @@ class Heroquest_solo:
 
             for i in range(monsters_number):
 
-                print("rand_monst 1")
                 #choose id based on monster class
                 query_string = "Select id_monster from monsters where monster_class = '{}' or monster_class LIKE '%{}' or monster_class LIKE '{}%' or monster_class LIKE '%{}%'".format(self.MONSTER_CLASS, self.MONSTER_CLASS, self.MONSTER_CLASS, self.MONSTER_CLASS)
-                print("rand_monst 2")
                 db_monsters_class_query = self.CURSOR.execute(query_string)
-                print("rand_monst 3")
                 db_monsters_class_charged = db_monsters_class_query.fetchall()
                 db_monsters_class_charged_list = []
                 for i in db_monsters_class_charged:
                     db_monsters_class_charged_list.append(i[0])
 
-                print("rand_monst 4 {}".format(str(db_monsters_class_charged_list)))
                 db_monsters_class_charged_lenght = len(db_monsters_class_charged_list)-1
-                print("rand_monst 5 {}".format(str(db_monsters_class_charged_lenght)))
                 rng = random.SystemRandom()
                 id_monster_rand = db_monsters_class_charged_list[rng.randint(0, db_monsters_class_charged_lenght)]
-                print("rand_monst 6")
 
                 monsters_residue = self.MONSTERS_QTY_DICT[id_monster_rand]
 
@@ -324,6 +323,7 @@ class Heroquest_solo:
         self.LR_n = self.r_num.randint(1, 2) #select beetween left ora right
         rock_msg_value = self.random_numbers()
 
+        print('aisles 1')
         #generate a rock message and sometis with a monster
         if rock_msg_value > 0 and rock_msg_value <= 15:
             rocks_msg = self.CONFIG_DICT['aisles_msg_1']
@@ -332,19 +332,50 @@ class Heroquest_solo:
         else:
             rocks_msg = self.CONFIG_DICT['aisles_msg_3'].format(self.monsters_dict[self.r_num.randint(1, 7)])
 
-        if self.rv > 1 and self.rv <= 12:
+        print('aisles 2')
+
+
+        #aisles generators with doors
+
+        if self.rv > 19 and self.rv <= 22 and self.FORNITURES_QTY_DICT[11] >= 3:  # three doors
+            print('aisles 2a')
+
+            msg_1 = self.CONFIG_DICT['aisles_msg_6'].format(self.position_dict[self.r_num.randint(1, 2)], self.position_dict[self.r_num.randint(1, 2)], self.position_dict[self.r_num.randint(1, 2)], rocks_msg)
+            new_doors_residue = self.FORNITURES_QTY_DICT[11] - 3
+            self.FORNITURES_QTY_DICT[11] = new_doors_residue
+
+            print('aisles 3 TRE PORTE')
+            print('porte rimaste: ' + str(self.FORNITURES_QTY_DICT[11]))
+            return '{} {}'.format(msg_1, self.CONFIG_DICT['aisles_msg_8'])
+
+        elif self.rv > 12 and self.rv <= 19 and self.FORNITURES_QTY_DICT[11] >= 2: #two doors
+            msg_1 = self.CONFIG_DICT['aisles_msg_5'].format(self.position_dict[self.r_num.randint(1, 2)], self.position_dict[self.r_num.randint(1, 2)], rocks_msg)
+            new_doors_residue = self.FORNITURES_QTY_DICT[11] - 2
+            self.FORNITURES_QTY_DICT[11] = new_doors_residue
+
+            print('aisles 4 DUE PORTE')
+            print('porte rimaste: ' + str(self.FORNITURES_QTY_DICT[11]))
+
+            return '{} {}'.format(msg_1, self.CONFIG_DICT['aisles_msg_8'])
+
+        elif self.rv > 1 and self.rv <= 12 and self.FORNITURES_QTY_DICT[11] >= 1: #one door
             msg_1 = self.CONFIG_DICT['aisles_msg_4'].format(self.position_dict[self.LR_n], rocks_msg)
 
-            return '{} {}'.format(msg_1, self.CONFIG_DICT['aisles_msg_8'])
-        elif self.rv > 12 and self.rv <= 20:
-            msg_1 = self.CONFIG_DICT['aisles_msg_5'].format(self.position_dict[self.r_num.randint(1, 2)], self.position_dict[self.r_num.randint(1, 2)], rocks_msg)
+            new_doors_residue = self.FORNITURES_QTY_DICT[11] - 1
+            self.FORNITURES_QTY_DICT[11] = new_doors_residue
+
+            print('aisles 5 UNO PORTE')
+            print('porte rimaste: ' + str(self.FORNITURES_QTY_DICT[11]))
 
             return '{} {}'.format(msg_1, self.CONFIG_DICT['aisles_msg_8'])
-        elif self.rv > 20 and self.rv <= 24:
-            msg_1 = self.CONFIG_DICT['aisles_msg_6'].format(self.position_dict[self.r_num.randint(1, 2)], self.position_dict[self.r_num.randint(1, 2)], self.position_dict[self.r_num.randint(1, 2)],rocks_msg)
 
-            return '{} {}'.format(msg_1, self.CONFIG_DICT['aisles_msg_8'])
+        elif self.rv > 22 and self.rv <= 24 or self.FORNITURES_QTY_DICT[11] == 0:
+            print('aisles 6 ZERO PORTE')
+            print('porte rimaste: ' + str(self.FORNITURES_QTY_DICT[11]))
+            return self.CONFIG_DICT['aisles_msg_7']
         else:
+            print('aisles 6 ZERO PORTE')
+            print('porte rimaste: ' + str(self.FORNITURES_QTY_DICT[11]))
             return self.CONFIG_DICT['aisles_msg_7']
 
     def treasures(self, rv):
@@ -389,21 +420,15 @@ class Heroquest_solo:
         """"create a random treasures inside chest"""
         self.rv = rv
         if self.rv >= 1 and self.rv <= 12: #you'll find a wanderer monster
-            print("tresure_1")
             treasure_description = self.treasures_card_dict[19]
             return treasure_description
         elif self.rv > 12 and self.rv <= 16: #you'll find a healing potion
-            print("tresure_2")
 
             treasure_description = self.treasures_card_dict[5]
             return treasure_description
         else:
-            print("tresure_3")
-
             rng_1 = random.SystemRandom()
-            print("tresure_4")
             treasure_description = self.treasures_card_dict[rng_1.randint(1, 20)]
-            print("tresure_5")
             return treasure_description
 
     def secret_doors(self, rv):
@@ -428,21 +453,29 @@ class Heroquest_solo:
         else:
             return self.CONFIG_DICT['traps_msg_3']
 
-    def fighting_system(self, mc):
+    def fighting_system(self, mc, mg):
 
         self.monster_category = mc
+        self.monster_group = mg
 
         combat_value_dict = self.CONFIG_DICT['combat_value_dict']
 
-        monster_converted  = self.CONFIG_DICT['monster_name_reconversion_dict'][self.monster_category]
+        monster_converted = self.CONFIG_DICT['monster_name_reconversion_dict'][self.monster_category]
 
         combat_value = combat_value_dict[monster_converted]
 
-        aggr_rand_num = self.random_numbers()
+        if self.monster_group == 0:
+            aggr_rand_num = self.random_numbers()
+        else:
+            rng = random.SystemRandom()
+            aggresivity_bonus = rng.randint(1, 3)
+            aggr_rand_num = self.random_numbers()+aggresivity_bonus #if monsters are on a group the aggresivity increments.
 
         aggression_value = aggr_rand_num+combat_value
 
-        if aggression_value > 17:
+        print("aggressiione value: "+str(aggression_value))
+
+        if aggression_value >= 18:
             #heroe mode
             return 1
         else:

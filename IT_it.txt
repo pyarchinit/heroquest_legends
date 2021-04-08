@@ -2,7 +2,7 @@
 'aisles_msg_1': "Dal fondo del corridoio arriva una luce fioca, forse troverai altre stanze?",
 'aisles_msg_2' : "Il soffitto è crollato e il corridoio è bloccato (metti un segnalino crollo dopo 5 caselle). O tornare indietro o entrare. Che cosa ti dice di fare l'istinto?",
 'aisles_msg_3' : "Il soffitto è crollato e il corridoio è bloccato dopo la porta (metti un segnalino crollo dopo 5 caselle). Dul buio del corridoio arriva un rumore sinistro: sulla tua strada trovi {}",
-'aisles_msg_4' : "Hai trovato una porta {}. Colloca una porta nella prima stanza inesplorata. {}",
+'aisles_msg_4' : "Hai trovato una porta {}. Colloca una porta per entrare nella prima stanza inesplorata. {}",
 'aisles_msg_5' : "Hai trovato due porte. Una prima porta {} e una seconda porta {}. Ognuna ti conduce ad una stanza inesplorata diversa. {}",
 'aisles_msg_6' : "Hai trovato tre porte. Colloca una prima porta {}, una seconda porta {} e una terza porta a {}. Ognuna ti conduce ad una stanza inesplorata diversa.{}",
 'aisles_msg_7' : "Non hai trovato nessuna porta.",
@@ -12,14 +12,14 @@
 'treasures_msg_3' : "Mentre cerchi tra vecchi stracci e ossa di sorcio, senti uno scatto: un dardo ti colpisce e perdi 1 punto corpo",
 'treasures_msg_4' : "Non hai trovato nulla. Pesca una carta dal mazzo dei Tesori.",
 'secret_doors_msg_1': "Non hai trovato nessuna porta segreta.",
-'secret_doors_msg_2' : "Hai trovato una porta segreta a metà del muro {}",
+'secret_doors_msg_2' : "Hai trovato una porta segreta a metà del muro {}. (se ti porta ad una stanza già esplorata mettila sul muro di fronto se la stanza non è esplorata, altrimenti ignora l'istruzione.",
 'secret_doors_msg_3' : "Hai trovato una botola. Metti una botola davanti a te e un'altra in una stanza non esplorata",
 'chest_msg_1' : "Hai trovato un tesoro con dentro: {}",
 'chest_msg_2' : "Hai trovato {} monete d'oro",
 'chest_msg_3' : "Putroppo hai fatto scattare un trabocchetto. Se provare a disinnescarlo tirando un dado da combattimento: \nCon 1 scudo bianco non ti succede nulla e puoi ritentare la sorte; \nCon 1 scudo nero non ti succede nulla; \nCon 1 teschio perdi 1 punto corpo.",
 'chest_msg_4' : "Non puoi credere ai tuoi occhi. Hai trovato un'arma:\n{}",
 'traps_msg_1' : "Per fortuna non ci sono trabocchetti.",
-'traps_msg_2' : "Mentre cerchi una porta segreta, senti il rumore di un meccanisco e un trabocchetto scatta proprio sotto ai tuoi piedi (trappola con lancia). Scopri se riesci ad evitarlo tirando un dado da combattimento:\n Con 1 scudo bianco passi indenne. \n Con uno scudo nero o un teschio cadi e perdi 1 punto corpo. Se sei caduto difendi con un dado in meno e uscirai solo facendo un valore superiore a 2",
+'traps_msg_2' : "Mentre cerchi una porta segreta, senti il rumore di un meccanisco e un trabocchetto scatta proprio sotto ai tuoi piedi (trappola con lancia). Scopri se riesci ad evitarlo tirando un dado da combattimento:\n Con 1 scudo bianco passi indenne. \n Con uno scudo nero o un teschio cadi e perdi 1 punto corpo. Se sei caduto difendi con un dado in meno e uscirai solo facendo un valore superiore a 2 lanciando un D6",
 'traps_msg_3' : "Un trabocchetto scatta, ma riesci a schivarlo. Spostati di una casella e metti una tessera crollo al posto tuo",
 'fornitures_msg_1' : "Nella stanza trovi{}",
 'fornitures_msg_2' : "Non c'è mobilio ma attento agli incantesimi!!!",
@@ -214,7 +214,8 @@
 
   'attack_messages' : {1: ['Il mostro attacca l\'eroe {} oppure si muove verso l\'eroe più vicino e se può lo attacca.',
                            'Se ci sono nemici nel raggio di movimento, il mostro muove va verso l\'eroe {}. Se lo raggiunge lo attacca; altrimenti si muove verso l\'eroe più vicino e se può lo attacca.'],
-                       2: 'Il mostro cerca di fuggire lontano.'},
+
+                       2: ['il mostro non accenna a muoversi: potrebbe essere la vostra occasione', 'Il mostro cerca di fuggire lontano.', 'Il mostro cerca di bloccare la via di fuga agli eroi. Se finisce vicino ad un eroe non lo attacca, blocca solo la fuga.', 'Il resta a sorvegliare il suo antro e non si sposta.']},
 
   'choice_dict' : {1:'più vicino {}',
                    2:'più lontano {}',
@@ -233,7 +234,7 @@
                      },
 
   'specials_rooms' : {1: [[1,1,3,7], "Hai trovato la stanza di Hogarth, necromante della dinastia di Hamasul che qui ha il suo laboratorio. Metti sul fondo due scrigni, a sinistra il tavolo dell'alchimista e un armadio a destra."],
-                      2: [[9], "Hai trovato la catacomba in cui riposa Eriamar della dinastia di Hamasul. Senti arrivare un tonfo sordo, come di un crollo e l\'angoscia ti attanaglia: ora hai la certezza che la via è chiusa (Rimuovi il tassello delle scale da dove sei partito). All\'improvviso ricordi cosa ti ha detto Mentor: \"Giovane eroe, ricordati che appena prenderai la spada, la tomba ti rivelerà delle scale per uscire ma attento agli spettri che difendono la tomba!\". Finalmente le sue parole diventano chiare: Metti la tomba in fondo alla stanza difesa da 3 scheletri, poi colloca nel corridoio 3 mummie e 3 zombie (se i mostri sono già impiegati sul tabellone spostali qui)."]
+                      2: [[9], "Hai trovato la catacomba in cui riposa Eriamar della dinastia di Hamasul. Senti arrivare un tonfo sordo, come di un crollo e l\'angoscia ti attanaglia: ora hai la certezza che la via è chiusa (Rimuovi il tassello delle scale da dove sei partito). All\'improvviso ricordi cosa ti ha detto Mentor: \"Giovane eroe, ricordati che appena prenderai la spada, la tomba ti rivelerà delle scale per uscire ma attento agli spettri che difendono la tomba!\". Finalmente le sue parole diventano chiare: Metti la tomba in fondo alla stanza difesa da 3 scheletri, poi colloca nel corridoio 3 mummie e 3 zombie (se i mostri sono già impiegati sul tabellone spostali qui). Per fuggire devi entrare dentro alla Tomba che nasconde le scale.."]
                      },
   'monster_class'  : {1 : 'orc',
                       2 : 'not_dead'}

@@ -34,7 +34,12 @@ from PyQt5.QtWidgets import QLabel
 from heroquest_solo_function import Heroquest_solo
 
 class Ui(QtWidgets.QMainWindow):
-
+    #TODO aggiungere un numero minimo di stanze da aprire random oltre al numero di turni oppure che si deve trovare una porta segreta
+    #TODO aggiungere come posizione il mostro davanti alla porta fuori o dentro la stanza
+    #TODO se si supera il numero di ROUND senza trovare la stanza aggiungere mostri che arrivano per i corridoi
+    #TODO aggiungere oltre che davanti, davanti ed adiacente a te.
+    #TODO aggiungere a come è fatto il corridoio il seguente messaggio: se nel turno precedente nessun eroe ha cercato trabocchetti in quel corridoio cadi in una trappola. Altrimenti ignora questo messaggio e riclicca il pulsante per scoprire come è fatto il corridio
+    #TODO aggiungere opzione per circondare l'eroe
     CONFIG = ""
     local_language = locale.getdefaultlocale()
     file_name = 'it_IT.txt'
@@ -55,8 +60,11 @@ class Ui(QtWidgets.QMainWindow):
     TREASURES_FINDS = 0
 
 
+
+
     #todo messaggio con punto di partenza
     #todo aggiungere segnalatore di fine avventura scale trovate
+    #todo se il mostro prima attacca poi si sposta per lasciare spazio ad un altro mostro se è nella stanza
 
 
     def __init__(self):
@@ -128,6 +136,7 @@ class Ui(QtWidgets.QMainWindow):
         self.textEdit_traps.setText("")
         self.textEdit_secret_doors.setText("")
         self.textEdit_treasure_cards_description.setText("")
+        self.textEdit_combat_text.setText("")
         current_turn = int(self.lineEdit_round.text())
         next_turn = current_turn+1
         self.lineEdit_round.setText(str(next_turn))
@@ -217,9 +226,14 @@ class Ui(QtWidgets.QMainWindow):
 
     def on_pushButton_monster_attack_pressed(self):
         self.textEdit_combat_text.setText("")
-        monster_category = self.comboBox_monster_attack.currentText()
 
-        mode_result = self.HQ_SOLO.fighting_system(monster_category) #1 attack - 0 escape
+        monster_category = self.comboBox_monster_attack.currentText()
+        monster_group = 0
+
+        if self.checkBox_group.isChecked() == True:
+            monster_group = 1
+
+        mode_result = self.HQ_SOLO.fighting_system(monster_category, monster_group) #1 attack - 0 escape
 
         if mode_result == 1:
             msg_attack = self.CONFIG_DICT['attack_messages'][1]
@@ -235,7 +249,8 @@ class Ui(QtWidgets.QMainWindow):
 
             self.textEdit_combat_text.setText(str(msg_attack_choice_direction))
         else:
-            msg_escape = self.CONFIG_DICT['attack_messages'][2]
+            rng_base = random.SystemRandom()
+            msg_escape = self.CONFIG_DICT['attack_messages'][2][rng_base.randint(0, 3)]
             self.textEdit_combat_text.setText(msg_escape)
 
 

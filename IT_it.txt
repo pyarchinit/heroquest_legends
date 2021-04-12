@@ -114,19 +114,20 @@
   'aux_msg_5': 'Attendi che la vista si adatti al buio e vedi',
   'aux_msg_6': 'La stanza è spoglia e solo muffa e sangue arredano le sue pareti.',
   'aux_msg_7': 'Siete tornati sui vostri passi e un rumore sinistro vi accoglie...cosa può essere?',
+  'aux_msg_8': 'Un ticchettio sordo e una freccia parte dal muro verso di te togliendoti 1 punto corpo! Se avevi già cercato trabocchetti in questa stanza eviti la freccia altrimentni difenditi lanciando un dado da combattimento per ogni punto mente che hai.',
   'end_msg_1' : 'La via d\'uscita! Noti una pietra spostata nel muro e toccandola, un rumore di ingranaggi apre una voragine nel pavimento. Hai trovato le scale per uscire!',
   'monsters_msg_intro': 'Prendi tutto il tuo coraggio e guardi dentro. Ecco cosa vedi:\n',
 
 
   'combat_value_dict'  : {
-            'goblin'        : 2,
-            'orc'           : 3,
-            'fimir'         : 5,
-            'skeleton'      : 3,
-            'zombie'        : 7,
-            'mummy'         : 6,
-            'chaos_warrior' : 8,
-            'gargoyle'      : 9
+            'goblin'        : 15,
+            'orc'           : 16,
+            'fimir'         : 17,
+            'zombie'        : 10,
+            'skeleton'      : 11,
+            'mummy'         : 12,
+            'chaos_warrior' : 17,
+            'gargoyle'      : 19
                             },
 
 

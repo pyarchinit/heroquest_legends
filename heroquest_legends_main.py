@@ -7,7 +7,7 @@
     begin                : 2021-01-02
     copyright            : (C) 2021 by Luca Mandolesi
     email                : mandoluca at gmail.com
-    version              : 0.8 ALPHA
+    version              : 0.82 ALPHA
  ***************************************************************************/
 
 /***************************************************************************
@@ -34,11 +34,8 @@ from PyQt5.QtWidgets import QLabel
 from heroquest_solo_function import Heroquest_solo
 
 class Ui(QtWidgets.QMainWindow):
-    #TODO aggiungere un numero minimo di stanze da aprire random oltre al numero di turni oppure che si deve trovare una porta segreta
     #TODO aggiungere come posizione il mostro davanti alla porta fuori o dentro la stanza
-    #TODO se si supera il numero di ROUND senza trovare la stanza aggiungere mostri che arrivano per i corridoi
     #TODO aggiungere oltre che davanti, davanti ed adiacente a te.
-    #TODO aggiungere a come è fatto il corridoio il seguente messaggio: se nel turno precedente nessun eroe ha cercato trabocchetti in quel corridoio cadi in una trappola. Altrimenti ignora questo messaggio e riclicca il pulsante per scoprire come è fatto il corridio
     #TODO aggiungere opzione per circondare l'eroe
     CONFIG = ""
     local_language = locale.getdefaultlocale()
@@ -126,7 +123,6 @@ class Ui(QtWidgets.QMainWindow):
 
         self.textEdit_the_mission.setText(the_mission_text)
 
-
     def on_pushButton_round_pressed(self):
         self.textEdit_aisles.setText("")
         self.textEdit_monsters.setText("")
@@ -156,7 +152,7 @@ class Ui(QtWidgets.QMainWindow):
 
         self.textEdit_aisles.setText("")
         self.textEdit_aisles.setText(str(msg))
-
+        self.textEdit_traps.setText(self.HQ_SOLO.random_trap())
 
     def on_pushButton_treasures_finds_pressed(self):
         self.textEdit_treasures_description.setText("")
@@ -205,24 +201,28 @@ class Ui(QtWidgets.QMainWindow):
 
         if current_turn == 1 or current_turn == 2:
             msg_room = self.HQ_SOLO.CONFIG_DICT['aux_msg_1'].format(msg_temp[0])
+
+            self.textEdit_traps.setText(self.HQ_SOLO.random_trap())
+
         else:
             if msg_temp[2] != '':
                 msg_room = msg_temp[2]
+                self.textEdit_traps.setText(self.HQ_SOLO.random_trap())
             elif msg_temp[0] == '' and msg_temp[2] == '' and room_explored == 1:
                 msg_room = self.HQ_SOLO.CONFIG_DICT['aux_msg_7']
+                self.textEdit_traps.setText(self.HQ_SOLO.random_trap())
             elif msg_temp[0] == '' and msg_temp[2] == '' and room_explored == 0:
                 msg_room = self.HQ_SOLO.CONFIG_DICT['aux_msg_6']
+                self.textEdit_traps.setText(self.HQ_SOLO.random_trap())
             else:
                 msg_room = msg_temp[0]
+                self.textEdit_traps.setText(self.HQ_SOLO.random_trap())
 
         msg_room = msg_room.replace(';.', '.')
 
         self.textEdit_room_description.setText(str(msg_room))
 
         self.textEdit_monsters.setText(str(msg_temp[1]))
-
-        #TODO test area to add images
-
 
     def on_pushButton_monster_attack_pressed(self):
         self.textEdit_combat_text.setText("")
@@ -252,7 +252,6 @@ class Ui(QtWidgets.QMainWindow):
             rng_base = random.SystemRandom()
             msg_escape = self.CONFIG_DICT['attack_messages'][2][rng_base.randint(0, 3)]
             self.textEdit_combat_text.setText(msg_escape)
-
 
 app = QtWidgets.QApplication(sys.argv)
 window = Ui()

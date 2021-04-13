@@ -462,13 +462,7 @@ class Heroquest_solo:
 
         aggression_value = combat_value+aggr_rand_num
 
-
         final_aggression_value = aggression_value+aggresivity_bonus
-
-        print("combat value: " + str(combat_value))
-        print("bonus value: " + str(aggresivity_bonus))
-        print("random value: " + str(aggr_rand_num))
-        print("final_aggression value: " + str(final_aggression_value))
 
         if final_aggression_value > 30:
             #heroe mode

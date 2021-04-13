@@ -39,9 +39,9 @@ class Ui(QtWidgets.QMainWindow):
     #TODO aggiungere opzione per circondare l'eroe
     CONFIG = ""
     local_language = locale.getdefaultlocale()
-    file_name = 'it_IT.txt'
+    #file_name = 'en_EN.txt'
     if local_language[0] == 'it_IT':
-        CONFIG = open(file_name, "rb+")
+        CONFIG = open('it_IT.txt', "rb+")
     elif local_language[0] == 'en_EN':
         CONFIG = open('en_EN.txt', "rb+")
     data_config = CONFIG.read()

@@ -42,7 +42,7 @@ class Ui(QtWidgets.QMainWindow):
     #file_name = 'en_EN.txt'
     if local_language[0] == 'it_IT':
         CONFIG = open('it_IT.txt', "rb+")
-    elif local_language[0] == 'en_EN':
+    else :
         CONFIG = open('en_EN.txt', "rb+")
     data_config = CONFIG.read()
     CONFIG.close()

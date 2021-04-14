@@ -42,7 +42,7 @@ class Ui(QtWidgets.QMainWindow):
     #file_name = 'en_EN.txt'
     if local_language[0] == 'it_IT':
         CONFIG = open('it_IT.txt', "rb+")
-    elif local_language[0] == 'en_EN':
+    else :
         CONFIG = open('en_EN.txt', "rb+")
     data_config = CONFIG.read()
     CONFIG.close()
@@ -69,7 +69,11 @@ class Ui(QtWidgets.QMainWindow):
         self.acceptDrops()
         self.setWindowFlag(QtCore.Qt.WindowCloseButtonHint, False)
 
-        uic.loadUi(os.path.join(os.path.dirname(__file__),'heroquest_legends.ui'), self)
+        local_language = locale.getdefaultlocale()
+        if local_language[0] == 'it_IT':
+            uic.loadUi(os.path.join(os.path.dirname(__file__),'heroquest_legends_it.ui'), self)
+        else:
+            uic.loadUi(os.path.join(os.path.dirname(__file__), 'heroquest_legends.ui'), self)
 
         self.HQ_SOLO = Heroquest_solo(self.CONFIG_DICT)
 

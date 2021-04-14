@@ -84,7 +84,7 @@
           </font>
          </property>
          <property name="text">
-          <string>The monster looks at you and then ...</string>
+          <string>Il mostro ti scruta e poi ... </string>
          </property>
         </widget>
        </item>
@@ -159,7 +159,7 @@
             <string notr="true">color: rgb(0, 0, 0);</string>
            </property>
            <property name="text">
-            <string>Next Round</string>
+            <string>Prossimo Round</string>
            </property>
           </widget>
          </item>
@@ -192,7 +192,7 @@
             <bool>false</bool>
            </property>
            <property name="text">
-            <string>Are there any secret doors or pitfalls?</string>
+            <string>Ci sono porte segrete o trabocchetti?</string>
            </property>
           </widget>
          </item>
@@ -350,7 +350,7 @@
           </font>
          </property>
          <property name="text">
-          <string>Draw a card from the treasure deck</string>
+          <string>Pesca una carta dal mazzo dei tesori</string>
          </property>
         </widget>
        </item>
@@ -371,7 +371,7 @@
           </font>
          </property>
          <property name="text">
-          <string>How the dungeon is made</string>
+          <string>Come è fatto il corridoio</string>
          </property>
         </widget>
        </item>
@@ -412,7 +412,7 @@
             </font>
            </property>
            <property name="text">
-            <string>There are treasures in the ...</string>
+            <string>Ci sono tesori nel ...</string>
            </property>
           </widget>
          </item>
@@ -503,7 +503,7 @@
           </font>
          </property>
          <property name="text">
-          <string>Discover the mission that Mentor has for you</string>
+          <string>Scopri la missione che Mentor ha per te!!!</string>
          </property>
         </widget>
        </item>
@@ -566,7 +566,7 @@
           </font>
          </property>
          <property name="text">
-          <string>Find out how the room is made</string>
+          <string>Scopri come è fatta la stanza</string>
          </property>
         </widget>
        </item>
@@ -665,7 +665,7 @@
        </size>
       </property>
       <property name="text">
-       <string>Quit</string>
+       <string>Esci</string>
       </property>
      </widget>
     </item>

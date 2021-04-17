@@ -114,7 +114,7 @@
   'aux_msg_5': 'Attendi che la vista si adatti al buio e vedi',
   'aux_msg_6': 'La stanza è spoglia e solo muffa e sangue arredano le sue pareti.',
   'aux_msg_7': 'Siete tornati sui vostri passi e un rumore sinistro vi accoglie...cosa può essere?',
-  'aux_msg_8': 'Un ticchettio sordo e una freccia parte dal muro verso di te togliendoti 1 punto corpo! Se avevi già cercato trabocchetti in questa stanza eviti la freccia altrimentni difenditi lanciando un dado da combattimento per ogni punto mente che hai.',
+  'aux_msg_8': 'Un ticchettio sordo e una freccia parte dal muro verso di te togliendoti 1 punto corpo! Se avevi già cercato trabocchetti in questa stanza eviti la freccia altrimentni difenditi lanciando un dado da combattimento per ogni punto mente che hai. (ATTENZIONE: se hai già cercato trabocchetti qui ignora il messaggio).',
   'aux_msg_9': 'Attirato dai rumori ti ritrovi davanti {}',
   'aux_msg_10': 'Fino a qui tutto tranquillo...',
   'end_msg_1' : 'La via d\'uscita! Noti una pietra spostata nel muro e toccandola, un rumore di ingranaggi apre una voragine nel pavimento. Hai trovato le scale per uscire!',

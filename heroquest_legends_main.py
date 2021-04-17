@@ -50,7 +50,7 @@ class Ui(QtWidgets.QMainWindow):
 
     HQ_SOLO = ""
 
-    CURRENT_ROUND = ''
+    CURRENT_ROUND = 1
 
     MONSTER_LIST = ''
 
@@ -111,7 +111,7 @@ class Ui(QtWidgets.QMainWindow):
     def on_pushButton_the_mission_pressed(self):
         rng_base = random.SystemRandom()
 
-        mission_number_rand = rng_base.randint(2, 2)
+        mission_number_rand = rng_base.randint(1, 1)
 
         self.HQ_SOLO.special_data_mission_charged(mission_number_rand)
 
@@ -137,26 +137,31 @@ class Ui(QtWidgets.QMainWindow):
         self.textEdit_secret_doors.setText("")
         self.textEdit_treasure_cards_description.setText("")
         self.textEdit_combat_text.setText("")
-        current_turn = int(self.lineEdit_round.text())
-        next_turn = current_turn+1
+        self.CURRENT_ROUND = int(self.lineEdit_round.text())
+        next_turn = self.CURRENT_ROUND+1
         self.lineEdit_round.setText(str(next_turn))
+        self.CURRENT_ROUND = next_turn
 
 
     def on_pushButton_aisles_pressed(self):
         current_turn = int(self.lineEdit_round.text())
         self.textEdit_aisles.setText("")
-
-        if current_turn == 1 or current_turn == 2:
-            msg_num = self.HQ_SOLO.random_numbers()
-            while (msg_num) >= 21:
-                msg_num = self.HQ_SOLO.random_numbers()  # return always door at first and second turn
-            msg = self.HQ_SOLO.aisles(msg_num)
+        if self.radioButton_aisles_not_explored.isChecked() == True:
+            if current_turn == 1 or current_turn == 2:
+                msg_num = self.HQ_SOLO.random_numbers()
+                while (msg_num) >= 21:
+                    msg_num = self.HQ_SOLO.random_numbers()  # return always door at first and second turn
+                msg = self.HQ_SOLO.aisles(msg_num)
+            else:
+                msg = self.HQ_SOLO.aisles(self.HQ_SOLO.random_numbers())
         else:
-            msg = self.HQ_SOLO.aisles(self.HQ_SOLO.random_numbers())
+            print("puppa 1")
+            msg = self.HQ_SOLO.random_monsters_on_aisles(self.CURRENT_ROUND)
+
 
         self.textEdit_aisles.setText("")
         self.textEdit_aisles.setText(str(msg))
-        self.textEdit_traps.setText(self.HQ_SOLO.random_trap())
+        self.textEdit_traps.setText(self.HQ_SOLO.random_trap(self.CURRENT_ROUND))
 
     def on_pushButton_treasures_finds_pressed(self):
         self.textEdit_treasures_description.setText("")
@@ -182,6 +187,7 @@ class Ui(QtWidgets.QMainWindow):
         self.pushButton_treasures_random.setEnabled(False)
         self.TREASURES_FINDS = 0
         self.textEdit_treasures_description.setText(str(msg))
+        self.textEdit_traps.setText(self.HQ_SOLO.random_trap(self.CURRENT_ROUND))
 
 
     def on_pushButton_traps_and_secret_doors_finder_pressed(self):
@@ -197,6 +203,7 @@ class Ui(QtWidgets.QMainWindow):
         self.textEdit_monsters.setText('')
         if self.radioButton_explored.isChecked() == True:
             room_explored = 1
+            self.textEdit_traps.setText(self.HQ_SOLO.random_trap(self.CURRENT_ROUND))
         else:
             room_explored = 0
 
@@ -206,21 +213,21 @@ class Ui(QtWidgets.QMainWindow):
         if current_turn == 1 or current_turn == 2:
             msg_room = self.HQ_SOLO.CONFIG_DICT['aux_msg_1'].format(msg_temp[0])
 
-            self.textEdit_traps.setText(self.HQ_SOLO.random_trap())
+            self.textEdit_traps.setText(self.HQ_SOLO.random_trap(self.CURRENT_ROUND))
 
         else:
             if msg_temp[2] != '':
                 msg_room = msg_temp[2]
-                self.textEdit_traps.setText(self.HQ_SOLO.random_trap())
+                self.textEdit_traps.setText(self.HQ_SOLO.random_trap(self.CURRENT_ROUND))
             elif msg_temp[0] == '' and msg_temp[2] == '' and room_explored == 1:
                 msg_room = self.HQ_SOLO.CONFIG_DICT['aux_msg_7']
-                self.textEdit_traps.setText(self.HQ_SOLO.random_trap())
+                self.textEdit_traps.setText(self.HQ_SOLO.random_trap(self.CURRENT_ROUND))
             elif msg_temp[0] == '' and msg_temp[2] == '' and room_explored == 0:
                 msg_room = self.HQ_SOLO.CONFIG_DICT['aux_msg_6']
-                self.textEdit_traps.setText(self.HQ_SOLO.random_trap())
+                self.textEdit_traps.setText(self.HQ_SOLO.random_trap(self.CURRENT_ROUND))
             else:
                 msg_room = msg_temp[0]
-                self.textEdit_traps.setText(self.HQ_SOLO.random_trap())
+                self.textEdit_traps.setText(self.HQ_SOLO.random_trap(self.CURRENT_ROUND))
 
         msg_room = msg_room.replace(';.', '.')
 

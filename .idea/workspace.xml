@@ -5,8 +5,153 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f0731132-1647-4714-b667-c61b5640c3c3" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/exe_files/heroquest_legends_v03_BETA/EN_en.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exe_files/heroquest_legends_v03_BETA/IT_it.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exe_files/heroquest_legends_v03_BETA/db_heroquest_legends.sqlite" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/EN_en.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/HQ_solo.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/IT_it.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/Include/pyconfig.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/MSVCP140.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/MSVCP140_1.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/PyQt5/Qt/plugins/iconengines/qsvgicon.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/PyQt5/Qt/plugins/imageformats/qgif.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/PyQt5/Qt/plugins/imageformats/qicns.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/PyQt5/Qt/plugins/imageformats/qico.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/PyQt5/Qt/plugins/imageformats/qjpeg.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/PyQt5/Qt/plugins/imageformats/qsvg.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/PyQt5/Qt/plugins/imageformats/qtga.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/PyQt5/Qt/plugins/imageformats/qtiff.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/PyQt5/Qt/plugins/imageformats/qwbmp.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/PyQt5/Qt/plugins/imageformats/qwebp.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/PyQt5/Qt/plugins/platforms/qminimal.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/PyQt5/Qt/plugins/platforms/qoffscreen.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/PyQt5/Qt/plugins/platforms/qwebgl.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/PyQt5/Qt/plugins/platforms/qwindows.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/PyQt5/Qt/plugins/platformthemes/qxdgdesktopportal.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/PyQt5/Qt/plugins/styles/qwindowsvistastyle.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/PyQt5/Qt/translations/qtbase_ar.qm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/PyQt5/Qt/translations/qtbase_bg.qm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/PyQt5/Qt/translations/qtbase_ca.qm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/PyQt5/Qt/translations/qtbase_cs.qm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/PyQt5/Qt/translations/qtbase_da.qm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/PyQt5/Qt/translations/qtbase_de.qm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/PyQt5/Qt/translations/qtbase_en.qm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/PyQt5/Qt/translations/qtbase_es.qm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/PyQt5/Qt/translations/qtbase_fi.qm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/PyQt5/Qt/translations/qtbase_fr.qm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/PyQt5/Qt/translations/qtbase_gd.qm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/PyQt5/Qt/translations/qtbase_he.qm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/PyQt5/Qt/translations/qtbase_hu.qm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/PyQt5/Qt/translations/qtbase_it.qm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/PyQt5/Qt/translations/qtbase_ja.qm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/PyQt5/Qt/translations/qtbase_ko.qm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/PyQt5/Qt/translations/qtbase_lv.qm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/PyQt5/Qt/translations/qtbase_pl.qm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/PyQt5/Qt/translations/qtbase_ru.qm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/PyQt5/Qt/translations/qtbase_sk.qm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/PyQt5/Qt/translations/qtbase_tr.qm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/PyQt5/Qt/translations/qtbase_uk.qm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/PyQt5/Qt/translations/qtbase_zh_TW.qm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/PyQt5/QtCore.pyd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/PyQt5/QtGui.pyd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/PyQt5/QtWidgets.pyd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/PyQt5/sip.cp38-win32.pyd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/PyQt5/uic/widget-plugins/qaxcontainer.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/PyQt5/uic/widget-plugins/qscintilla.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/PyQt5/uic/widget-plugins/qtcharts.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/PyQt5/uic/widget-plugins/qtprintsupport.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/PyQt5/uic/widget-plugins/qtquickwidgets.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/PyQt5/uic/widget-plugins/qtwebenginewidgets.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/PyQt5/uic/widget-plugins/qtwebkit.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/Qt5Core.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/Qt5DBus.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/Qt5Gui.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/Qt5Network.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/Qt5Qml.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/Qt5QmlModels.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/Qt5Quick.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/Qt5Svg.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/Qt5WebSockets.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/Qt5Widgets.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/VCRUNTIME140.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/_asyncio.pyd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/_bz2.pyd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/_ctypes.pyd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/_decimal.pyd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/_elementtree.pyd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/_hashlib.pyd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/_lzma.pyd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/_multiprocessing.pyd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/_overlapped.pyd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/_queue.pyd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/_socket.pyd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/_sqlite3.pyd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/_ssl.pyd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/base_library.zip" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/d3dcompiler_47.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/db_heroquest_legends.sqlite" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/fimir.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/fimir.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/gargoyle.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/gargoyle.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/goblin.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/guerriero_del_chaos.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/guerriero_del_chaos.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/heroquest_legends.ui" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/heroquest_solo_gui_ibg.exe" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/heroquest_solo_gui_ibg.exe.manifest" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/heroquest_solo_gui_ibg.spec" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/images/fimir.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/images/fimir.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/images/gargoyle.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/images/gargoyle.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/images/goblin.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/images/guerriero_del_chaos.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/images/guerriero_del_chaos.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/images/mappa.bmp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/images/mappa.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/images/mappa.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/images/mummia.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/images/mummia.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/images/orco.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/images/orco.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/images/scheletro.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/images/scheletro.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/images/zombie.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/images/zombie.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/images_resources.qrc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/libEGL.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/libGLESv2.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/libcrypto-1_1.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/libffi-7.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/libssl-1_1.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/mappa.bmp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/mappa.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/mappa.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/memo.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/mummia.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/mummia.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/opengl32sw.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/orco.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/orco.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/pyexpat.pyd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/python3.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/python38.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/resources.qrc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/scheletro.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/scheletro.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/select.pyd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/sqlite3.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/unicodedata.pyd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/zombie.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/zombie.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EN_en.txt" beforeDir="false" afterPath="$PROJECT_DIR$/EN_en.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/IT_it.txt" beforeDir="false" afterPath="$PROJECT_DIR$/IT_it.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_heroquest_legends.sqlite" beforeDir="false" afterPath="$PROJECT_DIR$/db_heroquest_legends.sqlite" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/heroquest_legends.ui" beforeDir="false" afterPath="$PROJECT_DIR$/heroquest_legends.ui" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/heroquest_legends_it.ui" beforeDir="false" afterPath="$PROJECT_DIR$/heroquest_legends_it.ui" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/heroquest_legends_main.py" beforeDir="false" afterPath="$PROJECT_DIR$/heroquest_legends_main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/heroquest_solo_function.py" beforeDir="false" afterPath="$PROJECT_DIR$/heroquest_solo_function.py" afterDir="false" />
     </list>
@@ -20,12 +165,12 @@
     <session id="-2020558873">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="56" />
+          <entry key="project.closed" value="60" />
           <entry key="project.open.time.0" value="2" />
           <entry key="project.open.time.1" value="1" />
           <entry key="project.open.time.10" value="9" />
           <entry key="project.open.time.11" value="2" />
-          <entry key="project.open.time.13" value="2" />
+          <entry key="project.open.time.13" value="4" />
           <entry key="project.open.time.14" value="1" />
           <entry key="project.open.time.2" value="1" />
           <entry key="project.open.time.20" value="1" />
@@ -34,10 +179,10 @@
           <entry key="project.open.time.4" value="12" />
           <entry key="project.open.time.5" value="6" />
           <entry key="project.open.time.6" value="4" />
-          <entry key="project.open.time.7" value="10" />
+          <entry key="project.open.time.7" value="11" />
           <entry key="project.open.time.8" value="3" />
-          <entry key="project.open.time.9" value="5" />
-          <entry key="project.opened" value="61" />
+          <entry key="project.open.time.9" value="6" />
+          <entry key="project.opened" value="65" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -46,16 +191,16 @@
           <entry key="jpg" value="13" />
           <entry key="md" value="2" />
           <entry key="png" value="7" />
-          <entry key="py" value="45" />
-          <entry key="txt" value="25" />
+          <entry key="py" value="48" />
+          <entry key="txt" value="26" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="Image" value="21" />
           <entry key="Markdown" value="2" />
-          <entry key="PLAIN_TEXT" value="25" />
-          <entry key="Python" value="44" />
+          <entry key="PLAIN_TEXT" value="26" />
+          <entry key="Python" value="47" />
           <entry key="Scratch" value="1" />
         </counts>
       </usages-collector>
@@ -64,15 +209,15 @@
           <entry key="Python Console" value="784" />
           <entry key="dummy" value="21" />
           <entry key="md" value="94" />
-          <entry key="py" value="21460" />
-          <entry key="txt" value="14842" />
+          <entry key="py" value="22029" />
+          <entry key="txt" value="15052" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="Markdown" value="94" />
-          <entry key="PLAIN_TEXT" value="14863" />
-          <entry key="Python" value="22244" />
+          <entry key="PLAIN_TEXT" value="15073" />
+          <entry key="Python" value="22813" />
         </counts>
       </usages-collector>
     </session>
@@ -82,14 +227,23 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/heroquest_legends_main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="144">
-              <caret line="41" column="5" selection-start-line="41" selection-start-column="5" selection-end-line="41" selection-end-column="5" />
+            <state relative-caret-position="101">
+              <caret line="157" column="1" selection-start-line="157" selection-start-column="1" selection-end-line="157" selection-end-column="28" />
               <folding>
                 <element signature="e#1088#1101#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/IT_it.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="180">
+              <caret line="117" column="55" selection-start-line="117" selection-start-column="55" selection-end-line="117" selection-end-column="55" />
             </state>
           </provider>
         </entry>
@@ -97,31 +251,14 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/heroquest_solo_function.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="192">
-              <caret line="22" column="14" lean-forward="true" selection-start-line="22" selection-start-column="14" selection-end-line="22" selection-end-column="14" />
+            <state relative-caret-position="255">
+              <caret line="355" column="28" selection-start-line="355" selection-start-column="28" selection-end-line="355" selection-end-column="28" />
               <folding>
                 <element signature="e#1088#1101#0" expanded="true" />
-                <marker date="1618323672205" expanded="true" signature="6551:6556" ph="..." />
-                <marker date="1618323672205" expanded="true" signature="19877:19882" ph="..." />
+                <marker date="1618666080774" expanded="true" signature="6551:6556" ph="..." />
+                <marker date="1618666080774" expanded="true" signature="16143:16150" ph="..." />
+                <marker date="1618666080774" expanded="true" signature="21720:21725" ph="..." />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/IT_it.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2304">
-              <caret line="96" column="33" lean-forward="true" selection-start-line="96" selection-start-column="33" selection-end-line="96" selection-end-column="33" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/EN_en.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="216">
-              <caret line="226" lean-forward="true" selection-start-line="226" selection-end-line="226" />
             </state>
           </provider>
         </entry>
@@ -137,10 +274,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>i muri e vedete</find>
-      <find>treasure_ra</find>
-      <find>comboBox_monster_attack</find>
-      <find>hai trovato un</find>
       <find>trovato</find>
       <find>monster</find>
       <find>a voi</find>
@@ -150,8 +283,6 @@
       <find>treasures_dict</find>
       <find>treasures</find>
       <find>uscira</find>
-      <find>aisle</find>
-      <find>aisl</find>
       <find>atta</find>
       <find>round</find>
       <find>combat_value_dict</find>
@@ -165,8 +296,14 @@
       <find>fuggir</find>
       <find>fuggi</find>
       <find>traps</find>
-      <find>random_trap</find>
       <find>btn_6</find>
+      <find>random_trap</find>
+      <find>CURRENT_ROUND</find>
+      <find>monst</find>
+      <find>aisle</find>
+      <find>aux_msg_9</find>
+      <find>aisl</find>
+      <find>random_mon</find>
     </findStrings>
     <replaceStrings>
       <replace>treasures</replace>
@@ -201,16 +338,15 @@
         <option value="$PROJECT_DIR$/heroquest_solo_gui_ibg.py" />
         <option value="$PROJECT_DIR$/cocos2D_gui.py" />
         <option value="$PROJECT_DIR$/appunti..txt" />
-        <option value="$PROJECT_DIR$/IT_it.txt" />
         <option value="$PROJECT_DIR$/EN_en.txt" />
-        <option value="$PROJECT_DIR$/heroquest_solo_function.py" />
         <option value="$PROJECT_DIR$/heroquest_legends_main.py" />
+        <option value="$PROJECT_DIR$/heroquest_solo_function.py" />
+        <option value="$PROJECT_DIR$/IT_it.txt" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-105" />
-    <option name="y" value="490" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="-13" />
     <option name="width" value="1940" />
     <option name="height" value="1100" />
   </component>
@@ -220,7 +356,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -240,6 +375,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -695,7 +831,14 @@
       <option name="project" value="LOCAL" />
       <updated>1618240656836</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="Version 0.82: add right messages to EN_en.txt&#10;Must be translated in English">
+      <created>1618323794583</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1618323794583</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="TodoView">
@@ -708,19 +851,19 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="878" extended-state="6" />
+    <frame x="-10" y="0" width="1552" height="880" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Favorites" order="0" sideWeight="0.3614679" side_tool="true" weight="0.26635823" />
-      <window_info content_ui="combo" id="Project" order="1" sideWeight="0.51618123" visible="true" weight="0.13483146" />
-      <window_info id="Structure" order="2" sideWeight="0.48381877" side_tool="true" visible="true" weight="0.13483146" />
+      <window_info content_ui="combo" id="Project" order="1" sideWeight="0.30038023" visible="true" weight="0.18019801" />
+      <window_info id="Structure" order="2" sideWeight="0.69961977" side_tool="true" visible="true" weight="0.18019801" />
       <window_info anchor="bottom" id="Terminal" order="0" sideWeight="0.4990086" weight="0.14265928" />
       <window_info anchor="bottom" id="Event Log" order="1" sideWeight="0.32253802" side_tool="true" weight="0.28393352" />
       <window_info anchor="bottom" id="Python Console" order="2" sideWeight="0.8360872" weight="0.14127424" />
       <window_info anchor="bottom" id="Message" order="3" />
       <window_info anchor="bottom" id="Find" order="4" weight="0.32963988" />
       <window_info anchor="bottom" id="Version Control" order="5" sideWeight="0.4976867" weight="0.433518" />
-      <window_info active="true" anchor="bottom" id="Run" order="6" sideWeight="0.677462" visible="true" weight="0.14404432" />
+      <window_info active="true" anchor="bottom" id="Run" order="6" sideWeight="0.677462" visible="true" weight="0.27348065" />
       <window_info anchor="bottom" id="Debug" order="7" weight="0.54432136" />
       <window_info anchor="bottom" id="Cvs" order="8" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="9" weight="0.4" />
@@ -734,7 +877,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Add somes messages, images and a basic system to charge images." />
     <MESSAGE value="New system for create monsters' crew" />
     <MESSAGE value="New system for create rooms" />
     <MESSAGE value="Created a new translations system.&#10;Messages translated&#10;_ TODO Buttons" />
@@ -759,7 +901,8 @@
     <MESSAGE value="Versione 0.81 ALPHA added" />
     <MESSAGE value="Versione 0.81: fighting system modified with group mode and new doors system added" />
     <MESSAGE value="Version 0.82: fighting system modified with group mode and new doors system added. Minor bug fixed.&#10;TODO ADDED" />
-    <option name="LAST_COMMIT_MESSAGE" value="Version 0.82: fighting system modified with group mode and new doors system added. Minor bug fixed.&#10;TODO ADDED" />
+    <MESSAGE value="Version 0.82: add right messages to EN_en.txt&#10;Must be translated in English" />
+    <option name="LAST_COMMIT_MESSAGE" value="Version 0.82: add right messages to EN_en.txt&#10;Must be translated in English" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -912,39 +1055,40 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/IT_it.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2304">
-          <caret line="96" column="33" lean-forward="true" selection-start-line="96" selection-start-column="33" selection-end-line="96" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/EN_en.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="226" lean-forward="true" selection-start-line="226" selection-end-line="226" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/heroquest_solo_function.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="22" column="14" lean-forward="true" selection-start-line="22" selection-start-column="14" selection-end-line="22" selection-end-column="14" />
-          <folding>
-            <element signature="e#1088#1101#0" expanded="true" />
-            <marker date="1618323672205" expanded="true" signature="6551:6556" ph="..." />
-            <marker date="1618323672205" expanded="true" signature="19877:19882" ph="..." />
-          </folding>
+        <state relative-caret-position="5424">
+          <caret line="226" selection-start-line="226" selection-end-line="226" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/heroquest_legends_main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="41" column="5" selection-start-line="41" selection-start-column="5" selection-end-line="41" selection-end-column="5" />
+        <state relative-caret-position="101">
+          <caret line="157" column="1" selection-start-line="157" selection-start-column="1" selection-end-line="157" selection-end-column="28" />
           <folding>
             <element signature="e#1088#1101#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/heroquest_solo_function.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="355" column="28" selection-start-line="355" selection-start-column="28" selection-end-line="355" selection-end-column="28" />
+          <folding>
+            <element signature="e#1088#1101#0" expanded="true" />
+            <marker date="1618666080774" expanded="true" signature="6551:6556" ph="..." />
+            <marker date="1618666080774" expanded="true" signature="16143:16150" ph="..." />
+            <marker date="1618666080774" expanded="true" signature="21720:21725" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/IT_it.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="117" column="55" selection-start-line="117" selection-start-column="55" selection-end-line="117" selection-end-column="55" />
         </state>
       </provider>
     </entry>

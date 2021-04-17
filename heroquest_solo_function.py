@@ -321,6 +321,53 @@ class Heroquest_solo:
                 msg_monsters = '{} {}'.format(self.CONFIG_DICT['monsters_msg_intro'],self.CONFIG_DICT['monsters_msg_2'])
         return msg_monsters
 
+    def random_monsters_on_aisles(self, n):
+        print("giulia")
+        turn = n
+
+        rn = self.random_numbers()
+        comparison_value = 0
+
+
+        if turn >= 1 and turn <= 15:
+            comparison_value = 23
+        elif turn > 15 and turn <= 20:
+            comparison_value = 22
+        else:
+            comparison_value = 18
+        print("giulia 2")
+        if rn >= comparison_value:
+            query_string = "Select id_monster from monsters where monster_class = '{}' or monster_class LIKE '%{}' or monster_class LIKE '{}%' or monster_class LIKE '%{}%'".format(
+                self.MONSTER_CLASS, self.MONSTER_CLASS, self.MONSTER_CLASS, self.MONSTER_CLASS)
+            db_monsters_class_query = self.CURSOR.execute(query_string)
+            db_monsters_class_charged = db_monsters_class_query.fetchall()
+            db_monsters_class_charged_list = []
+            for i in db_monsters_class_charged:
+                db_monsters_class_charged_list.append(i[0])
+
+            db_monsters_class_charged_lenght = len(db_monsters_class_charged_list) - 1
+            rng = random.SystemRandom()
+            id_monster_rand = db_monsters_class_charged_list[rng.randint(0, db_monsters_class_charged_lenght)]
+            print("giulia 5")
+            monsters_residue = self.MONSTERS_QTY_DICT[id_monster_rand]
+
+            if monsters_residue > 0:
+                print("giulia 6")
+                msg_monsters = self.CONFIG_DICT['aux_msg_9'].format(self.monsters_dict[id_monster_rand])
+                new_monster_residue = monsters_residue - 1
+                print("giulia 7")
+                self.MONSTERS_QTY_DICT[id_monster_rand] = new_monster_residue
+                print("giulia 9")
+                return msg_monsters
+        else:
+            print("giulia 3")
+            return self.CONFIG_DICT['aux_msg_10']
+
+
+
+
+
+
 
     def aisles(self, rv):
         #sistem for discover aisles
@@ -471,10 +518,21 @@ class Heroquest_solo:
             #villan mode
             return 2
 
-    def random_trap(self):
-        rn = self.random_numbers()
+    def random_trap(self, n):
+        turn = n
 
-        if rn >= 23:
+        rn = self.random_numbers()
+        comparison_value = 0
+
+
+        if turn >= 1 and turn <= 15:
+            comparison_value = 23
+        elif turn > 15 and turn <= 20:
+            comparison_value = 22
+        else:
+            comparison_value = 18
+
+        if rn >= comparison_value:
             return self.CONFIG_DICT['aux_msg_8']
 
 

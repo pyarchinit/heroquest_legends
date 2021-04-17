@@ -115,6 +115,8 @@
   'aux_msg_6': 'La stanza è spoglia e solo muffa e sangue arredano le sue pareti.',
   'aux_msg_7': 'Siete tornati sui vostri passi e un rumore sinistro vi accoglie...cosa può essere?',
   'aux_msg_8': 'Un ticchettio sordo e una freccia parte dal muro verso di te togliendoti 1 punto corpo! Se avevi già cercato trabocchetti in questa stanza eviti la freccia altrimentni difenditi lanciando un dado da combattimento per ogni punto mente che hai.',
+  'aux_msg_9': 'Attirato dai rumori ti ritrovi davanti {}',
+  'aux_msg_10': 'Fino a qui tutto tranquillo...',
   'end_msg_1' : 'La via d\'uscita! Noti una pietra spostata nel muro e toccandola, un rumore di ingranaggi apre una voragine nel pavimento. Hai trovato le scale per uscire!',
   'monsters_msg_intro': 'Prendi tutto il tuo coraggio e guardi dentro. Ecco cosa vedi:\n',
 
@@ -230,7 +232,7 @@
                               3: 'dietro di lui',
                               4: 'davanti a lui'},
 
-  'missions_dict' : { 1: "Nelle terre di Hogarth, in un maniero abbandonato, si trova nascosto in un sotterraneo un antico laboratorio. Dovrai recuperare una pozione che il potente necromante tiene nascosta da qualche parte. Trova il laboratorio e cerca di sopravvivere!!! (Metti gli eroi nell'angolo del corridoio in alto a destra del tabellone.",
+  'missions_dict' : { 1: "Nelle terre di Hogarth, in un maniero abbandonato, si trova nascosto in un sotterraneo un antico laboratorio. Dovrai recuperare una pozione che il potente necromante tiene nascosta da qualche parte. Trova il laboratorio e cerca di sopravvivere tornando alle scale!!! (Metti le scale e gli eroi nell'angolo del tabellone in alto a destra.",
                       2: "Il re Volgarth darà una ricompensa di 150 monete d'oro a chi gli porterà la spada del leggendario Eriamar, re barbaro dei tempi antichi, la cui tomba si trova in fondo ad un profondo intrico di cunicoli. Vai nella fortezza di Gurmardath e cerca la tomba dell'antico re e recupera la sua spada. Metti le scale al centro con gli eroi e 4 porte chiuse al centro di ogni muro; per vincere dovrai trovare la tomba e ... ."
                      },
 

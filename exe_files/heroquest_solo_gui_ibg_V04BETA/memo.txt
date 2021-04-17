@@ -1,0 +1,59 @@
+"""
+
+from __future__ import absolute_import
+
+import os
+from datetime import date
+
+import sys
+from builtins import range
+from builtins import str
+from PyQt.QtGui import QDesktopServices
+from PyQt.QtCore import QUrl, QVariant
+from PyQt.QtWidgets import QDialog, QMessageBox, QFileDialog
+from PyQt.uic import loadUiType
+
+
+#from ..gui.pyarchinitConfigDialog import pyArchInitDialog_Config
+
+MAIN_DIALOG_CLASS, _ = loadUiType(os.path.join(os.path.dirname(__file__), 'heroquest_legends.ui'))
+
+
+#import sys
+from PyQt5.QtWidgets import QApplication
+
+class pyarchinit_Site(QDialog, MAIN_DIALOG_CLASS):
+    #This class provides to manage the Site Sheet
+    self.SOMEVAR = ""
+
+    #SITO = for external dialog
+    #For languages
+
+
+    def __init__(self, iface):
+        super().__init__()
+        self.iface = iface
+        self.pyQGIS = Pyarchinit_pyqgis(iface)
+        self.setupUi(self)
+        self.currentLayerId = None
+        self.HOME = os.environ['PYARCHINIT_HOME']
+        try:
+            self.on_pushButton_connect_pressed()
+        except Exception as e:
+            QMessageBox.warning(self, "Connection system", str(e), QMessageBox.Ok)
+
+        self.pbnOpenSiteDirectory.clicked.connect(self.openSiteDir)
+        self.pbn_browse_folder.clicked.connect(self.setPathToSites)
+        self.set_sito()
+        self.msg_sito()
+
+    def dosomething(self):
+        pass
+
+
+if __name__ == "__main__":
+    app = QApplication(sys.argv)
+    ui = pyarchinit_US()
+    ui.show()
+    sys.exit(app.exec_())
+"""

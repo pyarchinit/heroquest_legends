@@ -300,7 +300,7 @@
           </font>
          </property>
          <property name="text">
-          <string>Cosa contiene?</string>
+          <string>Thing contains?</string>
          </property>
         </widget>
        </item>

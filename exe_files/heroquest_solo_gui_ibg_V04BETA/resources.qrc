@@ -1,7 +1,0 @@
-<RCC>
-  <qresource prefix="images">
-    <file>images/mappa.jpg</file>
-    <file>images/mappa.png</file>
-  </qresource>
-  <qresource prefix="newPrefix"/>
-</RCC>

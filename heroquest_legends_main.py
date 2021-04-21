@@ -41,9 +41,9 @@ class Ui(QtWidgets.QMainWindow):
     local_language = locale.getdefaultlocale()
     #file_name = 'en_EN.txt'
     if local_language[0] == 'it_IT':
-        CONFIG = open('IT_it.txt', "rb+")
+        CONFIG = open('./languages/IT_it.txt', "rb+")
     else :
-        CONFIG = open('EN_en.txt', "rb+")
+        CONFIG = open('./languages/EN_en.txt', "rb+")
     data_config = CONFIG.read()
     CONFIG.close()
     CONFIG_DICT = eval(data_config)
@@ -70,10 +70,8 @@ class Ui(QtWidgets.QMainWindow):
         self.setWindowFlag(QtCore.Qt.WindowCloseButtonHint, False)
 
         local_language = locale.getdefaultlocale()
-        if local_language[0] == 'it_IT':
-            uic.loadUi(os.path.join(os.path.dirname(__file__),'heroquest_legends_it.ui'), self)
-        else:
-            uic.loadUi(os.path.join(os.path.dirname(__file__), 'heroquest_legends.ui'), self)
+
+        uic.loadUi(os.path.join(os.path.dirname(__file__),'heroquest_legends.ui'), self)
 
         self.HQ_SOLO = Heroquest_solo(self.CONFIG_DICT)
 
@@ -283,11 +281,13 @@ app = QtWidgets.QApplication(sys.argv)
 translator = QtCore.QTranslator()
 local_language = locale.getdefaultlocale()
 if local_language[0] == 'it_IT':
-    translator.load("IT_it.qm")
+    translator.load("./languages/IT_it.qm")
 elif local_language[0] == 'en_EN':
-    translator.load("EN_en.qm")
+    translator.load("./languages/EN_en.qm")
+elif local_language[0] == 'es_ES':
+    translator.load("./languages/ES_es.qm")
 else:
-    translator.load("EN_en.qm")
+    translator.load("./languages/EN_en.qm")
 
 app.installTranslator(translator)
 window = Ui()

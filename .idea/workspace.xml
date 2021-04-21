@@ -6,12 +6,275 @@
   <component name="ChangeListManager">
     <list default="true" id="f0731132-1647-4714-b667-c61b5640c3c3" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/IT_it.txt" beforeDir="false" afterPath="$PROJECT_DIR$/IT_it.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db_heroquest_legends.sqlite" beforeDir="false" afterPath="$PROJECT_DIR$/db_heroquest_legends.sqlite" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/heroquest_legends.ui" beforeDir="false" afterPath="$PROJECT_DIR$/heroquest_legends.ui" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/heroquest_legends_it.ui" beforeDir="false" afterPath="$PROJECT_DIR$/heroquest_legends_it.ui" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EN_en.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/IT_it.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exe_files/heroquest_legends_v03_BETA/EN_en.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exe_files/heroquest_legends_v03_BETA/IT_it.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exe_files/heroquest_legends_v03_BETA/db_heroquest_legends.sqlite" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exe_files/heroquest_legends_v081_ALPHA/EN_en.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exe_files/heroquest_legends_v081_ALPHA/HQ_solo.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exe_files/heroquest_legends_v081_ALPHA/IT_it.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exe_files/heroquest_legends_v081_ALPHA/Include/pyconfig.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exe_files/heroquest_legends_v081_ALPHA/MSVCP140.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exe_files/heroquest_legends_v081_ALPHA/MSVCP140_1.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exe_files/heroquest_legends_v081_ALPHA/PyQt5/Qt/plugins/iconengines/qsvgicon.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exe_files/heroquest_legends_v081_ALPHA/PyQt5/Qt/plugins/imageformats/qgif.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exe_files/heroquest_legends_v081_ALPHA/PyQt5/Qt/plugins/imageformats/qicns.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exe_files/heroquest_legends_v081_ALPHA/PyQt5/Qt/plugins/imageformats/qico.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exe_files/heroquest_legends_v081_ALPHA/PyQt5/Qt/plugins/imageformats/qjpeg.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exe_files/heroquest_legends_v081_ALPHA/PyQt5/Qt/plugins/imageformats/qsvg.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exe_files/heroquest_legends_v081_ALPHA/PyQt5/Qt/plugins/imageformats/qtga.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exe_files/heroquest_legends_v081_ALPHA/PyQt5/Qt/plugins/imageformats/qtiff.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exe_files/heroquest_legends_v081_ALPHA/PyQt5/Qt/plugins/imageformats/qwbmp.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exe_files/heroquest_legends_v081_ALPHA/PyQt5/Qt/plugins/imageformats/qwebp.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exe_files/heroquest_legends_v081_ALPHA/PyQt5/Qt/plugins/platforms/qminimal.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exe_files/heroquest_legends_v081_ALPHA/PyQt5/Qt/plugins/platforms/qoffscreen.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exe_files/heroquest_legends_v081_ALPHA/PyQt5/Qt/plugins/platforms/qwebgl.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exe_files/heroquest_legends_v081_ALPHA/PyQt5/Qt/plugins/platforms/qwindows.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exe_files/heroquest_legends_v081_ALPHA/PyQt5/Qt/plugins/platformthemes/qxdgdesktopportal.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exe_files/heroquest_legends_v081_ALPHA/PyQt5/Qt/plugins/styles/qwindowsvistastyle.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exe_files/heroquest_legends_v081_ALPHA/PyQt5/Qt/translations/qtbase_ar.qm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exe_files/heroquest_legends_v081_ALPHA/PyQt5/Qt/translations/qtbase_bg.qm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exe_files/heroquest_legends_v081_ALPHA/PyQt5/Qt/translations/qtbase_ca.qm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exe_files/heroquest_legends_v081_ALPHA/PyQt5/Qt/translations/qtbase_cs.qm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exe_files/heroquest_legends_v081_ALPHA/PyQt5/Qt/translations/qtbase_da.qm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exe_files/heroquest_legends_v081_ALPHA/PyQt5/Qt/translations/qtbase_de.qm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exe_files/heroquest_legends_v081_ALPHA/PyQt5/Qt/translations/qtbase_en.qm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exe_files/heroquest_legends_v081_ALPHA/PyQt5/Qt/translations/qtbase_es.qm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exe_files/heroquest_legends_v081_ALPHA/PyQt5/Qt/translations/qtbase_fi.qm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exe_files/heroquest_legends_v081_ALPHA/PyQt5/Qt/translations/qtbase_fr.qm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exe_files/heroquest_legends_v081_ALPHA/PyQt5/Qt/translations/qtbase_gd.qm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exe_files/heroquest_legends_v081_ALPHA/PyQt5/Qt/translations/qtbase_he.qm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exe_files/heroquest_legends_v081_ALPHA/PyQt5/Qt/translations/qtbase_hu.qm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exe_files/heroquest_legends_v081_ALPHA/PyQt5/Qt/translations/qtbase_it.qm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exe_files/heroquest_legends_v081_ALPHA/PyQt5/Qt/translations/qtbase_ja.qm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exe_files/heroquest_legends_v081_ALPHA/PyQt5/Qt/translations/qtbase_ko.qm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exe_files/heroquest_legends_v081_ALPHA/PyQt5/Qt/translations/qtbase_lv.qm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exe_files/heroquest_legends_v081_ALPHA/PyQt5/Qt/translations/qtbase_pl.qm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exe_files/heroquest_legends_v081_ALPHA/PyQt5/Qt/translations/qtbase_ru.qm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exe_files/heroquest_legends_v081_ALPHA/PyQt5/Qt/translations/qtbase_sk.qm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exe_files/heroquest_legends_v081_ALPHA/PyQt5/Qt/translations/qtbase_tr.qm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exe_files/heroquest_legends_v081_ALPHA/PyQt5/Qt/translations/qtbase_uk.qm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exe_files/heroquest_legends_v081_ALPHA/PyQt5/Qt/translations/qtbase_zh_TW.qm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exe_files/heroquest_legends_v081_ALPHA/PyQt5/QtCore.pyd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exe_files/heroquest_legends_v081_ALPHA/PyQt5/QtGui.pyd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exe_files/heroquest_legends_v081_ALPHA/PyQt5/QtWidgets.pyd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exe_files/heroquest_legends_v081_ALPHA/PyQt5/sip.cp38-win32.pyd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exe_files/heroquest_legends_v081_ALPHA/PyQt5/uic/widget-plugins/qaxcontainer.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exe_files/heroquest_legends_v081_ALPHA/PyQt5/uic/widget-plugins/qscintilla.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exe_files/heroquest_legends_v081_ALPHA/PyQt5/uic/widget-plugins/qtcharts.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exe_files/heroquest_legends_v081_ALPHA/PyQt5/uic/widget-plugins/qtprintsupport.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exe_files/heroquest_legends_v081_ALPHA/PyQt5/uic/widget-plugins/qtquickwidgets.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exe_files/heroquest_legends_v081_ALPHA/PyQt5/uic/widget-plugins/qtwebenginewidgets.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exe_files/heroquest_legends_v081_ALPHA/PyQt5/uic/widget-plugins/qtwebkit.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exe_files/heroquest_legends_v081_ALPHA/Qt5Core.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exe_files/heroquest_legends_v081_ALPHA/Qt5DBus.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exe_files/heroquest_legends_v081_ALPHA/Qt5Gui.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exe_files/heroquest_legends_v081_ALPHA/Qt5Network.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exe_files/heroquest_legends_v081_ALPHA/Qt5Qml.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exe_files/heroquest_legends_v081_ALPHA/Qt5QmlModels.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exe_files/heroquest_legends_v081_ALPHA/Qt5Quick.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exe_files/heroquest_legends_v081_ALPHA/Qt5Svg.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exe_files/heroquest_legends_v081_ALPHA/Qt5WebSockets.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exe_files/heroquest_legends_v081_ALPHA/Qt5Widgets.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exe_files/heroquest_legends_v081_ALPHA/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exe_files/heroquest_legends_v081_ALPHA/VCRUNTIME140.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exe_files/heroquest_legends_v081_ALPHA/_asyncio.pyd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exe_files/heroquest_legends_v081_ALPHA/_bz2.pyd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exe_files/heroquest_legends_v081_ALPHA/_ctypes.pyd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exe_files/heroquest_legends_v081_ALPHA/_decimal.pyd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exe_files/heroquest_legends_v081_ALPHA/_elementtree.pyd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exe_files/heroquest_legends_v081_ALPHA/_hashlib.pyd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exe_files/heroquest_legends_v081_ALPHA/_lzma.pyd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exe_files/heroquest_legends_v081_ALPHA/_multiprocessing.pyd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exe_files/heroquest_legends_v081_ALPHA/_overlapped.pyd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exe_files/heroquest_legends_v081_ALPHA/_queue.pyd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exe_files/heroquest_legends_v081_ALPHA/_socket.pyd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exe_files/heroquest_legends_v081_ALPHA/_sqlite3.pyd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exe_files/heroquest_legends_v081_ALPHA/_ssl.pyd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exe_files/heroquest_legends_v081_ALPHA/background.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exe_files/heroquest_legends_v081_ALPHA/background.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exe_files/heroquest_legends_v081_ALPHA/background.xcf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exe_files/heroquest_legends_v081_ALPHA/base_library.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exe_files/heroquest_legends_v081_ALPHA/d3dcompiler_47.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exe_files/heroquest_legends_v081_ALPHA/db_heroquest_legends.sqlite" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exe_files/heroquest_legends_v081_ALPHA/fimir.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exe_files/heroquest_legends_v081_ALPHA/fimir.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exe_files/heroquest_legends_v081_ALPHA/gargoyle.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exe_files/heroquest_legends_v081_ALPHA/gargoyle.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exe_files/heroquest_legends_v081_ALPHA/goblin.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exe_files/heroquest_legends_v081_ALPHA/goblin.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exe_files/heroquest_legends_v081_ALPHA/guerriero_del_chaos.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exe_files/heroquest_legends_v081_ALPHA/guerriero_del_chaos.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exe_files/heroquest_legends_v081_ALPHA/heroquest_legends.ui" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exe_files/heroquest_legends_v081_ALPHA/heroquest_legends_main.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exe_files/heroquest_legends_v081_ALPHA/heroquest_legends_main.exe.manifest" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exe_files/heroquest_legends_v081_ALPHA/heroquest_legends_main.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exe_files/heroquest_legends_v081_ALPHA/heroquest_solo_function.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exe_files/heroquest_legends_v081_ALPHA/images_resources.qrc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exe_files/heroquest_legends_v081_ALPHA/libEGL.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exe_files/heroquest_legends_v081_ALPHA/libGLESv2.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exe_files/heroquest_legends_v081_ALPHA/libcrypto-1_1.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exe_files/heroquest_legends_v081_ALPHA/libffi-7.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exe_files/heroquest_legends_v081_ALPHA/libssl-1_1.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exe_files/heroquest_legends_v081_ALPHA/mappa.bmp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exe_files/heroquest_legends_v081_ALPHA/mappa.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exe_files/heroquest_legends_v081_ALPHA/mappa.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exe_files/heroquest_legends_v081_ALPHA/mummia.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exe_files/heroquest_legends_v081_ALPHA/mummia.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exe_files/heroquest_legends_v081_ALPHA/opengl32sw.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exe_files/heroquest_legends_v081_ALPHA/orco.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exe_files/heroquest_legends_v081_ALPHA/orco.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exe_files/heroquest_legends_v081_ALPHA/pyexpat.pyd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exe_files/heroquest_legends_v081_ALPHA/python3.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exe_files/heroquest_legends_v081_ALPHA/python38.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exe_files/heroquest_legends_v081_ALPHA/scheletro.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exe_files/heroquest_legends_v081_ALPHA/scheletro.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exe_files/heroquest_legends_v081_ALPHA/select.pyd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exe_files/heroquest_legends_v081_ALPHA/sqlite3.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exe_files/heroquest_legends_v081_ALPHA/unicodedata.pyd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exe_files/heroquest_legends_v081_ALPHA/zombie.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exe_files/heroquest_legends_v081_ALPHA/zombie.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/EN_en.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/HQ_solo.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/IT_it.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/Include/pyconfig.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/MSVCP140.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/MSVCP140_1.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/PyQt5/Qt/plugins/iconengines/qsvgicon.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/PyQt5/Qt/plugins/imageformats/qgif.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/PyQt5/Qt/plugins/imageformats/qicns.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/PyQt5/Qt/plugins/imageformats/qico.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/PyQt5/Qt/plugins/imageformats/qjpeg.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/PyQt5/Qt/plugins/imageformats/qsvg.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/PyQt5/Qt/plugins/imageformats/qtga.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/PyQt5/Qt/plugins/imageformats/qtiff.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/PyQt5/Qt/plugins/imageformats/qwbmp.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/PyQt5/Qt/plugins/imageformats/qwebp.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/PyQt5/Qt/plugins/platforms/qminimal.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/PyQt5/Qt/plugins/platforms/qoffscreen.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/PyQt5/Qt/plugins/platforms/qwebgl.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/PyQt5/Qt/plugins/platforms/qwindows.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/PyQt5/Qt/plugins/platformthemes/qxdgdesktopportal.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/PyQt5/Qt/plugins/styles/qwindowsvistastyle.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/PyQt5/Qt/translations/qtbase_ar.qm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/PyQt5/Qt/translations/qtbase_bg.qm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/PyQt5/Qt/translations/qtbase_ca.qm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/PyQt5/Qt/translations/qtbase_cs.qm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/PyQt5/Qt/translations/qtbase_da.qm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/PyQt5/Qt/translations/qtbase_de.qm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/PyQt5/Qt/translations/qtbase_en.qm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/PyQt5/Qt/translations/qtbase_es.qm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/PyQt5/Qt/translations/qtbase_fi.qm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/PyQt5/Qt/translations/qtbase_fr.qm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/PyQt5/Qt/translations/qtbase_gd.qm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/PyQt5/Qt/translations/qtbase_he.qm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/PyQt5/Qt/translations/qtbase_hu.qm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/PyQt5/Qt/translations/qtbase_it.qm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/PyQt5/Qt/translations/qtbase_ja.qm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/PyQt5/Qt/translations/qtbase_ko.qm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/PyQt5/Qt/translations/qtbase_lv.qm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/PyQt5/Qt/translations/qtbase_pl.qm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/PyQt5/Qt/translations/qtbase_ru.qm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/PyQt5/Qt/translations/qtbase_sk.qm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/PyQt5/Qt/translations/qtbase_tr.qm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/PyQt5/Qt/translations/qtbase_uk.qm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/PyQt5/Qt/translations/qtbase_zh_TW.qm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/PyQt5/QtCore.pyd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/PyQt5/QtGui.pyd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/PyQt5/QtWidgets.pyd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/PyQt5/sip.cp38-win32.pyd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/PyQt5/uic/widget-plugins/qaxcontainer.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/PyQt5/uic/widget-plugins/qscintilla.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/PyQt5/uic/widget-plugins/qtcharts.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/PyQt5/uic/widget-plugins/qtprintsupport.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/PyQt5/uic/widget-plugins/qtquickwidgets.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/PyQt5/uic/widget-plugins/qtwebenginewidgets.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/PyQt5/uic/widget-plugins/qtwebkit.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/Qt5Core.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/Qt5DBus.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/Qt5Gui.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/Qt5Network.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/Qt5Qml.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/Qt5QmlModels.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/Qt5Quick.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/Qt5Svg.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/Qt5WebSockets.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/Qt5Widgets.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/VCRUNTIME140.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/_asyncio.pyd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/_bz2.pyd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/_ctypes.pyd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/_decimal.pyd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/_elementtree.pyd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/_hashlib.pyd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/_lzma.pyd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/_multiprocessing.pyd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/_overlapped.pyd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/_queue.pyd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/_socket.pyd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/_sqlite3.pyd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/_ssl.pyd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/base_library.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/d3dcompiler_47.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/db_heroquest_legends.sqlite" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/fimir.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/fimir.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/gargoyle.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/gargoyle.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/goblin.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/guerriero_del_chaos.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/guerriero_del_chaos.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/heroquest_legends.ui" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/heroquest_solo_gui_ibg.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/heroquest_solo_gui_ibg.exe.manifest" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/heroquest_solo_gui_ibg.spec" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/images/fimir.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/images/fimir.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/images/gargoyle.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/images/gargoyle.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/images/goblin.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/images/guerriero_del_chaos.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/images/guerriero_del_chaos.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/images/mappa.bmp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/images/mappa.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/images/mappa.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/images/mummia.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/images/mummia.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/images/orco.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/images/orco.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/images/scheletro.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/images/scheletro.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/images/zombie.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/images/zombie.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/images_resources.qrc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/libEGL.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/libGLESv2.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/libcrypto-1_1.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/libffi-7.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/libssl-1_1.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/mappa.bmp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/mappa.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/mappa.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/memo.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/mummia.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/mummia.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/opengl32sw.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/orco.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/orco.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/pyexpat.pyd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/python3.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/python38.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/resources.qrc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/scheletro.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/scheletro.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/select.pyd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/sqlite3.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/unicodedata.pyd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/zombie.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exe_files/heroquest_solo_gui_ibg_V04BETA/zombie.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/heroquest_legends_main.py" beforeDir="false" afterPath="$PROJECT_DIR$/heroquest_legends_main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/heroquest_solo_function.py" beforeDir="false" afterPath="$PROJECT_DIR$/heroquest_solo_function.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -67,15 +330,15 @@
           <entry key="Python Console" value="784" />
           <entry key="dummy" value="21" />
           <entry key="md" value="94" />
-          <entry key="py" value="22321" />
-          <entry key="txt" value="15383" />
+          <entry key="py" value="22355" />
+          <entry key="txt" value="15497" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="Markdown" value="94" />
-          <entry key="PLAIN_TEXT" value="15404" />
-          <entry key="Python" value="23105" />
+          <entry key="PLAIN_TEXT" value="15518" />
+          <entry key="Python" value="23139" />
         </counts>
       </usages-collector>
     </session>
@@ -88,20 +351,11 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/heroquest_legends_main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-5593">
-              <caret line="46" column="31" lean-forward="true" selection-start-line="46" selection-start-column="31" selection-end-line="46" selection-end-column="31" />
+            <state relative-caret-position="6175">
+              <caret line="289" column="22" selection-start-line="289" selection-start-column="22" selection-end-line="289" selection-end-column="22" />
               <folding>
                 <element signature="e#1088#1101#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/IT_it.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3192">
-              <caret line="133" column="20" selection-start-line="133" selection-start-column="20" selection-end-line="133" selection-end-column="20" />
             </state>
           </provider>
         </entry>
@@ -219,28 +473,7 @@
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
-    <panes>
-      <pane id="Scope" />
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="heroquest_legends" type="b2602c69:ProjectViewProjectNode" />
-              <item name="heroquest_solo" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="heroquest_legends" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-            </path>
-            <path>
-              <item name="heroquest_legends" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Scratches and Consoles" type="1a2a3e82:ScratchProjectViewPane$MyProjectNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-    </panes>
+    <panes />
   </component>
   <component name="PropertiesComponent">
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="Python" />
@@ -716,7 +949,14 @@
       <option name="project" value="LOCAL" />
       <updated>1618688093247</updated>
     </task>
-    <option name="localTasksCounter" value="39" />
+    <task id="LOCAL-00039" summary="New Internalizzation system added with&#10;lupdate&#10;lrelease&#10;linguist&#10;&#10;ADDED&#10;EN_en.ts&#10;EN_en.qm&#10;IT_it.ts&#10;IT_it.qm">
+      <created>1619021771306</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1619021771306</updated>
+    </task>
+    <option name="localTasksCounter" value="40" />
     <servers />
   </component>
   <component name="TodoView">
@@ -730,22 +970,21 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="878" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Favorites" order="0" sideWeight="0.3614679" side_tool="true" weight="0.26635823" />
       <window_info content_ui="combo" id="Project" order="1" sideWeight="0.29142857" weight="0.102445476" />
       <window_info id="Structure" order="2" sideWeight="0.70857143" side_tool="true" weight="0.102445476" />
-      <window_info anchor="bottom" id="Terminal" order="0" sideWeight="0.4990086" weight="0.14265928" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="0" sideWeight="0.4990086" visible="true" weight="0.38781163" />
       <window_info anchor="bottom" id="Event Log" order="1" sideWeight="0.32253802" side_tool="true" weight="0.28393352" />
       <window_info anchor="bottom" id="Python Console" order="2" sideWeight="0.8360872" weight="0.42797783" />
       <window_info anchor="bottom" id="Message" order="3" />
       <window_info anchor="bottom" id="Find" order="4" weight="0.32963988" />
-      <window_info anchor="bottom" id="Version Control" order="5" sideWeight="0.4976867" weight="0.43232045" />
-      <window_info active="true" anchor="bottom" id="Run" order="6" sideWeight="0.677462" visible="true" weight="0.2728532" />
+      <window_info anchor="bottom" id="Version Control" order="5" sideWeight="0.4976867" weight="0.43213296" />
+      <window_info anchor="bottom" id="Run" order="6" sideWeight="0.677462" weight="0.2728532" />
       <window_info anchor="bottom" id="Debug" order="7" weight="0.54432136" />
       <window_info anchor="bottom" id="Cvs" order="8" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="9" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="10" sideWeight="0.49966952" weight="0.18508287" />
+      <window_info anchor="bottom" id="TODO" order="10" sideWeight="0.49966952" weight="0.18421052" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -774,7 +1013,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Created a new translations system.&#10;Messages translated&#10;_ TODO Buttons" />
     <MESSAGE value="heroquest_solo_gui_v_0_004_BETA.exe added" />
     <MESSAGE value="More randomness added to the adventure!!!" />
     <MESSAGE value="TRANSLATION SYSTEM UPDATE!" />
@@ -799,7 +1037,8 @@
     <MESSAGE value="Version 0.82: add right messages to EN_en.txt&#10;Must be translated in English" />
     <MESSAGE value="I've added a new random monsters system inside the dungeons when the number of rounds increments" />
     <MESSAGE value="minor bug fixex" />
-    <option name="LAST_COMMIT_MESSAGE" value="minor bug fixex" />
+    <MESSAGE value="New Internalizzation system added with&#10;lupdate&#10;lrelease&#10;linguist&#10;&#10;ADDED&#10;EN_en.ts&#10;EN_en.qm&#10;IT_it.ts&#10;IT_it.qm" />
+    <option name="LAST_COMMIT_MESSAGE" value="New Internalizzation system added with&#10;lupdate&#10;lrelease&#10;linguist&#10;&#10;ADDED&#10;EN_en.ts&#10;EN_en.qm&#10;IT_it.ts&#10;IT_it.qm" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -961,8 +1200,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/heroquest_legends_main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-5593">
-          <caret line="46" column="31" lean-forward="true" selection-start-line="46" selection-start-column="31" selection-end-line="46" selection-end-column="31" />
+        <state relative-caret-position="6175">
+          <caret line="289" column="22" selection-start-line="289" selection-start-column="22" selection-end-line="289" selection-end-column="22" />
           <folding>
             <element signature="e#1088#1101#0" expanded="true" />
           </folding>

@@ -4,9 +4,12 @@
     <bookmark url="file://$PROJECT_DIR$/cocos2D_gui.py" description="label.position = (320, 240)" line="20" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f0731132-1647-4714-b667-c61b5640c3c3" name="Default Changelist" comment="minor bug fixex">
+    <list default="true" id="f0731132-1647-4714-b667-c61b5640c3c3" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/IT_it.txt" beforeDir="false" afterPath="$PROJECT_DIR$/IT_it.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_heroquest_legends.sqlite" beforeDir="false" afterPath="$PROJECT_DIR$/db_heroquest_legends.sqlite" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/heroquest_legends.ui" beforeDir="false" afterPath="$PROJECT_DIR$/heroquest_legends.ui" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/heroquest_legends_it.ui" beforeDir="false" afterPath="$PROJECT_DIR$/heroquest_legends_it.ui" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/heroquest_legends_main.py" beforeDir="false" afterPath="$PROJECT_DIR$/heroquest_legends_main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/heroquest_solo_function.py" beforeDir="false" afterPath="$PROJECT_DIR$/heroquest_solo_function.py" afterDir="false" />
     </list>
@@ -20,9 +23,9 @@
     <session id="-2020558873">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="61" />
-          <entry key="project.open.time.0" value="2" />
-          <entry key="project.open.time.1" value="1" />
+          <entry key="project.closed" value="67" />
+          <entry key="project.open.time.0" value="3" />
+          <entry key="project.open.time.1" value="2" />
           <entry key="project.open.time.10" value="9" />
           <entry key="project.open.time.11" value="2" />
           <entry key="project.open.time.13" value="4" />
@@ -33,11 +36,11 @@
           <entry key="project.open.time.3" value="1" />
           <entry key="project.open.time.4" value="12" />
           <entry key="project.open.time.5" value="6" />
-          <entry key="project.open.time.6" value="5" />
-          <entry key="project.open.time.7" value="11" />
-          <entry key="project.open.time.8" value="3" />
+          <entry key="project.open.time.6" value="6" />
+          <entry key="project.open.time.7" value="12" />
+          <entry key="project.open.time.8" value="5" />
           <entry key="project.open.time.9" value="6" />
-          <entry key="project.opened" value="66" />
+          <entry key="project.opened" value="72" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -64,15 +67,15 @@
           <entry key="Python Console" value="784" />
           <entry key="dummy" value="21" />
           <entry key="md" value="94" />
-          <entry key="py" value="22031" />
-          <entry key="txt" value="15235" />
+          <entry key="py" value="22321" />
+          <entry key="txt" value="15383" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="Markdown" value="94" />
-          <entry key="PLAIN_TEXT" value="15256" />
-          <entry key="Python" value="22815" />
+          <entry key="PLAIN_TEXT" value="15404" />
+          <entry key="Python" value="23105" />
         </counts>
       </usages-collector>
     </session>
@@ -82,11 +85,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/heroquest_legends_main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="216">
-              <caret line="9" column="31" selection-start-line="9" selection-start-column="31" selection-end-line="9" selection-end-column="31" />
+            <state relative-caret-position="-5593">
+              <caret line="46" column="31" lean-forward="true" selection-start-line="46" selection-start-column="31" selection-end-line="46" selection-end-column="31" />
               <folding>
                 <element signature="e#1088#1101#0" expanded="true" />
               </folding>
@@ -97,22 +100,22 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/IT_it.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="1" lean-forward="true" selection-start-column="1" selection-end-column="1" />
+            <state relative-caret-position="3192">
+              <caret line="133" column="20" selection-start-line="133" selection-start-column="20" selection-end-line="133" selection-end-column="20" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/heroquest_solo_function.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="216">
-              <caret line="9" column="31" selection-start-line="9" selection-start-column="31" selection-end-line="9" selection-end-column="31" />
+            <state relative-caret-position="12216">
+              <caret line="510" selection-start-line="510" selection-end-line="510" />
               <folding>
                 <element signature="e#1088#1101#0" expanded="true" />
-                <marker date="1618688068068" expanded="true" signature="6551:6556" ph="..." />
-                <marker date="1618688068068" expanded="true" signature="16143:16150" ph="..." />
-                <marker date="1618688068068" expanded="true" signature="21720:21725" ph="..." />
+                <marker date="1618947632777" expanded="true" signature="6551:6556" ph="..." />
+                <marker date="1618947632777" expanded="true" signature="16143:16150" ph="..." />
+                <marker date="1618947632777" expanded="true" signature="21720:21725" ph="..." />
               </folding>
             </state>
           </provider>
@@ -129,13 +132,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>trovato</find>
-      <find>monster</find>
-      <find>a voi</find>
-      <find>special_room_charged</find>
-      <find>random_treasure_dict</find>
-      <find>treas</find>
-      <find>treasures_dict</find>
       <find>treasures</find>
       <find>uscira</find>
       <find>atta</find>
@@ -159,6 +155,13 @@
       <find>aux_msg_9</find>
       <find>aisl</find>
       <find>random_mon</find>
+      <find>chaos</find>
+      <find>conver</find>
+      <find>forniture_name_reconversion_dict</find>
+      <find>fornitures_list</find>
+      <find>monster_name_conversion_dict</find>
+      <find>addItems</find>
+      <find>figh</find>
     </findStrings>
     <replaceStrings>
       <replace>treasures</replace>
@@ -172,6 +175,11 @@
     </replaceStrings>
   </component>
   <component name="Git.Settings">
+    <option name="PREVIOUS_COMMIT_AUTHORS">
+      <list>
+        <option value="Luca Mandolesi &lt;pyarchinit@gmail.com&gt;" />
+      </list>
+    </option>
     <option name="UPDATE_TYPE" value="REBASE" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -194,14 +202,15 @@
         <option value="$PROJECT_DIR$/cocos2D_gui.py" />
         <option value="$PROJECT_DIR$/appunti..txt" />
         <option value="$PROJECT_DIR$/EN_en.txt" />
+        <option value="$PROJECT_DIR$/heroquest_solo_function.py" />
         <option value="$PROJECT_DIR$/IT_it.txt" />
         <option value="$PROJECT_DIR$/heroquest_legends_main.py" />
-        <option value="$PROJECT_DIR$/heroquest_solo_function.py" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="-14" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-10" />
+    <option name="y" value="-10" />
     <option name="width" value="1940" />
     <option name="height" value="1100" />
   </component>
@@ -235,7 +244,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="Python" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../pycharm_pj" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
   </component>
   <component name="RecentsManager">
@@ -700,7 +709,14 @@
       <option name="project" value="LOCAL" />
       <updated>1618666377442</updated>
     </task>
-    <option name="localTasksCounter" value="38" />
+    <task id="LOCAL-00038" summary="minor bug fixex">
+      <created>1618688093247</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1618688093247</updated>
+    </task>
+    <option name="localTasksCounter" value="39" />
     <servers />
   </component>
   <component name="TodoView">
@@ -713,33 +729,51 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-11" y="0" width="1552" height="880" extended-state="0" />
+    <frame x="-7" y="-7" width="1550" height="878" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Favorites" order="0" sideWeight="0.3614679" side_tool="true" weight="0.26635823" />
-      <window_info content_ui="combo" id="Project" order="1" sideWeight="0.29847908" visible="true" weight="0.10231023" />
-      <window_info id="Structure" order="2" sideWeight="0.7015209" side_tool="true" visible="true" weight="0.10231023" />
+      <window_info content_ui="combo" id="Project" order="1" sideWeight="0.29142857" weight="0.102445476" />
+      <window_info id="Structure" order="2" sideWeight="0.70857143" side_tool="true" weight="0.102445476" />
       <window_info anchor="bottom" id="Terminal" order="0" sideWeight="0.4990086" weight="0.14265928" />
       <window_info anchor="bottom" id="Event Log" order="1" sideWeight="0.32253802" side_tool="true" weight="0.28393352" />
-      <window_info anchor="bottom" id="Python Console" order="2" sideWeight="0.8360872" weight="0.14127424" />
+      <window_info anchor="bottom" id="Python Console" order="2" sideWeight="0.8360872" weight="0.42797783" />
       <window_info anchor="bottom" id="Message" order="3" />
       <window_info anchor="bottom" id="Find" order="4" weight="0.32963988" />
-      <window_info anchor="bottom" id="Version Control" order="5" sideWeight="0.4976867" weight="0.433518" />
-      <window_info active="true" anchor="bottom" id="Run" order="6" sideWeight="0.677462" visible="true" weight="0.27348065" />
+      <window_info anchor="bottom" id="Version Control" order="5" sideWeight="0.4976867" weight="0.43232045" />
+      <window_info active="true" anchor="bottom" id="Run" order="6" sideWeight="0.677462" visible="true" weight="0.2728532" />
       <window_info anchor="bottom" id="Debug" order="7" weight="0.54432136" />
       <window_info anchor="bottom" id="Cvs" order="8" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="9" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="10" sideWeight="0.49966952" weight="0.18559557" />
+      <window_info anchor="bottom" id="TODO" order="10" sideWeight="0.49966952" weight="0.18508287" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
     </layout>
+    <layout-to-restore>
+      <window_info id="Favorites" order="0" sideWeight="0.3614679" side_tool="true" weight="0.26635823" />
+      <window_info content_ui="combo" id="Project" order="1" sideWeight="0.29142857" visible="true" weight="0.102445476" />
+      <window_info id="Structure" order="2" sideWeight="0.70857143" side_tool="true" visible="true" weight="0.102445476" />
+      <window_info anchor="bottom" id="Terminal" order="0" sideWeight="0.4990086" weight="0.14265928" />
+      <window_info anchor="bottom" id="Event Log" order="1" sideWeight="0.32253802" side_tool="true" weight="0.28393352" />
+      <window_info anchor="bottom" id="Python Console" order="2" sideWeight="0.8360872" weight="0.42797783" />
+      <window_info anchor="bottom" id="Message" order="3" />
+      <window_info anchor="bottom" id="Find" order="4" weight="0.32963988" />
+      <window_info anchor="bottom" id="Version Control" order="5" sideWeight="0.4976867" weight="0.43232045" />
+      <window_info active="true" anchor="bottom" id="Run" order="6" sideWeight="0.677462" visible="true" weight="0.2728532" />
+      <window_info anchor="bottom" id="Debug" order="7" weight="0.54432136" />
+      <window_info anchor="bottom" id="Cvs" order="8" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="9" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="10" sideWeight="0.49966952" weight="0.18508287" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+    </layout-to-restore>
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="New system for create rooms" />
     <MESSAGE value="Created a new translations system.&#10;Messages translated&#10;_ TODO Buttons" />
     <MESSAGE value="heroquest_solo_gui_v_0_004_BETA.exe added" />
     <MESSAGE value="More randomness added to the adventure!!!" />
@@ -764,7 +798,8 @@
     <MESSAGE value="Version 0.82: fighting system modified with group mode and new doors system added. Minor bug fixed.&#10;TODO ADDED" />
     <MESSAGE value="Version 0.82: add right messages to EN_en.txt&#10;Must be translated in English" />
     <MESSAGE value="I've added a new random monsters system inside the dungeons when the number of rounds increments" />
-    <option name="LAST_COMMIT_MESSAGE" value="I've added a new random monsters system inside the dungeons when the number of rounds increments" />
+    <MESSAGE value="minor bug fixex" />
+    <option name="LAST_COMMIT_MESSAGE" value="minor bug fixex" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -924,32 +959,32 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/IT_it.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="1" lean-forward="true" selection-start-column="1" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/heroquest_legends_main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="9" column="31" selection-start-line="9" selection-start-column="31" selection-end-line="9" selection-end-column="31" />
+        <state relative-caret-position="-5593">
+          <caret line="46" column="31" lean-forward="true" selection-start-line="46" selection-start-column="31" selection-end-line="46" selection-end-column="31" />
           <folding>
             <element signature="e#1088#1101#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/IT_it.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3192">
+          <caret line="133" column="20" selection-start-line="133" selection-start-column="20" selection-end-line="133" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/heroquest_solo_function.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="9" column="31" selection-start-line="9" selection-start-column="31" selection-end-line="9" selection-end-column="31" />
+        <state relative-caret-position="12216">
+          <caret line="510" selection-start-line="510" selection-end-line="510" />
           <folding>
             <element signature="e#1088#1101#0" expanded="true" />
-            <marker date="1618688068068" expanded="true" signature="6551:6556" ph="..." />
-            <marker date="1618688068068" expanded="true" signature="16143:16150" ph="..." />
-            <marker date="1618688068068" expanded="true" signature="21720:21725" ph="..." />
+            <marker date="1618947632777" expanded="true" signature="6551:6556" ph="..." />
+            <marker date="1618947632777" expanded="true" signature="16143:16150" ph="..." />
+            <marker date="1618947632777" expanded="true" signature="21720:21725" ph="..." />
           </folding>
         </state>
       </provider>

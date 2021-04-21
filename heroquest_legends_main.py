@@ -41,9 +41,9 @@ class Ui(QtWidgets.QMainWindow):
     local_language = locale.getdefaultlocale()
     #file_name = 'en_EN.txt'
     if local_language[0] == 'it_IT':
-        CONFIG = open('it_IT.txt', "rb+")
+        CONFIG = open('IT_it.txt', "rb+")
     else :
-        CONFIG = open('en_EN.txt', "rb+")
+        CONFIG = open('EN_en.txt', "rb+")
     data_config = CONFIG.read()
     CONFIG.close()
     CONFIG_DICT = eval(data_config)
@@ -98,6 +98,7 @@ class Ui(QtWidgets.QMainWindow):
         self.MONSTER_LIST = []
 
         for value in db_monsters_charged.values():
+
             self.MONSTER_LIST.append(self.CONFIG_DICT['monster_name_conversion_dict'][value])
 
         self.comboBox_monster_attack.clear()
@@ -211,25 +212,30 @@ class Ui(QtWidgets.QMainWindow):
         msg_temp = self.HQ_SOLO.room_generator(self.lineEdit_room_dimension.text(), current_turn,room_explored)
 
         if current_turn == 1 or current_turn == 2:
+            print("test_room1")
             msg_room = self.HQ_SOLO.CONFIG_DICT['aux_msg_1'].format(msg_temp[0])
-
             self.textEdit_traps.setText(self.HQ_SOLO.random_trap(self.CURRENT_ROUND))
-
         else:
             if msg_temp[2] != '':
+                print("test_room3")
                 msg_room = msg_temp[2]
                 self.textEdit_traps.setText(self.HQ_SOLO.random_trap(self.CURRENT_ROUND))
+
             elif msg_temp[0] == '' and msg_temp[2] == '' and room_explored == 1:
+                print("test_room4")
                 msg_room = self.HQ_SOLO.CONFIG_DICT['aux_msg_7']
                 self.textEdit_traps.setText(self.HQ_SOLO.random_trap(self.CURRENT_ROUND))
             elif msg_temp[0] == '' and msg_temp[2] == '' and room_explored == 0:
+                print("test_room5")
                 msg_room = self.HQ_SOLO.CONFIG_DICT['aux_msg_6']
                 self.textEdit_traps.setText(self.HQ_SOLO.random_trap(self.CURRENT_ROUND))
             else:
+                print("test_room6")
                 msg_room = msg_temp[0]
                 self.textEdit_traps.setText(self.HQ_SOLO.random_trap(self.CURRENT_ROUND))
 
         msg_room = msg_room.replace(';.', '.')
+
 
         self.textEdit_room_description.setText(str(msg_room))
 
@@ -240,11 +246,15 @@ class Ui(QtWidgets.QMainWindow):
 
         monster_category = self.comboBox_monster_attack.currentText()
         monster_group = 0
+        monster_sight = 0
 
         if self.checkBox_group.isChecked() == True:
             monster_group = 1
 
-        mode_result = self.HQ_SOLO.fighting_system(monster_category, monster_group) #1 attack - 0 escape
+        if self.checkBox_sight.isChecked() == True:
+            monster_sight = 1
+
+        mode_result = self.HQ_SOLO.fighting_system(monster_category, monster_group, monster_sight) #1 attack - 0 escape
 
         if mode_result == 1:
             msg_attack = self.CONFIG_DICT['attack_messages'][1]
@@ -264,6 +274,24 @@ class Ui(QtWidgets.QMainWindow):
             msg_escape = self.CONFIG_DICT['attack_messages'][2][rng_base.randint(0, 3)]
             self.textEdit_combat_text.setText(msg_escape)
 
+        def on_pushButton_hero_attack_pressed(self):
+            self.textEdit_traps.setText(self.HQ_SOLO.random_trap(self.CURRENT_ROUND))
+
 app = QtWidgets.QApplication(sys.argv)
+
+#load language
+translator = QtCore.QTranslator()
+local_language = locale.getdefaultlocale()
+if local_language[0] == 'it_IT':
+    translator.load("IT_it.qm")
+elif local_language[0] == 'en_EN':
+    translator.load("EN_en.qm")
+else:
+    translator.load("EN_en.qm")
+
+app.installTranslator(translator)
 window = Ui()
 app.exec_()
+
+
+

@@ -487,10 +487,11 @@ class Heroquest_solo:
         else:
             return self.CONFIG_DICT['traps_msg_3']
 
-    def fighting_system(self, mc, mg):
+    def fighting_system(self, mc, mg, ms):
 
         self.monster_category = mc
         self.monster_group = mg
+        self.monster_sight = ms
 
         #COMBAT VALUE FROM DB
         combat_value_dict = self.CONFIG_DICT['combat_value_dict']
@@ -500,12 +501,15 @@ class Heroquest_solo:
         #IF GROUPED aggresivity_bonus VALUE RANDOM 1-3 TO ADD
         #RANDO VALUE 4D6
         aggresivity_bonus = 0
-        if self.monster_group == 0:
-            aggr_rand_num = self.random_numbers()
-        else:
+        if self.monster_group == 1:
             rng = random.SystemRandom()
             aggresivity_bonus = rng.randint(1, 10)
-            aggr_rand_num = self.random_numbers()  #if monsters are on a group the aggresivity increments.
+
+        if self.monster_sight == 1:
+            rng = random.SystemRandom()
+            aggresivity_bonus += rng.randint(1, 5)
+
+        aggr_rand_num = self.random_numbers()
 
         aggression_value = combat_value+aggr_rand_num
 

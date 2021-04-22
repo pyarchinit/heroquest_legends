@@ -348,25 +348,15 @@ class Heroquest_solo:
             db_monsters_class_charged_lenght = len(db_monsters_class_charged_list) - 1
             rng = random.SystemRandom()
             id_monster_rand = db_monsters_class_charged_list[rng.randint(0, db_monsters_class_charged_lenght)]
-            print("giulia 5")
             monsters_residue = self.MONSTERS_QTY_DICT[id_monster_rand]
 
             if monsters_residue > 0:
-                print("giulia 6")
                 msg_monsters = self.CONFIG_DICT['aux_msg_9'].format(self.monsters_dict[id_monster_rand])
                 new_monster_residue = monsters_residue - 1
-                print("giulia 7")
                 self.MONSTERS_QTY_DICT[id_monster_rand] = new_monster_residue
-                print("giulia 9")
                 return msg_monsters
         else:
-            print("giulia 3")
             return self.CONFIG_DICT['aux_msg_10']
-
-
-
-
-
 
 
     def aisles(self, rv):
@@ -523,20 +513,27 @@ class Heroquest_solo:
             return 2
 
     def random_trap(self, n):
-        turn = n
-
-        rn = self.random_numbers()
+        self.turn = int(n)
         comparison_value = 0
+        rn = self.random_numbers()
 
-
-        if turn >= 1 and turn <= 15:
+        if self.turn >= 1 or turn <= 15:
             comparison_value = 23
-        elif turn > 15 and turn <= 20:
+            print(str('comp1'))
+        elif self.turn > 15 or turn <= 20:
             comparison_value = 22
-        else:
+            print(str('comp2'))
+        elif self.turn > 20 or turn <= 26:
             comparison_value = 18
+            print(str('comp3'))
+        else:
+            comparison_value = 20
 
-        if rn >= comparison_value:
+        if rn <= comparison_value:
+            msg = ''
+            return msg
+        else:
+            print(str('comp5'))
             return self.CONFIG_DICT['aux_msg_8']
 
 

@@ -57,8 +57,6 @@ class Ui(QtWidgets.QMainWindow):
     TREASURES_FINDS = 0
 
 
-
-
     #todo messaggio con punto di partenza
     #todo aggiungere segnalatore di fine avventura scale trovate
     #todo se il mostro prima attacca poi si sposta per lasciare spazio ad un altro mostro se è nella stanza
@@ -160,7 +158,7 @@ class Ui(QtWidgets.QMainWindow):
 
         self.textEdit_aisles.setText("")
         self.textEdit_aisles.setText(str(msg))
-        self.textEdit_traps.setText(self.HQ_SOLO.random_trap(self.CURRENT_ROUND))
+        #self.textEdit_traps.setText(self.HQ_SOLO.random_trap(self.CURRENT_ROUND))
 
     def on_pushButton_treasures_finds_pressed(self):
         self.textEdit_treasures_description.setText("")
@@ -186,7 +184,7 @@ class Ui(QtWidgets.QMainWindow):
         self.pushButton_treasures_random.setEnabled(False)
         self.TREASURES_FINDS = 0
         self.textEdit_treasures_description.setText(str(msg))
-        self.textEdit_traps.setText(self.HQ_SOLO.random_trap(self.CURRENT_ROUND))
+        #self.textEdit_traps.setText(self.HQ_SOLO.random_trap(self.CURRENT_ROUND))
 
 
     def on_pushButton_traps_and_secret_doors_finder_pressed(self):
@@ -210,34 +208,32 @@ class Ui(QtWidgets.QMainWindow):
         msg_temp = self.HQ_SOLO.room_generator(self.lineEdit_room_dimension.text(), current_turn,room_explored)
 
         if current_turn == 1 or current_turn == 2:
-            print("test_room1")
             msg_room = self.HQ_SOLO.CONFIG_DICT['aux_msg_1'].format(msg_temp[0])
             self.textEdit_traps.setText(self.HQ_SOLO.random_trap(self.CURRENT_ROUND))
         else:
             if msg_temp[2] != '':
-                print("test_room3")
                 msg_room = msg_temp[2]
                 self.textEdit_traps.setText(self.HQ_SOLO.random_trap(self.CURRENT_ROUND))
-
             elif msg_temp[0] == '' and msg_temp[2] == '' and room_explored == 1:
-                print("test_room4")
                 msg_room = self.HQ_SOLO.CONFIG_DICT['aux_msg_7']
                 self.textEdit_traps.setText(self.HQ_SOLO.random_trap(self.CURRENT_ROUND))
             elif msg_temp[0] == '' and msg_temp[2] == '' and room_explored == 0:
-                print("test_room5")
                 msg_room = self.HQ_SOLO.CONFIG_DICT['aux_msg_6']
                 self.textEdit_traps.setText(self.HQ_SOLO.random_trap(self.CURRENT_ROUND))
             else:
-                print("test_room6")
                 msg_room = msg_temp[0]
                 self.textEdit_traps.setText(self.HQ_SOLO.random_trap(self.CURRENT_ROUND))
 
         msg_room = msg_room.replace(';.', '.')
 
-
-        self.textEdit_room_description.setText(str(msg_room))
-
-        self.textEdit_monsters.setText(str(msg_temp[1]))
+        try:
+            self.textEdit_room_description.setText(str(msg_room))
+        except Exception(e):
+            print("eccezione"+str(e))
+        try:
+            self.textEdit_monsters.setText(str(msg_temp[1]))
+        except Exception(e):
+            print("eccezione mostri"+str(e))
 
     def on_pushButton_monster_attack_pressed(self):
         self.textEdit_combat_text.setText("")
@@ -272,9 +268,9 @@ class Ui(QtWidgets.QMainWindow):
             msg_escape = self.CONFIG_DICT['attack_messages'][2][rng_base.randint(0, 3)]
             self.textEdit_combat_text.setText(msg_escape)
 
-        def on_pushButton_hero_attack_pressed(self):
-            self.textEdit_traps.setText(self.HQ_SOLO.random_trap(self.CURRENT_ROUND))
-
+    def on_pushButton_hero_attack_pressed(self):
+        #self.textEdit_traps.setText(self.HQ_SOLO.random_trap(self.CURRENT_ROUND))
+        pass
 app = QtWidgets.QApplication(sys.argv)
 
 #load language

@@ -67,8 +67,6 @@ class Ui(QtWidgets.QMainWindow):
         self.acceptDrops()
         self.setWindowFlag(QtCore.Qt.WindowCloseButtonHint, False)
 
-        local_language = locale.getdefaultlocale()
-
         uic.loadUi(os.path.join(os.path.dirname(__file__),'heroquest_legends.ui'), self)
 
         self.HQ_SOLO = Heroquest_solo(self.CONFIG_DICT)
@@ -124,6 +122,16 @@ class Ui(QtWidgets.QMainWindow):
 
         self.textEdit_the_mission.setText(the_mission_text)
 
+        self.pushButton_aisles.setEnabled(True)
+        self.pushButton_rooms.setEnabled(True)
+        self.pushButton_treasures_finds.setEnabled(True)
+        self.pushButton_treasures_random.setEnabled(True)
+        self.pushButton_treasure_card.setEnabled(True)
+        self.pushButton_traps_and_secret_doors_finder.setEnabled(True)
+        self.pushButton_hero_attack.setEnabled(True)
+        self.pushButton_monster_attack.setEnabled(True)
+        self.pushButton_round.setEnabled(True)
+
     def on_pushButton_round_pressed(self):
         self.textEdit_aisles.setText("")
         self.textEdit_monsters.setText("")
@@ -152,13 +160,12 @@ class Ui(QtWidgets.QMainWindow):
             else:
                 msg = self.HQ_SOLO.aisles(self.HQ_SOLO.random_numbers())
         else:
-            print("puppa 1")
             msg = self.HQ_SOLO.random_monsters_on_aisles(self.CURRENT_ROUND)
 
 
         self.textEdit_aisles.setText("")
         self.textEdit_aisles.setText(str(msg))
-        #self.textEdit_traps.setText(self.HQ_SOLO.random_trap(self.CURRENT_ROUND))
+        self.textEdit_traps.setText(self.HQ_SOLO.random_trap(self.CURRENT_ROUND))
 
     def on_pushButton_treasures_finds_pressed(self):
         self.textEdit_treasures_description.setText("")
@@ -184,7 +191,7 @@ class Ui(QtWidgets.QMainWindow):
         self.pushButton_treasures_random.setEnabled(False)
         self.TREASURES_FINDS = 0
         self.textEdit_treasures_description.setText(str(msg))
-        #self.textEdit_traps.setText(self.HQ_SOLO.random_trap(self.CURRENT_ROUND))
+        self.textEdit_traps.setText(self.HQ_SOLO.random_trap(self.CURRENT_ROUND))
 
 
     def on_pushButton_traps_and_secret_doors_finder_pressed(self):
@@ -199,13 +206,17 @@ class Ui(QtWidgets.QMainWindow):
         self.textEdit_room_description.setText('')
         self.textEdit_monsters.setText('')
         if self.radioButton_explored.isChecked() == True:
+            #print("room pressed_1")
             room_explored = 1
             self.textEdit_traps.setText(self.HQ_SOLO.random_trap(self.CURRENT_ROUND))
         else:
+            #print("room pressed_2")
             room_explored = 0
 
         current_turn = int(self.lineEdit_round.text())
+        #print("room pressed_3-uscita da room pressed")
         msg_temp = self.HQ_SOLO.room_generator(self.lineEdit_room_dimension.text(), current_turn,room_explored)
+        #print("room pressed_4-rientrato da room pressed")
 
         if current_turn == 1 or current_turn == 2:
             msg_room = self.HQ_SOLO.CONFIG_DICT['aux_msg_1'].format(msg_temp[0])
@@ -226,14 +237,10 @@ class Ui(QtWidgets.QMainWindow):
 
         msg_room = msg_room.replace(';.', '.')
 
-        try:
-            self.textEdit_room_description.setText(str(msg_room))
-        except Exception(e):
-            print("eccezione"+str(e))
-        try:
-            self.textEdit_monsters.setText(str(msg_temp[1]))
-        except Exception(e):
-            print("eccezione mostri"+str(e))
+        self.textEdit_room_description.setText(str(msg_room))
+
+        self.textEdit_monsters.setText(str(msg_temp[1]))
+
 
     def on_pushButton_monster_attack_pressed(self):
         self.textEdit_combat_text.setText("")
@@ -269,8 +276,8 @@ class Ui(QtWidgets.QMainWindow):
             self.textEdit_combat_text.setText(msg_escape)
 
     def on_pushButton_hero_attack_pressed(self):
-        #self.textEdit_traps.setText(self.HQ_SOLO.random_trap(self.CURRENT_ROUND))
-        pass
+        self.textEdit_traps.setText(self.HQ_SOLO.random_trap(self.CURRENT_ROUND))
+
 app = QtWidgets.QApplication(sys.argv)
 
 #load language

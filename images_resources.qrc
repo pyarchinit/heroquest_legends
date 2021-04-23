@@ -1,5 +1,10 @@
 <RCC>
   <qresource prefix="hq_">
+    <file>images/porta.PNG</file>
+    <file>images/scrigno.PNG</file>
+    <file>images/porta_segreta.PNG</file>
+    <file>images/libreria.PNG</file>
+    <file>images/scrivania_dellalchimista.png</file>
     <file>images/fimir.jpg</file>
     <file>images/fimir.png</file>
     <file>images/gargoyle.jpg</file>

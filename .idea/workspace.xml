@@ -6,10 +6,11 @@
   <component name="ChangeListManager">
     <list default="true" id="f0731132-1647-4714-b667-c61b5640c3c3" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/background.png" beforeDir="false" afterPath="$PROJECT_DIR$/background.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/heroquest_legends.ui" beforeDir="false" afterPath="$PROJECT_DIR$/heroquest_legends.ui" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/heroquest_legends_main.py" beforeDir="false" afterPath="$PROJECT_DIR$/heroquest_legends_main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/heroquest_solo_function.py" beforeDir="false" afterPath="$PROJECT_DIR$/heroquest_solo_function.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images_resources.qrc" beforeDir="false" afterPath="$PROJECT_DIR$/images_resources.qrc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/IT_it.txt" beforeDir="false" afterPath="$PROJECT_DIR$/languages/IT_it.txt" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -21,7 +22,7 @@
     <session id="-2020558873">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="70" />
+          <entry key="project.closed" value="74" />
           <entry key="project.open.time.0" value="4" />
           <entry key="project.open.time.1" value="2" />
           <entry key="project.open.time.10" value="10" />
@@ -33,12 +34,12 @@
           <entry key="project.open.time.23" value="1" />
           <entry key="project.open.time.3" value="1" />
           <entry key="project.open.time.4" value="13" />
-          <entry key="project.open.time.5" value="6" />
-          <entry key="project.open.time.6" value="6" />
+          <entry key="project.open.time.5" value="8" />
+          <entry key="project.open.time.6" value="7" />
           <entry key="project.open.time.7" value="12" />
           <entry key="project.open.time.8" value="5" />
-          <entry key="project.open.time.9" value="6" />
-          <entry key="project.opened" value="75" />
+          <entry key="project.open.time.9" value="7" />
+          <entry key="project.opened" value="79" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -48,14 +49,14 @@
           <entry key="md" value="2" />
           <entry key="png" value="7" />
           <entry key="py" value="48" />
-          <entry key="txt" value="27" />
+          <entry key="txt" value="29" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="Image" value="21" />
           <entry key="Markdown" value="2" />
-          <entry key="PLAIN_TEXT" value="27" />
+          <entry key="PLAIN_TEXT" value="29" />
           <entry key="Python" value="47" />
           <entry key="Scratch" value="1" />
         </counts>
@@ -65,15 +66,15 @@
           <entry key="Python Console" value="784" />
           <entry key="dummy" value="21" />
           <entry key="md" value="94" />
-          <entry key="py" value="22976" />
-          <entry key="txt" value="15644" />
+          <entry key="py" value="23760" />
+          <entry key="txt" value="15671" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="Markdown" value="94" />
-          <entry key="PLAIN_TEXT" value="15665" />
-          <entry key="Python" value="23760" />
+          <entry key="PLAIN_TEXT" value="15692" />
+          <entry key="Python" value="24544" />
         </counts>
       </usages-collector>
     </session>
@@ -86,11 +87,11 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/heroquest_legends_main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3528">
-              <caret line="210" column="80" selection-start-line="210" selection-start-column="80" selection-end-line="210" selection-end-column="80" />
+            <state relative-caret-position="1154">
+              <caret line="132" column="46" selection-start-line="132" selection-start-column="46" selection-end-line="132" selection-end-column="46" />
               <folding>
                 <element signature="e#1088#1101#0" expanded="true" />
-                <marker date="1619110463562" expanded="true" signature="10672:10681" ph="..." />
+                <marker date="1619201487653" expanded="true" signature="11098:11107" ph="..." />
               </folding>
             </state>
           </provider>
@@ -99,13 +100,14 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/heroquest_solo_function.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="5568">
-              <caret line="232" column="8" selection-start-line="232" selection-start-column="8" selection-end-line="232" selection-end-column="8" />
+            <state relative-caret-position="392">
+              <caret line="246" column="83" selection-start-line="246" selection-start-column="83" selection-end-line="246" selection-end-column="83" />
               <folding>
                 <element signature="e#1088#1101#0" expanded="true" />
-                <marker date="1619110145623" expanded="true" signature="6551:6556" ph="..." />
-                <marker date="1619110145623" expanded="true" signature="15977:15983" ph="..." />
-                <marker date="1619110145623" expanded="true" signature="21553:21558" ph="..." />
+                <marker date="1619201100919" expanded="true" signature="6749:6754" ph="..." />
+                <marker date="1619201100919" expanded="true" signature="16197:16198" ph="..." />
+                <marker date="1619201100919" expanded="true" signature="17779:17785" ph="..." />
+                <marker date="1619201100919" expanded="true" signature="23355:23360" ph="..." />
               </folding>
             </state>
           </provider>
@@ -114,8 +116,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/languages/IT_it.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="435">
-              <caret line="117" column="12" selection-start-line="117" selection-start-column="3" selection-end-line="117" selection-end-column="12" />
+            <state relative-caret-position="376">
+              <caret line="251" lean-forward="true" selection-start-line="251" selection-end-line="251" />
             </state>
           </provider>
         </entry>
@@ -131,21 +133,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>round</find>
-      <find>combat_value_dict</find>
-      <find>rom</find>
-      <find>porte rimaste: 14</find>
-      <find>porte rimaste</find>
-      <find>aux_msg_</find>
-      <find>self.textEdit_traps.setText(self.random_trap())</find>
-      <find>print</find>
-      <find>davanti</find>
-      <find>fuggir</find>
-      <find>fuggi</find>
-      <find>traps</find>
-      <find>btn_6</find>
-      <find>CURRENT_ROUND</find>
-      <find>monst</find>
       <find>aisle</find>
       <find>aux_msg_9</find>
       <find>aisl</find>
@@ -161,6 +148,21 @@
       <find>textEdit_traps</find>
       <find>random_trap</find>
       <find>GIGI</find>
+      <find>CURRENT_ROOM_COUNTER</find>
+      <find>MAX_ROOM_COUNTER</find>
+      <find>current_turn</find>
+      <find>TOTAL_NUMBER_OF_TURNS</find>
+      <find>ESCAPE_FOUND</find>
+      <find>room_explored</find>
+      <find>id_monster_rand</find>
+      <find>MONSTERS_QTY_DICT</find>
+      <find>monster_name_reconversion_dict</find>
+      <find>print</find>
+      <find>entrata in room generato 4</find>
+      <find>special</find>
+      <find>SPECIAL_ROOM_CHARGED</find>
+      <find>treas</find>
+      <find>local_language</find>
     </findStrings>
     <replaceStrings>
       <replace>treasures</replace>
@@ -171,6 +173,7 @@
       <replace>self.textEdit_traps.setText(self.random_trap())</replace>
       <replace>self.textEdit_traps.setText(self.HQ_SOLO.random_trap())</replace>
       <replace>self.HQ_SOLO.random_trap()</replace>
+      <replace>#print</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -202,6 +205,7 @@
         <option value="$PROJECT_DIR$/appunti..txt" />
         <option value="$PROJECT_DIR$/EN_en.txt" />
         <option value="$PROJECT_DIR$/IT_it.txt" />
+        <option value="$PROJECT_DIR$/languages/IT_it.txt" />
         <option value="$PROJECT_DIR$/heroquest_solo_function.py" />
         <option value="$PROJECT_DIR$/heroquest_legends_main.py" />
       </list>
@@ -219,7 +223,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -240,6 +243,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -744,7 +748,21 @@
       <option name="project" value="LOCAL" />
       <updated>1619032050491</updated>
     </task>
-    <option name="localTasksCounter" value="43" />
+    <task id="LOCAL-00043" summary="#9 New GUI Upload">
+      <created>1619121779528</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1619121779528</updated>
+    </task>
+    <task id="LOCAL-00044" summary="#9 New GUI Upload">
+      <created>1619121926681</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1619121926681</updated>
+    </task>
+    <option name="localTasksCounter" value="45" />
     <servers />
   </component>
   <component name="TodoView">
@@ -761,7 +779,7 @@
     <editor active="true" />
     <layout>
       <window_info id="Favorites" order="0" sideWeight="0.3614679" side_tool="true" weight="0.26635823" />
-      <window_info content_ui="combo" id="Project" order="1" sideWeight="0.29142857" visible="true" weight="0.102445476" />
+      <window_info content_ui="combo" id="Project" order="1" sideWeight="0.29142857" visible="true" weight="0.15399867" />
       <window_info id="Structure" order="2" sideWeight="0.70857143" side_tool="true" weight="0.102445476" />
       <window_info anchor="bottom" id="Terminal" order="0" sideWeight="0.4990086" weight="0.087257616" />
       <window_info anchor="bottom" id="Event Log" order="1" sideWeight="0.32253802" side_tool="true" weight="0.28393352" />
@@ -769,7 +787,7 @@
       <window_info anchor="bottom" id="Message" order="3" />
       <window_info anchor="bottom" id="Find" order="4" weight="0.32963988" />
       <window_info anchor="bottom" id="Version Control" order="5" sideWeight="0.4976867" weight="0.43213296" />
-      <window_info active="true" anchor="bottom" id="Run" order="6" sideWeight="0.677462" visible="true" weight="0.25623268" />
+      <window_info active="true" anchor="bottom" id="Run" order="6" sideWeight="0.677462" visible="true" weight="0.28116342" />
       <window_info anchor="bottom" id="Debug" order="7" weight="0.54432136" />
       <window_info anchor="bottom" id="Cvs" order="8" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="9" weight="0.4" />
@@ -802,7 +820,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="RESET ALL BUTTON ADDED" />
     <MESSAGE value="Add v0.01 exe CONSOLE for testing" />
     <MESSAGE value="More randomness in chests' items" />
     <MESSAGE value="Added exe version 05 BETA" />
@@ -827,7 +844,8 @@
     <MESSAGE value="New release .exe in italian and english" />
     <MESSAGE value="Files from alexander uploaded" />
     <MESSAGE value="New .exe versione 0.821 uploaded" />
-    <option name="LAST_COMMIT_MESSAGE" value="New .exe versione 0.821 uploaded" />
+    <MESSAGE value="#9 New GUI Upload" />
+    <option name="LAST_COMMIT_MESSAGE" value="#9 New GUI Upload" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -982,33 +1000,41 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/EN_en.txt" />
     <entry file="file://$PROJECT_DIR$/IT_it.txt" />
+    <entry file="file://$PROJECT_DIR$/languages/EN_en.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-272">
+          <caret line="148" column="32" selection-start-line="148" selection-start-column="32" selection-end-line="148" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/languages/IT_it.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="435">
-          <caret line="117" column="12" selection-start-line="117" selection-start-column="3" selection-end-line="117" selection-end-column="12" />
+        <state relative-caret-position="376">
+          <caret line="251" lean-forward="true" selection-start-line="251" selection-end-line="251" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/heroquest_solo_function.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5568">
-          <caret line="232" column="8" selection-start-line="232" selection-start-column="8" selection-end-line="232" selection-end-column="8" />
+        <state relative-caret-position="392">
+          <caret line="246" column="83" selection-start-line="246" selection-start-column="83" selection-end-line="246" selection-end-column="83" />
           <folding>
             <element signature="e#1088#1101#0" expanded="true" />
-            <marker date="1619110145623" expanded="true" signature="6551:6556" ph="..." />
-            <marker date="1619110145623" expanded="true" signature="15977:15983" ph="..." />
-            <marker date="1619110145623" expanded="true" signature="21553:21558" ph="..." />
+            <marker date="1619201100919" expanded="true" signature="6749:6754" ph="..." />
+            <marker date="1619201100919" expanded="true" signature="16197:16198" ph="..." />
+            <marker date="1619201100919" expanded="true" signature="17779:17785" ph="..." />
+            <marker date="1619201100919" expanded="true" signature="23355:23360" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/heroquest_legends_main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3528">
-          <caret line="210" column="80" selection-start-line="210" selection-start-column="80" selection-end-line="210" selection-end-column="80" />
+        <state relative-caret-position="1154">
+          <caret line="132" column="46" selection-start-line="132" selection-start-column="46" selection-end-line="132" selection-end-column="46" />
           <folding>
             <element signature="e#1088#1101#0" expanded="true" />
-            <marker date="1619110463562" expanded="true" signature="10672:10681" ph="..." />
+            <marker date="1619201487653" expanded="true" signature="11098:11107" ph="..." />
           </folding>
         </state>
       </provider>

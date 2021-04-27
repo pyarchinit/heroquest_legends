@@ -1,7 +1,7 @@
 {
 'aisles_msg_1': "A dim light comes from the end of the corridor, maybe you will find other rooms?",
-'aisles_msg_2': "The ceiling has collapsed and the corridor is blocked (put a collapse token after 5 boxes). Either go back or enter. What does your instinct tell you to do?",
-'aisles_msg_3': "The ceiling has collapsed and the corridor is blocked after the door (put a collapse token after 5 spaces). From the darkness of the corridor comes a sinister noise: on your way you find {}",
+'aisles_msg_2': "The ceiling has collapsed and the corridor is blocked (put a collapse token after 5 boxes from the hero). Either go back or enter. What does your instinct tell you to do?",
+'aisles_msg_3': "The ceiling has collapsed and the corridor is blocked after the door (put a collapse token after 5 spaces from the hero). From the darkness of the corridor comes a sinister noise: on your way you find {}",
 'aisles_msg_4': "You found a door to {}. Place a door in the first room. {}",
 'aisles_msg_5': "You have found two doors. A first door to {} and a second door to {}. Each leads you to a different room. {}",
 'aisles_msg_6': "You have found three doors. Place a first door at {}, a second door at {} and a third door at {}. Each leads you to a different room. {}",
@@ -194,12 +194,15 @@
                                                   "Dopo un\'estenuante ricerca decidete di sedervi e ... avvertite un click dietro allo schienale: avete trovato uno scomparto segreto con una pozione di coraggio da +2 dadi in attacco."],
                               'wardrobe'       : ["Tra gli scaffali dell\'armadio trovate una pozione di cura che vi permette di recuperare 2 punti corpo",
                                                   "Trovate uno scomparto segreto nell\'armadio che continee una fiala: si tratta di acqua benedetta in grado di uccidere un non-morto.",
-                                                  "Una custodia voluminosa attira la vostra attenzione: la aprite con cautela e...meraviglia! Avete trovato una sborsa degli attrezzi che vi farà ritirare un dado da combattimento a scelta nel caso cadiate in una trappola."],
+                                                  "Una custodia voluminosa attira la vostra attenzione: la aprite con cautela e...meraviglia! Avete trovato una sborsa degli attrezzi che vi farà ritirare un dado da combattimento a scelta nel caso cadiate in una trappola.",
+                                                  "Mentre cercate dentro all\'armadio fate scattare un meccanismo. L'armadio si sposta e vi rivela una porta segreta"],
                               'bookcase'       : ["Un voluminoso tomo contiene tantissime formule utili. Purtroppo non c\'è tempo per studiarle tutte: vi appuntate una formula per guarire un vostro compagno di avventura con +1 punto corpo.",
-                                                  "Non c'è tempo per indugiare tra questi polverosi libri. Ne prendete un po' sperando che valgano qualcosa. Alla fine dell'avventura tirate due D6 e moltiplicate il valore per 10: sarà il vostro guadagno per rivendere i libri al vecchio mercato di Aman Sur."],
-                              'chimney'        : ["Appoggiata sul caminetto trovate una fiala con all\'interno dell'elisir del coraggio che vi danno +2 dadi da combattimento al prossimo scronto.",
+                                                  "Non c'è tempo per indugiare tra questi polverosi libri. Ne prendete un po' sperando che valgano qualcosa. Alla fine dell'avventura tirate due D6 e moltiplicate il valore per 10: sarà il vostro guadagno per rivendere i libri al vecchio mercato di Aman Sur.",
+                                                  "Cercando tra i libri un grosso tomo rosso scuro attira la vostra attenzione: tirandolo a voi fa scattare un meccanismo che rivela una porta (mettetela preferibilmente verso una stanza inesplorata"],
+                              'chimney'        : ["Un meccanismo nastosco nel camino fa aprire un porta segreta che vi conduce in una stanza inesplorata",
+                                                  "Appoggiata sul caminetto trovate una fiala con all\'interno dell'elisir del coraggio che vi danno +2 dadi da combattimento al prossimo scronto.",
                                                   "Tra i tizzoni ardenti notate una pergamena sbruciacchiata: è una mappa che vi conduce ad un tesoro. La mappa recità così: trova la libreria dell'alchimista, lì vi è una gemma di inestimabile valore. Il primo che trova e arriva ad una casella adiacente ad una libreria o fa ritorno ad una libreria già trovata, conquista la gemma da 500 monete d'oro"],
-                              'torture_table'  : ["Hai trovato una spada arrugginita (+ 1 dado da combattimento in attacco)",
+                             'torture_table'  : ["Hai trovato una spada arrugginita (+ 1 dado da combattimento in attacco)",
                                                   "Tra le ossa del povero sventurato, hai trovato un antico scudo nanico molto pesante ammaccato (+2 dadi in difesa e 1 dado di movimento in meno se non sei un nano)."],
                               'alchemist_desk' : ["Una pozione di guarigione (+ 4 punti corpo)",
                                                   "Una pozione di guarigione (+ 1 punto corpo)",
@@ -231,15 +234,19 @@
                               3: 'dietro di lui',
                               4: 'davanti a lui'},
 
-  'missions_dict' : { 1: "Nelle terre di Hogarth, in un maniero abbandonato, si trova nascosto in un sotterraneo un antico laboratorio. Dovrai recuperare una pozione che il potente necromante tiene nascosta da qualche parte. Trova il laboratorio e cerca di sopravvivere tornando alle scale!!! (Metti le scale e gli eroi nell'angolo del tabellone in alto a destra.",
+  'missions_dict' : { 1: "Nelle terre di Hogarth, in un maniero abbandonato, si trova nascosto in un sotterraneo un antico laboratorio. Dovrai recuperare una pozione che il potente necromante tiene nascosta da qualche parte. Trova il laboratorio e cerca di sopravvivere tornando alle scale!!! (Metti le scale, una porta chiusa verso il corridoio e gli eroi nell'angolo del tabellone in alto a destra.",
                       2: "Il re Volgarth darà una ricompensa di 150 monete d'oro a chi gli porterà la spada del leggendario Eriamar, re barbaro dei tempi antichi, la cui tomba si trova in fondo ad un profondo intrico di cunicoli. Vai nella fortezza di Gurmardath e cerca la tomba dell'antico re e recupera la sua spada. Metti le scale al centro con gli eroi e 4 porte chiuse al centro di ogni muro; per vincere dovrai trovare la tomba e ... ."
+                      3: "Un grande pericolo si annida nel Bastione di Oropher. Un Mago del Chaos ha evocato un Gargoyle per riprendere il controllo sulle terre circoscanti. Recati al bastione, trova e uccidi il Gargoyle e il suo evocatore, ma attento: si dice che se il padrone e la sua nefasta creatura sono insieme, la loro furia raddoppia. Se la speranza di sta abbandonando sappi che in una segreta, lo Stregone del Chaos ha nascosco la Lama degli spiriti, la sua nemesi. Trovala prima che lo stregone del Chaos trovi te!!!
+                            \n##################\nObbiettivo: Recupera la Lama degli Spiriti, uccidi lo Stregone del Chaos e torna alle scale. Metti le scale e gli eroi in una stanza da 6 caselle con una porta chiusa su un corridoio. \nRegole: Il Mago del Chaos si muove di 5 caselle, ha 2 dadi di attacco e uno di difesa. Possiede i tre incantesimi di fuoco che userà nei suoi primi 3 attacchi: lancia un D6: 1-4 Palla di Fuoco, 2-5 Coraggio; 3-6 Fiamma d'ira. Se lo stregone del Chaos e il Gargoyle sono in contatto visivo attaccano 2 volte per turno."
                      },
 
   'specials_rooms' : {1: [[1,1,3,7], "Hai trovato la stanza di Hogarth, necromante della dinastia di Hamasul che qui ha il suo laboratorio. Metti sul fondo due scrigni, a sinistra il tavolo dell'alchimista e un armadio a destra."],
-                      2: [[9], "Hai trovato la catacomba in cui riposa Eriamar della dinastia di Hamasul. Senti arrivare un tonfo sordo, come di un crollo e l\'angoscia ti attanaglia: ora hai la certezza che la via è chiusa (Rimuovi il tassello delle scale da dove sei partito). All\'improvviso ricordi cosa ti ha detto Mentor: \"Giovane eroe, ricordati che appena prenderai la spada, la tomba ti rivelerà delle scale per uscire ma attento agli spettri che difendono la tomba!\". Finalmente le sue parole diventano chiare: Metti la tomba in fondo alla stanza difesa da 3 scheletri, poi colloca nel corridoio 3 mummie e 3 zombie (se i mostri sono già impiegati sul tabellone spostali qui). Per fuggire devi entrare dentro alla Tomba che nasconde le scale.."]
+                      2: [[9], "Hai trovato la catacomba in cui riposa Eriamar della dinastia di Hamasul. Senti arrivare un tonfo sordo, come di un crollo e l\'angoscia ti attanaglia: ora hai la certezza che la via è chiusa (Rimuovi il tassello delle scale da dove sei partito). Improvvisamente ricordi cosa ti ha detto Mentor: Giovane eroe, ricordati che appena prenderai la spada, la tomba ti rivelerà delle scale per uscire ma attento agli spettri che difendono la tomba. Finalmente le sue parole diventano chiare: Metti la tomba in fondo alla stanza difesa da 3 scheletri, poi colloca nel corridoio 3 mummie e 3 zombie (se i mostri sono già impiegati sul tabellone spostali qui). Per fuggire devi entrare dentro alla Tomba che nasconde le scale.."],
+                      3: [[8], "Hai finalmente trovato l'altare sacro dello Stregone del Chaos, ma ... la porta si chiude dietro di te intrappolandoti. Sulle pagine del libro aperto un potente incantesimo tiene la Lama degli Spiriti celata agli occhi degli umani. Prova a spezzare l'incantesimo che ti intrappola nella stanza e ti tiene celata la Lama degli Spiriti: in ogni turno lancia 2D6 e somma il risultato ai tuo punti mente: con un valore superiore a 10 libererai la Lama degli Spiriti. ATTENZIONE:se dopo 4 tentativi non sarai riuscito nell'impresa lo Stregone del Chaos apparirà nella stanza anche se lo avevi già ucciso."]
                      },
-  'monster_class'  : {1 : 'orc',
-                      2 : 'not_dead'}
+  'monster_class'  : {1 : ['orc'],
+                      2 : ['not_dead', 'magical'],
+                      3 : ['not_dead', 'magical']}
 
 
 }

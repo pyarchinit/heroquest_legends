@@ -106,7 +106,7 @@ class Ui(QtWidgets.QMainWindow):
     def on_pushButton_the_mission_pressed(self):
         rng_base = random.SystemRandom()
 
-        mission_number_rand = rng_base.randint(1, 1)
+        mission_number_rand = rng_base.randint(3, 3)
 
         self.HQ_SOLO.special_data_mission_charged(mission_number_rand)
 
@@ -149,6 +149,7 @@ class Ui(QtWidgets.QMainWindow):
 
 
     def on_pushButton_aisles_pressed(self):
+        self.textEdit_traps.setText("")
         current_turn = int(self.lineEdit_round.text())
         self.textEdit_aisles.setText("")
         if self.radioButton_aisles_not_explored.isChecked() == True:
@@ -168,6 +169,7 @@ class Ui(QtWidgets.QMainWindow):
         self.textEdit_traps.setText(self.HQ_SOLO.random_trap(self.CURRENT_ROUND))
 
     def on_pushButton_treasures_finds_pressed(self):
+        self.textEdit_traps.setText("")
         self.textEdit_treasures_description.setText("")
         res = self.HQ_SOLO.treasures(self.HQ_SOLO.random_numbers())
         msg = res[0]
@@ -179,12 +181,14 @@ class Ui(QtWidgets.QMainWindow):
 
 
     def on_pushButton_treasure_card_pressed(self):
+        self.textEdit_traps.setText("")
         msg = self.HQ_SOLO.treasure_card(self.HQ_SOLO.random_numbers())
         self.textEdit_treasure_cards_description.setText("")
         self.textEdit_treasure_cards_description.setText(str(msg))
 
 
     def on_pushButton_treasures_random_pressed(self):
+        self.textEdit_traps.setText("")
         self.textEdit_treasures_description.setText("")
         forniture = self.comboBox_fornitures.currentText()
         msg = self.HQ_SOLO.treasure_random(self.HQ_SOLO.random_numbers(), forniture)
@@ -195,6 +199,7 @@ class Ui(QtWidgets.QMainWindow):
 
 
     def on_pushButton_traps_and_secret_doors_finder_pressed(self):
+        self.textEdit_traps.setText("")
         msg_traps = self.HQ_SOLO.traps(self.HQ_SOLO.random_numbers())
         msg_secret_door = self.HQ_SOLO.secret_doors(self.HQ_SOLO.random_numbers())
 
@@ -203,6 +208,7 @@ class Ui(QtWidgets.QMainWindow):
 
 
     def on_pushButton_rooms_pressed(self):
+        self.textEdit_traps.setText("")
         self.textEdit_room_description.setText('')
         self.textEdit_monsters.setText('')
         if self.radioButton_explored.isChecked() == True:
@@ -244,7 +250,7 @@ class Ui(QtWidgets.QMainWindow):
 
     def on_pushButton_monster_attack_pressed(self):
         self.textEdit_combat_text.setText("")
-
+        self.textEdit_traps.setText("")
         monster_category = self.comboBox_monster_attack.currentText()
         monster_group = 0
         monster_sight = 0
@@ -276,6 +282,7 @@ class Ui(QtWidgets.QMainWindow):
             self.textEdit_combat_text.setText(msg_escape)
 
     def on_pushButton_hero_attack_pressed(self):
+        self.textEdit_traps.setText("")
         self.textEdit_traps.setText(self.HQ_SOLO.random_trap(self.CURRENT_ROUND))
 
 app = QtWidgets.QApplication(sys.argv)

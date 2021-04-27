@@ -208,7 +208,7 @@ class Heroquest_solo:
                 self.CURRENT_ROOM_COUNTER += 1
 
         #print("entrata in room generato 3")
-        if self.current_turn >= self.TOTAL_NUMBER_OF_TURNS : #and self.ESCAPE_FOUND==0 and self.room_explored == 0 and self.CURRENT_ROOM_COUNTER >= self.MAX_ROOM_COUNTER
+        if self.current_turn >= self.TOTAL_NUMBER_OF_TURNS and self.ESCAPE_FOUND==0 and self.room_explored == 0 and self.CURRENT_ROOM_COUNTER >= self.MAX_ROOM_COUNTER:
             #print("entrata in room generato 4")
             #print("special room charged: {}".format(str(self.SPECIAL_ROOM_CHARGED)))
             msg_end = self.SPECIAL_ROOM_CHARGED[1] #Replace the number with THE_MISSION = RAND_NUM
@@ -314,17 +314,24 @@ class Heroquest_solo:
                 rng_base = random.SystemRandom()
                 monsters_number = rng_base.randint(3, 6)
 
-            #print("monster_generator_2 3")
+            query_string_base="Select id_monster from monsters where "
+            query_string_where = ""
+            for cm in self.MONSTER_CLASS:
+                if query_string_where == "":
+                    query_string_where = "monster_class = '{}' or monster_class LIKE '%{}' or monster_class LIKE '{}%' or monster_class LIKE '%{}%'".format(cm, cm, cm, cm)
+                else:
+                    query_string_where += " or monster_class = '{}' or monster_class LIKE '%{}' or monster_class LIKE '{}%' or monster_class LIKE '%{}%'".format(cm, cm, cm, cm)
+
+            query_string = '{} {}'.format(query_string_base, query_string_where)
+
             for i in range(monsters_number):
                 #choose id based on monster class
-                query_string = "Select id_monster from monsters where monster_class = '{}' or monster_class LIKE '%{}' or monster_class LIKE '{}%' or monster_class LIKE '%{}%'".format(self.MONSTER_CLASS, self.MONSTER_CLASS, self.MONSTER_CLASS, self.MONSTER_CLASS)
                 db_monsters_class_query = self.CURSOR.execute(query_string)
                 db_monsters_class_charged = db_monsters_class_query.fetchall()
                 db_monsters_class_charged_list = []
                 #print("monster_generator_2 4")
                 for i in db_monsters_class_charged:
                     db_monsters_class_charged_list.append(i[0])
-
                 #print("monster_generator_2 5")
                 db_monsters_class_charged_lenght = len(db_monsters_class_charged_list)-1
                 rng = random.SystemRandom()
@@ -358,16 +365,24 @@ class Heroquest_solo:
         rn = self.random_numbers()
         comparison_value = 0
 
-
         if turn >= 1 and turn <= 15:
-            comparison_value = 23
+            comparison_value = 20
         elif turn > 15 and turn <= 20:
-            comparison_value = 22
+            comparison_value = 15
         else:
-            comparison_value = 18
+            comparison_value = 15
         if rn >= comparison_value:
-            query_string = "Select id_monster from monsters where monster_class = '{}' or monster_class LIKE '%{}' or monster_class LIKE '{}%' or monster_class LIKE '%{}%'".format(
-                self.MONSTER_CLASS, self.MONSTER_CLASS, self.MONSTER_CLASS, self.MONSTER_CLASS)
+
+            query_string_base="Select id_monster from monsters where "
+            query_string_where = ""
+            for cm in self.MONSTER_CLASS:
+                if query_string_where == "":
+                    query_string_where = "monster_class = '{}' or monster_class LIKE '%{}' or monster_class LIKE '{}%' or monster_class LIKE '%{}%'".format(cm, cm, cm, cm)
+                else:
+                    query_string_where += " or monster_class = '{}' or monster_class LIKE '%{}' or monster_class LIKE '{}%' or monster_class LIKE '%{}%'".format(cm, cm, cm, cm)
+
+            query_string = '{} {}'.format(query_string_base, query_string_where)
+
             db_monsters_class_query = self.CURSOR.execute(query_string)
             db_monsters_class_charged = db_monsters_class_query.fetchall()
             db_monsters_class_charged_list = []
@@ -472,11 +487,10 @@ class Heroquest_solo:
     def treasure_card(self, rv):
         """"create a random treasures inside chest"""
         self.rv = rv
-        if self.rv >= 1 and self.rv <= 12: #you'll find a wanderer monster
+        if self.rv >= 19 and self.rv <= 20: #you'll find a healing potion
             treasure_description = self.treasures_card_dict[19]
             return treasure_description
-        elif self.rv > 12 and self.rv <= 16: #you'll find a healing potion
-
+        elif self.rv > 20 and self.rv <= 24: #you'll find a wanderer monster
             treasure_description = self.treasures_card_dict[5]
             return treasure_description
         else:
@@ -522,11 +536,11 @@ class Heroquest_solo:
         aggresivity_bonus = 0
         if self.monster_group == 1:
             rng = random.SystemRandom()
-            aggresivity_bonus = rng.randint(1, 10)
+            aggresivity_bonus = rng.randint(2, 8)
 
         if self.monster_sight == 1:
             rng = random.SystemRandom()
-            aggresivity_bonus += rng.randint(1, 5)
+            aggresivity_bonus += rng.randint(5, 10)
 
         aggr_rand_num = self.random_numbers()
 
@@ -547,21 +561,21 @@ class Heroquest_solo:
         rn = self.random_numbers()
 
         if self.turn >= 1 or turn <= 15:
-            comparison_value = 23
+            comparison_value = 17
 
         elif self.turn > 15 or turn <= 20:
-            comparison_value = 22
+            comparison_value = 16
 
         elif self.turn > 20 or turn <= 26:
-            comparison_value = 18
+            comparison_value = 15
         else:
-            comparison_value = 20
+            comparison_value = 12
 
-        if rn <= comparison_value:
-            msg = ''
-            return msg
-        else:
+        if rn > comparison_value:
+
             return self.CONFIG_DICT['aux_msg_8']
+        else:
+            return 'OK HERO'
 
 
 

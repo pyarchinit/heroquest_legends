@@ -185,8 +185,11 @@ class Heroquest_solo:
 
         #room controller INPUT
         self.room_explored = int(re)
-        self.room_dimension = int(room_dimension)/2 #total of room's tiles
-
+        rng = random.SystemRandom()
+        value = rng.randint(1, 3)
+        self.room_dimension = int(room_dimension)/value #total of room's tiles
+        print(str(value))
+        print(str(self.room_dimension))
         #forniture_square_taken
         tot_square_taken = 0
 

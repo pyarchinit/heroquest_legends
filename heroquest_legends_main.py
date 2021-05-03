@@ -56,6 +56,8 @@ class Ui(QtWidgets.QMainWindow):
 
     TREASURES_FINDS = 0
 
+    CHRONICLE = ""
+
 
     #todo messaggio con punto di partenza
     #todo aggiungere segnalatore di fine avventura scale trovate
@@ -119,8 +121,10 @@ class Ui(QtWidgets.QMainWindow):
         wanderer_monster_text = self.CONFIG_DICT['monsters_msg_3']
 
         the_mission_text = '{}\n{}{}'.format(the_mission_dict[mission_number_rand],wanderer_monster_text,wanderer_monster)
-
         self.textEdit_the_mission.setText(the_mission_text)
+
+        self.CHRONICLE = the_mission_text
+        self.textEdit_chronicle.setText(self.CHRONICLE)
 
         self.pushButton_aisles.setEnabled(True)
         self.pushButton_rooms.setEnabled(True)
@@ -229,7 +233,13 @@ class Ui(QtWidgets.QMainWindow):
             self.textEdit_traps.setText(self.HQ_SOLO.random_trap(self.CURRENT_ROUND))
         else:
             if msg_temp[2] != '':
+                print("puppa 1")
+                self.CHRONICLE = '{} \n\n --- \n\n {}'.format(self.CHRONICLE, msg_temp[2])
+                print("puppa 2")
+                self.textEdit_chronicle.setText(self.CHRONICLE)
+                print("puppa 3")
                 msg_room = msg_temp[2]
+                print("puppa 4")
                 self.textEdit_traps.setText(self.HQ_SOLO.random_trap(self.CURRENT_ROUND))
             elif msg_temp[0] == '' and msg_temp[2] == '' and room_explored == 1:
                 msg_room = self.HQ_SOLO.CONFIG_DICT['aux_msg_7']

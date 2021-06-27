@@ -30,12 +30,14 @@ import sqlite3
 class Heroquest_solo:
     """main class for variables management"""
     rng = random.SystemRandom()
-    TOTAL_NUMBER_OF_TURNS = rng.randint(6, 15)
+    TOTAL_NUMBER_OF_TURNS = rng.randint(5, 10)
 
     rng = random.SystemRandom()
-    MAX_ROOM_COUNTER = rng.randint(6, 12)
+    MAX_ROOM_COUNTER = rng.randint(5, 10)
 
     CURRENT_ROOM_COUNTER = 0
+
+    MISSION_PERCENT_MADE = 0
 
     ESCAPE_FOUND = 0
 
@@ -177,6 +179,14 @@ class Heroquest_solo:
 
         return rn_sum
 
+    def mission_percent_made(self, ct):
+        current_turn = ct
+        print("gigi 1")
+        self.MISSION_PERCENT_MADE = (current_turn/self.TOTAL_NUMBER_OF_TURNS)*100
+
+        print("second data: "+str(self.MISSION_PERCENT_MADE))
+
+
     def room_generator(self, room_dimension, ct, re):
         """create random rooms with fornitures"""
         #print("entrata in room generato")
@@ -186,10 +196,9 @@ class Heroquest_solo:
         #room controller INPUT
         self.room_explored = int(re)
         rng = random.SystemRandom()
-        value = rng.randint(1, 3)
+        value = rng.randint(1, 2)
         self.room_dimension = int(room_dimension)/value #total of room's tiles
-        print(str(value))
-        print(str(self.room_dimension))
+
         #forniture_square_taken
         tot_square_taken = 0
 
@@ -364,16 +373,22 @@ class Heroquest_solo:
 
     def random_monsters_on_aisles(self, n):
         turn = n
-
+        self.mission_percent_made(turn)
         rn = self.random_numbers()
         comparison_value = 0
-
-        if turn >= 1 and turn <= 15:
-            comparison_value = 20
-        elif turn > 15 and turn <= 20:
-            comparison_value = 15
+        if self.MISSION_PERCENT_MADE >= 100:
+            comparison_value = 4
+            print("14")
+        elif self.MISSION_PERCENT_MADE >= 70:
+            comparison_value = 12
+            print("12")
+        elif self.MISSION_PERCENT_MADE >= 20:
+            comparison_value = 18
+            print("18")
         else:
-            comparison_value = 15
+            comparison_value = 22
+            print("22")
+
         if rn >= comparison_value:
 
             query_string_base="Select id_monster from monsters where "
@@ -412,7 +427,7 @@ class Heroquest_solo:
         self.LR_n = self.r_num.randint(1, 2) #select beetween left ora right
         rock_msg_value = self.random_numbers()
 
-        #generate a rock message and sometis with a monster
+        #generate a rock message and a monster
         if rock_msg_value > 0 and rock_msg_value <= 15:
             rocks_msg = self.CONFIG_DICT['aisles_msg_1']
         elif rock_msg_value > 15 and rock_msg_value <= 18:
@@ -558,6 +573,18 @@ class Heroquest_solo:
             #villan mode
             return 2
 
+    def hero_attack(self, rv):
+        self.rv = rv
+        print("pippo hero")
+        if self.rv < 20:
+            msg = self.CONFIG_DICT['aux_msg_12']
+            return str(msg)
+        else:
+            print("pippo hero 2")
+            msg = self.CONFIG_DICT['attack_messages'][3][0]
+            return str(msg)
+
+
     def random_trap(self, n):
         self.turn = int(n)
         comparison_value = 0
@@ -578,7 +605,7 @@ class Heroquest_solo:
 
             return self.CONFIG_DICT['aux_msg_8']
         else:
-            return 'OK HERO'
+            return self.CONFIG_DICT['aux_msg_11']
 
 
 

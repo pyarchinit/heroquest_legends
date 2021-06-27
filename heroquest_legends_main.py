@@ -33,6 +33,9 @@ from PyQt5.QtWidgets import QLabel
 #codeadde d/
 from heroquest_solo_function import Heroquest_solo
 
+
+from adventure_panel_settings_main import AdventurePanelSettings
+
 class Ui(QtWidgets.QMainWindow):
     #TODO aggiungere come posizione il mostro davanti alla porta fuori o dentro la stanza
     #TODO aggiungere oltre che davanti, davanti ed adiacente a te.
@@ -72,7 +75,6 @@ class Ui(QtWidgets.QMainWindow):
         uic.loadUi(os.path.join(os.path.dirname(__file__),'heroquest_legends.ui'), self)
 
         self.HQ_SOLO = Heroquest_solo(self.CONFIG_DICT)
-
         self.pushButton_close.clicked.connect(self.close)
 
         bg_img_path = './background.png'  #os.path.join(os.path.dirname(__file__),'mappa.png')
@@ -82,10 +84,49 @@ class Ui(QtWidgets.QMainWindow):
         palette.setBrush(QPalette.Window, QBrush(sImage))
 
         self.setPalette(palette)
-
         self.charge_list()
-
         self.show()
+
+
+    def on_pushButton_settings_pressed(self):
+        dlg = AdventurePanelSettings(self)
+        dlg.DICT = self.CONFIG_DICT
+        dlg.insertItems()
+
+        dlg.exec_()
+        #open the panel and freeze the process
+
+        #then pass to variables data from settings
+        """
+        items, order_type = dlg.ITEMS, dlg.TYPE_ORDER
+        self.SORT_ITEMS_CONVERTED = []
+        for i in items:
+            # QMessageBox.warning(self, "Messaggio",i, QMessageBox.Ok)
+            self.SORT_ITEMS_CONVERTED.append(
+                self.CONVERSION_DICT[str(i)])  # apportare la modifica nellle altre schede
+        self.SORT_MODE = order_type
+        self.empty_fields()
+        id_list = []
+        for i in self.DATA_LIST:
+            id_list.append(eval("i." + self.ID_TABLE))
+        self.DATA_LIST = []
+        temp_data_list = self.DB_MANAGER.query_sort(id_list, self.SORT_ITEMS_CONVERTED, self.SORT_MODE,
+                                                    self.MAPPER_TABLE_CLASS, self.ID_TABLE)
+        for i in temp_data_list:
+            self.DATA_LIST.append(i)
+        self.BROWSE_STATUS = 'b'
+        self.label_status.setText(self.STATUS_ITEMS[self.BROWSE_STATUS])
+        if type(self.REC_CORR) == "<type 'str'>":
+            corr = 0
+        else:
+            corr = self.REC_CORR
+        self.REC_TOT, self.REC_CORR = len(self.DATA_LIST), 0
+        self.DATA_LIST_REC_TEMP = self.DATA_LIST_REC_CORR = self.DATA_LIST[0]
+        self.SORT_STATUS = "o"
+        self.label_sort.setText(self.SORTED_ITEMS[self.SORT_STATUS])
+        self.set_rec_counter(len(self.DATA_LIST), self.REC_CORR + 1)
+        self.fill_fields()
+        """
 
 
     def charge_list(self):
@@ -108,7 +149,7 @@ class Ui(QtWidgets.QMainWindow):
     def on_pushButton_the_mission_pressed(self):
         rng_base = random.SystemRandom()
 
-        mission_number_rand = rng_base.randint(3, 3)
+        mission_number_rand = rng_base.randint(4,4)
 
         self.HQ_SOLO.special_data_mission_charged(mission_number_rand)
 
@@ -120,9 +161,9 @@ class Ui(QtWidgets.QMainWindow):
         wanderer_monster = self.CONFIG_DICT['monsters_dict'][wanderer_monster_number_rand]
         wanderer_monster_text = self.CONFIG_DICT['monsters_msg_3']
 
-        the_mission_text = '{}\n{}{}'.format(the_mission_dict[mission_number_rand],wanderer_monster_text,wanderer_monster)
+        the_mission_text = '{}\n{}{}'.format(the_mission_dict[mission_number_rand][1],wanderer_monster_text,wanderer_monster)
         self.textEdit_the_mission.setText(the_mission_text)
-
+        self.QLabel_the_title.setText(the_mission_dict[mission_number_rand][0])
         self.CHRONICLE = the_mission_text
         self.textEdit_chronicle.setText(self.CHRONICLE)
 
@@ -165,6 +206,10 @@ class Ui(QtWidgets.QMainWindow):
             else:
                 msg = self.HQ_SOLO.aisles(self.HQ_SOLO.random_numbers())
         else:
+            print("gigi 2")
+            print("TOTAL TURNS: "+str(self.HQ_SOLO.TOTAL_NUMBER_OF_TURNS))
+            print("current turns"+str(self.CURRENT_ROUND))
+            print("percent"+str(self.HQ_SOLO.MISSION_PERCENT_MADE))
             msg = self.HQ_SOLO.random_monsters_on_aisles(self.CURRENT_ROUND)
 
 
@@ -216,30 +261,30 @@ class Ui(QtWidgets.QMainWindow):
         self.textEdit_room_description.setText('')
         self.textEdit_monsters.setText('')
         if self.radioButton_explored.isChecked() == True:
-            #print("room pressed_1")
+            ##print("room pressed_1")
             room_explored = 1
             self.textEdit_traps.setText(self.HQ_SOLO.random_trap(self.CURRENT_ROUND))
         else:
-            #print("room pressed_2")
+            ##print("room pressed_2")
             room_explored = 0
 
         current_turn = int(self.lineEdit_round.text())
-        #print("room pressed_3-uscita da room pressed")
+        ##print("room pressed_3-uscita da room pressed")
         msg_temp = self.HQ_SOLO.room_generator(self.lineEdit_room_dimension.text(), current_turn,room_explored)
-        #print("room pressed_4-rientrato da room pressed")
+        ##print("room pressed_4-rientrato da room pressed")
 
         if current_turn == 1 or current_turn == 2:
             msg_room = self.HQ_SOLO.CONFIG_DICT['aux_msg_1'].format(msg_temp[0])
             self.textEdit_traps.setText(self.HQ_SOLO.random_trap(self.CURRENT_ROUND))
         else:
             if msg_temp[2] != '':
-                print("puppa 1")
+                #print("puppa 1")
                 self.CHRONICLE = '{} \n\n --- \n\n {}'.format(self.CHRONICLE, msg_temp[2])
-                print("puppa 2")
+                #print("puppa 2")
                 self.textEdit_chronicle.setText(self.CHRONICLE)
-                print("puppa 3")
+                #print("puppa 3")
                 msg_room = msg_temp[2]
-                print("puppa 4")
+                #print("puppa 4")
                 self.textEdit_traps.setText(self.HQ_SOLO.random_trap(self.CURRENT_ROUND))
             elif msg_temp[0] == '' and msg_temp[2] == '' and room_explored == 1:
                 msg_room = self.HQ_SOLO.CONFIG_DICT['aux_msg_7']
@@ -294,6 +339,8 @@ class Ui(QtWidgets.QMainWindow):
     def on_pushButton_hero_attack_pressed(self):
         self.textEdit_traps.setText("")
         self.textEdit_traps.setText(self.HQ_SOLO.random_trap(self.CURRENT_ROUND))
+        rand_value = self.HQ_SOLO.random_numbers()
+        self.textEdit_combat_text.setText(self.HQ_SOLO.hero_attack(rand_value))
 
 app = QtWidgets.QApplication(sys.argv)
 

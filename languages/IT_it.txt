@@ -1,7 +1,7 @@
 {
 'aisles_msg_1': "Dal fondo del corridoio arriva una luce fioca, forse troverai altre stanze?",
-'aisles_msg_2' : "Il soffitto è crollato e il corridoio è bloccato (metti un segnalino crollo dopo 5 caselle dall'eroe). O tornare indietro o entrare. Che cosa ti dice di fare l'istinto?",
-'aisles_msg_3' : "Il soffitto è crollato e il corridoio è bloccato dopo la porta (metti un segnalino crollo dopo 5 caselle dall'eroe). Dul buio del corridoio arriva un rumore sinistro: sulla tua strada trovi {}",
+'aisles_msg_2' : "Il soffitto è crollato e il corridoio è bloccato (metti un segnalino crollo dopo 1 casella dall'ultima porta). O tornare indietro o entrare. Che cosa ti dice di fare l'istinto?",
+'aisles_msg_3' : "Il soffitto è crollato e il corridoio è bloccato dopo la porta (metti un segnalino crollo dopo 1 casella dall'ultima porta). Dul buio del corridoio arriva un rumore sinistro: sulla tua strada trovi {}",
 'aisles_msg_4' : "Hai trovato una porta {}. Colloca una porta per entrare nella prima stanza inesplorata. {}",
 'aisles_msg_5' : "Hai trovato due porte. Una prima porta {} e una seconda porta {}. Ognuna ti conduce ad una stanza inesplorata diversa. {}",
 'aisles_msg_6' : "Hai trovato tre porte. Colloca una prima porta {}, una seconda porta {} e una terza porta a {}. Ognuna ti conduce ad una stanza inesplorata diversa.{}",
@@ -118,6 +118,8 @@
   'aux_msg_8': 'Un ticchettio sordo e una freccia parte dal muro verso di te togliendoti 1 punto corpo! Se avevi già cercato trabocchetti in questa stanza eviti la freccia altrimentni difenditi lanciando un dado da combattimento per ogni punto mente che hai. (ATTENZIONE: se hai già cercato trabocchetti qui ignora il messaggio).',
   'aux_msg_9': 'Attirato dai rumori ti ritrovi davanti {}',
   'aux_msg_10': 'Fino a qui tutto tranquillo...',
+  'aux_msg_11': 'Per ora nessun problema... ma attento ai trabocchetti!!!',
+  'aux_msg_12': 'I mostri si preparano alla battaglia',
   'end_msg_1' : 'La via d\'uscita! Noti una pietra spostata nel muro e toccandola, un rumore di ingranaggi apre una voragine nel pavimento. Hai trovato le scale per uscire!',
   'monsters_msg_intro': 'Prendi tutto il tuo coraggio e guardi dentro. Ecco cosa vedi:\n',
 
@@ -225,7 +227,8 @@
   'attack_messages' : {1: ['Il mostro attacca l\'eroe {} oppure si muove verso l\'eroe più vicino e se può lo attacca.',
                            'Se ci sono nemici nel raggio di movimento, il mostro muove va verso l\'eroe {}. Se lo raggiunge lo attacca; altrimenti si muove verso l\'eroe più vicino e se può lo attacca.'],
 
-                       2: ['il mostro non accenna a muoversi: potrebbe essere la vostra occasione', 'Il mostro cerca di fuggire lontano.', 'Il mostro cerca di bloccare la via di fuga agli eroi. Se finisce vicino ad un eroe non lo attacca, blocca solo la fuga.', 'Il resta a sorvegliare il suo antro e non si sposta.']},
+                       2: ['il mostro non accenna a muoversi: potrebbe essere la vostra occasione', 'Il mostro cerca di fuggire lontano.', 'Il mostro cerca di bloccare la via di fuga agli eroi. Se finisce vicino ad un eroe non lo attacca, blocca solo la fuga.', 'Il resta a sorvegliare il suo antro e non si sposta.'],
+                       3: ['Il mostro con un rapido movimento raccoglie dei sassi da terra e te li getta in faccia infliggedoti 1 punto ferita (Ti difendi con un dado da combattimento)']},
 
   'choice_dict' : {1:'più vicino {}',
                    2:'più lontano {}',
@@ -239,20 +242,23 @@
                               3: 'dietro di lui',
                               4: 'davanti a lui'},
 
-  'missions_dict' : { 1: "Nelle terre di Hogarth, in un maniero abbandonato, si trova nascosto in un sotterraneo un antico laboratorio. Dovrai recuperare una pozione che il potente necromante tiene nascosta da qualche parte. Trova il laboratorio e cerca di sopravvivere tornando alle scale!!! (Metti le scale, una porta chiusa verso il corridoio e gli eroi nell'angolo del tabellone in alto a destra.",
-                      2: "Il re Volgarth darà una ricompensa di 150 monete d'oro a chi gli porterà la spada del leggendario Eriamar, re barbaro dei tempi antichi, la cui tomba si trova in fondo ad un profondo intrico di cunicoli. Vai nella fortezza di Gurmardath e cerca la tomba dell'antico re e recupera la sua spada. Metti le scale al centro con gli eroi e 4 porte chiuse al centro di ogni muro; per vincere dovrai trovare la tomba e ... .",
-                      3: "Un grande pericolo si annida nel Bastione abbandonato di Re Oropher.Uno Stregone del Chaos ha preso qui dimora e ha evocato un Gargoyle per riprendere il controllo sulle terre circoscanti. Recati al bastione, trova e uccidi il Gargoyle e il suo evocatore, ma attento: si dice che se il padrone e la sua nefasta creatura sono insieme, la loro furia raddoppia. Se la speranza di sta abbandonando sappi che in una segreta, lo Stregone del Chaos ha nascoscto la Lama degli spiriti, la sua nemesi, unica arma in grado di uccirle ma che non può eliminare da questo mondo. Trovala prima che lo stregone del Chaos trovi te!!! Obbiettivo: Recupera la Lama degli Spiriti, uccidi Stregone del Chaos e il suo Gargoyle servitore, poi torna alle scale. Metti le scale e gli eroi in una stanza da 6 caselle con una porta chiusa su un corridoio. Regole: Il Mago del Chaos ha 12 punti corpo si muove di 5 caselle, ha 3 dadi di attacco e due difesa. Possiede i tre incantesimi di fuoco che userà nei suoi primi 3 attacchi: lancia un D6: 1-4 Palla di Fuoco, 2-5 Coraggio; 3-6 Fiamma di ira. Se lo stregone del Chaos e il Gargoyle sono in contatto visivo attaccano 2 volte per turno."
+  'missions_dict' : { 1: ["Il maniero di Hogarth", "Nelle terre di Hogarth, in un maniero abbandonato, si trova nascosto in un sotterraneo un antico laboratorio. Dovrai recuperare una pozione che il potente necromante tiene nascosta da qualche parte. Trova il laboratorio e cerca di sopravvivere tornando alle scale!!! (Metti le scale, una porta chiusa verso il corridoio e gli eroi nell'angolo del tabellone in alto a destra."],
+                      2: ["La spada di Eriamar", "Il re Volgarth darà una ricompensa di 150 monete d'oro a chi gli porterà la spada del leggendario Eriamar, re barbaro dei tempi antichi, la cui tomba si trova in fondo ad un profondo intrico di cunicoli. Vai nella fortezza di Gurmardath e cerca la tomba dell'antico re e recupera la sua spada. Metti le scale al centro con gli eroi e 4 porte chiuse al centro di ogni muro; per vincere dovrai trovare la tomba e ... ."],
+                      3: ["Il Bastione di Oropher", "Un grande pericolo si annida nel Bastione di Oropher. Un Mago del Chaos ha evocato un Gargoyle per riprendere il controllo sulle terre circoscanti. Recati al bastione, trova e uccidi il Gargoyle e il suo evocatore, ma attento: si dice che se il padrone e la sua nefasta creatura sono insieme, la loro furia raddoppia. Se la speranza di sta abbandonando sappi che in una segreta, lo Stregone del Chaos ha nascosto la Lama degli spiriti, la sua nemesi. Trovala prima che lo stregone del Chaos trovi te!!!\n##################\nObbiettivo: Recupera la Lama degli Spiriti, uccidi lo Stregone del Chaos e torna alle scale. Metti le scale e gli eroi in una stanza da 6 caselle con una porta chiusa su un corridoio. \nRegole: Il Mago del Chaos si muove di 5 caselle, ha 2 dadi di attacco e uno di difesa. Possiede i tre incantesimi di fuoco che userà nei suoi primi 3 attacchi: lancia un D6: 1-4 Palla di Fuoco, 2-5 Coraggio; 3-6 Fiamma d'ira. Se lo stregone del Chaos e il Gargoyle sono in contatto visivo attaccano 2 volte per turno."],
+                      4: ["Caccia alla Corazza di Borin", "Il re Asaroth ha ordinato di recuperare la corazza di Borin. I suoi maghi hanno scoperto che si trova all\'interno della Rocca di Balagar. Cerca la Corazza, recuperala ed esci vivo dalla Rocca. Collaca una porta sul bordo esterno del pannello, al centro del lato con la scritta HEROQUEST."]
                      },
 
   'specials_rooms' : {1: [[1,1,3,7], "Hai trovato la stanza di Hogarth, necromante della dinastia di Hamasul che qui ha il suo laboratorio. Metti sul fondo due scrigni, a sinistra il tavolo dell'alchimista e un armadio a destra."],
                       2: [[9], "Hai trovato la catacomba in cui riposa Eriamar della dinastia di Hamasul. Senti arrivare un tonfo sordo, come di un crollo e l\'angoscia ti attanaglia: ora hai la certezza che la via è chiusa (Rimuovi il tassello delle scale da dove sei partito). Improvvisamente ricordi cosa ti ha detto Mentor: Giovane eroe, ricordati che appena prenderai la spada, la tomba ti rivelerà delle scale per uscire ma attento agli spettri che difendono la tomba. Finalmente le sue parole diventano chiare: Metti la tomba in fondo alla stanza difesa da 3 scheletri, poi colloca nel corridoio 3 mummie e 3 zombie (se i mostri sono già impiegati sul tabellone spostali qui). Per fuggire devi entrare dentro alla Tomba che nasconde le scale.."],
-                      3: [[8], "Hai finalmente trovato l'altare sacro dello Stregone del Chaos, ma ... Una mistieriosa forza ti risucchia nella stanza (metti tutti gli eroie i mostri  che si trovano nel raggio di 4 caselle dalla porta dentro alla stanza e togli la porta). Sulle pagine del libro aperto un potente incantesimo tiene la Lama degli Spiriti celata agli occhi degli umani. Prova a spezzare l'incantesimo che ti intrappola nella stanza e ti tiene celata la Lama degli Spiriti: in ogni turno lancia 2D6 e somma il risultato ai tuoi punti mente: con un valore superiore a 10 libererai la Lama degli Spiriti e farai riapparire la porta. ATTENZIONE:se dopo 4 tentativi non sarai riuscito nell'impresa una evocazione lo spirito dello Stregone del Chaos apparirà nella stanza anche se lo avevi già ucciso con ma con solo 4 punti corpo."]
-                     },
+                      3: [[8], "Hai finalmente trovato l\'altare sacro dello Stregone del Chaos, ma ... Una misteriosa forza ti risucchia nella stanza (metti tutti gli eroie i mostri  che si trovano nel raggio di 4 caselle dalla porta dentro alla stanza e togli la porta). Sulle pagine del libro aperto un potente incantesimo tiene la Lama degli Spiriti celata agli occhi degli umani. Prova a spezzare l'incantesimo che ti intrappola nella stanza e ti tiene celata la Lama degli Spiriti: in ogni turno lancia 2D6 e somma il risultato ai tuoi punti mente: con un valore superiore a 10 libererai la Lama degli Spiriti e farai riapparire la porta. ATTENZIONE:se dopo 4 tentativi non sarai riuscito nell'impresa una evocazione lo spirito dello Stregone del Chaos apparirà nella stanza facendo riapparire la porta anche se lo avevi già ucciso con ma con solo 4 punti corpo."],
+                      4: [[10, 13],"Finalmente hai trovato l\'armeria della Rocca di Balagar. La Corazza di Borin finalmente è alla tua portata ma, nonappena cerchi di afferarla 4 Guerrieri del Chaos appaiono nella stanza per impedirti di prenderla (Metti la rastrelliera e il tavolo sul fondo della stanza e 4 Guerrieri del Chaos tra te e l\'armeria (Se i mostri sono impegnati altrove, spostali qui. Conquistata la Corazza torna alla porta di accesso da cui sei entrato."]},
 
   'monster_class'  : {1 : ['orc'],
                       2 : ['not_dead', 'magical'],
-                      3 : ['not_dead', 'magical']}
+                      3 : ['not_dead', 'magical'],
+                      4 : ['orc']},
 
+  'monster_types'  : ['orc','not_dead','magical']
 
 }
 

@@ -1,0 +1,41 @@
+##########################################################################################################
+Heroquest Legends by Luca Mandolesi - mandoluca@gmail.com #
+##########################################################################################################
+
+Questo file è stato creato da Luca Mandolesi con l'ausilio di python e altre librerie.
+Per vedere un video dimostrativo vai su: https://www.youtube.com/watch?v=0yZ9JtQKrcQ&list=PL4jJ7vs7g2m8rc8dZsILMQ60-sgaUjeYz
+Non è in vendita ed è stato creato senza alcuno scopo di lucro.
+La sua pubblicazione avviene esclusivamente per aiutare la sopravvivenza del gioco da tavolo.
+
+Se intendi ripubblicarlo devi considerare che il suo creatore lo ha inserito nel network italiano di Heroquest in base alla licenza Creative Commons 3.0 Attribuzione - Non commerciale - Condividi allo stesso modo 3.0 Unported (CC BY-NC-SA 3.0).
+Qui trovi tutti i dettagli > http://creativecommons.org/licenses/by-nc-sa/3.0/deed.it
+
+-----------------------------------------------------------
+Hai scaricato questo file da 
+www.github.com/pyarchinit/heroquest_legends
+Il portale italiano di Heroquest
+
+E' consentito esclusivamente l'uso personale del
+contenuto del file.
+-----------------------------------------------------------
+Copyright Disclaimer
+
+Hero Quest ™ è un marchio della Games Workshop Inc. 
+Tutti i diritti sono riservati.
+Questo sito non intende ledere in modo 
+diretto o indiretto diritti di copyright legati 
+alla proprietà del marchio ma esiste esclusivamente 
+per lo scopo di continuare a diffondere 
+la conoscenza del gioco e delle sue espansioni.
+
+Hero Quest ™ is a trademark of the Games Workshop Inc. 
+All rights reserved. 
+This site doesn't intend to injure in direct or indirect 
+way copyrights to the ownership of the trademark but it 
+exclusively exists for the purpose to keep on spreading 
+the knowledge of the game and its expansions.
+-----------------------------------------------------------
+Visita il Forum Italiano di Heroquest:
+http://www.heroquestforum.it
+-----------------------------------------------------------
+###################################################################

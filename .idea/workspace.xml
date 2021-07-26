@@ -1,17 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/cocos2D_gui.py" description="label.position = (320, 240)" line="20" />
-  </component>
   <component name="ChangeListManager">
-    <list default="true" id="f0731132-1647-4714-b667-c61b5640c3c3" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/adventure_panel_settings_main.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/delegateComboBox.py" afterDir="false" />
+    <list default="true" id="f0731132-1647-4714-b667-c61b5640c3c3" name="Default Changelist" comment="Chronicle fields added... to be found the translation method">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/heroquest_legends.ui" beforeDir="false" afterPath="$PROJECT_DIR$/heroquest_legends.ui" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/adventure_panel_settings_main.py" beforeDir="false" afterPath="$PROJECT_DIR$/adventure_panel_settings_main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/appunti..txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cocos2D_gui.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/heroquest_legends_it.ui" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/heroquest_legends_main.py" beforeDir="false" afterPath="$PROJECT_DIR$/heroquest_legends_main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/heroquest_solo_function.py" beforeDir="false" afterPath="$PROJECT_DIR$/heroquest_solo_function.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/EN_en.ts" beforeDir="false" afterPath="$PROJECT_DIR$/languages/EN_en.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/languages/EN_en.txt" beforeDir="false" afterPath="$PROJECT_DIR$/languages/EN_en.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/ES_es.ts" beforeDir="false" afterPath="$PROJECT_DIR$/languages/ES_es.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/IT_it.ts" beforeDir="false" afterPath="$PROJECT_DIR$/languages/IT_it.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/languages/IT_it.txt" beforeDir="false" afterPath="$PROJECT_DIR$/languages/IT_it.txt" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -83,6 +84,16 @@
         </counts>
       </usages-collector>
     </session>
+    <session id="-225659097">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="1" />
+          <entry key="project.open.time.0" value="1" />
+          <entry key="project.open.time.4" value="1" />
+          <entry key="project.opened" value="2" />
+        </counts>
+      </usages-collector>
+    </session>
   </component>
   <component name="FavoritesManager">
     <favorites_list name="heroquest_solo" />
@@ -92,17 +103,20 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/heroquest_legends_main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4728">
-              <caret line="212" column="26" selection-start-line="212" selection-start-column="26" selection-end-line="212" selection-end-column="26" />
+            <state relative-caret-position="7235">
+              <caret line="408" selection-start-line="408" selection-end-line="408" />
+              <folding>
+                <element signature="e#1088#1101#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/heroquest_solo_function.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="155">
-              <caret line="39" column="4" selection-start-line="39" selection-start-column="4" selection-end-line="39" selection-end-column="28" />
+            <state relative-caret-position="15720">
+              <caret line="655" selection-start-line="655" selection-end-line="655" />
               <folding>
                 <element signature="e#1088#1101#0" expanded="true" />
               </folding>
@@ -122,11 +136,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/languages/IT_it.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="6072">
-              <caret line="253" column="270" selection-start-line="253" selection-start-column="270" selection-end-line="253" selection-end-column="270" />
+            <state relative-caret-position="233">
+              <caret line="264" column="30" selection-start-line="264" selection-start-column="30" selection-end-line="264" selection-end-column="30" />
             </state>
           </provider>
         </entry>
@@ -142,7 +156,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>chro</find>
       <find>5 caselle</find>
       <find>/</find>
       <find>print</find>
@@ -172,6 +185,7 @@
       <find>perce</find>
       <find>MISSION_PERCENT_MADE</find>
       <find>percent</find>
+      <find>secret</find>
     </findStrings>
     <replaceStrings>
       <replace>treasures</replace>
@@ -217,15 +231,15 @@
         <option value="$PROJECT_DIR$/delegateComboBox.py" />
         <option value="$PROJECT_DIR$/languages/EN_en.txt" />
         <option value="$PROJECT_DIR$/adventure_panel_settings_main.py" />
-        <option value="$PROJECT_DIR$/languages/IT_it.txt" />
         <option value="$PROJECT_DIR$/heroquest_legends_main.py" />
         <option value="$PROJECT_DIR$/heroquest_solo_function.py" />
+        <option value="$PROJECT_DIR$/languages/IT_it.txt" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-10" />
-    <option name="y" value="-10" />
+    <option name="x" value="-9" />
+    <option name="y" value="-9" />
     <option name="width" value="1940" />
     <option name="height" value="1100" />
   </component>
@@ -235,23 +249,18 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
               <item name="heroquest_legends" type="b2602c69:ProjectViewProjectNode" />
-              <item name="heroquest_solo" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="heroquest_legends" type="b2602c69:ProjectViewProjectNode" />
-              <item name="heroquest_solo" type="462c0819:PsiDirectoryNode" />
-              <item name="languages" type="462c0819:PsiDirectoryNode" />
+              <item name="heroquest_legends" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -805,17 +814,18 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="878" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Favorites" order="0" sideWeight="0.48559672" side_tool="true" weight="0.22538003" />
       <window_info content_ui="combo" id="Project" order="1" sideWeight="0.8518519" visible="true" weight="0.20555188" />
       <window_info id="Structure" order="2" sideWeight="0.14814815" side_tool="true" weight="0.30601454" />
       <window_info anchor="bottom" id="Terminal" order="0" sideWeight="0.4990086" weight="0.087257616" />
-      <window_info active="true" anchor="bottom" id="Event Log" order="1" sideWeight="0.32782552" side_tool="true" visible="true" weight="0.3434903" />
+      <window_info anchor="bottom" id="Event Log" order="1" sideWeight="0.32848644" side_tool="true" visible="true" weight="0.3434903" />
       <window_info anchor="bottom" id="Python Console" order="2" sideWeight="0.8347654" weight="0.42797783" />
       <window_info anchor="bottom" id="Message" order="3" />
       <window_info anchor="bottom" id="Find" order="4" weight="0.32963988" />
       <window_info anchor="bottom" id="Version Control" order="5" sideWeight="0.4976867" weight="0.43213296" />
-      <window_info active="true" anchor="bottom" id="Run" order="6" sideWeight="0.6721745" visible="true" weight="0.3434903" />
+      <window_info active="true" anchor="bottom" id="Run" order="6" sideWeight="0.67151356" visible="true" weight="0.3434903" />
       <window_info anchor="bottom" id="Debug" order="7" weight="0.54432136" />
       <window_info anchor="bottom" id="Cvs" order="8" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="9" weight="0.4" />
@@ -858,13 +868,6 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/cocos2D_gui.py</url>
-          <line>20</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
       <default-breakpoints>
         <breakpoint type="python-exception">
           <properties notifyOnTerminate="true" exception="BaseException">
@@ -893,21 +896,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../pycharm_pj/pyarchinit/modules/db/pyarchinit_conn_strings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="504">
-          <caret line="48" column="50" lean-forward="true" selection-end-line="171" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/../pycharm_pj/pyarchinit/modules/db/pyarchinit_conn_strings.py" />
     <entry file="file://$PROJECT_DIR$/../settings.py" />
-    <entry file="file://$PROJECT_DIR$/../pycharm_pj/pyarchinit/modules/utility/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="672">
-          <caret line="28" column="43" lean-forward="true" selection-start-line="28" selection-start-column="43" selection-end-line="28" selection-end-column="56" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/../pycharm_pj/pyarchinit/modules/utility/settings.py" />
     <entry file="file://$PROJECT_DIR$/settings.py" />
     <entry file="file://$PROJECT_DIR$/config.py" />
     <entry file="file://$PROJECT_DIR$/mappa.jpg" />
@@ -1023,22 +1014,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../pycharm_pj/pyarchinit/tabs/US_USM.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="24">
-          <caret line="39" column="14" selection-start-line="39" selection-start-column="14" selection-end-line="39" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/../pycharm_pj/pyarchinit/tabs/US_USM.py" />
     <entry file="file://$PROJECT_DIR$/languages/IT_it.ts">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/heroquest_legends_main.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4728">
-          <caret line="212" column="26" selection-start-line="212" selection-start-column="26" selection-end-line="212" selection-end-column="26" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/adventure_panel_settings_main.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -1050,20 +1028,30 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/languages/IT_it.txt">
+    <entry file="file://$PROJECT_DIR$/heroquest_legends_main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6072">
-          <caret line="253" column="270" selection-start-line="253" selection-start-column="270" selection-end-line="253" selection-end-column="270" />
+        <state relative-caret-position="7235">
+          <caret line="408" selection-start-line="408" selection-end-line="408" />
+          <folding>
+            <element signature="e#1088#1101#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/heroquest_solo_function.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="155">
-          <caret line="39" column="4" selection-start-line="39" selection-start-column="4" selection-end-line="39" selection-end-column="28" />
+        <state relative-caret-position="15720">
+          <caret line="655" selection-start-line="655" selection-end-line="655" />
           <folding>
             <element signature="e#1088#1101#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/languages/IT_it.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="233">
+          <caret line="264" column="30" selection-start-line="264" selection-start-column="30" selection-end-line="264" selection-end-column="30" />
         </state>
       </provider>
     </entry>

@@ -1,5 +1,0 @@
-- se il personaggio ha già esplorato una stanza alla sua sinistra e mentre è nel
-corridoio l'app ridice che c'è una porta a sinitra verso una stanza inesplorata (ma non ci sono più
-stanze disponibili) cosa fare?
-
-- il sistema di rimozione forniture

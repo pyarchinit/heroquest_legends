@@ -7,7 +7,7 @@
     begin                : 2021-01-02
     copyright            : (C) 2021 by Luca Mandolesi
     email                : mandoluca at gmail.com
-    version              : 0.83 ALPHA
+    version              : 0.92 ALPHA
  ***************************************************************************/
 
 /***************************************************************************
@@ -47,6 +47,8 @@ class Heroquest_solo:
 
     CONNECTION = sqlite3.connect('./db_heroquest_legends.sqlite')
     CURSOR = CONNECTION.cursor()
+
+    NEW_DATA_TO_TEST_DELETE = 0
 
     #charge the total of forniture linked to ID
     db_fornitures_query = CURSOR.execute("Select * from fornitures")
@@ -210,7 +212,7 @@ class Heroquest_solo:
 
         #roll the dice and select a random number of fornitures between 1 and 3
         rng = random.SystemRandom()
-        forniture_numbers = rng.randint(1, 3)
+        forniture_numbers = rng.randint(1, 4)
         count = 0
         #if the current turn is max or equal and the escape is founded
 
@@ -315,13 +317,13 @@ class Heroquest_solo:
                 monsters_number = 1
             elif self.residual_tiles > 3 and self.residual_tiles <= 6:
                 rng_base = random.SystemRandom()
-                monsters_number = rng_base.randint(1, 2)
+                monsters_number = rng_base.randint(1, 3)
             elif self.residual_tiles > 6 and self.residual_tiles <= 12:
                 rng_base = random.SystemRandom()
-                monsters_number = rng_base.randint(2,3)
+                monsters_number = rng_base.randint(2,4)
             elif self.residual_tiles > 12 and self.residual_tiles <= 20:
                 rng_base = random.SystemRandom()
-                monsters_number = rng_base.randint(3,5)
+                monsters_number = rng_base.randint(3,6)
             else:
                 rng_base = random.SystemRandom()
                 monsters_number = rng_base.randint(1, 6)
@@ -416,7 +418,10 @@ class Heroquest_solo:
                 msg_monsters = self.CONFIG_DICT['aux_msg_9'].format(self.monsters_dict[id_monster_rand])
                 new_monster_residue = monsters_residue - 1
                 self.MONSTERS_QTY_DICT[id_monster_rand] = new_monster_residue
-                return msg_monsters
+                if msg_monsters == "":
+                    return "Per ora tutto ok!" #TODO sistemare il null
+                else:
+                    return msg_monsters
         else:
             return self.CONFIG_DICT['aux_msg_10']
 
@@ -424,6 +429,7 @@ class Heroquest_solo:
     def aisles(self, rv):
         #sistem for discover aisles
         self.rv = rv #recive a random number beetween 4 and 24 for number of doors
+        print("Randvalue"+str(self.rv))
         self.LR_n = self.r_num.randint(1, 2) #select beetween left ora right
         rock_msg_value = self.random_numbers()
 
@@ -436,32 +442,58 @@ class Heroquest_solo:
             rocks_msg = self.CONFIG_DICT['aisles_msg_3'].format(self.monsters_dict[self.r_num.randint(1, 7)])
 
         #aisles generators with doors
-        if self.rv > 19 and self.rv <= 22 and self.FORNITURES_QTY_DICT[11] >= 3:  # three doors
-            msg_1 = self.CONFIG_DICT['aisles_msg_6'].format(self.position_dict[self.r_num.randint(1, 2)], self.position_dict[self.r_num.randint(1, 2)], self.position_dict[self.r_num.randint(1, 2)], rocks_msg)
-            new_doors_residue = self.FORNITURES_QTY_DICT[11] - 3
-            self.FORNITURES_QTY_DICT[11] = new_doors_residue
-
-            return '{} {}'.format(msg_1, self.CONFIG_DICT['aisles_msg_8'])
-
-        elif self.rv > 12 and self.rv <= 19 and self.FORNITURES_QTY_DICT[11] >= 2: #two doors
-            msg_1 = self.CONFIG_DICT['aisles_msg_5'].format(self.position_dict[self.r_num.randint(1, 2)], self.position_dict[self.r_num.randint(1, 2)], rocks_msg)
-            new_doors_residue = self.FORNITURES_QTY_DICT[11] - 2
-            self.FORNITURES_QTY_DICT[11] = new_doors_residue
-
-            return '{} {}'.format(msg_1, self.CONFIG_DICT['aisles_msg_8'])
-
-        elif self.rv > 1 and self.rv <= 12 and self.FORNITURES_QTY_DICT[11] >= 1: #one door
+        if self.rv > 1 and self.rv <= 12 and self.FORNITURES_QTY_DICT[11] >= 1:  #one door
+            print("una porta")
             msg_1 = self.CONFIG_DICT['aisles_msg_4'].format(self.position_dict[self.LR_n], rocks_msg)
             new_doors_residue = self.FORNITURES_QTY_DICT[11] - 1
             self.FORNITURES_QTY_DICT[11] = new_doors_residue
 
             return '{} {}'.format(msg_1, self.CONFIG_DICT['aisles_msg_8'])
 
+        elif self.rv > 12 and self.rv <= 14 and self.FORNITURES_QTY_DICT[11] >= 2: #two doors
+            print("nessuna porta")
+            return self.CONFIG_DICT['aisles_msg_7']
+
+
+
+        elif self.rv > 14 and self.rv <= 19 or self.FORNITURES_QTY_DICT[11] == 0: #NO DOORS
+            print("due porte")
+            msg_1 = self.CONFIG_DICT['aisles_msg_5'].format(
+                self.position_dict[self.r_num.randint(1, 2)],
+                self.position_dict[self.r_num.randint(1, 2)],
+                rocks_msg)
+            new_doors_residue = self.FORNITURES_QTY_DICT[11] - 2
+            self.FORNITURES_QTY_DICT[11] = new_doors_residue
+            return '{} {}'.format(msg_1, self.CONFIG_DICT[
+                'aisles_msg_8'])
+
+
+        elif self.rv > 19 and self.rv <= 24 and self.FORNITURES_QTY_DICT[11] >= 3:  #three door
+            print("tre porte")
+            msg_1 = self.CONFIG_DICT['aisles_msg_6'].format(self.position_dict[self.r_num.randint(1, 2)], self.position_dict[self.r_num.randint(1, 2)], self.position_dict[self.r_num.randint(1, 2)], rocks_msg)
+            new_doors_residue = self.FORNITURES_QTY_DICT[11] - 3
+            self.FORNITURES_QTY_DICT[11] = new_doors_residue
+
+            return '{} {}'.format(msg_1, self.CONFIG_DICT['aisles_msg_8'])
+
+        """
+        if self.rv > 19 and self.rv <= 22 and self.FORNITURES_QTY_DICT[11] >= 3:  # three doors
+
+
+        elif self.rv > 12 and self.rv <= 19 and self.FORNITURES_QTY_DICT[11] >= 2: #two doors
+
+
+            return '{} {}'.format(msg_1, self.CONFIG_DICT['aisles_msg_8'])
+
+        elif self.rv > 1 and self.rv <= 12 and self.FORNITURES_QTY_DICT[11] >= 1: #one door
+
+
         elif self.rv > 22 and self.rv <= 24 or self.FORNITURES_QTY_DICT[11] == 0:
             return self.CONFIG_DICT['aisles_msg_7']
 
         else:
             return self.CONFIG_DICT['aisles_msg_7']
+        """
 
     def treasures(self, rv):
         self.rv = rv
@@ -519,6 +551,10 @@ class Heroquest_solo:
     def secret_doors(self, rv):
         """Create random doors for aisles"""
         self.rv = rv
+
+        if self.rv >=23 and self.ESCAPE_FOUND == 0:
+            self.ESCAPE_FOUND = 1
+            return [self.CONFIG_DICT['secret_doors_msg_4'], self.SPECIAL_ROOM_CHARGED[1]] #Replace the number with THE_MISSION = RAND_NUM
 
         if self.rv >= 1 and self.rv <= 15:
             return self.CONFIG_DICT['secret_doors_msg_1'] #no secret doors

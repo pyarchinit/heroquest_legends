@@ -212,7 +212,7 @@ class Heroquest_solo:
 
         #roll the dice and select a random number of fornitures between 1 and 3
         rng = random.SystemRandom()
-        forniture_numbers = rng.randint(1, 4)
+        forniture_numbers = rng.randint(1, 3)
         count = 0
         #if the current turn is max or equal and the escape is founded
 

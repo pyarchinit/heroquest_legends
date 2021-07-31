@@ -38,59 +38,12 @@ class AdventurePanelSettings(QDialog, MAIN_DIALOG_CLASS):
 
     def __init__(self, parent=None, db=None):
         QDialog.__init__(self, parent)
+
         self.setupUi(self)
-        #self.ITEMS = []
-        #self.insertItems()
 
 
     def closeEvent(self, event):
         QDialog.closeEvent(self, event)
-
-
-    def on_pushButtonRight_pressed(self):
-        pass
-        """
-        all_items = []
-
-        for index in range(self.FieldsList.count()):
-            all_items.append(self.FieldsList.item(index).text())
-
-        item_selected = self.FieldsList.selectedItems()
-
-        all_items.remove(item_selected[0].text())
-        try:
-            all_items.remove('')
-        except:
-            pass
-        self.FieldListsort.addItem(item_selected[0].text())
-
-        self.FieldsList.clear()
-
-        for item in all_items:
-            self.FieldsList.addItem(item)
-        """
-
-    def on_pushButtonLeft_pressed(self):
-        pass
-        """
-        all_items = []
-
-        for index in range(self.FieldListsort.count()):
-            all_items.append(self.FieldListsort.item(index).text())
-
-        item_selected = self.FieldListsort.selectedItems()
-        try:
-            all_items.remove(item_selected[0].text())
-        except:
-            pass
-        self.FieldsList.addItem(item_selected[0].text())
-
-        self.FieldListsort.clear()
-
-        if len(all_items) > 0:
-            for item in all_items:
-                self.FieldListsort.addItem(item)
-        """
 
     def insertItems(self):
         the_missions_dict = self.DICT['missions_dict']
@@ -101,14 +54,30 @@ class AdventurePanelSettings(QDialog, MAIN_DIALOG_CLASS):
         self.comboBox_id.addItems(key_list)
 
 
+    def customize_gui(self):
+        the_fornitures_list = []
 
-        """"
-        self.delegate_fornitures = ComboBoxDelegate()
-        self.delegate_fornitures.def_values(values_fornitures)
-        self.delegate_fornitures.def_editable('False')
-        self.tableWidget_fornitures.setItemDelegateForColumn(1,self.delegate_fornitures)
-        self.tableWidget_fornitures.insertRow(0)
-        #self.FieldsList.insertItems(0, lv)
+        #
+        #forniture_dict = self.DICT['position_dict']
+
+        """
+        fornitures_values = forniture_dict.values()
+        for i in fornitures_values:
+            the_fornitures_list.append(i)
+
+        self.delegateFornitures = ComboBoxDelegate()
+        values_fornitures = the_fornitures_list
+        self.delegateFornitures.def_values(values_fornitures)
+        self.delegateFornitures.def_editable('False')
+        self.tableWidget_fornitures.setItemDelegateForColumn(1, self.delegateFornitures)
+        
+        the_monster_types_list = self.DICT['monster_types']
+
+        self.delegateMT = ComboBoxDelegate()
+        values_monsters_types = the_monster_types_list
+        self.delegateMT.def_values(values_monsters_types)
+        self.delegateMT.def_editable('False')
+        self.tableWidget_monsters_type.setItemDelegateForColumn(0, self.delegateMT)
         """
 
     def on_pushButton_charge_adventure_pressed(self):
@@ -116,63 +85,60 @@ class AdventurePanelSettings(QDialog, MAIN_DIALOG_CLASS):
         the_missions = self.DICT['missions_dict'][mission_number]
         the_title = the_missions[0]
         description = the_missions[1]
-        the_fornitures_list = []
-        the_fornitures_dict = self.DICT['forniture_name_conversion_dict'].keys()
 
-        for i in self.DICT['forniture_name_conversion_dict'].keys():
-            the_fornitures_list.append(i)
-
-        print(str(the_fornitures_list))
-
+        #VALUES
         special_room = self.DICT['specials_rooms'][mission_number]
-        print(str(special_room))
         room_description = special_room[1]
         room_fornitures_list = special_room[0]
 
+        #GUI
         self.lineEdit_adventure_title.setText(str(the_title))
         self.textEdit_lamissione.setText(str(description))
         self.textEdit_the_final_room.setText(str(room_description))
 
-        self.delegateRS = ComboBoxDelegate()
-        values_fornitures = ["tavolo", "sedia", "cesso"]
-        self.delegateRS.def_values(values_fornitures)
-        self.delegateRS.def_editable('False')
-        self.tableWidget_fornitures.setItemDelegateForColumn(1, self.delegateRS)
 
-        elenco = [["1","tavolo"], ["2","sedia"], ["3","cesso"]]
+        class_monsters_list = self.from_list_to_listoflist(self.DICT['monster_class'][mission_number])
 
-        self.tableInsertData("self.tableWidget_fornitures",the_fornitures_list)
+        #print(str(class_monsters_list))
+        self.tableInsertData("self.tableWidget_monsters_type", class_monsters_list)
+
+        #specials_rooms = self.DICT['specials_rooms'][mission_number][0]
+        #self.tableInsertData("self.tableWidget_fornitures",specials_rooms)
+
+        #self.customize_gui()
+
+    def from_list_to_listoflist(self,l):
+        self.list = l
+        list_of_lists = []
+
+        for i in  self.list:
+            list_of_lists.append([i])
+
+        return list_of_lists
+
 
     def tableInsertData(self, t, d):
         """Set the value into alls Grid"""
         self.table_name = t
-        print("table_insert 0")
+
         self.data_list = d
         self.data_list.sort()
-        print("table_insert 1")
         # column table count
         table_col_count_cmd = "{}.columnCount()".format(self.table_name)
         table_col_count = eval(table_col_count_cmd)
-        print("table_insert 2")
         # clear table
         table_clear_cmd = "{}.clearContents()".format(self.table_name)
         eval(table_clear_cmd)
         for i in range(table_col_count):
-            print("table_insert 3")
             table_rem_row_cmd = "{}.removeRow(int({}))".format(self.table_name, i)
-            print("table_insert 4")
             eval(table_rem_row_cmd)
         for row in range(len(self.data_list)):
             cmd = '{}.insertRow(int({}))'.format(self.table_name, row)
             eval(cmd)
             for col in range(len(self.data_list[row])):
-                print("table_insert 4.3")
                 exec_str = '{}.setItem(int({}),int({}),QTableWidgetItem(self.data_list[row][col]))'.format(self.table_name, row, col)
-                print("table_insert 4.4")
                 eval(exec_str)
-                print("table_insert 4.5")
         max_row_num = len(self.data_list)
-        print("table_insert 5")
         value = eval(self.table_name+".item(max_row_num,1)")
         if value == '':
             cmd = ("%s.removeRow(%d)") % (self.table_name, max_row_num)

@@ -26,11 +26,12 @@ import sqlite3
 #TODO E' nella linea di vista del mostro l'eroe?
 #TODO I MOSTRI SONO IN GRUPPO SE SI VEDONO RECIPROCAMENTE
 #TODO inserire sequenza di movimento mostri se quello con più punti attacco, quello che si muove di più
+#TODO quando si trova la stanza finale cambiare il testo dei mostri: vengono caricati dei mostri con la descrizione finale ma il testo può dire: nessun mostro in vista.
 
 class Heroquest_solo:
     """main class for variables management"""
     rng = random.SystemRandom()
-    TOTAL_NUMBER_OF_TURNS = rng.randint(5, 10)
+    TOTAL_NUMBER_OF_TURNS = rng.randint(10, 15)
 
     rng = random.SystemRandom()
     MAX_ROOM_COUNTER = rng.randint(5, 10)
@@ -184,9 +185,24 @@ class Heroquest_solo:
     def mission_percent_made(self, ct):
         current_turn = ct
         #print("gigi 1")
-        self.MISSION_PERCENT_MADE = (current_turn/self.TOTAL_NUMBER_OF_TURNS)*100
 
-        #print("second data: "+str(self.MISSION_PERCENT_MADE))
+        total_comparison_value = self.TOTAL_NUMBER_OF_TURNS+self.MAX_ROOM_COUNTER
+        partial_comparison_value =current_turn+self.CURRENT_ROOM_COUNTER
+
+        self.MISSION_PERCENT_MADE = (partial_comparison_value/total_comparison_value)*100
+
+
+        total_turn = "total_turns_made {}".format(self.TOTAL_NUMBER_OF_TURNS)
+        total_rooms = "total_rooms {}".format(self.MAX_ROOM_COUNTER)
+        current_turn_made = "current_turn_made {}".format(current_turn)
+        current_room_made = "current_room_made {}".format(self.CURRENT_ROOM_COUNTER)
+        totale_percent_made = "total_percent_made {}".format(self.MISSION_PERCENT_MADE)
+
+        print(total_turn)
+        print(total_rooms)
+        print(current_turn_made)
+        print(current_room_made)
+        print(totale_percent_made)
 
 
     def room_generator(self, room_dimension, ct, re):
@@ -199,6 +215,8 @@ class Heroquest_solo:
         self.room_explored = int(re)
         rng = random.SystemRandom()
         value = rng.randint(1, 2)
+
+        room_dimension = int(room_dimension)- rng.randint(1, 2)
         self.room_dimension = int(room_dimension)/value #total of room's tiles
 
         #forniture_square_taken
@@ -212,7 +230,7 @@ class Heroquest_solo:
 
         #roll the dice and select a random number of fornitures between 1 and 3
         rng = random.SystemRandom()
-        forniture_numbers = rng.randint(1, 3)
+        forniture_numbers = rng.randint(1, 4)
         count = 0
         #if the current turn is max or equal and the escape is founded
 
@@ -285,7 +303,12 @@ class Heroquest_solo:
         #generate the room
         if self.FIRST_ROOM == 1:
             ##print("entrata in room generato 11")
-            msg_monsters = self.monsters_generator_2(self.random_numbers(),tot_square_taken, self.current_turn)
+            if self.ESCAPE_FOUND == 2:
+                msg_monsters = self.monsters_generator_2(self.random_numbers(),tot_square_taken, self.current_turn)
+            if self.ESCAPE_FOUND == 0:
+                msg_monsters = self.monsters_generator_2(self.random_numbers(),tot_square_taken, self.current_turn)
+            if self.ESCAPE_FOUND == 1:
+                self.ESCAPE_FOUND = 2
         else:
             ##print("entrata in room generato 12")
             msg_monsters = self.CONFIG_DICT['monsters_msg_first_room']
@@ -379,17 +402,17 @@ class Heroquest_solo:
         rn = self.random_numbers()
         comparison_value = 0
         if self.MISSION_PERCENT_MADE >= 100:
-            comparison_value = 4
-            #print("14")
+            comparison_value = 5
+            print("100, 10")
         elif self.MISSION_PERCENT_MADE >= 70:
-            comparison_value = 12
-            #print("12")
+            comparison_value = 10
+            print("70, 15")
         elif self.MISSION_PERCENT_MADE >= 20:
             comparison_value = 18
-            #print("18")
+            print("20, 22")
         else:
-            comparison_value = 22
-            #print("22")
+            comparison_value = 21
+            print("23")
 
         if rn >= comparison_value:
 
@@ -422,6 +445,8 @@ class Heroquest_solo:
                     return "Per ora tutto ok!" #TODO sistemare il null
                 else:
                     return msg_monsters
+            else:
+                return self.CONFIG_DICT['aux_msg_10']
         else:
             return self.CONFIG_DICT['aux_msg_10']
 

@@ -40,6 +40,10 @@ class Ui(QtWidgets.QMainWindow):
     #TODO aggiungere come posizione il mostro davanti alla porta fuori o dentro la stanza
     #TODO aggiungere oltre che davanti, davanti ed adiacente a te.
     #TODO aggiungere opzione per circondare l'eroe
+    #TODO messaggio con punto di partenza
+    #TODO aggiungere segnalatore di fine avventura scale trovate
+    #TODO se il mostro prima attacca poi si sposta per lasciare spazio ad un altro mostro se è nella stanza
+
     CONFIG = ""
     local_language = locale.getdefaultlocale()
     #file_name = 'en_EN.txt'
@@ -61,12 +65,6 @@ class Ui(QtWidgets.QMainWindow):
 
     CHRONICLE = ""
 
-
-    #todo messaggio con punto di partenza
-    #todo aggiungere segnalatore di fine avventura scale trovate
-    #todo se il mostro prima attacca poi si sposta per lasciare spazio ad un altro mostro se è nella stanza
-
-
     def __init__(self):
         super(Ui, self).__init__()
         self.acceptDrops()
@@ -77,7 +75,7 @@ class Ui(QtWidgets.QMainWindow):
         self.HQ_SOLO = Heroquest_solo(self.CONFIG_DICT)
         self.pushButton_close.clicked.connect(self.close)
 
-        bg_img_path = './background.png'  #os.path.join(os.path.dirname(__file__),'mappa.png')
+        bg_img_path = './background.png'
         oImage = QImage(bg_img_path)
         sImage = oImage.scaled(QSize(800, 768))  # resize Image to widgets size
         palette = QPalette()
@@ -164,8 +162,6 @@ class Ui(QtWidgets.QMainWindow):
         the_mission_text = '{}\n{}{}'.format(the_mission_dict[mission_number_rand][1],wanderer_monster_text,wanderer_monster)
         self.textEdit_the_mission.setText(the_mission_text)
         self.QLabel_the_title.setText(the_mission_dict[mission_number_rand][0])
-        #self.CHRONICLE =
-        #self.textEdit_chronicle.setText(self.CHRONICLE)
 
         self.set_chronicle(the_mission_text)
 
@@ -272,7 +268,6 @@ class Ui(QtWidgets.QMainWindow):
             self.textEdit_room_description.setText('')
             self.textEdit_room_description.setText(msg_secret_door[1])
 
-            #÷self.CHRONICLE = '{} \n\n --- \n\n {}'.format(self.CHRONICLE, msg_temp[2])
             self.set_chronicle(msg_secret_door[0]+msg_secret_door[1])
             # print("puppa 2")
 
@@ -287,13 +282,11 @@ class Ui(QtWidgets.QMainWindow):
         self.textEdit_room_description.setText('')
         self.textEdit_monsters.setText('')
         if self.radioButton_explored.isChecked() == True:
-            ##print("room pressed_1")
             room_explored = 1
             random_trap = self.HQ_SOLO.random_trap(self.CURRENT_ROUND)
             self.textEdit_traps.setText(random_trap)
             self.set_chronicle(random_trap)
         else:
-            ##print("room pressed_2")
             room_explored = 0
 
         current_turn = int(self.lineEdit_round.text())
@@ -403,6 +396,3 @@ else:
 app.installTranslator(translator)
 window = Ui()
 app.exec_()
-
-
-

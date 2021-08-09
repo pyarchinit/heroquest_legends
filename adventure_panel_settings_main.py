@@ -28,6 +28,8 @@ from PyQt5.QtWidgets import QApplication, QDialog, QMessageBox, QTableWidgetItem
 from PyQt5.uic import loadUiType
 from delegateComboBox import ComboBoxDelegate
 import os
+import sqlite3
+
 
 MAIN_DIALOG_CLASS, _ = loadUiType(os.path.join(os.path.dirname(__file__), 'adventures_panel_settings.ui'))
 
@@ -35,6 +37,8 @@ MAIN_DIALOG_CLASS, _ = loadUiType(os.path.join(os.path.dirname(__file__), 'adven
 class AdventurePanelSettings(QDialog, MAIN_DIALOG_CLASS):
     TYPE_ORDER = ""
     DICT = ""
+    CONNECTION = sqlite3.connect('./db_heroquest_legends.sqlite')
+    CURSOR = CONNECTION.cursor()
 
     def __init__(self, parent=None, db=None):
         QDialog.__init__(self, parent)
@@ -56,21 +60,19 @@ class AdventurePanelSettings(QDialog, MAIN_DIALOG_CLASS):
 
     def customize_gui(self):
         the_fornitures_list = []
+        print(str('gigio'))
 
-        #
-        #forniture_dict = self.DICT['position_dict']
-
-        """
-        fornitures_values = forniture_dict.values()
+        res = self.CURSOR.execute("SELECT DISTINCT(tipe_forniture) FROM fornitures")
+        fornitures_values = res.fetchall()
         for i in fornitures_values:
-            the_fornitures_list.append(i)
+            the_fornitures_list.append(i[0])
+        print(str(the_fornitures_list))
 
         self.delegateFornitures = ComboBoxDelegate()
-        values_fornitures = the_fornitures_list
-        self.delegateFornitures.def_values(values_fornitures)
+        self.delegateFornitures.def_values(the_fornitures_list)
         self.delegateFornitures.def_editable('False')
         self.tableWidget_fornitures.setItemDelegateForColumn(1, self.delegateFornitures)
-        
+
         the_monster_types_list = self.DICT['monster_types']
 
         self.delegateMT = ComboBoxDelegate()
@@ -78,7 +80,7 @@ class AdventurePanelSettings(QDialog, MAIN_DIALOG_CLASS):
         self.delegateMT.def_values(values_monsters_types)
         self.delegateMT.def_editable('False')
         self.tableWidget_monsters_type.setItemDelegateForColumn(0, self.delegateMT)
-        """
+
 
     def on_pushButton_charge_adventure_pressed(self):
         mission_number = int(self.comboBox_id.currentText())
@@ -86,14 +88,14 @@ class AdventurePanelSettings(QDialog, MAIN_DIALOG_CLASS):
         the_title = the_missions[0]
         description = the_missions[1]
 
-        #VALUES
         special_room = self.DICT['specials_rooms'][mission_number]
         room_description = special_room[1]
         room_fornitures_list = special_room[0]
 
+        print("puccia")
         #GUI
         self.lineEdit_adventure_title.setText(str(the_title))
-        self.textEdit_lamissione.setText(str(description))
+        self.textEdit_the_mission.setText(str(description))
         self.textEdit_the_final_room.setText(str(room_description))
 
 
@@ -102,10 +104,26 @@ class AdventurePanelSettings(QDialog, MAIN_DIALOG_CLASS):
         #print(str(class_monsters_list))
         self.tableInsertData("self.tableWidget_monsters_type", class_monsters_list)
 
-        #specials_rooms = self.DICT['specials_rooms'][mission_number][0]
-        #self.tableInsertData("self.tableWidget_fornitures",specials_rooms)
+        #type_special_room_fornitures_list = self.from_list_to_listoflist(self.DICT['specials_rooms'][mission_number][0])
 
-        #self.customize_gui()
+        special_room_fornitures_list = self.DICT['specials_rooms'][mission_number][0]
+        special_room_fornitures_list_charge = []
+
+        # charge the total of forniture linked to ID
+
+        #FORNITURES_QTY_DICT = {1: db_fornitures_charged[0][2],
+        for i in special_room_fornitures_list:
+            res = self.CURSOR.execute("SELECT * FROM fornitures WHERE id_forniture = '{}'".format(str(i)))
+            #print(str(paolo))
+            res_charged = res.fetchone()
+            forniture = [str(i), res_charged[1]]
+
+            special_room_fornitures_list_charge.append(forniture)
+
+        self.tableInsertData("self.tableWidget_fornitures", special_room_fornitures_list_charge)
+
+
+        self.customize_gui()
 
     def from_list_to_listoflist(self,l):
         self.list = l
@@ -143,6 +161,7 @@ class AdventurePanelSettings(QDialog, MAIN_DIALOG_CLASS):
         if value == '':
             cmd = ("%s.removeRow(%d)") % (self.table_name, max_row_num)
             eval(cmd)
+
 
 
 if __name__ == '__main__':

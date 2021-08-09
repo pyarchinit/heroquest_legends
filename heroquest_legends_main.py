@@ -145,9 +145,14 @@ class Ui(QtWidgets.QMainWindow):
 
 
     def on_pushButton_the_mission_pressed(self):
-        rng_base = random.SystemRandom()
 
-        mission_number_rand = rng_base.randint(1,4)
+        mission_choosed = self.comboBox_choose_adventure.currentText()
+
+        if mission_choosed =="":
+            rng_base = random.SystemRandom()
+            mission_number_rand = rng_base.randint(1,4)
+        else:
+            mission_number_rand = int(mission_choosed)
 
         self.HQ_SOLO.special_data_mission_charged(mission_number_rand)
 
@@ -292,6 +297,7 @@ class Ui(QtWidgets.QMainWindow):
         current_turn = int(self.lineEdit_round.text())
         ##print("room pressed_3-uscita da room pressed")
         msg_temp = self.HQ_SOLO.room_generator(self.lineEdit_room_dimension.text(), current_turn,room_explored)
+        #test = self.HQ_SOLO.room_generator_2(self.lineEdit_room_dimension.text(), current_turn,room_explored)
         ##print("room pressed_4-rientrato da room pressed")
 
         if current_turn == 1 or current_turn == 2:

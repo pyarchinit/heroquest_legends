@@ -60,13 +60,14 @@ class AdventurePanelSettings(QDialog, MAIN_DIALOG_CLASS):
 
     def customize_gui(self):
         the_fornitures_list = []
-        print(str('gigio'))
+        #print(str('gigio'))
 
         res = self.CURSOR.execute("SELECT DISTINCT(tipe_forniture) FROM fornitures")
         fornitures_values = res.fetchall()
         for i in fornitures_values:
-            the_fornitures_list.append(i[0])
-        print(str(the_fornitures_list))
+            forniture_converted = self.DICT['forniture_name_conversion_dict']
+            the_fornitures_list.append(forniture_converted[i[0]])
+
 
         self.delegateFornitures = ComboBoxDelegate()
         self.delegateFornitures.def_values(the_fornitures_list)
@@ -92,7 +93,7 @@ class AdventurePanelSettings(QDialog, MAIN_DIALOG_CLASS):
         room_description = special_room[1]
         room_fornitures_list = special_room[0]
 
-        print("puccia")
+        #print("puccia")
         #GUI
         self.lineEdit_adventure_title.setText(str(the_title))
         self.textEdit_the_mission.setText(str(description))
@@ -116,7 +117,10 @@ class AdventurePanelSettings(QDialog, MAIN_DIALOG_CLASS):
             res = self.CURSOR.execute("SELECT * FROM fornitures WHERE id_forniture = '{}'".format(str(i)))
             #print(str(paolo))
             res_charged = res.fetchone()
-            forniture = [str(i), res_charged[1]]
+            print(str(self.DICT['forniture_name_conversion_dict']))
+            forniture_converted = self.DICT['forniture_name_conversion_dict'][res_charged[1]]
+
+            forniture = [str(i), forniture_converted]
 
             special_room_fornitures_list_charge.append(forniture)
 
@@ -161,6 +165,74 @@ class AdventurePanelSettings(QDialog, MAIN_DIALOG_CLASS):
         if value == '':
             cmd = ("%s.removeRow(%d)") % (self.table_name, max_row_num)
             eval(cmd)
+
+    def insert_new_row(self, table_name):
+        """insert new row into a table based on table_name"""
+        cmd = table_name + ".insertRow(0)"
+        eval(cmd)
+
+    def remove_row(self, table_name):
+        try:
+            """insert new row into a table based on table_name"""
+            table_row_count_cmd = ("%s.rowCount()") % (table_name)
+            table_row_count = eval(table_row_count_cmd)
+            rowSelected_cmd = ("%s.selectedIndexes()") % (table_name)
+            rowSelected = eval(rowSelected_cmd)
+            rowIndex = (rowSelected[0].row())
+            cmd = ("%s.removeRow(%d)") % (table_name, rowIndex)
+            eval(cmd)
+        except:
+            pass
+
+    def empty_fields(self):
+        fornitures_row_count = self.tableWidget_fornitures.rowCount()
+        monsters_row_count = self.tableWidget_monsters_type.rowCount()
+
+        self.lineEdit_adventure_title.clear()
+        self.textEdit_the_mission.clear()
+        self.textEdit_the_final_room.clear()
+
+        #self.comboBox_sito.setEditText("")  # 1 - Sito
+
+        for i in range(fornitures_row_count):
+            self.tableWidget_fornitures.removeRow(0)
+        self.insert_new_row("self.tableWidget_fornitures")
+
+        for i in range(monsters_row_count):
+            self.tableWidget_monsters_type.removeRow(0)
+        self.insert_new_row("self.tableWidget_monsters_type")
+
+    def on_pushButton_insert_row_fornitures_pressed(self):
+        self.insert_new_row('self.tableWidget_fornitures')
+
+
+    def on_pushButton_remove_row_fornitures_pressed(self):
+        self.remove_row('self.tableWidget_fornitures')
+
+
+    def on_pushButton_insert_row_monster_pressed(self):
+        self.insert_new_row('self.tableWidget_monsters_type')
+
+
+    def on_pushButton_remove_row_monster_pressed(self):
+        self.remove_row('self.tableWidget_monsters_type')
+
+
+
+
+###############
+
+
+    def on_pushButton_create_pressed(self):
+        self.empty_fields()
+
+
+
+
+
+
+
+
 
 
 

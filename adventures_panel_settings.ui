@@ -6,64 +6,15 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1341</width>
+    <width>1255</width>
     <height>841</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Form</string>
   </property>
-  <property name="styleSheet">
-   <string notr="true">background-color: rgb(50, 0, 0);</string>
-  </property>
   <layout class="QGridLayout" name="gridLayout">
-   <item row="2" column="0">
-    <widget class="QLabel" name="label">
-     <property name="font">
-      <font>
-       <family>Viner Hand ITC</family>
-       <pointsize>10</pointsize>
-      </font>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">color: rgb(255, 255, 255);</string>
-     </property>
-     <property name="text">
-      <string>The mission</string>
-     </property>
-    </widget>
-   </item>
-   <item row="7" column="4" colspan="3">
-    <widget class="QTableWidget" name="tableWidget_monsters_type">
-     <property name="styleSheet">
-      <string notr="true">background-color: rgb(255, 255, 255);</string>
-     </property>
-     <column>
-      <property name="text">
-       <string>Monster types</string>
-      </property>
-     </column>
-    </widget>
-   </item>
-   <item row="1" column="0">
-    <widget class="QLineEdit" name="lineEdit_adventure_title">
-     <property name="minimumSize">
-      <size>
-       <width>850</width>
-       <height>0</height>
-      </size>
-     </property>
-     <property name="font">
-      <font>
-       <family>Viner Hand ITC</family>
-      </font>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">background-color: rgb(255, 255, 255);</string>
-     </property>
-    </widget>
-   </item>
-   <item row="0" column="2">
+   <item row="0" column="7">
     <widget class="QComboBox" name="comboBox_id">
      <property name="maximumSize">
       <size>
@@ -73,71 +24,24 @@
      </property>
     </widget>
    </item>
-   <item row="1" column="6">
-    <widget class="QPushButton" name="pushButton">
-     <property name="font">
-      <font>
-       <family>Viner Hand ITC</family>
-       <pointsize>10</pointsize>
-      </font>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">color: rgb(255, 255, 255);</string>
-     </property>
-     <property name="text">
-      <string>create new adventure</string>
+   <item row="1" column="0" colspan="7">
+    <widget class="QLineEdit" name="lineEdit_adventure_title">
+     <property name="minimumSize">
+      <size>
+       <width>850</width>
+       <height>0</height>
+      </size>
      </property>
     </widget>
    </item>
-   <item row="1" column="2">
+   <item row="1" column="7">
     <widget class="QPushButton" name="pushButton_charge_adventure">
-     <property name="font">
-      <font>
-       <family>Viner Hand ITC</family>
-       <pointsize>10</pointsize>
-      </font>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">color: rgb(255, 255, 255);</string>
-     </property>
      <property name="text">
       <string>charge an adventure</string>
      </property>
     </widget>
    </item>
-   <item row="6" column="4">
-    <widget class="QLabel" name="label_4">
-     <property name="font">
-      <font>
-       <family>Viner Hand ITC</family>
-       <pointsize>10</pointsize>
-      </font>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">color: rgb(255, 255, 255);</string>
-     </property>
-     <property name="text">
-      <string>Monster types</string>
-     </property>
-    </widget>
-   </item>
-   <item row="4" column="0">
-    <widget class="QLabel" name="label_2">
-     <property name="font">
-      <font>
-       <family>Viner Hand ITC</family>
-       <pointsize>10</pointsize>
-      </font>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">color: rgb(255, 255, 255);</string>
-     </property>
-     <property name="text">
-      <string>The final room</string>
-     </property>
-    </widget>
-   </item>
-   <item row="1" column="4">
+   <item row="1" column="8">
     <spacer name="horizontalSpacer">
      <property name="orientation">
       <enum>Qt::Horizontal</enum>
@@ -150,7 +54,174 @@
      </property>
     </spacer>
    </item>
-   <item row="8" column="0" colspan="6">
+   <item row="1" column="9">
+    <widget class="QPushButton" name="pushButton_create">
+     <property name="text">
+      <string>create new adventure</string>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="0">
+    <widget class="QLabel" name="label">
+     <property name="text">
+      <string>The mission</string>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="0" colspan="10">
+    <widget class="QTextEdit" name="textEdit_the_mission"/>
+   </item>
+   <item row="4" column="0">
+    <widget class="QLabel" name="label_2">
+     <property name="text">
+      <string>The final room</string>
+     </property>
+    </widget>
+   </item>
+   <item row="5" column="0" colspan="10">
+    <widget class="QTextEdit" name="textEdit_the_final_room"/>
+   </item>
+   <item row="6" column="0">
+    <widget class="QLabel" name="label_3">
+     <property name="text">
+      <string>Fornitures</string>
+     </property>
+    </widget>
+   </item>
+   <item row="6" column="3" colspan="2">
+    <widget class="QLabel" name="label_4">
+     <property name="text">
+      <string>Monster types</string>
+     </property>
+    </widget>
+   </item>
+   <item row="7" column="0">
+    <spacer name="horizontalSpacer_3">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>40</width>
+       <height>20</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item row="7" column="1">
+    <widget class="QPushButton" name="pushButton_insert_row_fornitures">
+     <property name="maximumSize">
+      <size>
+       <width>100</width>
+       <height>16777215</height>
+      </size>
+     </property>
+     <property name="text">
+      <string>add forniture</string>
+     </property>
+    </widget>
+   </item>
+   <item row="7" column="2">
+    <widget class="QPushButton" name="pushButton_remove_row_fornitures">
+     <property name="minimumSize">
+      <size>
+       <width>150</width>
+       <height>0</height>
+      </size>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>110</width>
+       <height>16777215</height>
+      </size>
+     </property>
+     <property name="text">
+      <string>remove forniture</string>
+     </property>
+    </widget>
+   </item>
+   <item row="7" column="3">
+    <spacer name="horizontalSpacer_4">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>158</width>
+       <height>20</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item row="7" column="4">
+    <widget class="QPushButton" name="pushButton_insert_row_monster">
+     <property name="maximumSize">
+      <size>
+       <width>100</width>
+       <height>16777215</height>
+      </size>
+     </property>
+     <property name="text">
+      <string>add monster</string>
+     </property>
+    </widget>
+   </item>
+   <item row="7" column="5">
+    <widget class="QPushButton" name="pushButton_remove_row_monster">
+     <property name="minimumSize">
+      <size>
+       <width>150</width>
+       <height>0</height>
+      </size>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>120</width>
+       <height>16777215</height>
+      </size>
+     </property>
+     <property name="text">
+      <string>remove monster</string>
+     </property>
+    </widget>
+   </item>
+   <item row="8" column="0" colspan="3">
+    <widget class="QTableWidget" name="tableWidget_fornitures">
+     <column>
+      <property name="text">
+       <string>id</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>forniture</string>
+      </property>
+     </column>
+    </widget>
+   </item>
+   <item row="8" column="3" colspan="3">
+    <widget class="QTableWidget" name="tableWidget_monsters_type">
+     <column>
+      <property name="text">
+       <string>Monster types</string>
+      </property>
+     </column>
+    </widget>
+   </item>
+   <item row="8" column="6" colspan="4">
+    <spacer name="horizontalSpacer_5">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>380</width>
+       <height>20</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item row="9" column="0" colspan="9">
     <spacer name="horizontalSpacer_2">
      <property name="orientation">
       <enum>Qt::Horizontal</enum>
@@ -163,73 +234,11 @@
      </property>
     </spacer>
    </item>
-   <item row="5" column="0" colspan="7">
-    <widget class="QTextEdit" name="textEdit_the_final_room">
-     <property name="font">
-      <font>
-       <family>Viner Hand ITC</family>
-      </font>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">background-color: rgb(255, 255, 255);</string>
-     </property>
-    </widget>
-   </item>
-   <item row="8" column="6">
+   <item row="9" column="9">
     <widget class="QPushButton" name="pushButton_2">
      <property name="text">
       <string>Save</string>
      </property>
-    </widget>
-   </item>
-   <item row="3" column="0" colspan="7">
-    <widget class="QTextEdit" name="textEdit_the_mission">
-     <property name="font">
-      <font>
-       <family>Viner Hand ITC</family>
-      </font>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">background-color: rgb(255, 255, 255);</string>
-     </property>
-    </widget>
-   </item>
-   <item row="6" column="0">
-    <widget class="QLabel" name="label_3">
-     <property name="font">
-      <font>
-       <family>Viner Hand ITC</family>
-       <pointsize>10</pointsize>
-      </font>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">color: rgb(255, 255, 255);</string>
-     </property>
-     <property name="text">
-      <string>Fornitures</string>
-     </property>
-    </widget>
-   </item>
-   <item row="7" column="0" colspan="4">
-    <widget class="QTableWidget" name="tableWidget_fornitures">
-     <property name="font">
-      <font>
-       <family>Viner Hand ITC</family>
-      </font>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">background-color: rgb(255, 255, 255);</string>
-     </property>
-     <column>
-      <property name="text">
-       <string>id</string>
-      </property>
-     </column>
-     <column>
-      <property name="text">
-       <string>forniture</string>
-      </property>
-     </column>
     </widget>
    </item>
   </layout>

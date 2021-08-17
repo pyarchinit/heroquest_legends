@@ -176,7 +176,9 @@
                                     'wizard_counter' : 'Bancone del mago',
                                     'tomb'           : 'Tomba',
                                     'weapon_rack'    : 'Rastrelliera',
-                                    'table'          : 'Tavolo'
+                                    'table'          : 'Tavolo',
+                                    'open_doors'     : 'Porta aperta',
+                                    'closed_doors'   : 'Porta chiusa'
                                     },
 
 
@@ -191,7 +193,9 @@
                                      'Bancone del mago'         : 'wizard_counter',
                                      'Tomba'                    : 'tomb',
                                      'Rastrelliera'             : 'weapon_rack',
-                                     'Tavolo'                   : 'table'
+                                     'Tavolo'                   : 'table',
+                                     'Porta aperta'             : 'open_doors',
+                                     'Porta chiusa'             : 'closed_doors'
                                      },
 
   'treasures_random_type' : { 'chest'          : ["Uno scrigno pieno di gioielli del valore di 200 monete d'oro.",

@@ -219,20 +219,8 @@ class AdventurePanelSettings(QDialog, MAIN_DIALOG_CLASS):
 
 
 
-
-###############
-
-
     def on_pushButton_create_pressed(self):
         self.empty_fields()
-
-
-
-
-
-
-
-
 
 
 

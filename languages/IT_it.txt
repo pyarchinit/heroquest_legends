@@ -176,9 +176,9 @@
                                     'wizard_counter' : 'Bancone del mago',
                                     'tomb'           : 'Tomba',
                                     'weapon_rack'    : 'Rastrelliera',
-                                    'table'          : 'Tavolo',
                                     'open_doors'     : 'Porta aperta',
-                                    'closed_doors'   : 'Porta chiusa'
+                                    'closed_doors'   : 'Porta chiusa',
+                                    'table'          : 'Tavolo'
                                     },
 
 
@@ -193,10 +193,26 @@
                                      'Bancone del mago'         : 'wizard_counter',
                                      'Tomba'                    : 'tomb',
                                      'Rastrelliera'             : 'weapon_rack',
-                                     'Tavolo'                   : 'table',
                                      'Porta aperta'             : 'open_doors',
-                                     'Porta chiusa'             : 'closed_doors'
+                                     'Porta chiusa'             : 'closed_doors',
+                                     'Tavolo'                   : 'table'
                                      },
+
+  'id_fornitures_convertion_dict' : {
+                                    'chest'          : 1,
+                                    'throne'         : 2,
+                                    'wardrobe'       : 3,
+                                    'bookcase'       : 4,
+                                    'chimney'        : 5,
+                                    'torture_table'  : 6,
+                                    'alchemist_desk' : 7,
+                                    'wizard_counter' : 8,
+                                    'tomb'           : 9,
+                                    'weapon_rack'    : 10,
+                                    'open_doors'     : 11,
+                                    'closed_doors'   : 12,
+                                    'table'          : 13
+                                    },
 
   'treasures_random_type' : { 'chest'          : ["Uno scrigno pieno di gioielli del valore di 200 monete d'oro.",
                                                   "Tra varie cianfrusaglie notate un luccichio sul fondo. Avete trovato uno Spadino. Prendete la relativa carta e annotatevi il valore di attacco.",

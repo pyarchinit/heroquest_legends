@@ -401,4 +401,8 @@ else:
 
 app.installTranslator(translator)
 window = Ui()
+#window.showFullScreen()
+window.adjustSize()
+
+
 app.exec_()

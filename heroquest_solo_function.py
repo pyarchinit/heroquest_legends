@@ -261,6 +261,8 @@ class Heroquest_solo:
         """create random rooms with fornitures"""
         ##print("entrata in room generato")
         #turn controller INPUT
+        print("room_generator NUOVO NUOVO NUOVO")
+        print("room_generator fin qui 1")
 
         self.current_turn = ct
 
@@ -288,15 +290,18 @@ class Heroquest_solo:
         #if the current turn is max or equal and the escape is founded
 
         if self.room_explored == 0:
+            print("room_generator fin qui 2")
             ##print("entrata in room generato 2")
             if self.CURRENT_ROOM_COUNTER < self.MAX_ROOM_COUNTER:
                 self.CURRENT_ROOM_COUNTER += 1
 
         ##print("entrata in room generato 3")
         if self.current_turn >= self.TOTAL_NUMBER_OF_TURNS and self.ESCAPE_FOUND==0 and self.room_explored == 0 and self.CURRENT_ROOM_COUNTER >= self.MAX_ROOM_COUNTER:
+            print("room_generator fin qui 3")
             msg_end = self.SPECIAL_ROOM_CHARGED[1] #Replace the number with THE_MISSION = RAND_NUM
             self.ESCAPE_FOUND = 1
         else:
+            print("room_generator fin qui 4")
             if self.room_explored == 0: #if the room is not explored
                 count = 0 #counter
                 for i in range(forniture_numbers):
@@ -311,15 +316,22 @@ class Heroquest_solo:
                     #verify if the fornitures is still present
                     forniture_residue = self.FORNITURES_QTY_DICT[id_forniture_rand]
                     if forniture_residue > 0:
+                        print("room_generator fin qui 5")
                         # charge from DB the selected fornitures
-                        res = self.CURSOR.execute(
-                            "SELECT * FROM fornitures WHERE id_forniture = %d" % id_forniture_rand)
+                        res = self.CURSOR.execute("SELECT * FROM fornitures WHERE id_forniture = %d" % id_forniture_rand)
+                        print("room_generator fin qui 6.1")
                         forniture_selected = res.fetchone()
+                        print("room_generator fin qui 6.2")
+                        print(str(forniture_selected))
                         square_taken_temp = forniture_selected[4]
+                        print("room_generator fin qui 6.3")
                         tot_square_taken += square_taken_temp
                         #if there is residue space in rooms
+                        print("room_generator fin qui 6")
                         if tot_square_taken < self.room_dimension:
+                            print("room_generator fin qui 7")
                             if count == 0:
+                                print("room_generator fin qui 8")
                                 if id_forniture_rand == 11 or id_forniture_rand == 12:
                                     msg_forniture = '{} {} {};'.format(msg_forniture, self.forniture_dict[id_forniture_rand],self.position_dict[self.r_num.randint(1, 3)])
                                 else:
@@ -328,6 +340,7 @@ class Heroquest_solo:
                                 self.FORNITURES_QTY_DICT[id_forniture_rand] = new_forniture_residue
                                 count = 1
                             else:
+                                print("room_generator fin qui 9")
                                 msg_forniture = '{} {} {};'.format(msg_forniture, self.forniture_dict[id_forniture_rand],
                                                                  self.position_dict[self.r_num.randint(1, 5)])
                                 new_forniture_residue = forniture_residue - 1
@@ -606,9 +619,9 @@ class Heroquest_solo:
             self.ESCAPE_FOUND = 1
             return [self.CONFIG_DICT['secret_doors_msg_4'], self.SPECIAL_ROOM_CHARGED[1]] #Replace the number with THE_MISSION = RAND_NUM
 
-        if self.rv >= 1 and self.rv <= 15:
+        if self.rv >= 1 and self.rv <= 16:
             return self.CONFIG_DICT['secret_doors_msg_1'] #no secret doors
-        elif self.rv > 15 and self.rv <= 20 :
+        elif self.rv > 16 and self.rv <= 20 :
             value_LR = self.r_num.randint(1, 3)
             return self.CONFIG_DICT['secret_doors_msg_2'].format(self.position_dict[value_LR]) #find a secret doot
         else:

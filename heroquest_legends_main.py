@@ -283,38 +283,40 @@ class Ui(QtWidgets.QMainWindow):
 
 
     def on_pushButton_rooms_pressed(self):
+        print("room fin qui NEWNEWNEWNENWWN")
         self.textEdit_traps.setText("")
         self.textEdit_room_description.setText('')
         self.textEdit_monsters.setText('')
+        print("room fin qui 1")
         if self.radioButton_explored.isChecked() == True:
             room_explored = 1
             random_trap = self.HQ_SOLO.random_trap(self.CURRENT_ROUND)
             self.textEdit_traps.setText(random_trap)
             self.set_chronicle(random_trap)
+            print("room fin qui 2")
         else:
             room_explored = 0
-
+            print("room fin qui 3")
+        print("room fin qui 4")
         current_turn = int(self.lineEdit_round.text())
-        ##print("room pressed_3-uscita da room pressed")
         msg_temp = self.HQ_SOLO.room_generator(self.lineEdit_room_dimension.text(), current_turn,room_explored)
-        #test = self.HQ_SOLO.room_generator_2(self.lineEdit_room_dimension.text(), current_turn,room_explored)
-        ##print("room pressed_4-rientrato da room pressed")
-
+        print("room fin qui 5")
         if current_turn == 1 or current_turn == 2:
+            print("room fin qui 6")
             msg_room = self.HQ_SOLO.CONFIG_DICT['aux_msg_1'].format(msg_temp[0])
             random_trap = self.HQ_SOLO.random_trap(self.CURRENT_ROUND)
+            print("room fin qui 7")
             self.textEdit_traps.setText(random_trap)
             self.set_chronicle(random_trap)
         else:
+            print("room fin qui 8")
             if msg_temp[2] != '':
-                #print("puppa 1")
+                print("room fin qui 9")
                 self.CHRONICLE = '{} \n\n --- \n\n {}'.format(self.CHRONICLE, msg_temp[2])
-                #print("puppa 2")
                 self.textEdit_chronicle.setText(self.CHRONICLE)
-                #print("puppa 3")
                 msg_room = msg_temp[2]
-                #print("puppa 4")
                 random_trap = self.HQ_SOLO.random_trap(self.CURRENT_ROUND)
+                print("room fin qui 10")
                 self.textEdit_traps.setText(random_trap)
                 self.set_chronicle(random_trap)
             elif msg_temp[0] == '' and msg_temp[2] == '' and room_explored == 1:

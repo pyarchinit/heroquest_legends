@@ -378,18 +378,16 @@ class Heroquest_solo:
         else:
             print(str(self.residual_tiles))
             if self.residual_tiles >= 0 and self.residual_tiles <= 3:
-                print("monsters 1-3")
                 rng_base = random.SystemRandom()
                 monsters_number = rng_base.randint(1, 3)
             elif self.residual_tiles > 3 and self.residual_tiles <= 6:
-                print("monsters 2-4")
                 rng_base = random.SystemRandom()
                 monsters_number = rng_base.randint(2, 4)
             elif self.residual_tiles > 6 and self.residual_tiles <= 12:
                 print("monsters 3-5")
                 rng_base = random.SystemRandom()
                 monsters_number = rng_base.randint(3, 5)
-            elif self.residual_tiles > 12 and self.residual_tiles <= 20:
+            elif self.residual_tiles > 12 and self.residual_tiles <= 30:
                 print("monsters 4-6")
                 rng_base = random.SystemRandom()
                 monsters_number = rng_base.randint(4, 6)
@@ -416,15 +414,10 @@ class Heroquest_solo:
                 ##print("monster_generator_2 4")
                 for i in db_monsters_class_charged:
                     db_monsters_class_charged_list.append(i[0])
-                ##print("monster_generator_2 5")
                 db_monsters_class_charged_lenght = len(db_monsters_class_charged_list)-1
                 rng = random.SystemRandom()
                 id_monster_rand = db_monsters_class_charged_list[rng.randint(0, db_monsters_class_charged_lenght)]
-                ##print("monster_generator_2 6")
-                ##print("id_monster_rand {}".format(id_monster_rand))
-                ##print("MONSTERS_QTY_DICT: {}".format(self.MONSTERS_QTY_DICT[id_monster_rand]))
                 monsters_residue = int(self.MONSTERS_QTY_DICT[id_monster_rand])
-                ##print("monster_generator_2 7")
                 if monsters_residue > 0:
                     ##print("monster_generator_2 8")
                     monsters_msg_partial = '{} {} {};'.format(monsters_msg_partial,
@@ -454,16 +447,12 @@ class Heroquest_solo:
         comparison_value = 0
         if self.MISSION_PERCENT_MADE >= 100:
             comparison_value = 5
-            print("100, 10")
         elif self.MISSION_PERCENT_MADE >= 70:
             comparison_value = 10
-            print("70, 15")
         elif self.MISSION_PERCENT_MADE >= 20:
             comparison_value = 18
-            print("20, 22")
         else:
             comparison_value = 21
-            print("23")
 
         if rn >= comparison_value:
 
@@ -637,6 +626,7 @@ class Heroquest_solo:
 
         #COMBAT VALUE FROM DB
         combat_value_dict = self.CONFIG_DICT['combat_value_dict']
+        print("attacck system 1")
         monster_converted = self.CONFIG_DICT['monster_name_reconversion_dict'][self.monster_category]
         combat_value = combat_value_dict[monster_converted]
 

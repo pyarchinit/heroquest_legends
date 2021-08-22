@@ -364,7 +364,6 @@ class Ui(QtWidgets.QMainWindow):
         monster_category = self.comboBox_monster_attack.currentText()
         monster_group = 0
         monster_sight = 0
-
         if self.checkBox_group.isChecked() == True:
             monster_group = 1
 
@@ -374,11 +373,11 @@ class Ui(QtWidgets.QMainWindow):
         mode_result = self.HQ_SOLO.fighting_system(monster_category, monster_group, monster_sight) #1 attack - 0 escape
 
         if mode_result == 1:
-            #print("Message attack 1")
+            print("Message attack 1")
             msg_attack_list = self.CONFIG_DICT['attack_messages'][1]
 
             rng_base = random.SystemRandom()
-            msg_attack = msg_attack[rng_base.randint(0, len(msg_attack_list))]
+            msg_attack = msg_attack_list[rng_base.randint(0, len(msg_attack_list)-1)]
 
             rng_base = random.SystemRandom()
             msg_attack_choice = msg_attack.format(self.CONFIG_DICT['choice_dict'][rng_base.randint(1, 5)])
@@ -388,9 +387,12 @@ class Ui(QtWidgets.QMainWindow):
 
             self.textEdit_combat_text.setText(str(msg_attack_choice_direction))
         else:
-            rng_base = random.SystemRandom()
+            print(self.CONFIG_DICT['attack_messages'])
             msg_escape_list = self.CONFIG_DICT['attack_messages'][2]
-            msg_escape = msg_escape_list[rng_base.randint(0, len(msg_escape_list))]
+            print("attacck system 4")
+            rng_base = random.SystemRandom()
+            msg_escape = msg_escape_list[rng_base.randint(0, len(msg_escape_list)-1)]
+            print("attacck system 5")
             self.textEdit_combat_text.setText(msg_escape)
 
     def on_pushButton_hero_attack_pressed(self):

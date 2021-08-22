@@ -7,12 +7,12 @@
 'aisles_msg_6' : "Hai trovato tre porte. Colloca una prima porta {}, una seconda porta {} e una terza porta a {}. Ognuna ti conduce ad una stanza inesplorata diversa.{}",
 'aisles_msg_7' : "Non hai trovato nessuna porta.",
 'aisles_msg_8' : "ATTENZIONE: Se le porte indicate conducono fuori dal tabellone, mettile frontalmente sulla prima stanza utile. Se invece ti conducono su stanze già esplorate ignora il comando.",
-'treasures_msg_1' : "Non hai trovato nulla. Pesca una carta dal mazzo dei Tesori.",
-'treasures_msg_2' : "Finalmente un tesoro. Scopri cosa contiene",
-'treasures_msg_3' : "Mentre cerchi tra vecchi stracci e ossa di sorcio, senti uno scatto: un dardo ti colpisce e perdi 1 punto corpo",
-'treasures_msg_4' : "Non hai trovato nulla. Pesca una carta dal mazzo dei Tesori.",
+'treasures_msg_1' : "Pesca una carta dal mazzo dei Tesori.",
+'treasures_msg_2' : "Dopo una attenta ricerca forse ai trovato qualcosa. Scopri cosa contiere il tesoro.",
+'treasures_msg_3' : "Mentre cerchi tra vecchi stracci e ossa di sorcio, senti uno scatto: un dardo ti colpisce e perdi 1 punto corpo (Ignora questa istruzione se hai cercato trabocchetti in questa stanza.",
+'treasures_msg_4' : "Pesca una carta dal mazzo dei Tesori.",
 'secret_doors_msg_1': "Non hai trovato nessuna porta segreta.",
-'secret_doors_msg_2' : "Hai trovato una porta segreta a metà del muro {}    . (Se ti porta ad una stanza o corridio già esplorati o mettila verso una stanza o un corridoio adiacente; se non sono possibili le prime due opzioni allora mettine una nella stanza in cui sei e un'altra in una stanza inesplorata.",
+'secret_doors_msg_2' : "Hai trovato una porta segreta a metà del muro {}. (Se ti porta ad una stanza o corridio già esplorati o mettila verso una stanza o un corridoio adiacente; se non sono possibili le prime due opzioni allora mettine una nella stanza in cui sei e un'altra in una stanza inesplorata.",
 'secret_doors_msg_3' : "Hai trovato una botola. Metti una botola davanti a te e un'altra in una stanza non esplorata",
 'secret_doors_msg_4' : "Facendo pressione su un blocco di pietra si rivela davanti a te un tunnel che ti conduce nelle viscere della terra. Quando risali ed entri nella stanza non puoi credere ai tuoi occhi...(metti la porta segreta verso una stanza adiacente se non esplorata, oppure in una qualsiasi stanza non esplorata)...",
 'chest_msg_1' : "Hai trovato un tesoro con dentro: {}",
@@ -195,8 +195,7 @@
                                      'Rastrelliera'             : 'weapon_rack',
                                      'Porta aperta'             : 'open_doors',
                                      'Porta chiusa'             : 'closed_doors',
-                                     'Tavolo'                   : 'table'
-                                     },
+                                     'Tavolo'                   : 'table'                                     },
 
   'id_fornitures_convertion_dict' : {
                                     'chest'          : 1,
@@ -212,7 +211,7 @@
                                     'open_doors'     : 11,
                                     'closed_doors'   : 12,
                                     'table'          : 13
-                                    },
+                                   },
 
   'treasures_random_type' : { 'chest'          : ["Uno scrigno pieno di gioielli del valore di 200 monete d'oro.",
                                                   "Tra varie cianfrusaglie notate un luccichio sul fondo. Avete trovato uno Spadino. Prendete la relativa carta e annotatevi il valore di attacco.",
@@ -249,14 +248,15 @@
 
   'attack_messages' : {1: ['Il mostro attacca l\'eroe {} oppure si muove verso l\'eroe più vicino e se può lo attacca.',
                            'Se ci sono nemici nel raggio di movimento, il mostro muove va verso l\'eroe {}. Se lo raggiunge lo attacca; altrimenti si muove verso l\'eroe più vicino e se può lo attacca.',
-                           'Se il mostro è vicino ad un eroe lo attacca e poi si muove il più lontano possibile. Altrimenti non si muove.'],
+                           'Se il mostro è vicino ad un eroe lo attacca e poi si muove il più lontano possibile. Altrimenti non si muove.',
+                           'Se il mostro non è solo, chiama a sè tutti i mostri (in base al contatto visivo) che attaccano contemporaneamente l\'eroe più vicino, altrimenti cerca di fuggire lontano.'],
 
                        2: ['il mostro non accenna a muoversi: potrebbe essere la vostra occasione',
                           'Il mostro cerca di fuggire lontano.', 'Il mostro cerca di bloccare la via di fuga agli eroi. Se finisce vicino ad un eroe non lo attacca, blocca solo la fuga.',
                           'Il resta a sorvegliare il suo antro e non si sposta.'],
 
                        3: ['Il mostro con un rapido movimento raccoglie dei sassi da terra e te li scaglia in faccia infliggendoti 1 punto ferita (Ti difendi con un dado da combattimento)',
-                           'Il mostro scarta di lato e ti coglie di sorpresa attancandoti di sorpresa (Lancia un dado da combattimento in attacco per il mostro. L\'eroe si difende normalmente.)']},
+                           'Il mostro scarta di lato e ti coglie di sorpresa attancandoti (Lancia un dado da combattimento in attacco per il mostro. L\'eroe si difende normalmente.)']},
 
   'choice_dict' : {1:'più vicino {}',
                    2:'più lontano {}',
@@ -273,7 +273,7 @@
   'missions_dict' : { 1: ["Il maniero di Hogarth", "Nelle terre di Hogarth, in un maniero abbandonato, si trova nascosto in un sotterraneo un antico laboratorio. Dovrai recuperare un talismano che il potente necromante tiene nascosto da qualche parte. Trova il laboratorio e cerca di sopravvivere tornando alle scale!!! (Metti le scale, una porta chiusa verso il corridoio e gli eroi nell\'angolo del tabellone in alto a destra."],
                       2: ["Il gioiello di Eriamar", "Il re Volgarth (discendente di Eriamar) per recuperare il gioiello del suo antenato, donerà la spada -Morte degli Orchi- a colui che gli riporterà l\'antico manufatto del suo antenato, sottrandolo dalla tomba del leggendario Eriamar, re barbaro dei tempi antichi; il gioiello si dice che giaccia sulla sua tomba, in fondo ad un profondo intrico di cunicoli. Vai nella fortezza di Gurmardath, cerca la tomba dell\'antico re e recupera il gioiello. Metti le scale al centro del tabellone con gli eroi e 4 porte chiuse al centro di ogni muro; per vincere dovrai trovare la tomba e ... ."],
                       3: ["Il Bastione di Oropher", "Un grande pericolo si annida nel Bastione di Oropher. Un Mago del Chaos ha evocato un Gargoyle per riprendere il controllo sulle terre circoscanti. Recati al bastione, trova e uccidi il Gargoyle e il suo evocatore, ma attento: si dice che se il padrone e la sua nefasta creatura sono insieme, la loro furia raddoppia. Se la speranza ti sta abbandonando sappi che in una segreta, lo Stregone del Chaos ha nascosto la Lama degli spiriti, la sua nemesi. Trovala prima che lo stregone del Chaos trovi te!!!\n##################\nObbiettivo: Recupera la Lama degli Spiriti, uccidi lo Stregone del Chaos e il Gargoyle e torna alle scale. Metti le scale e gli eroi in una stanza da 6 caselle con una porta chiusa su un corridoio. \nRegole: Il Mago del Chaos si muove di 5 caselle, ha 2 dadi di attacco e uno di difesa. Possiede i tre incantesimi di fuoco che userà nei suoi primi 3 attacchi: lancia un D6: 1-4 Palla di Fuoco, 2-5 Coraggio; 3-6 Fiamma d\'ira. Se lo stregone del Chaos e il Gargoyle sono in contatto visivo attaccano 2 volte per turno."],
-                      4: ["Caccia alla Corazza di Borin", "Il re Asaroth ha ordinato di recuperare la corazza di Borin. I suoi maghi hanno scoperto che si trova all\'interno della Rocca di Balagar e hanno individuato un\'antica porta segreta. Cerca la Corazza, recuperala ed esci vivo dalla Rocca. Collaca una porta segreta sul bordo esterno del pannello, al centro del lato con la scritta HEROQUEST con gli eroi pronti ad entrare; per vincere dovrai uscire da questa porta con la corazza."]
+                      4: ["Caccia alla Corazza di Borin", "Il re Asaroth ha ordinato di recuperare la corazza di Borin. I suoi maghi hanno scoperto che si trova all\'interno della Rocca di Balagar e hanno individuato un\'antica porta segreta per intruforlarsi nel maniero. Cerca la Corazza, recuperala ed esci vivo dalla Rocca. Collaca una porta segreta sul bordo esterno del pannello, al centro del lato con la scritta HEROQUEST con gli eroi pronti ad entrare; per vincere dovrai uscire da questa porta con la corazza."]
                      },
 
   'specials_rooms' : {1: [[1,1,3,7], "Hai trovato la stanza di Hogarth, necromante della dinastia di Hamasul che qui ha il suo laboratorio. Metti sul fondo due scrigni, a sinistra il tavolo dell\'alchimista e un armadio a destra. Metti due Guerrieri del Chaos a difesa della stanza. Sconfiggendo i due mostri riuscirai ad aprire l\'armadio e far apparire il Talismano di Lore. (Se i mostri sono già impiegati sul tabellone spostali qui)"],

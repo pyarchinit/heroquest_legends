@@ -122,8 +122,8 @@
     </message>
     <message>
         <location filename="heroquest_legends.ui" line="617"/>
-        <source>-</source>
-        <translation type="unfinished"></translation>
+        <source>Room</source>
+        <translation type="unfinished">Stanza</translation>
     </message>
     <message>
         <location filename="heroquest_legends.ui" line="640"/>

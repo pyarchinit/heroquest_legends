@@ -36,6 +36,11 @@ from heroquest_solo_function import Heroquest_solo
 
 from adventure_panel_settings_main import AdventurePanelSettings
 
+
+from pygame import mixer  # Load the popular external library
+
+
+
 class Ui(QtWidgets.QMainWindow):
     #TODO aggiungere come posizione il mostro davanti alla porta fuori o dentro la stanza
     #TODO aggiungere oltre che davanti, davanti ed adiacente a te.
@@ -173,12 +178,15 @@ class Ui(QtWidgets.QMainWindow):
         self.pushButton_aisles.setEnabled(True)
         self.pushButton_rooms.setEnabled(True)
         self.pushButton_treasures_finds.setEnabled(True)
-        self.pushButton_treasures_random.setEnabled(True)
-        self.pushButton_treasure_card.setEnabled(True)
+        self.pushButton_treasures_random.setEnabled(False)
+        self.pushButton_treasure_card.setEnabled(False)
         self.pushButton_traps_and_secret_doors_finder.setEnabled(True)
         self.pushButton_hero_attack.setEnabled(True)
         self.pushButton_monster_attack.setEnabled(True)
         self.pushButton_round.setEnabled(True)
+
+
+        self.pushButton_the_mission.setEnabled(False)
 
     def set_chronicle(self, nt):
         self.new_text = nt
@@ -201,6 +209,9 @@ class Ui(QtWidgets.QMainWindow):
         next_turn = self.CURRENT_ROUND+1
         self.lineEdit_round.setText(str(next_turn))
         self.CURRENT_ROUND = next_turn
+        self.pushButton_treasures_finds.setEnabled(True)
+        self.pushButton_treasures_random.setEnabled(False)
+        self.pushButton_treasure_card.setEnabled(False)
 
 
     def on_pushButton_aisles_pressed(self):
@@ -235,6 +246,10 @@ class Ui(QtWidgets.QMainWindow):
         self.TREASURES_FINDS = res[1]
         if self.TREASURES_FINDS == 1:
             self.pushButton_treasures_random.setEnabled(True)
+            self.pushButton_treasure_card.setEnabled(False)
+        else:
+            self.pushButton_treasures_random.setEnabled(False)
+            self.pushButton_treasure_card.setEnabled(True)
         self.textEdit_treasures_finder.setText("")
         self.textEdit_treasures_finder.setText(str(msg))
 
@@ -247,6 +262,7 @@ class Ui(QtWidgets.QMainWindow):
         msg = self.HQ_SOLO.treasure_card(self.HQ_SOLO.random_numbers())
         self.textEdit_treasure_cards_description.setText("")
         self.textEdit_treasure_cards_description.setText(str(msg))
+        self.pushButton_treasure_card.setEnabled(False)
 
 
     def on_pushButton_treasures_random_pressed(self):
@@ -359,10 +375,10 @@ class Ui(QtWidgets.QMainWindow):
 
         if mode_result == 1:
             #print("Message attack 1")
-            msg_attack = self.CONFIG_DICT['attack_messages'][1]
+            msg_attack_list = self.CONFIG_DICT['attack_messages'][1]
 
             rng_base = random.SystemRandom()
-            msg_attack = msg_attack[rng_base.randint(0, 2)]
+            msg_attack = msg_attack[rng_base.randint(0, len(msg_attack_list))]
 
             rng_base = random.SystemRandom()
             msg_attack_choice = msg_attack.format(self.CONFIG_DICT['choice_dict'][rng_base.randint(1, 5)])
@@ -372,10 +388,9 @@ class Ui(QtWidgets.QMainWindow):
 
             self.textEdit_combat_text.setText(str(msg_attack_choice_direction))
         else:
-
             rng_base = random.SystemRandom()
-            msg_escape = self.CONFIG_DICT['attack_messages'][2][rng_base.randint(0, 2)]
-
+            msg_escape_list = self.CONFIG_DICT['attack_messages'][2]
+            msg_escape = msg_escape_list[rng_base.randint(0, len(msg_escape_list))]
             self.textEdit_combat_text.setText(msg_escape)
 
     def on_pushButton_hero_attack_pressed(self):

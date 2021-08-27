@@ -1,13 +1,14 @@
 #! /usr/bin/env python
 # -*- coding: utf-8 -*-
+
 """
 /***************************************************************************
-        pyArchInit Plugin  - A QGIS plugin to manage archaeological dataset
-        					 stored in Postgres
+        Heroquest's Legends Solo by Mandor the Druid
                              -------------------
-    begin                : 2007-12-01
-    copyright            : (C) 2008 by Luca Mandolesi
+    begin                : 2021-01-02
+    copyright            : (C) 2021 by Luca Mandolesi
     email                : mandoluca at gmail.com
+    version              : 0.91 ALPHA
  ***************************************************************************/
 
 /***************************************************************************

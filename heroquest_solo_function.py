@@ -1,3 +1,4 @@
+#! /usr/bin/env python
 # -*- coding: utf-8 -*-
 
 """
@@ -7,7 +8,7 @@
     begin                : 2021-01-02
     copyright            : (C) 2021 by Luca Mandolesi
     email                : mandoluca at gmail.com
-    version              : 0.92 ALPHA
+    version              : 0.91 ALPHA
  ***************************************************************************/
 
 /***************************************************************************

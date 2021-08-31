@@ -2792,26 +2792,6 @@ p, li { white-space: pre-wrap; }
              <string/>
             </property>
            </item>
-           <item>
-            <property name="text">
-             <string>1</string>
-            </property>
-           </item>
-           <item>
-            <property name="text">
-             <string>2</string>
-            </property>
-           </item>
-           <item>
-            <property name="text">
-             <string>3</string>
-            </property>
-           </item>
-           <item>
-            <property name="text">
-             <string>4</string>
-            </property>
-           </item>
           </widget>
          </item>
          <item row="10" column="2" colspan="5">

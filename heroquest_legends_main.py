@@ -23,6 +23,7 @@
 import locale
 import sys, os
 import random
+import json
 from datetime import datetime
 from PyQt5 import QtWidgets, uic, QtCore
 
@@ -41,7 +42,6 @@ from adventure_panel_settings_main import AdventurePanelSettings
 from pygame import mixer  # Load the popular external library
 
 
-
 class Ui(QtWidgets.QMainWindow):
     #TODO aggiungere come posizione il mostro davanti alla porta fuori o dentro la stanza
     #TODO aggiungere oltre che davanti, davanti ed adiacente a te.
@@ -54,13 +54,12 @@ class Ui(QtWidgets.QMainWindow):
     local_language = locale.getdefaultlocale()
     #file_name = 'en_EN.txt'
     if local_language[0] == 'it_IT':
-        CONFIG = open('./languages/IT_it.txt', "rb+")
+        CONFIG = open('./languages/IT_it.txt', "r")
     else :
-        CONFIG = open('./languages/EN_en.txt', "rb+")
+        CONFIG = open('./languages/EN_en.txt', "r")
     data_config = CONFIG.read()
-    CONFIG.close()
     CONFIG_DICT = eval(data_config)
-
+    CONFIG.close()
     HQ_SOLO = ""
 
     CURRENT_ROUND = 1
@@ -71,8 +70,11 @@ class Ui(QtWidgets.QMainWindow):
 
     CHRONICLE = ""
 
+
+
     def __init__(self):
         super(Ui, self).__init__()
+
         self.acceptDrops()
         self.setWindowFlag(QtCore.Qt.WindowCloseButtonHint, False)
 
@@ -87,9 +89,17 @@ class Ui(QtWidgets.QMainWindow):
         palette = QPalette()
         palette.setBrush(QPalette.Window, QBrush(sImage))
 
-        self.setPalette(palette)
+        self.setPalette(palette )
         self.charge_list()
+        the_missions_dict = self.CONFIG_DICT['missions_dict']
+        key_list = []
+        for k in the_missions_dict.keys():
+            key_list.append(str(k))
+
+        self.comboBox_choose_adventure.addItems(key_list)
+
         self.show()
+
 
 
     def on_pushButton_settings_pressed(self):
@@ -98,39 +108,29 @@ class Ui(QtWidgets.QMainWindow):
         dlg.insertItems()
 
         dlg.exec_()
-        #open the panel and freeze the process
+        the_missions_dict = self.CONFIG_DICT['missions_dict']
+        key_list = []
+        for k in the_missions_dict.keys():
+            key_list.append(str(k))
 
-        #then pass to variables data from settings
-        """
-        items, order_type = dlg.ITEMS, dlg.TYPE_ORDER
-        self.SORT_ITEMS_CONVERTED = []
-        for i in items:
-            # QMessageBox.warning(self, "Messaggio",i, QMessageBox.Ok)
-            self.SORT_ITEMS_CONVERTED.append(
-                self.CONVERSION_DICT[str(i)])  # apportare la modifica nellle altre schede
-        self.SORT_MODE = order_type
-        self.empty_fields()
-        id_list = []
-        for i in self.DATA_LIST:
-            id_list.append(eval("i." + self.ID_TABLE))
-        self.DATA_LIST = []
-        temp_data_list = self.DB_MANAGER.query_sort(id_list, self.SORT_ITEMS_CONVERTED, self.SORT_MODE,
-                                                    self.MAPPER_TABLE_CLASS, self.ID_TABLE)
-        for i in temp_data_list:
-            self.DATA_LIST.append(i)
-        self.BROWSE_STATUS = 'b'
-        self.label_status.setText(self.STATUS_ITEMS[self.BROWSE_STATUS])
-        if type(self.REC_CORR) == "<type 'str'>":
-            corr = 0
+        self.comboBox_choose_adventure.clear()
+        self.comboBox_choose_adventure.addItems(key_list)
+
+        local_language = locale.getdefaultlocale()
+        # file_name = 'en_EN.txt'
+        if local_language[0] == 'it_IT':
+            convert_file = open('./languages/IT_it.txt', 'w')
+            convert_file.write(str(self.CONFIG_DICT))
+            convert_file.close()
+            self.pushButton_the_mission.setEnabled(True)
+
         else:
-            corr = self.REC_CORR
-        self.REC_TOT, self.REC_CORR = len(self.DATA_LIST), 0
-        self.DATA_LIST_REC_TEMP = self.DATA_LIST_REC_CORR = self.DATA_LIST[0]
-        self.SORT_STATUS = "o"
-        self.label_sort.setText(self.SORTED_ITEMS[self.SORT_STATUS])
-        self.set_rec_counter(len(self.DATA_LIST), self.REC_CORR + 1)
-        self.fill_fields()
-        """
+            self.CONFIG = open('./languages/EN_en.txt', 'w')
+            convert_file.write(str(self.CONFIG_DICT))
+            convert_file.close()
+            self.pushButton_the_mission.setEnabled(True)
+
+
 
 
     def charge_list(self):
@@ -148,7 +148,6 @@ class Ui(QtWidgets.QMainWindow):
 
         fornitures_list = self.CONFIG_DICT['forniture_name_reconversion_dict']
         self.comboBox_fornitures.addItems([*fornitures_list])
-
 
     def on_pushButton_the_mission_pressed(self):
 
@@ -300,63 +299,60 @@ class Ui(QtWidgets.QMainWindow):
 
 
     def on_pushButton_rooms_pressed(self):
-        print("room fin qui NEWNEWNEWNENWWN")
         self.textEdit_traps.setText("")
         self.textEdit_room_description.setText('')
         self.textEdit_monsters.setText('')
-        print("room fin qui 1")
         if self.radioButton_explored.isChecked() == True:
             room_explored = 1
             random_trap = self.HQ_SOLO.random_trap(self.CURRENT_ROUND)
             self.textEdit_traps.setText(random_trap)
             self.set_chronicle(random_trap)
-            print("room fin qui 2")
         else:
             room_explored = 0
-            print("room fin qui 3")
-        print("room fin qui 4")
         current_turn = int(self.lineEdit_round.text())
         msg_temp = self.HQ_SOLO.room_generator(self.lineEdit_room_dimension.text(), current_turn,room_explored)
-        print("room fin qui 5")
         if current_turn == 1 or current_turn == 2:
-            print("room fin qui 6")
             msg_room = self.HQ_SOLO.CONFIG_DICT['aux_msg_1'].format(msg_temp[0])
             random_trap = self.HQ_SOLO.random_trap(self.CURRENT_ROUND)
-            print("room fin qui 7")
             self.textEdit_traps.setText(random_trap)
             self.set_chronicle(random_trap)
         else:
-            print("room fin qui 8")
             if msg_temp[2] != '':
-                print("room fin qui 9")
                 self.CHRONICLE = '{} \n\n --- \n\n {}'.format(self.CHRONICLE, msg_temp[2])
                 self.textEdit_chronicle.setText(self.CHRONICLE)
                 msg_room = msg_temp[2]
                 random_trap = self.HQ_SOLO.random_trap(self.CURRENT_ROUND)
-                print("room fin qui 10")
                 self.textEdit_traps.setText(random_trap)
                 self.set_chronicle(random_trap)
+                self.set_chronicle(msg_room)
             elif msg_temp[0] == '' and msg_temp[2] == '' and room_explored == 1:
                 msg_room = self.HQ_SOLO.CONFIG_DICT['aux_msg_7']
                 random_trap = self.HQ_SOLO.random_trap(self.CURRENT_ROUND)
                 self.textEdit_traps.setText(random_trap)
                 self.set_chronicle(random_trap)
+                self.set_chronicle(msg_room)
             elif msg_temp[0] == '' and msg_temp[2] == '' and room_explored == 0:
                 msg_room = self.HQ_SOLO.CONFIG_DICT['aux_msg_6']
                 random_trap = self.HQ_SOLO.random_trap(self.CURRENT_ROUND)
                 self.textEdit_traps.setText(random_trap)
                 self.set_chronicle(random_trap)
+                self.set_chronicle(msg_room)
             else:
                 msg_room = msg_temp[0]
                 random_trap = self.HQ_SOLO.random_trap(self.CURRENT_ROUND)
                 self.textEdit_traps.setText(random_trap)
                 self.set_chronicle(random_trap)
+                self.set_chronicle(msg_room)
 
         msg_room = msg_room.replace(';.', '.')
 
         self.textEdit_room_description.setText(str(msg_room))
 
         self.textEdit_monsters.setText(str(msg_temp[1]))
+
+        self.set_chronicle(random_trap)
+        self.set_chronicle(msg_room)
+        self.set_chronicle(str(msg_temp[1]))
 
 
     def on_pushButton_monster_attack_pressed(self):
@@ -374,7 +370,6 @@ class Ui(QtWidgets.QMainWindow):
         mode_result = self.HQ_SOLO.fighting_system(monster_category, monster_group, monster_sight) #1 attack - 0 escape
 
         if mode_result == 1:
-            print("Message attack 1")
             msg_attack_list = self.CONFIG_DICT['attack_messages'][1]
 
             rng_base = random.SystemRandom()
@@ -388,12 +383,9 @@ class Ui(QtWidgets.QMainWindow):
 
             self.textEdit_combat_text.setText(str(msg_attack_choice_direction))
         else:
-            print(self.CONFIG_DICT['attack_messages'])
             msg_escape_list = self.CONFIG_DICT['attack_messages'][2]
-            print("attacck system 4")
             rng_base = random.SystemRandom()
             msg_escape = msg_escape_list[rng_base.randint(0, len(msg_escape_list)-1)]
-            print("attacck system 5")
             self.textEdit_combat_text.setText(msg_escape)
 
     def on_pushButton_hero_attack_pressed(self):
@@ -423,6 +415,7 @@ app.installTranslator(translator)
 window = Ui()
 #window.showFullScreen()
 window.adjustSize()
+
 
 
 app.exec_()

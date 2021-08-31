@@ -6,15 +6,53 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1255</width>
+    <width>1168</width>
     <height>841</height>
    </rect>
+  </property>
+  <property name="font">
+   <font>
+    <family>Viner Hand ITC</family>
+    <pointsize>10</pointsize>
+    <weight>50</weight>
+    <italic>false</italic>
+    <bold>false</bold>
+   </font>
   </property>
   <property name="windowTitle">
    <string>Form</string>
   </property>
+  <property name="autoFillBackground">
+   <bool>false</bool>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">font: 10pt &quot;Viner Hand ITC&quot;;</string>
+  </property>
   <layout class="QGridLayout" name="gridLayout">
-   <item row="0" column="7">
+   <item row="0" column="0" colspan="2">
+    <widget class="QLabel" name="the_title">
+     <property name="palette">
+      <palette>
+       <active/>
+       <inactive/>
+       <disabled/>
+      </palette>
+     </property>
+     <property name="font">
+      <font>
+       <family>Viner Hand ITC</family>
+       <pointsize>10</pointsize>
+       <weight>50</weight>
+       <italic>false</italic>
+       <bold>false</bold>
+      </font>
+     </property>
+     <property name="text">
+      <string>Name of legend</string>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="6">
     <widget class="QComboBox" name="comboBox_id">
      <property name="maximumSize">
       <size>
@@ -22,26 +60,16 @@
        <height>16777215</height>
       </size>
      </property>
-    </widget>
-   </item>
-   <item row="1" column="0" colspan="7">
-    <widget class="QLineEdit" name="lineEdit_adventure_title">
-     <property name="minimumSize">
-      <size>
-       <width>850</width>
-       <height>0</height>
-      </size>
+     <property name="palette">
+      <palette>
+       <active/>
+       <inactive/>
+       <disabled/>
+      </palette>
      </property>
     </widget>
    </item>
-   <item row="1" column="7">
-    <widget class="QPushButton" name="pushButton_charge_adventure">
-     <property name="text">
-      <string>charge an adventure</string>
-     </property>
-    </widget>
-   </item>
-   <item row="1" column="8">
+   <item row="0" column="7" colspan="2">
     <spacer name="horizontalSpacer">
      <property name="orientation">
       <enum>Qt::Horizontal</enum>
@@ -54,42 +82,91 @@
      </property>
     </spacer>
    </item>
-   <item row="1" column="9">
-    <widget class="QPushButton" name="pushButton_create">
-     <property name="text">
-      <string>create new adventure</string>
+   <item row="1" column="0" colspan="6">
+    <widget class="QLineEdit" name="lineEdit_adventure_title">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+     <property name="minimumSize">
+      <size>
+       <width>850</width>
+       <height>0</height>
+      </size>
+     </property>
+     <property name="palette">
+      <palette>
+       <active/>
+       <inactive/>
+       <disabled/>
+      </palette>
      </property>
     </widget>
    </item>
-   <item row="2" column="0">
+   <item row="1" column="6" colspan="3">
+    <widget class="QPushButton" name="pushButton_charge_adventure">
+     <property name="palette">
+      <palette>
+       <active/>
+       <inactive/>
+       <disabled/>
+      </palette>
+     </property>
+     <property name="text">
+      <string>charge an adventure</string>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="0" colspan="2">
     <widget class="QLabel" name="label">
+     <property name="palette">
+      <palette>
+       <active/>
+       <inactive/>
+       <disabled/>
+      </palette>
+     </property>
      <property name="text">
       <string>The mission</string>
      </property>
     </widget>
    </item>
-   <item row="3" column="0" colspan="10">
-    <widget class="QTextEdit" name="textEdit_the_mission"/>
-   </item>
-   <item row="4" column="0">
+   <item row="4" column="0" colspan="3">
     <widget class="QLabel" name="label_2">
+     <property name="palette">
+      <palette>
+       <active/>
+       <inactive/>
+       <disabled/>
+      </palette>
+     </property>
      <property name="text">
       <string>The final room</string>
      </property>
     </widget>
    </item>
-   <item row="5" column="0" colspan="10">
-    <widget class="QTextEdit" name="textEdit_the_final_room"/>
-   </item>
-   <item row="6" column="0">
+   <item row="6" column="0" colspan="3">
     <widget class="QLabel" name="label_3">
+     <property name="palette">
+      <palette>
+       <active/>
+       <inactive/>
+       <disabled/>
+      </palette>
+     </property>
      <property name="text">
       <string>Fornitures</string>
      </property>
     </widget>
    </item>
-   <item row="6" column="3" colspan="2">
+   <item row="6" column="3">
     <widget class="QLabel" name="label_4">
+     <property name="palette">
+      <palette>
+       <active/>
+       <inactive/>
+       <disabled/>
+      </palette>
+     </property>
      <property name="text">
       <string>Monster types</string>
      </property>
@@ -110,11 +187,24 @@
    </item>
    <item row="7" column="1">
     <widget class="QPushButton" name="pushButton_insert_row_fornitures">
+     <property name="minimumSize">
+      <size>
+       <width>115</width>
+       <height>0</height>
+      </size>
+     </property>
      <property name="maximumSize">
       <size>
        <width>100</width>
        <height>16777215</height>
       </size>
+     </property>
+     <property name="palette">
+      <palette>
+       <active/>
+       <inactive/>
+       <disabled/>
+      </palette>
      </property>
      <property name="text">
       <string>add forniture</string>
@@ -134,6 +224,13 @@
        <width>110</width>
        <height>16777215</height>
       </size>
+     </property>
+     <property name="palette">
+      <palette>
+       <active/>
+       <inactive/>
+       <disabled/>
+      </palette>
      </property>
      <property name="text">
       <string>remove forniture</string>
@@ -161,6 +258,13 @@
        <height>16777215</height>
       </size>
      </property>
+     <property name="palette">
+      <palette>
+       <active/>
+       <inactive/>
+       <disabled/>
+      </palette>
+     </property>
      <property name="text">
       <string>add monster</string>
      </property>
@@ -180,35 +284,19 @@
        <height>16777215</height>
       </size>
      </property>
+     <property name="palette">
+      <palette>
+       <active/>
+       <inactive/>
+       <disabled/>
+      </palette>
+     </property>
      <property name="text">
       <string>remove monster</string>
      </property>
     </widget>
    </item>
-   <item row="8" column="0" colspan="3">
-    <widget class="QTableWidget" name="tableWidget_fornitures">
-     <column>
-      <property name="text">
-       <string>id</string>
-      </property>
-     </column>
-     <column>
-      <property name="text">
-       <string>forniture</string>
-      </property>
-     </column>
-    </widget>
-   </item>
-   <item row="8" column="3" colspan="3">
-    <widget class="QTableWidget" name="tableWidget_monsters_type">
-     <column>
-      <property name="text">
-       <string>Monster types</string>
-      </property>
-     </column>
-    </widget>
-   </item>
-   <item row="8" column="6" colspan="4">
+   <item row="8" column="6" rowspan="2" colspan="3">
     <spacer name="horizontalSpacer_5">
      <property name="orientation">
       <enum>Qt::Horizontal</enum>
@@ -221,7 +309,21 @@
      </property>
     </spacer>
    </item>
-   <item row="9" column="0" colspan="9">
+   <item row="9" column="8">
+    <widget class="QPushButton" name="pushButton_create">
+     <property name="palette">
+      <palette>
+       <active/>
+       <inactive/>
+       <disabled/>
+      </palette>
+     </property>
+     <property name="text">
+      <string>create new adventure</string>
+     </property>
+    </widget>
+   </item>
+   <item row="10" column="0" colspan="3">
     <spacer name="horizontalSpacer_2">
      <property name="orientation">
       <enum>Qt::Horizontal</enum>
@@ -234,10 +336,424 @@
      </property>
     </spacer>
    </item>
-   <item row="9" column="9">
-    <widget class="QPushButton" name="pushButton_2">
+   <item row="10" column="8">
+    <widget class="QPushButton" name="pushButton_save">
      <property name="text">
       <string>Save</string>
+     </property>
+    </widget>
+   </item>
+   <item row="8" column="3" rowspan="2" colspan="3">
+    <widget class="QTableWidget" name="tableWidget_monsters_type">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+     <property name="palette">
+      <palette>
+       <active>
+        <colorrole role="Button">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
+           <red>255</red>
+           <green>255</green>
+           <blue>255</blue>
+          </color>
+         </brush>
+        </colorrole>
+        <colorrole role="Base">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
+           <red>255</red>
+           <green>255</green>
+           <blue>255</blue>
+          </color>
+         </brush>
+        </colorrole>
+        <colorrole role="Window">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
+           <red>255</red>
+           <green>255</green>
+           <blue>255</blue>
+          </color>
+         </brush>
+        </colorrole>
+       </active>
+       <inactive>
+        <colorrole role="Button">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
+           <red>255</red>
+           <green>255</green>
+           <blue>255</blue>
+          </color>
+         </brush>
+        </colorrole>
+        <colorrole role="Base">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
+           <red>255</red>
+           <green>255</green>
+           <blue>255</blue>
+          </color>
+         </brush>
+        </colorrole>
+        <colorrole role="Window">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
+           <red>255</red>
+           <green>255</green>
+           <blue>255</blue>
+          </color>
+         </brush>
+        </colorrole>
+       </inactive>
+       <disabled>
+        <colorrole role="Button">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
+           <red>255</red>
+           <green>255</green>
+           <blue>255</blue>
+          </color>
+         </brush>
+        </colorrole>
+        <colorrole role="Base">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
+           <red>255</red>
+           <green>255</green>
+           <blue>255</blue>
+          </color>
+         </brush>
+        </colorrole>
+        <colorrole role="Window">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
+           <red>255</red>
+           <green>255</green>
+           <blue>255</blue>
+          </color>
+         </brush>
+        </colorrole>
+       </disabled>
+      </palette>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(255, 255, 255);</string>
+     </property>
+     <column>
+      <property name="text">
+       <string>Monster types</string>
+      </property>
+     </column>
+    </widget>
+   </item>
+   <item row="8" column="0" rowspan="2" colspan="3">
+    <widget class="QTableWidget" name="tableWidget_fornitures">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+     <property name="palette">
+      <palette>
+       <active>
+        <colorrole role="Button">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
+           <red>255</red>
+           <green>255</green>
+           <blue>255</blue>
+          </color>
+         </brush>
+        </colorrole>
+        <colorrole role="Base">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
+           <red>255</red>
+           <green>255</green>
+           <blue>255</blue>
+          </color>
+         </brush>
+        </colorrole>
+        <colorrole role="Window">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
+           <red>255</red>
+           <green>255</green>
+           <blue>255</blue>
+          </color>
+         </brush>
+        </colorrole>
+       </active>
+       <inactive>
+        <colorrole role="Button">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
+           <red>255</red>
+           <green>255</green>
+           <blue>255</blue>
+          </color>
+         </brush>
+        </colorrole>
+        <colorrole role="Base">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
+           <red>255</red>
+           <green>255</green>
+           <blue>255</blue>
+          </color>
+         </brush>
+        </colorrole>
+        <colorrole role="Window">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
+           <red>255</red>
+           <green>255</green>
+           <blue>255</blue>
+          </color>
+         </brush>
+        </colorrole>
+       </inactive>
+       <disabled>
+        <colorrole role="Button">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
+           <red>255</red>
+           <green>255</green>
+           <blue>255</blue>
+          </color>
+         </brush>
+        </colorrole>
+        <colorrole role="Base">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
+           <red>255</red>
+           <green>255</green>
+           <blue>255</blue>
+          </color>
+         </brush>
+        </colorrole>
+        <colorrole role="Window">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
+           <red>255</red>
+           <green>255</green>
+           <blue>255</blue>
+          </color>
+         </brush>
+        </colorrole>
+       </disabled>
+      </palette>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(255, 255, 255);</string>
+     </property>
+     <column>
+      <property name="text">
+       <string>forniture</string>
+      </property>
+     </column>
+    </widget>
+   </item>
+   <item row="3" column="0" colspan="6">
+    <widget class="QTextEdit" name="textEdit_the_mission">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+     <property name="palette">
+      <palette>
+       <active>
+        <colorrole role="Button">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
+           <red>255</red>
+           <green>255</green>
+           <blue>255</blue>
+          </color>
+         </brush>
+        </colorrole>
+        <colorrole role="Base">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
+           <red>255</red>
+           <green>255</green>
+           <blue>255</blue>
+          </color>
+         </brush>
+        </colorrole>
+        <colorrole role="Window">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
+           <red>255</red>
+           <green>255</green>
+           <blue>255</blue>
+          </color>
+         </brush>
+        </colorrole>
+       </active>
+       <inactive>
+        <colorrole role="Button">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
+           <red>255</red>
+           <green>255</green>
+           <blue>255</blue>
+          </color>
+         </brush>
+        </colorrole>
+        <colorrole role="Base">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
+           <red>255</red>
+           <green>255</green>
+           <blue>255</blue>
+          </color>
+         </brush>
+        </colorrole>
+        <colorrole role="Window">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
+           <red>255</red>
+           <green>255</green>
+           <blue>255</blue>
+          </color>
+         </brush>
+        </colorrole>
+       </inactive>
+       <disabled>
+        <colorrole role="Button">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
+           <red>255</red>
+           <green>255</green>
+           <blue>255</blue>
+          </color>
+         </brush>
+        </colorrole>
+        <colorrole role="Base">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
+           <red>255</red>
+           <green>255</green>
+           <blue>255</blue>
+          </color>
+         </brush>
+        </colorrole>
+        <colorrole role="Window">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
+           <red>255</red>
+           <green>255</green>
+           <blue>255</blue>
+          </color>
+         </brush>
+        </colorrole>
+       </disabled>
+      </palette>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(255, 255, 255);</string>
+     </property>
+    </widget>
+   </item>
+   <item row="5" column="0" colspan="6">
+    <widget class="QTextEdit" name="textEdit_the_final_room">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+     <property name="palette">
+      <palette>
+       <active>
+        <colorrole role="Button">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
+           <red>253</red>
+           <green>253</green>
+           <blue>253</blue>
+          </color>
+         </brush>
+        </colorrole>
+        <colorrole role="Base">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
+           <red>253</red>
+           <green>253</green>
+           <blue>253</blue>
+          </color>
+         </brush>
+        </colorrole>
+        <colorrole role="Window">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
+           <red>253</red>
+           <green>253</green>
+           <blue>253</blue>
+          </color>
+         </brush>
+        </colorrole>
+       </active>
+       <inactive>
+        <colorrole role="Button">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
+           <red>253</red>
+           <green>253</green>
+           <blue>253</blue>
+          </color>
+         </brush>
+        </colorrole>
+        <colorrole role="Base">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
+           <red>253</red>
+           <green>253</green>
+           <blue>253</blue>
+          </color>
+         </brush>
+        </colorrole>
+        <colorrole role="Window">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
+           <red>253</red>
+           <green>253</green>
+           <blue>253</blue>
+          </color>
+         </brush>
+        </colorrole>
+       </inactive>
+       <disabled>
+        <colorrole role="Button">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
+           <red>253</red>
+           <green>253</green>
+           <blue>253</blue>
+          </color>
+         </brush>
+        </colorrole>
+        <colorrole role="Base">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
+           <red>253</red>
+           <green>253</green>
+           <blue>253</blue>
+          </color>
+         </brush>
+        </colorrole>
+        <colorrole role="Window">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
+           <red>253</red>
+           <green>253</green>
+           <blue>253</blue>
+          </color>
+         </brush>
+        </colorrole>
+       </disabled>
+      </palette>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(253, 253, 253);</string>
      </property>
     </widget>
    </item>

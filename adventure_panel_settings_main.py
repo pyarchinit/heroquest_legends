@@ -42,8 +42,8 @@ class AdventurePanelSettings(QDialog, MAIN_DIALOG_CLASS):
 
     def __init__(self, parent=None, db=None):
         QDialog.__init__(self, parent)
-
         self.setupUi(self)
+
 
 
     def closeEvent(self, event):
@@ -60,8 +60,6 @@ class AdventurePanelSettings(QDialog, MAIN_DIALOG_CLASS):
 
     def customize_gui(self):
         the_fornitures_list = []
-        #print(str('gigio'))
-
         res = self.CURSOR.execute("SELECT DISTINCT(tipe_forniture) FROM fornitures")
         fornitures_values = res.fetchall()
         for i in fornitures_values:
@@ -72,7 +70,7 @@ class AdventurePanelSettings(QDialog, MAIN_DIALOG_CLASS):
         self.delegateFornitures = ComboBoxDelegate()
         self.delegateFornitures.def_values(the_fornitures_list)
         self.delegateFornitures.def_editable('False')
-        self.tableWidget_fornitures.setItemDelegateForColumn(1, self.delegateFornitures)
+        self.tableWidget_fornitures.setItemDelegateForColumn(0, self.delegateFornitures)
 
         the_monster_types_list = self.DICT['monster_types']
 
@@ -92,13 +90,10 @@ class AdventurePanelSettings(QDialog, MAIN_DIALOG_CLASS):
         special_room = self.DICT['specials_rooms'][mission_number]
         room_description = special_room[1]
         room_fornitures_list = special_room[0]
-
-        #print("puccia")
         #GUI
         self.lineEdit_adventure_title.setText(str(the_title))
         self.textEdit_the_mission.setText(str(description))
         self.textEdit_the_final_room.setText(str(room_description))
-
 
         class_monsters_list = self.from_list_to_listoflist(self.DICT['monster_class'][mission_number])
 
@@ -117,10 +112,9 @@ class AdventurePanelSettings(QDialog, MAIN_DIALOG_CLASS):
             res = self.CURSOR.execute("SELECT * FROM fornitures WHERE id_forniture = '{}'".format(str(i)))
             #print(str(paolo))
             res_charged = res.fetchone()
-            print(str(self.DICT['forniture_name_conversion_dict']))
             forniture_converted = self.DICT['forniture_name_conversion_dict'][res_charged[1]]
 
-            forniture = [str(i), forniture_converted]
+            forniture = [forniture_converted]
 
             special_room_fornitures_list_charge.append(forniture)
 
@@ -217,16 +211,103 @@ class AdventurePanelSettings(QDialog, MAIN_DIALOG_CLASS):
     def on_pushButton_remove_row_monster_pressed(self):
         self.remove_row('self.tableWidget_monsters_type')
 
-
-
     def on_pushButton_create_pressed(self):
         self.empty_fields()
+        self.setComboBoxEnable(["self.comboBox_id"], "True")
+        self.setComboBoxEditable(["self.comboBox_id"], 1)
+        self.setComboBoxEnable(["self.lineEdit_adventure_title"],"True")
+        self.setComboBoxEnable(["self.textEdit_the_mission"],"True")
+        self.setComboBoxEnable(["self.textEdit_the_final_room"],"True")
+        self.setTableEnable(["self.tableWidget_fornitures"],"True")
+        self.setTableEnable(["self.tableWidget_monsters_type"],"True")
+        self.customize_gui()
+
+    def on_pushButton_save_pressed(self):
+        try:
+            the_missions_dict = self.DICT['missions_dict']
+            adventure_title = self.lineEdit_adventure_title.text()
+            the_mission = self.textEdit_the_mission.toPlainText()
+            the_final_room = self.textEdit_the_final_room.toPlainText()
+            forniture_list = self.table2dict('self.tableWidget_fornitures')
+
+            id_fornitures_list = []
+            for i in forniture_list:
+                forniture_converted = self.DICT['forniture_name_reconversion_dict'][i]
+                query_string = "SELECT id_forniture FROM fornitures WHERE tipe_forniture = '{}{}".format(forniture_converted, "'")
+                res = self.CURSOR.execute(query_string)
+                fornitures_values = res.fetchone()
+                id_fornitures_list.append(fornitures_values[0])
+
+            #values to add to DICT
+            to_missions_dict_list = [adventure_title, the_mission]
+            to_specials_rooms_list = [id_fornitures_list, the_final_room]
+            to_monster_class_list = self.table2dict('self.tableWidget_monsters_type')
+            max_num_id = self.returnMaxMissionNumber()
+            #ADD DATA TO DICT
+            self.DICT['missions_dict'][max_num_id]=to_missions_dict_list
+            self.DICT['specials_rooms'][max_num_id]=to_specials_rooms_list
+            self.DICT['monster_class'][max_num_id]=to_monster_class_list
+            QMessageBox.warning(self, "Hai un messaggio da Mentor: ","La tua leggenda è stata scritta nel Loretomo. Sei pronto per affrontarne le conseguenze?",QMessageBox.Ok)
+        except Exception as e:
+            QMessageBox.warning(self, "NOT GOOD!!!", str(e), QMessageBox.Ok)
+
+    def table2dict(self, n):
+        self.tablename = n
+        row = eval(self.tablename + ".rowCount()")
+        col = eval(self.tablename + ".columnCount()")
+        print("col 1")
+        lista = []
+        for r in range(row):
+            print("col 2")
+            for c in range(col):
+                value = eval(self.tablename + ".item(r,c)")
+                print("col 3")
+                if value != None:
+                    lista.append(str(value.text()))
+        return lista
+
+    def setComboBoxEditable(self, f, n):
+        field_names = f
+        value = n
+        for fn in field_names:
+            cmd = '{}{}{}{}'.format(fn, '.setEditable(', n, ')')
+            eval(cmd)
+
+    def setComboBoxEnable(self, f, v):
+        field_names = f
+        value = v
+        for fn in field_names:
+            cmd = '{}{}{}{}'.format(fn, '.setEnabled(', v, ')')
+            eval(cmd)
+
+    def setTableEnable(self, t, v):
+        tab_names = t
+        value = v
+        for tn in tab_names:
+            cmd = '{}{}{}{}'.format(tn, '.setEnabled(', v, ')')
+            eval(cmd)
 
 
+    def returnMaxMissionNumber(self):
+        print(str('chiavi 1'))
+        keys_list = self.DICT['missions_dict'].keys()
+        id_list = []
+        print(str('chiavi 2'))
+        print(str(keys_list))
+        for i in keys_list:
+            id_list.append(i)
+        print(str('chiavi 3'))
+        id_list.sort()
+        print(str('chiavi 4'))
+        print(str(id_list))
+        max_num_index = len(id_list)-1
+        max_num_id = id_list[max_num_index]+1
+        print(str('chiavi 5'))
+        print(str(max_num_id))
+        return max_num_id
 
 if __name__ == '__main__':
     import sys
-
     a = QApplication(sys.argv)
     dlg = AdventurePanelSettings()
     dlg.show()

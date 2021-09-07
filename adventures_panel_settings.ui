@@ -12,7 +12,7 @@
   </property>
   <property name="font">
    <font>
-    <family>Viner Hand ITC</family>
+    <family>Cambria</family>
     <pointsize>10</pointsize>
     <weight>50</weight>
     <italic>false</italic>
@@ -26,7 +26,7 @@
    <bool>false</bool>
   </property>
   <property name="styleSheet">
-   <string notr="true">font: 10pt &quot;Viner Hand ITC&quot;;</string>
+   <string notr="true">font: 10pt &quot;Cambria&quot;;</string>
   </property>
   <layout class="QGridLayout" name="gridLayout">
    <item row="0" column="0" colspan="2">
@@ -40,7 +40,7 @@
      </property>
      <property name="font">
       <font>
-       <family>Viner Hand ITC</family>
+       <family>Cambria</family>
        <pointsize>10</pointsize>
        <weight>50</weight>
        <italic>false</italic>
@@ -379,9 +379,15 @@
      <property name="enabled">
       <bool>false</bool>
      </property>
+     <property name="minimumSize">
+      <size>
+       <width>115</width>
+       <height>0</height>
+      </size>
+     </property>
      <property name="maximumSize">
       <size>
-       <width>100</width>
+       <width>110</width>
        <height>16777215</height>
       </size>
      </property>

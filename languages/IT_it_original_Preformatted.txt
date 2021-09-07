@@ -242,7 +242,11 @@
                               'weapon_rack'    : ["Le armi nella rastrelliera sono quasi tutte arrugginite a parte una balestra (+1 dado in attacco da lontano)",
                                                   "Scegli tra uno scudo (+ 1 dado da combattimento in difesa) e una piccola daga affilata (+2 dadi da combattimento in attacco)"],
                               'table'          : ["Un pugno di monete giace sul tavolo dall\'ultima partita a dadi di qualche orco (+5 monete d\'oro)",
-                                                  "Sotto al tavolo trovi uno scudo (+1 dado da combattimento in difesa)"]
+                                                  "Sotto al tavolo trovi uno scudo (+1 dado da combattimento in difesa)"],
+                              'open_doors'     : ["La porta è aperta solo in parte e ti accorgi che è incastrata in qualcosa che giace sul pavimento: si tratta di un vecchio coltello da lancio. Da vicino non vale nulla, ma lo potrai usare per lanciarlo contro un mostro, infliggendogli un danno di 1 punto corpo.",
+                                                    "Osservi da vicino la porta già spalancata: qualcuno ha lasciato appoggiato alla maniglia un sacchetto di cuoio: contiene una pozione di difesa: +2 dadi da combattimento in difesa al prossimo combattimento."],
+                              'closed_doors'   : ["La porta si rivela essere chiusa grazie ad un incantesimo: lancia un D6 per ogni punto mente che hai: se fai un numero superiore o uguale a 9 la porta si aprirà rivelandovi una nicchia che contiene una pozione curativa da +4 punti, ma se fallirai perderai un punto corpo (Dietro a questa porta non generare una stanza)",
+                                                  "Ti attardi ad osservare la porta chiusa davanti a te: le borchie brillano e sembrano essere fatte di metalli preziosi: ma sai che non è tutto oro quel che luccica. Per verificare se c'è dell'oro e dell'argento da sgraffignare perdi tempo e ricavi un bottino da 25 monete d'oro. Il tuo turno finisce qui e salterai il turno successivo."]
                             },
 
 

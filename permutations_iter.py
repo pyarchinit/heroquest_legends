@@ -23,6 +23,6 @@ class Permutation_class:
         for x in range(1,self.N+1):
             self.rec(l+[x])
 
-#ac = Permutation_class(10)
-#ac.rec([])
-#print(Permutation_class.res)
+ac = Permutation_class(2)
+ac.rec([])
+print(Permutation_class.res)

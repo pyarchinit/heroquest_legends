@@ -1,0 +1,24 @@
+Translations notes
+
+For the GUI translatios use LINGUIST and the relative guide attached
+C:\Users\Luca\Programmazione\pycharm_pj\heroquest_legends\languages
+
+
+Add the word for "Room" in the heroquest_solo_function.py at line 569 for your language:
+        "if self.rv > 1 and self.rv <= 13 and (forniture != 'Room' or forniture != 'Stanza'): #add any translation for the word room #a special treasure"
+
+Go to languages directory, duplicate the IT_it.txt file, translate all the phrases in your language;
+pay ATTENTION TO !!!NOT NOT NOT!!! TRANSLATE the english words in the following Dictionaries and Lists:
+
+'combat_value_dict'  
+'monster_name_conversion_dict'  
+'monster_name_reconversion_dict'  
+
+'forniture_name_conversion_dict'
+'forniture_name_reconversion_dict'
+'id_fornitures_convertion_dict' 
+'treasures_random_type'     
+		
+'monster_class'  
+
+'monster_types'  

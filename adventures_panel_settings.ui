@@ -2,6 +2,9 @@
 <ui version="4.0">
  <class>Form</class>
  <widget class="QWidget" name="Form">
+  <property name="windowModality">
+   <enum>Qt::WindowModal</enum>
+  </property>
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -20,7 +23,11 @@
    </font>
   </property>
   <property name="windowTitle">
-   <string>Form</string>
+   <string>Heroquest's Legends Settings Panel</string>
+  </property>
+  <property name="windowIcon">
+   <iconset>
+    <normaloff>HQ_solo.ico</normaloff>HQ_solo.ico</iconset>
   </property>
   <property name="autoFillBackground">
    <bool>false</bool>

@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="88.555084mm"
+   height="52.079868mm"
+   viewBox="0 0 88.555084 52.079868"
+   version="1.1"
+   id="svg8"
+   inkscape:version="1.0.2 (e86c870879, 2021-01-15, custom)"
+   sodipodi:docname="logo_hql.svg">
+  <defs
+     id="defs2" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.98994949"
+     inkscape:cx="547.39024"
+     inkscape:cy="293.89051"
+     inkscape:document-units="mm"
+     inkscape:current-layer="layer1"
+     inkscape:document-rotation="0"
+     showgrid="false"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0"
+     inkscape:window-width="1920"
+     inkscape:window-height="1051"
+     inkscape:window-x="-9"
+     inkscape:window-y="-9"
+     inkscape:window-maximized="1"
+     showguides="false" />
+  <metadata
+     id="metadata5">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Livello 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-1.4583102,-1.9458516)">
+    <rect
+       style="fill:#ff0000;fill-rule:evenodd;stroke:#000000;stroke-width:0.266037px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       id="rect857"
+       width="86.555092"
+       height="23.8125"
+       x="2.4583101"
+       y="2.0788701"
+       inkscape:export-filename="C:\Users\Luca\Programmazione\pycharm_pj\heroquest_legends\logo_hql.png"
+       inkscape:export-xdpi="72"
+       inkscape:export-ydpi="72" />
+    <text
+       xml:space="preserve"
+       style="font-size:12.6482px;line-height:125%;font-family:HeroQuest;-inkscape-font-specification:HeroQuest;letter-spacing:1.3029px;word-spacing:0.176709px;writing-mode:lr-tb;fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:#ffffff;stroke-width:0.945003;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:fill markers stroke"
+       x="9.1208057"
+       y="14.973113"
+       id="text835"
+       transform="scale(0.74544712,1.3414768)"
+       inkscape:export-filename="C:\Users\Luca\Programmazione\pycharm_pj\heroquest_legends\logo_hql.png"
+       inkscape:export-xdpi="72"
+       inkscape:export-ydpi="72"><tspan
+         sodipodi:role="line"
+         id="tspan833"
+         x="9.1208057"
+         y="14.973113"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:arial;-inkscape-font-specification:arial;letter-spacing:1.3029px;word-spacing:0.205721px;fill:#ffffff;fill-opacity:1;stroke:#ffffff;stroke-width:0.945003;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:fill markers stroke"
+         dx="0">HEROQUEST'S</tspan><tspan
+         sodipodi:role="line"
+         x="9.1208057"
+         y="33.619667"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:arial;-inkscape-font-specification:arial;letter-spacing:1.3029px;fill:#ffffff;fill-opacity:1;stroke:#ffffff;stroke-width:0.945003;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:fill markers stroke"
+         id="tspan837" /></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:21.6678px;line-height:125%;font-family:arial;-inkscape-font-specification:arial;writing-mode:lr-tb;fill:#ff0000;fill-rule:evenodd;stroke:#ff1414;stroke-width:1.471;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:fill markers stroke"
+       x="1.5995519"
+       y="44.658077"
+       id="text855"
+       transform="scale(0.84297978,1.1862681)"
+       inkscape:export-filename="C:\Users\Luca\Programmazione\pycharm_pj\heroquest_legends\logo_hql.png"
+       inkscape:export-xdpi="72"
+       inkscape:export-ydpi="72"><tspan
+         sodipodi:role="line"
+         id="tspan853"
+         x="1.5995519"
+         y="44.658077"
+         style="stroke-width:1.471;stroke-miterlimit:4;stroke-dasharray:none">LEGENDS</tspan></text>
+    <path
+       style="fill:#fe0000;fill-opacity:1;fill-rule:evenodd;stroke:#ff0000;stroke-width:2;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="M 2.4583102,29.066372 H 89.013395"
+       id="path859"
+       inkscape:export-filename="C:\Users\Luca\Programmazione\pycharm_pj\heroquest_legends\logo_hql.png"
+       inkscape:export-xdpi="72"
+       inkscape:export-ydpi="72" />
+  </g>
+</svg>

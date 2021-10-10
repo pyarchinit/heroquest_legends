@@ -37,6 +37,7 @@ from heroquest_solo_function import Heroquest_solo
 
 
 from adventure_panel_settings_main import AdventurePanelSettings
+from hql_map_viewer import HQL_MAP
 
 
 from pygame import mixer  # Load the popular external library
@@ -100,7 +101,10 @@ class Ui(QtWidgets.QMainWindow):
 
         self.show()
 
+    def on_pushButton_map_pressed(self):
+        map = HQL_MAP(self)
 
+        map.show()
 
     def on_pushButton_settings_pressed(self):
         dlg = AdventurePanelSettings(self)

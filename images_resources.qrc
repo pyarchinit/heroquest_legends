@@ -1,5 +1,6 @@
 <RCC>
   <qresource prefix="hq_">
+    <file>images/HQL_Map.png</file>
     <file>background.png</file>
     <file>images/porta.PNG</file>
     <file>images/scrigno.PNG</file>
